@@ -5,7 +5,7 @@ Release Notes for CRUX PPC 3.5
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
 
  Supported machines:
- Apple 32bit "NewWorld" G3/G4 
+ Apple 32bit "NewWorld" G4 (G4 only at this time, G3 support will be later)
 
  Other machines which use the G3, G4, or 60X PowerPC processors may be 
  compatible with CRUX PPC 3.5 but are untested. Use on non-MAC machines will 
