@@ -1,6 +1,6 @@
 # cruxppc-ng-3.5
 
-10Oct2019
+16Oct2019
 
 ## CRUX 3.5 port to powerpc (32bit)
 
@@ -10,7 +10,7 @@
 development team.   If you are using CRUX-PPC and run into problems, please DO NOT ask questions of, or raise bug reports against, the mainline CRUX project.  
 
   CRUX is a lightweight Linux distribution and CRUX PPC is an even lighter weight port of CRUX to the PowerPC architecture.   CRUX provides 
-  a small set of prebuilt packages which are sufficient to get started with but a fully implmented CRUX system will likely require the user to
+  a small set of prebuilt packages which are sufficient to get started with but a completed CRUX PPC system will likely require the user to
   build and add a number of additional packages. If you are 
   looking for a turn key Linux distro for your hardware with many prebuilt packages available, CRUX is probably not what you are looking for.   
   
@@ -18,9 +18,12 @@ development team.   If you are using CRUX-PPC and run into problems, please DO N
   figure it out yourself kind of distribution.   CRUX users will need to be experienced with the command line, manually editing configuration files,
   building packages, etc.   If you desire point and click system maintenance, CRUX is not what you are looking for.
 
-  CRUX-PPC supports 32bit PowerPC G3 and G4.   It does not support 64bit PowerPC (G5) at this time.   There are still a fair number of Linux 
-distributions supporting G5 machines but distros supporting 32bit PowerPC are getting scarce.  Hence, for now at least, CRUX-PPC efforts are focused 
-on the 32bit PowerPC machines.
+  CRUX-PPC goal is to supports 32bit PowerPC G3 and G4.   It does not support 64bit PowerPC (G5) at this time.   
+There are still a fair number of Linux distributions supporting G5 machines but distros 
+supporting 32bit PowerPC are getting scarce.  Hence, for now at least, CRUX-PPC efforts are focused on the 32bit PowerPC machines.   
+
+  At the current time CRUX-PPC does not run properly on G3 systems.   Until this issue is resolved, CRUX-PPC should only be used with
+G4 machines.
 
   This project is not a continuation of the (now defunct) CRUX-PPC project which existed previously (until 2012 or so).   This project is a 
   new port of CRUX-3.5 to the PowerPC.  Although similarities exist and pieces from the previous CRUX-PPC may be reused in this project, this is a
@@ -47,7 +50,8 @@ THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
 Problem reports, patches, improvement suggestions, and such are welcome.   Either file an 
 issue in this repository or send and email to cruxppc@gmail.com.  As time permits, reported
-issues may be addressed.  However there is no promise of support or bug fixes. 
+issues may be addressed.  However there is no promise that support or bug fixes will be
+provided.
 
 
 ### Project goals:
@@ -59,7 +63,7 @@ on providing a solid set of core packages.   Subsequent efforts will be towards 
 equivalent to what is on the Crux install ISO.   Later stages will work on creating a CRUX PPC installation CD and validation of additional 
 packages from opt, xorg and contrib.
 
-   Crux PPC will generally be kept the same as Crux mainline as much 
+   Crux PPC will generally be kept consistent with Crux mainline as much 
 as possible.   Changes certainly are required for the PowerPC but  
 differences between Crux PPC and Crux mainline will be minimized.
 
