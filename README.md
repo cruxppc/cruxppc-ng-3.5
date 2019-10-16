@@ -6,7 +6,7 @@
 
   This repository contains a port of CRUX Linux 3.5 to the PowerPC architecture (32 bit only).   
 
-  Note that this project is not a part of, nor sponsored, nor endorsed by the mainline (X86) CRUX project.  The CRUXPPC project is not supported by the mainline CRUX
+  Note that this project is not a part of, nor sponsored, nor endorsed by the mainline (X86) CRUX project.  The CRUXPPC project is NOT supported by the mainline CRUX
 development team.   If you are using CRUX-PPC and run into problems, please DO NOT ask questions of, or raise bug reports against, the mainline CRUX project.  
 
   CRUX is a lightweight Linux distribution and CRUX PPC is an even lighter weight port of CRUX to the PowerPC architecture.   CRUX provides 
