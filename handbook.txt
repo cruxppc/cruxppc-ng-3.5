@@ -1,5 +1,26 @@
+
+NOTE: This handbook is generally useful for the 3.5 CRUX PPC release.  However, 
+it has not yet been carefully adjusted to reflect CRUX PPC.   When
+using this handbook, keep in mind:
+
+1) CRUX PPC 3.5 only supports Apple 32bit PowerPC machines.  All references
+  to non Apple machines in this handbook should be disregarded.
+
+2) Alenia was part of the previous CRUX PPC project.   It is not part of
+  3.5 nor is it planned to be.  The regular CRUX prt-get utility is 
+  included in CRUX PPC 3.5 and it should be used instead of Alenia.
+
+3) For now at least, the user must manually maintain the ppc specific
+  portion of their ports tree by using git to pull a copy from the 
+  cruxppc-ng-3.5 repository and then cp the ppc ports into the /usr/ports
+  tree.  "ports -u" updates the non-ppc ports but does not update the
+  the ppc ports.
+
+  git can be installed from the install CD by either selecting the entire
+  opt set or by selecting git manually.  
+
+
 HANDBOOK FOR CRUX PPC 3.5
-25Sep2019
 
    1. Preface
 
@@ -14,6 +35,13 @@ HANDBOOK FOR CRUX PPC 3.5
 
     3. Installing CRUX PPC
 
+         1. Supported Hardware
+         2. Installing From CD-ROM
+         3. Upgrading From CD-ROM
+         4. Alternative Installation Methods
+
+              1. Network Installation
+
     4. The Package System
 
          1. Introduction
@@ -24,9 +52,10 @@ HANDBOOK FOR CRUX PPC 3.5
               3. Removing a Package
               4. Querying the Package Database
 
-         3. Package management frontend: prt-get
+         3. Package management frontend: ilenia
 
               1. prt-get and CRUX PPC
+              2. ilenia and CRUX PPC
 
          4. Creating Packages
 
@@ -91,26 +120,18 @@ HANDBOOK FOR CRUX PPC 3.5
    Copyright (c) 2001-2004 Per Liden
    Copyright (c) 2004-2005 Giulivo Navigante
    Copyright (c) 2005-2011 The CRUX PPC team
-   Copyright (c) 2018-2019 The CRUX PPC NG team
 
    This handbook covers the installation, configuration and administration of
    CRUX PPC  and  most in  general  of  the CRUX  distribution.  For  further
    information about the GNU/Linux system see the GNU's Not Unix project page
    and the Linux Documentation Project.
 
-   This handbook is somewhat vague regarding installation of CRUX-PPC.   
-   It will probably be sufficient for users experienced with hands on
-   PowerPC Linux installs (CRUX, Gentoo, LFS, etc) but it is likely not 
-   suffienct for inexperienced users.   As time passes, additional details
-   and information will be added to this handbook to make it easier to
-   install and use CRUX-PPC.
-   
-
 Preface
 
    Per Liden wrote this  handbook. Robert McMeekin  converted it to  DocBook.
    Giulivo Navigante and  further on  The CRUX PPC  Team adapted  it for  PPC
-   users.  Numerous others have  given feedback  and improvement suggestions.
+   users and made  a Wiki version.  Numerous others have  given feedback  and
+   improvement suggestions.
 
 Introduction
 
@@ -119,7 +140,7 @@ Introduction
    CRUX PPC is  a port  for the Power  Architecture^(R) platform  of CRUX,  a
    lightweight and optimized GNU/Linux  distribution targeted at  experienced
    GNU/Linux users.  The  primary focus  of  this distribution  is  "keep  it
-   simple", which  it  reflects  in a  simple  tar.xz-based  package  system,
+   simple", which  it  reflects  in a  simple  tar.gz-based  package  system,
    BSD-style initscripts,  and  a  relatively  small  collection  of  trimmed
    packages. The secondary focus is utilization of new Linux kernel  features
    and recent tools  and libraries. CRUX  PPC also has  a ports system  which
@@ -133,10 +154,10 @@ Introduction
    behind CRUX PPC. CRUX PPC is  made with simplicity in mind from  beginning
    to end. Making it easy to create new and update old packages is essential;
    updating a package in CRUX PPC is  often just a matter of typing pkgmk  -d
-   -u. The usage of ports helps keep your packages up-to-date;
+   -u (or ilenia -u). The usage of ports helps keep your packages up-to-date;
    not the latest bleeding-edge-alpha version, but the latest stable version.
    Other features include creating packages optimized for your processor, eg.
-   by  compiling  with   -mtune=750 and   avoiding
+   by  compiling  with   -mcpu=G4  -maltivec   -mabi=altivec,  and   avoiding
    cluttering the filesystem  with files  you'll never  use, eg.  /usr/doc/*,
    etc. If you  need more information  about a specific  program, other  than
    information found in the man-page, a  web search engine usually knows  all
@@ -149,10 +170,6 @@ Introduction
    doesn't hesitate  to download  and compile  programs yourself,  then  this
    istribution might suit you well.
 
-   If you are looking for a distribution that has numerous packages ready for
-   installation just with a point and click, then this distribution will 
-   probably not suit you well.
-
   License
 
     Packages
@@ -164,10 +181,10 @@ Introduction
 
     Build Scripts
 
-   Package build scripts in  CRUX PPC (initially  in package categories *-ppc)
-   are Copyright (c) by  CRUX PPC-NG Team and  licensed through the GNU General
-   Public License. Other  build scripts (in  package categories core  and
-   opt) are Copyright (c) 2000-2019 by Per Liden and the CRUX development
+   Package build scripts in  CRUX PPC (initially  in package categories  ppc)
+   are Copyright (c) by  CRUX PPC Team and  licensed through the GNU  General
+   Public License. Other  build scripts (in  package categories x86/core  and
+   x86/opt) are Copyright (c) 2000-2010 by Per Liden and the CRUX development
    team and licensed through the GNU General Public License.
 
     GPL
@@ -184,151 +201,188 @@ Introduction
    ANY WARRANTY;  without even  the implied  warranty of  MERCHANTABILITY  or
    FITNESS FOR A PARTICULAR PURPOSE. Use it at YOUR OWN RISK.
 
- Installing CRUX PPC
-
-   First make a backup copy of any crucial data that exists on the system
-   that CRUX-PPC will be installed onto.   Although installing CRUX-PPC
-   should not cause any loss of data, the install operations are performed
-   with root priveleges and the potential for data loss exists.   Therefore, 
-   the first step is to ensure that every piece of crucial data on the 
-   target install system is recoverable should a data loss occur.
+Installing CRUX PPC
 
   Supported Hardware
 
-   Packages  on  the  official   CRUX  PPC  rootfs image  are  compiled with
+   Packages  on  the  official   CRUX  PPC  ISO   image  are  compiled   with
    optimizations to support Power Architecture(R) processors. CRUX PPC  works
-   on Apple NewWorld 32 bit machines.   It may also be adaptable to other 
-   PowerPC machines such PegasosII, EFIKA, Sam440ep, Sam460ex, but testing
-   has been limited to Apple PowerPC machines and so its usability is unknown 
-   regarding other machines.
+   on Apple NewWorld (G4 32 bit only).   (G3 machines should also be 
+   supported but are not working yet.)
+
+   The kernel used during installation, i.e.  when booting from the CRUX  PPC
+   ISO image is configured according to  the platform; you will usually  find
+   support for the following  disk controllers, along  with USB and  FireWire
+   support (except for the kernels targeted to embedded platforms):
+
+Unchecked table:
+   +------------------------------------------------------------------------+
+   | Subsystem | Driver(s) included in bootkernels (varies with platform)  ||
+   |-----------+-----------------------------------------------------------||
+   |           | Generic PCI IDE chipset, Silicon Image, ServerWorks,      ||
+   | PATA      | OSB4/CSB5/CSB6/HT1000, CMD64x, Apple MacIO IDE,           ||
+   |           | VIA82Cxxx, AMD81xx, Freescale MPC5200B, Promise PDC2027x, ||
+   |           | SIL680, JMicron, Winbond SL82c105                         ||
+   |-----------+-----------------------------------------------------------||
+   | SATA      | ServerWorks Frodo/Apple K2, Silicon Image, SIL24,         ||
+   |           | Marvell, DWC, VITESSE VSC-7174                            ||
+   |-----------+-----------------------------------------------------------||
+   |           | 3ware 9xxx, ACARD, Adaptec AACRAID, Adaptec AIC7xxx,      ||
+   |           | Adaptec AIC79xx U320, AdvanSys, LSI Logic NewGen RAID,    ||
+   | SCSI/SAS  | LSI Logic MegaRAID (SAS), SYM53C8XX, Tekram DC390(T) and  ||
+   |           | Am53/79C974, IBM Power Linux RAID adapter, MESH (Power    ||
+   |           | Mac internal/external SCSI), IBM ServeRAID, IBM Virtual   ||
+   |           | SCSI, IBM Virtual FC                                      ||
+   |-----------+-----------------------------------------------------------||
+   |           | USB device filesystem, EHCI HCD (USB 2.0) support, UHCI   ||
+   |           | (VIA, many add-on cards,...) support, OHCI (iMacs, OPTi,  ||
+   | USB       | SiS, ALi, NEC,...) support, USB Mass Storage support, USB ||
+   |           | Human Interface Device (full HID) support, HID input      ||
+   |           | layer support                                             ||
+   |-----------+------------------------------------------------------------|
+   | Firewire  | OHCI-1394 controllers, Storage devices (SBP-2), IP         |
+   |           | networking over 1394                                       |
+   +------------------------------------------------------------------------+
+
+   In order to install CRUX PPC, your disk controller must be present in  the
+   list above. Some add-on controllers  (the ones your openfirmware won't  be
+   able to boot  from) are supported  with modules. If  your hardware is  not
+   supported or you have other problems installing CRUX PPC you might find  a
+   solution in  Section 3.4,  Alternative Installation  Methods but  consider
+   they could be intended for different hardware.
 
   Installing From CD-ROM
 
-   NOTE:  There is currently no ISO installation image of this release and 
-   so installing directly from a cruxppc CD-ROM is not possible.  However, 
-   it should be possible to boot another distributions CD-ROM and use it 
-   to perform the installation of the CRUX-PPC files.   Gentoo, in 
-   particular, produces a bootable ppc iso image that is intended to 
-   install gentoo but can also be used, to download and install 
-   the initial cruxppc root file system and kernel.  Any recent install media
-   that allows the user to break into shell (e.g. rescue mode) and provides
-   tools to partition, format, extract tar archives, and chroot should work for
-   a CRUX-PPC installation.
+Fix this.  Only 32 bit is supported:
 
-   Also if your system is already running a Linux distro and there is 
-   a spare partition for CRUX ppc, then it is quite easy to use the
-   distos tool set to install CRUX PPC into the spare partition.
+   1.   Download   the   CRUX    PPC   ISO   image   (crux-ppc-3.5.iso    or
+   crux-ppc64-3.5.iso). To  ensure  that  the download  was  successful  you
+   should examine its checksum using md5sum.
+   Compare   the   output   with    the   file   crux-ppc-3.5.iso.md5    (or
+   crux-ppc64-3.5.iso.md5), which can be found in the same directory as  the
+   ISO image on the  download site. If the  checksums match the download  was
+   successful and you can continue with burning the ISO image on a CD.
 
+   2. The ISO  image is bootable,  on Apple computers  just insert the  newly
+   burned CD into the first CD-ROM drive, reboot your computer and keep the C
+   key pressed to boot from CD. Select  at the boot prompt the kernel  chrp32
+   for 604e cpu based systems, apple32  for G3/G4 cpu based systems,  apple64
+   and ppc970 for G5 and PPC970 cpu based systems or pseries for  RS64/POWERn
+   cpu based machines.
 
-  The CRUX-PPC Tarball
+   Note On all systems you might have to adjust the root= parameter (that
+   defaults to /dev/sr0) to your cdrom device. Please keep in mind that
+   device names vary according to your hardware configuration: The first
+   SCSI, SATA (or EFIKA IDE) disk is called /dev/sda, while the first SCSI
+   cdrom is called /dev/scd0 or /dev/sr0; the first IDE disk or cdrom is
+   called /dev/sda too. For more information about harddisk naming
+   conventions please checkout this HOWTO.
 
-   CRUX-PPC is released as a tarball of a root filesystem that has been
-   populated with a basic set of CRUX-PPC packages.   These packages number
-   about 100 and consist of all the 'core' CRUX packages except omitting the 
-   x86 specific packages (e.g. lilo), ommiting openssl and it's dependents,
-   and including several additional packages useful for PowerPC 
-   (e.g. mac-fdisk).
+   3. Login as root (no password required).
 
-   The CRUX-PPC rootfs expands to about 600M in size.  Additional space
-   will be required as additional packages are added.   Although the initial
-   CRUX-PPC system will fit within a Gig of disk space, a more reasonable space
-   allocation for CRUX-PPC would be 10 to 20 Gig of disk space (or even
-   bigger if numerous additional packages are to be added).
+   4. Use mac-fdisk (on Macs), parted (on PegasosII, EFIKA and Sam4x0), fdisk
+   or cfdisk (on RISC/6000 and pSeries) to create and format the partition(s)
+   you want CRUX PPC to be installed on.
 
-   The CRUX-PPC system may be installed as a chroot or as a bootable 
-   system.  Typical use would be as a bootable system but a CRUX-PPC 
-   chroot environment is a quick and easy way to try crux ppc before going
-   through the more difficult process to install a bootable system.
+  $ mac-fdisk /dev/sd?
+  $ mkreiserfs /dev/sd??
+  $ mkswap /dev/sd??
 
-  Installing the root filesystem tarball as chroot:
+   Note A special bootstrap partition of 800k is needed to install the yaboot
+   loader on Macs; mac-fdisk has a special key to do this. Also consider that
+   yaboot can't read kernel images from JFS and Ext4fs partitions, so if you
+   intend to use those as root filesystem, a supplementary ext2/ext3
+   partition is needed to store the boot kernel images. Please note that
+   mac-fdisk works with existing MacOS partition tables, it can create/delete
+   partitions on a drive with MacOS installed; cfdisk and fdisk do not
+   recognize MacOS partition table and will destroy it creating a PC
+   compatible table from which you won't be able to boot, so use mac-fdisk on
+   Apple computers.
+   Note If you're using a PegasosII system or an EFIKA embedded board, you
+   should use parted to create an Amiga partition table; the partition where
+   the kernel image resides should be a primary one and formatted as ext2
+   with 128-byte inodes.
+   Note If you're using a Sam4x0, you should use parted to create an Amiga
+   partition table; the partition where the kernel image resides should be
+   formatted as ext2 with 128-byte inodes.
+   Note If you're using an IBM Power System, creating PC-Style partition
+   table is recommended; cfdisk or fidks are suitable for this. You will need
+   a special PReP Boot partition (type 41) of 8 megabytes.
 
-   The CRUX-PPC root file system can be used in a chroot environment.  
-   If chroot is desired then on an existing PowerPC machine create a
-   directory for the CRUX-PPC tree, extract the rootfs, mount needed
-   file systems and then chroot to it.  e.g.:
+   The amount of disk space you need depends on how many packages you  choose
+   to install. I recommend having at least a 1G root partition (CRUX PPC will
+   use about 200MB-500MB depending on your configuration).
 
-   mkdir /cruxppc
-   cd /cruxppc
-   tar xvfp /pathtocruxrootfs.tar.xz
-   mount --bind /dev /cruxppc/dev
-   mount --bind /tmp /cruxppc/tmp
-   mount -t proc proc /cruxppc/proc
-   mount -t sysfs none /cruxppc/sys
-   chroot /cruxppc /bin/bash
+   Using   ReiserFS   is    recommended,   but   there    is   support    for
+   Ext2fs/Ext3fs/Ext4fs, XFS,  JFS  and  BTRFS as  well.  Further,  I  highly
+   recommend separating  system data  from  user data,  i.e. use  a  separate
+   partition for /home (and possibly /var)  since that will make your life  a
+   lot easier the day you want to upgrade/reinstall/remove your system.
 
-   Next complete the needed configuration steps as described within 
-   this document.   Especially remember to set /etc/resolv.conf
-   to a valid name server else networking will not work within the chroot
-   environment.
+   5. Mount the partition on which you want to install this distribution.
 
-   Note that the CRUX-PPC 3.5 requires a minimum kernel version of 3.2.
-   If your systems kernel is an earlier version than 3.2, you will not be able
-   to chroot into CRUX-PPC.  Most PowerPC linux distributions released within
-   the last few years should work with crux ppc as chroot.
+  $ mount -t type /dev/sd?? /mnt
 
-   
-  Installing a bootable CRUX-PPC system (typical)
+   If you want the installation to span more than one partition, mount  those
+   partitions as well. For example, if you want to have a different partition
+   for /home or /var, then do:
 
-   To create a bootable CRUX-PPC machine, a disk partition must be allocated
-   for CRUX-PPC, the partition must be formatted and the CRUX-PPC root 
-   filesystem extracted into the partition.   The kernel must be added
-   and the bootloader configured to boot the CRUX-PPC system and use the
-   CRUX-PPC partition as root filesystem.
+  $ mkdir /mnt/var
+  $ mount -t type /dev/sd?? /mnt/var
 
-   If the machine already has an existing Linux install, then use the 
-   existing tools to create a new partition on the disk.   Format the
-   partition (ext4 is a good choice), mount it and then extract the CRUX-PPC
-   rootfs tarball into the partition:
+   6. Activate your swap partition(s).
 
-   mkdir /mnt/crux-3.5
-   mount /dev/(your crux partition) /mnt/crux-3.5
-   cd /mnt/crux-3.5
-   tar xvfp (path to the cruxppc-ng-3.5 rootfs tarball)
-   sync
+  $ swapon /dev/sd??
 
-   If the machine has no existing Linux install, then acquire an install
-   CD from another distro (e.g. Debian), boot it, and break into a root shell.
-   Partition the disk as needed, format the partition as needed,  mount it and 
-   then extract the CRUX-PPC rootfs tarball into the CRUX-PPC partition.
+   7. Type setup to  start the package installation  script. The script  will
+   ask where you mounted your new root partition and which packages you  want
+   to install. Just  select the packages  you want and  nothing else will  be
+   installed. However,  I  recommend at  least  installing all  the  packages
+   marked core.  Also git (from opt) is also recommended as it is used
+   for updates of the powerpc specific portions of the ports tree.
 
-   A sample ppc32 kernel configuration file is provided.   It can be used
-   as a starting point for configuring and building a kernel for the 
-   crux ppc system.   If desired, the prebuilt kernel can be installed
-   to get up and running quickly and then the user can build their
-   own kernel later as time permits.
+   Once it has installed the selected packages, the setup script will display
+   an installation log. Make sure the last line in the log says "0 error(s)".
 
-   If the machine has a seperate boot partition, copy the CRUX-PPC 
-   kernel into the appropriate /boot partition.
+   (At the present time the 'mesa3d' package install will fail.   It can
+    be ignored).
 
-   Modify the /etc/yaboot.conf file (save a backup copy first) and add
-   an entry for the CRUX-PPC kernel and root file system.  Once /etc/yaboot.conf
-   is satisfactory, run 'ybin' and the CRUX-PPC system will be a bootable
-   option at the next reboot.
+   If you at a later  stage find that you  need some additional packages  you
+   can just mount the CRUX PPC CD-ROM and use pkgadd to install them.
 
-   Once booted, the user should run 'dbus-uuidgen --ensure' to setup
-   the unique machine id.  The dbus package is included in the rootfs
-   and the installation script of dbus requires this step.
+   Note There is only a simple package dependency checking. This means that
+   it is up to you to figure out that if you for example install the exim
+   package you also need to install the db package.
+   Note On Sam4x0 you need opt/mkimage package to compile your own kernel.
+   Note On EFIKA boards you should now create the device /dev/ttyPSC0 needed
+   for the serial port of the console.
+   $ mknod /mnt/dev/ttyPSC0 c 204 148
 
- Extra packages.
-
-   Some opt and xorg packages are provided at this time and as this 
-   project progresses, additional precompiled packages from the 
-   opt and xorg ports may be provided.  Users must build 
-   and install any additional packages from /usr/opt* and /usr/opt/xorg* 
-   (and /usr/port/contrib) as desired.
-
-   Note that some packages have pre or post install scripts and/or
-   README files associated with them.   The pkgadd utility does NOT
-   run these sripts (or even is aware of their existence).   When 
-   installing binary packages, the user should always check for the
-   existence of scripts or READMEs and perform the needed additional
-   steps required by the package.
+   Note that unlike previous crux ppc install cds, the kernel source is
+   not automatically installed into the target system.   The kernel source
+   tarball is included under /crux/kernel and if desired, the user may copy this 
+   tarball to the target system and unpack and build it.
 
 
- Configuring a new CRUX-PPC system
+   8. Now it's time to compile your kernel and do basic system configuration.
+   The kernel compilation requires that you  "chroot" into your new CRUX  PPC
+   installation.
 
+  $ mount --bind /dev /mnt/dev
+  $ mount --bind /tmp /mnt/tmp
+  $ mount -t proc proc /mnt/proc
+  $ mount -t sysfs none /mnt/sys
+  $ chroot /mnt /bin/bash
 
-   Edit /etc/fstab to configure your filesystem(s). 
+   You can  type setup-chroot  instead of  issuing the  previous commands  to
+   chroot in the system installed in /mnt
+
+   9. Set the root password.
+
+  $ passwd
+
+   10. Edit /etc/fstab to configure your filesystem(s). Editors vim, nano and
+   mcedit are available.
 
    NOTE If you want access your computer via serial console (as it should be
    for IBM RS/6000, pSeries, Apple Xserve or Genesi EFIKA users) you also
@@ -342,52 +396,260 @@ Introduction
    hvc0 in the /etc/securetty and c7:2:respawn:/sbin/agetty 19200 hvsi0 (or
    c7:2:respawn:/sbin/agetty hvc0) in the /etc/inittab file.
 
-   Edit /etc/rc.conf to configure font, keyboard, timezone, hostname  and
+   11. Edit /etc/rc.conf to configure font, keyboard, timezone, hostname  and
    services. See Section 6.1.3,  Configuration Variables in /etc/rc.conf  for
    details about /etc/rc.conf .
 
-   Generate  locales  for  your system.  See  Section  6.1.4,  Generating
-   Locales for more information.   A script which generates a few selected
-   (of the many possible) locales can be found under misc.
+   12. Generate  locales  for  your system.  See  Section  6.1.4,  Generating
+   Locales for more information.
 
-   Edit /etc/rc.d/net, /etc/hosts and /etc/resolv.conf to configure  your
+   13. Edit /etc/rc.d/net, /etc/hosts and /etc/resolv.conf to configure  your
    network (ip-address/gateway/hostname/domain/dns).
 
-   Execute 'ports -u' to populate the initial set of ports files.   
-   NOTE: ports -u does NOT get the ppc specific ports.  
+   14. Go  to  /usr/src/linux-4.19.24.x,  patch  (if  needed),  configure  and
+   compile a new kernel.  
 
-   Retrieve the ppc ports from the git repository and copy them to /usr/ports/
-   core-ppc, /usr/ports/opt-ppc and /usr/ports/xorg-ppc:
+   Alternatively, a prebuilt starter kernel for Apple 32 bit machines is 
+   included in the install cd under /crux/kernel.  The user can then compile 
+   their own kernel later to suit their needs.  To install the prebuilt
+   kernel at the top of the target filesystem run the command.
 
-   git clone https://www.github.com/tarmiste/cruxppc-ng-3.5
-   cd cruxppc-ng-3.5/ports
-   cp -r *-ppc /usr/ports
+   cd /; tar xvfp <prebuilt kernel tarball>
 
-   Periodically check and update the ppc specific ports from the git 
-   repository if needed.    These ports are not automatically updated
-   when 'ports -u' is runa and must be updated by hand periodically.
-   
-   Note that most of the ppc specific ports have a counter part in the
-   generic /usr/ports tree.   For example there will exist both a 
-   /usr/ports/core/gcc and a /usr/ports/core-ppc/gcc package.   When 
-   building packages, you should always build the *-ppc version and 
-   not the generic version.   If no *-ppc version exists, then build
-   the generic version.   This is not ideal but for now is the way it
-   works.   Manually deleting the generic ports where the equivalent
-   powerpc specific port exists may make it easier to avoid mistakes.
+   Note On some systems, you should apply the provided patches; these patches
+   are found in the file /usr/src/
 
-   The prt-get tool should automatically find and use the ppc version
-   of ports when they exist.   prt-get is an easier method of adding
-   packages than the pkgmk utility.
+   On a 32 bit system:
 
-   
+     * for IBM RS/6000
+
+  $ cd /usr/src/linux-4.19.24.x
+  $ patch -p1 < ../your_patch
+  $ make menuconfig
+  $ make all
+  $ make modules_install
+  $ cp vmlinux /boot/vmlinux
+  $ cp System.map /boot/System.map
+
+     * for Apple
+
+  $ cd /usr/src/linux-4.19.24.x
+  $ patch -p1 < ../your_patch
+  $ make menuconfig
+  $ make all
+  $ make modules_install
+  $ cp arch/powerpc/boot/zImage.pmac /boot/zImage
+  $ cp System.map /boot/System.map
+
+     * for PegasosII, Efika
+
+  $ cd /usr/src/linux-4.19.24.x
+  $ patch -p1 < ../your_patch
+  $ make menuconfig
+  $ make all
+  $ make modules_install
+  $ cp arch/powerpc/boot/zImage.chrp /boot/zImage
+  $ cp System.map /boot/System.map
+
+     * for Sam4x0
+
+  $ cd /usr/src/linux-4.19.24.x
+  $ patch -p1 < ../your_patch
+  $ make menuconfig
+  $ make all
+  $ make uImage (for Sam460ex)
+  $ make canyonlands.dtb (for Sam460ex)
+  $ make modules_install
+  $ cp arch/powerpc/boot/cuImage.sam440ep /boot/uImage (for Sam440ep)
+  $ cp arch/powerpc/boot/uImage /boot/uImage (for Sam460ex)
+  $ cp arch/powerpc/boot/canyonlands.dtb /boot/canyonlands.dtb (for Sam460ex)
+  $ cp System.map /boot/System.map
+
+   On a 64 bit system:
+
+  $ cd /usr/src/linux-4.19.24.x
+  $ patch -p1 < ../your_patch
+  $ make menuconfig
+  $ make all
+  $ make modules_install
+  $ cp vmlinux /boot/vmlinux
+  $ cp System.map /boot/System.map
+
+   Useful kernel  config  files and  patches  are placed  into  the  /usr/src
+   directory. They are the config files used to build the boot kernels.
+
+   15. On Apple computers, edit /etc/yaboot.conf to boot the kernel you  just
+   compiled  and  run  mkofboot  -v  to  install  yaboot  into  the  boostrap
+   partition, then ybin -v to make the new system bootable.
+
+   On IBM RS/6000  and pSeries/System_p computers,  edit /etc/yaboot.conf  to
+   boot    the     kernel    you     just     compiled    and     type     dd
+   if=/usr/lib/yaboot/yaboot.chrp  of=/dev/sd??  where  sd??  is  the  device
+   corresponding to the disk and PReP Boot partition.
+
+   Note Remember that where /etc/yaboot.conf resides must be the first Ext2fs
+   formatted partition available on your disk.
+
+   On PegasosII  systems,  enter  the SmartFirmware?  and  type  boot  hd:Y-1
+   boot/zImage root=/dev/sd?Y where hd?Y is the  disc and partition and Y  is
+   the number of the partition where CRUX PPC has been installed.
+
+   On Sam4x0 you could use Parthenope as your second level bootloader. Create
+   the file /boot/menu.lst with the following syntax:
+
+ delay 5
+
+ title CRUX PPC 3.5 (Sam440ep)
+     kernel /uImage root=/dev/sdaY console=tty0 quiet
+
+ title CRUX PPC 3.5 (Sam460ex)
+     kernel /uImage root=/dev/sdaY console=tty0 quiet
+     dtb /canyonlands.dtb
+
+   Where X is the partition number where is located the kernel image and Y is
+   the root partition.
+   You also need to install Parthenope in the RDB with the following command:
+
+  $ parthenope-install /usr/share/parthenope/ub2lb
+
+   Parthenope is smart enough to search for other operating system and boot
+   them.
+
+   16. Remove the CRUX PPC CD-ROM from your drive and reboot from harddisk.
+
+  Upgrading From CD-ROM
+
+   Upgrading from a previous crux ppc to crux ppc 3.5 is not supported.  
+
+   1.   Download   the   CRUX    PPC   ISO   image   (crux-ppc-3.5.iso    or
+   crux-ppc64-3.5.iso). To  ensure  that  the download  was  successful  you
+   should examine its checksum using md5sum.
+   Compare   the   output   with    the   file   crux-ppc-3.5.iso.md5    (or
+   crux-ppc64-3.5.iso.md5), which can be found in the same directory as  the
+   ISO image on the  download site. If the  checksums match the download  was
+   successful and you can continue with burning the ISO image on a CD.
+
+   2. The ISO  image is bootable,  on Apple computers  just insert the  newly
+   burned CD-ROM into the first CD-ROM  drive, reboot your computer and  keep
+   the C key  pressed to  boot from  CD-ROM. Select  at the  boot prompt  the
+   kernel chrp32 for  604e cpu  based systems,  apple32 for  G3/G4 cpu  based
+   systems, apple64  and ppc970  for  G5 cpu  based  systems or  pseries  for
+   RS64/POWERn cpu based machines.
+
+   On PegasosII  systems you  have to  access the  SmartFirmware? prompt  and
+   type:
+
+  boot cd ppc/pegasos2/zImage.chrp root=/dev/sd??
+
+   where sd?? is  the device of  the CD-ROM  Drive with the  CRUX PPC  CD-ROM
+   inserted in (e.g. sr0 or scd0).
+
+   On  YDL  PowerStation  and  others  Maple/Bimini  SLOF  motherboard  based
+   systems, as the cd does not autoboot, you have to access the SLOF  prompt,
+   holding the S key during startup, and type:
+
+  boot cdrom [ENTER]
+
+   and when you are presented with the yaboot prompt, type:
+
+  cdrom:0,/ppc/ppc64/vmlinux root=/dev/sr0  [ENTER]
+
+   On Sam4x0 and IBM Power Systems, if the cd does not autoboot, you have  to
+   set up your cdrom as a bootable device in the multi-boot menu (F1 or 1  at
+   the startup for IBM Power Systems or Enter for Sam4x0).
+
+   Note On all systems you might have to adjust the root= parameter (that
+   defaults to /dev/sr0) to your cdrom device. Please keep in mind that
+   device names vary according to your hardware configuration: The first
+   SCSI, SATA (or EFIKA IDE) disk is called /dev/sda, while the first SCSI
+   cdrom is called /dev/scd0 or /dev/sr0; the first IDE disk or cdrom is
+   called /dev/sda too. For more information about harddisk naming
+   conventions please checkout this HOWTO.
+
+   3. Login as root (no password required).
+
+   4. Mount your CRUX PPC root partition.
+
+  $ mount -t type /dev/sd?? /mnt
+
+   If your installation spans over more than one partition, then mount  those
+   partitions as well.  For example, if  you have a  different partition  for
+   /var, then do:
+
+  $ mount -t type /dev/sd?? /mnt/var
+
+   5. Activate your swap partition(s).
+
+  $ swapon /dev/sd??
+
+   6. Type setup to  start the package installation  script. The script  will
+   ask you where you mounted your root partition and which packages you  want
+   to upgrade. It is a good idea to upgrade all packages, else you might  get
+   into trouble later, e.g. in case a new version of some library isn't  100%
+   backwards compatible.
+
+   Note The setup script uses the /etc/pkgadd.conf of the target system to
+   determine which files to upgrade and which files not to upgrade. The files
+   that are not upgraded are put in /var/lib/pkg/rejected/ (Section 4.2.2,
+   Upgrading a Package).
+
+   When the setup script  has upgraded the selected  packages an upgrade  log
+   will be displayed. Make sure the last line in the log says "0 error(s)".
+
+   If you at a later  stage find that you  need some additional packages  you
+   can just mount the CRUX  PPC CD-ROM and use  pkgadd to install them  (e.g.
+   pkgadd /mnt/crux/opt/package#1.0-1.pkg.tar.gz).
+
+   7. Now it's time to compile  your kernel. The kernel compilation  requires
+   that you "chroot" into your CRUX PPC installation.
+
+  $ mount -o bind /dev /mnt/dev
+  $ chroot /mnt /bin/bash
+
+   8. Go to /usr/src/linux-4.19.24.x, patch (if needed), configure and compile
+   a new kernel.
+   Useful kernel  config  files and  patches  are placed  into  the  /usr/src
+   directory. They  are the  config files  used to  build the  boot  kernels.
+   Adjust /etc/fstab if needed.
+
+   WARNING udev reads files in /sys/* and /proc/*. Make sure that those
+   pseudo filesystems are enabled in your kernel configuration and available
+   during system-startup. Also note that unlike devfsd, udev doesn't
+   automatically mount /dev/pts. Terminal applications such as xterm(1) will
+   not work if you forget to mount it. If you want udev to detect your
+   connected USB hardware you'll need the USB-Filesystem mounted on
+   /proc/bus/usb. We highly recommend you check your fstab file.
+
+   9. On Apple computers, edit /etc/yaboot.conf  to boot the kernel you  just
+   compiled  and  run  mkofboot  -v  to  install  yaboot  into  the  boostrap
+   partition, then ybin -v to make the new system bootable.
+
+   For IBM RS/6000 and  pSeries/System_p computers, edit /etc/yaboot.conf  to
+   boot the kernel  you just compiled  and type dd  if=/usr/lib/yaboot/yaboot
+   of=/dev/sd?? where sd?? is the device  corresponding to the disk and  PReP
+   Boot partition.
+
+   Note Remember that where /etc/yaboot.conf resides must be the first Ext2fs
+   formatted partition available on your disk.
+
+   10. Remove the CRUX PPC CD-ROM from your drive and reboot from harddisk.
+
+  Alternative Installation Methods
+
+    Network Installation
+
+   If you do not have a CD burner, are unable to boot your machine using  the
+   CRUX CD-ROM or for any other reason are unable to install CRUX the  normal
+   way (Section 2.2,  Installing From  CD-ROM) you  might want  to check  out
+   HOWTO install GNU/Linux CRUX PPC on Genesi EFIKA or HOWTO install CRUX via
+   NFS by Juergen Daubert.
 
 The Package System
 
   Introduction
 
    The package system (pkgutils) is made  with simplicity in mind, where  all
-   packages are plain  tar.xz files  (i.e. without  any kind  of meta  data).
+   packages are plain  tar.gz files  (i.e. without  any kind  of meta  data).
    Packages          follow          the          naming           convention
    <name>#<version>-<release>.pkg.tar.gz, where  <name> is  the name  of  the
    program, <version> is the version number of the program, and <release>  is
@@ -404,7 +666,7 @@ The Package System
    package database  (stored in  /var/lib/pkg/db). The  basic package  system
    does not have any kind of dependency  checking, thus it will not warn  you
    if you install a package that requires other packages to be installed. The
-   included prt-get tools, however, do support dependencies.
+   included prt-get and ilenia tools, however, do support dependencies.
 
    The following  sections will  in short  describe how  to use  the  package
    utilities. Additional information  about these utilities  can be found  on
@@ -594,7 +856,8 @@ The Package System
 
   Package management frontend: ilenia
 
-   Ilenia is no longer part of CRUX-PPC.   Disregard references to it.
+   Alenia is no longer part of cruxppc and all references to it should be 
+   ignored.   Use the regular crux "prt-get" utility instead.
 
    To address the different requirements  towards package management in  CRUX
    PPC, a  number  of users  started  discussion about  an  advanced  package
@@ -608,12 +871,8 @@ The Package System
      * Powerful search and query functionality
      * Ports repositories hierarchy
 
-   Prt-get, is the official project and tool of the CRUX project.  A
+   Prt-get, instead, is the official project and tool of the CRUX project.  A
    full description can be found in the manual of prt-get.
-
-    prt-get and CRUX PPC
-
-   Prt-get is included in CRUX PPC.
 
   Creating Packages
 
@@ -863,7 +1122,7 @@ The Package System
    # Depends on: glib
 
    Note If your package specifically addresses the PPC platform, or if your
-   Pkgfile is a modified version of an package build file, please add an
+   Pkgfile is a modified version of an x86 package build file, please add an
    extra header field PPC!=upstream that explains what's different from x86
    and/or a field that indicates the PPC packager name like Modified version
    for PPC.
@@ -905,7 +1164,7 @@ The Ports System
    users use the ports(8) utility to download ports from the repositorty  and
    place them in /usr/ports/. CRUX PPC  ports(8) utility syncs with both  the
    CRUX PPC repositories, whose copy is kept in /usr/ports/ppc, and the  CRUX
-   repositories, whose copy is kept in /usr/ports/ The ports utility uses
+   repositories, whose copy is kept in /usr/ports/x86. The ports utility uses
    rsync(1) to do the actual  synchronization with the PPC repositories,  and
    rsync(1) to sync with the main CRUX repositories.
 
@@ -913,25 +1172,25 @@ The Ports System
 
    CRUX ports are organized  in so called collections;  the CRUX PPC  project
    provides PPC specific collections that only contain ports that need to  be
-   different on Power  Architecture than  CRUX upstream  (. Whenever  the
+   different on Power  Architecture than  CRUX upstream  (x86). Whenever  the
    user seeks for a port  and finds it in a  PPC repository, s/he should  use
    the PPC version instead of the CRUX upstream.
    There are three different layers of ports.
 
     The official collection 'opt', 'core' and 'xorg'
 
-   core, x86/opt and x86/xorg are the three primary collections of  CRUX.
+   x86/core, x86/opt and x86/xorg are the three primary collections of  CRUX.
    They're maintained by the CRUX development team which ensures that they're
    consistent and working well together.
    ppc/core, ppc/opt and ppc/xorg collections are maintained by the CRUX  PPC
-   Team and  are meant  to override  the  ports when  there is  some  ppc
+   Team and  are meant  to override  the x86  ports when  there is  some  ppc
    specific issue  that prevents  the upstream  ports from  working on  Power
-   Architecture. Those three collections  and their ppc counterparts  are
+   Architecture. Those three x86 collections  and their ppc counterparts  are
    also enabled by default in CRUX PPC.
 
     The user contributed collection 'contrib'
 
-   The contrib  collection  is  a  relatively  new  collection  which  is
+   The x86/contrib  collection  is  a  relatively  new  collection  which  is
    provided  by  experienced  port  maintainers,   some  part  of  the   CRUX
    development team, some regular users. Its goal is to reduce the number  of
    duplicate ports  provided  in  the individual  collections.  If  you're  a
@@ -987,12 +1246,6 @@ The Ports System
 
    The output reveals which files are downladed, updated and deleted.
 
-   ports -u does NOT update the CRUX-PPC ports.   The CRUX-PPC ports are
-   stored in a git repository and must be downloaded and manually 
-   extracted to /usr/ports/core-ppc, /usr/pors/opt-ppc and /usr/pors/xorg-ppc
-   After installing the ppc specific ports, the cooresponding generic 
-   ports should be deleted to avoid confusion when building packages.
-
     Listing Local Ports
 
    When the local ports structure has been updated the directory  /usr/ports/
@@ -1000,50 +1253,42 @@ The Ports System
    directories you  will find  ports. You  can simply  browse around  in  the
    directory structure to find out which ports are available.
 
-# ls /usr/ports/core
-COPYING		 diffutils   httpup	    lzo		readline
-COPYRIGHT	 e2fsprogs   iana-etc	    m4		rsync
-acl		 ed	     inetutils	    make	sed
-attr		 elfutils    iproute2	    man-db	shadow
-autoconf	 eudev	     iptables	    man-pages	signify
-automake	 exim	     iputils	    mlocate	start-stop-daemon
-bash		 file	     kbd	    nasm	sudo
-bc		 filesystem  kmod	    ncurses	sysfsutils
-bin86		 findutils   less	    openrdate	sysklogd
-bindutils	 flex	     libarchive     openssh	sysvinit
-binutils	 gawk	     libcap	    openssl	tar
-bison		 gcc	     libdevmapper   patch	time
-bzip2		 gdbm	     libgmp	    pciutils	tzdata
-ca-certificates  gettext     libmpc	    perl	usbutils
-coreutils	 glibc	     libmpfr	    pkg-config	util-linux
-cpio		 glibc-32    libpcre	    pkgutils	vim
-curl		 gperf	     libpipeline    ports	wget
-dash		 grep	     libtool	    procps	which
-db		 groff	     libusb	    prt-get	xz
-dcron		 gzip	     libusb-compat  psmisc	zlib
-dhcpcd		 hdparm      lilo	    rc
-
-# ls /usr/ports/core-ppc
-COPYING    dejagnu     gcc	 kbd	 mac-fdisk  openssl   prt-get
-COPYRIGHT  expect      glibc	 libcap  nvsetenv   pkgutils  yaboot
-binutils   filesystem  hfsutils  libgmp  openrdate  ports
-# 
-
-
+  $ ls /usr/ports/ppc/core/
+              ed          iptables            mlocate            sed
+ acl          exim        iputils             module-init-tools  shadow
+ attr         file        jfsutils            ncurses            sudo
+ autoconf     filesystem  kbd                 net-tools          sysfsutils
+ automake     findutils   less                openrdate          sysklogd
+ bash         flex        libarchive          openssh            sysvinit
+ bc           gawk        libcap              openssl            tar
+ bindutils    gcc         libdevmapper        patch              tcp_wrappers
+ binutils     gdbm        libgmp              pciutils           time
+ bison        gettext     libmpc              perl               traceroute
+ btrfs-progs  glibc       libmpfr             pkg-config         udev
+ bzip2        grep        libpcre             pkgutils           unzip
+ cloog-ppl    groff       libstdc++-compat    ports              usbutils
+ coreutils    gzip        libstdc++-compat64  ppl                util-linux-ng
+ cpio         hdparm      libtool             ppp                vim
+ curl         hfsutils    libusb              procps             wget
+ db           httpup      libusb-compat       psmisc             which
+ dcron        iana-etc    m4                  rc                 xfsprogs
+ dhcpcd       ilenia      make                readline           xz
+ diffutils    inetutils   man                 reiserfsprogs      zip
+ e2fsprogs    iproute2    man-pages           rsync              zlib
 
 
    You can also use ports with the -l option to list all local ports.
    Example:
 
    $ ports -l
-   core/acl
-   core/attr
-   core/autoconf
-   core/automake
-   core/bash
-   core/bc
-   core/bindutils
-   core/binutils
+   ppc/core/acl
+   ppc/core/attr
+   ppc/core/autoconf
+   ppc/core/automake
+   ppc/core/bash
+   ppc/core/bc
+   ppc/core/bindutils
+   ppc/core/binutils
    ...
 
    If you are looking for a specific  package it might be easier to use  this
@@ -1059,8 +1304,8 @@ binutils   filesystem  hfsutils  libgmp  openrdate  ports
 
    $ ports -d
    Collection      Name     Port      Installed
-   core        glibc    2.6.1-2   3.5-1
-   opt         gtk      2.12.9-1  2.12.18-1
+   x86/core        glibc    2.6.1-2   3.5-1
+   x86/opt         gtk      2.12.9-1  2.12.18-1
 
    If no version differences were found, i.e. the system is in sync with  the
    ports structure. Then output will simply be:
@@ -1238,6 +1483,9 @@ Configuration
   # localedef -i sv_SE -f ISO-8859-1 sv_SE.ISO-8859-1
   # localedef -i sv_SE -f UTF-8 sv_SE.utf8
 
+   A 'makelocales' helper script can be found under /crux which may be 
+   useful as a starting point for creating whatever locales you require.
+
     Network Configuration
 
    The network configuration is found in the service script /etc/rc.d/net. To
@@ -1327,7 +1575,7 @@ Configuration
 
   Upgrading the Kernel
 
-   The kernel  source,  which  is  found  in  www.kernel.org  is  not
+   The kernel  source,  which  is  found  in  /usr/src/linux-4.19.xx/  is  not
    installed using  pkgadd. If  you decide  to upgrade  your kernel  you  can
    safely do so by manually replacing the kernel source with a newer  version
    (or place it  somewhere else).  This will  not make  the package  database
@@ -1335,8 +1583,6 @@ Configuration
    kernel headers  found  in /usr/include/linux  and  /usr/include/asm  since
    these are not symlinks to the kernel source, but instead contain copies of
    the headers.
-
-   The prebuilt kernel is built from the 4.15.1 kernel source.  
 
 Appendix
 
@@ -1386,4 +1632,3 @@ Appendix
    termination) it is most likely becuase  the font cache files are  missing.
    Run  fc-cache  (as  root)  to  create/update  the  cache  files.  See  the
    fc-cache(1) man page for information about this program.
-
