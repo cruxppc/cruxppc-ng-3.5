@@ -1,11 +1,15 @@
 Release Notes for CRUX PPC 3.5 Alpha release 
+11/15/2019
 
   Introduction
 
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
 
  Supported machines:
- Apple 32bit "NewWorld" G4 (G4 only at this time, G3 support will be later)
+ Apple 32bit "NewWorld" G4 and (in theory) G3 machines.   In reality however,
+ a G4 machine is used to build the prebuilt packages and in a few of the
+ packages, the compiler inserts G4 specific instructions which will cause
+ an illegal instruction exception when used on a G3 machine.
 
  Other machines which use the G3, G4, or 60X PowerPC processors may be 
  compatible with CRUX PPC 3.5 but are untested. Use on non-MAC machines will 
@@ -26,7 +30,7 @@ Release Notes for CRUX PPC 3.5 Alpha release
   Important changes
 
    CRUX PPC 3.5 is a new port of CRUX to the PowerPC.  There is no support
-   for upgrading from any earlier CRUX PPC releases to 3.5.  
+   for upgrading from any earlier CRUX PPC releases to 3.5.    
 
   Miscellaneous notes
 
@@ -39,11 +43,17 @@ Release Notes for CRUX PPC 3.5 Alpha release
 
    CRUX PPC does not provide .signature checking on the ppc specific packages.
 
+   The CRUXPPC 3.5 install CD for this Alpha release is a remastered 2.7 
+   install CD.  The various install utilities on the CD remain at 2.7 
+   versions but the packages that are installed to the target system
+   have been updated to 3.5 versions.    This does not cause any known problems
+   but is something the user should be aware of.
+
    It is not uncommon for the footprints to mismatch when building on powerpc.
    The package build utilities provide an option to ignore footprints.  Also
    /etc/prt-get.conf can be adjusted to ignore footprints by default.
 
-   The contents of core-ppc, opt-ppc, and xorg-ppc are not automatically
+   The contents of /usr/ports/core-ppc, opt-ppc, and xorg-ppc are not automatically
    updated when 'ports -u' is run.  For now, the user will have to 
    manually pull their contents from this repository and update their
    system with any changes.
@@ -70,7 +80,12 @@ Release Notes for CRUX PPC 3.5 Alpha release
    another package.   If mesa is not desired, then just ignore the error
    Otherwise, after install is complete Use the -f option to pkgadd to 
    force the installation of mesa.
- 
+
+   When using CRUX PPC on G3 hardware a few packages may need to be
+   rebuilt natively on the G3 machine in order to function properly.
+   If a package causes illegal instruction exceptions, it may need
+   to be rebuilt on the G3 machine to function properly.
+
   Tips
 
    Package build times can be quite long even on faster powerpc machines.

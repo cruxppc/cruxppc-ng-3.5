@@ -1,6 +1,7 @@
 
 NOTE: This handbook is generally useful for the 3.5 CRUX PPC release.  However, 
-it has not yet been carefully adjusted to reflect CRUX PPC.   When
+it has not yet been carefully adjusted to reflect CRUX PPC.    Various parts of 
+this handbook are not accurate in regards to CRUXPPC3.5.   When
 using this handbook, keep in mind:
 
 1) CRUX PPC 3.5 only supports Apple 32bit PowerPC machines.  All references
@@ -119,7 +120,7 @@ HANDBOOK FOR CRUX PPC 3.5
 
    Copyright (c) 2001-2004 Per Liden
    Copyright (c) 2004-2005 Giulivo Navigante
-   Copyright (c) 2005-2011 The CRUX PPC team
+   Copyright (c) 2005-2019 The CRUX PPC team
 
    This handbook covers the installation, configuration and administration of
    CRUX PPC  and  most in  general  of  the CRUX  distribution.  For  further
@@ -253,7 +254,7 @@ Unchecked table:
 
   Installing From CD-ROM
 
-Fix this.  Only 32 bit is supported:
+Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    1.   Download   the   CRUX    PPC   ISO   image   (crux-ppc-3.5.iso    or
    crux-ppc64-3.5.iso). To  ensure  that  the download  was  successful  you
@@ -310,10 +311,10 @@ Fix this.  Only 32 bit is supported:
    a special PReP Boot partition (type 41) of 8 megabytes.
 
    The amount of disk space you need depends on how many packages you  choose
-   to install. I recommend having at least a 1G root partition (CRUX PPC will
-   use about 200MB-500MB depending on your configuration).
+   to install. I recommend having at least a 5G root partition (CRUX PPC will
+   use about 500MB-1.5GB depending on your configuration).   
 
-   Using   ReiserFS   is    recommended,   but   there    is   support    for
+   Using   ReiserFS   is    possible,   but   there    is   support    for
    Ext2fs/Ext3fs/Ext4fs, XFS,  JFS  and  BTRFS as  well.  Further,  I  highly
    recommend separating  system data  from  user data,  i.e. use  a  separate
    partition for /home (and possibly /var)  since that will make your life  a
@@ -341,6 +342,10 @@ Fix this.  Only 32 bit is supported:
    marked core.  Also git (from opt) is also recommended as it is used
    for updates of the powerpc specific portions of the ports tree.
 
+   In this Alpha release, the dependency list has not been carefully checked
+   for accuracy.   It is suggested to install either all of "core" or all of
+   "core", "opt" and "xorg" to ensure that all dependencies are satisfied.
+
    Once it has installed the selected packages, the setup script will display
    an installation log. Make sure the last line in the log says "0 error(s)".
 
@@ -364,7 +369,7 @@ Fix this.  Only 32 bit is supported:
    tarball to the target system and unpack and build it.
 
 
-   8. Now it's time to compile your kernel and do basic system configuration.
+   8. Now it's time to install your kernel and do basic system configuration.
    The kernel compilation requires that you  "chroot" into your new CRUX  PPC
    installation.
 
@@ -414,7 +419,7 @@ Fix this.  Only 32 bit is supported:
    their own kernel later to suit their needs.  To install the prebuilt
    kernel at the top of the target filesystem run the command.
 
-   cd /; tar xvfp <prebuilt kernel tarball>
+   cd /; tar xvfp <path to prebuilt kernel tarball>
 
    Note On some systems, you should apply the provided patches; these patches
    are found in the file /usr/src/
@@ -1245,6 +1250,12 @@ The Ports System
    Finished successfully
 
    The output reveals which files are downladed, updated and deleted.
+
+   The user must manually install the -ppc portion of the ports tree as follows:
+
+# git clone https://www.github.com/cruxppc/cruxppc-ng-3.5
+# cd cruxppc-ng-3.5/ports
+# cp -r * /usr/ports
 
     Listing Local Ports
 

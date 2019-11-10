@@ -87,35 +87,17 @@ section of this repository.
 
 ### Usage overview:
 
-  There is no install CD at this time.   CRUX-PPC installation is done 
-  manually.
 
-  Download the root filesystem tarball from the releases area.  
-  The root filesystem consists mostly of packages from the Crux 
-  "core" ports.  A small handful of particularly useful "opt" 
-  packages are also included in the root filesystem.
+  The handbook provides details of the CRUXPPC install process.  Essentially,
+  download the CD iso file, burn a CD and boot it.   
 
-  The user extracts the root filesystem into the disk partition or 
-  directory that will contain the crux ppc system.
-
-  If bootable crux system is desired, the user will build the CRUX kernel 
-  and configure the bootloader to boot the crux system.   A sample 
-  kernel configuration file is provided (under kernel) that may be 
-  helpful in creating the kernel.   CRUX users normally configure and
-  build their own kernels but A prebuilt starter kernel may
-  also be found in the releases area that may be useful in getting
-  the initial CRUX system up and running quickly.
-  
-  Alternativelyl, the CRUX-PPC system may be used simply as a 
-  chroot environment, in which case no kernel/bootloader is required.
-
-  The user will likely need to install a number of additional packages to have 
-  a crux system that meets their needs.
+  The user will may need to install a number of additional packages beyond what
+  is provided by the install CD to have a crux system that meets their needs.
 
   Selected prebuilt packages from "opt", "xorg" and maybe "contrib" 
   may be found in the releases area.   These are optional, not required,
-  packages and are provided to help speed up the creation of the final
-  CRUX PPC system.
+  packages, typically requiring a long build time and are provided to help 
+  speed up the creation of the final CRUX PPC system.
 
   A more detailed description of installing and configuring CRUX PPC can be
   found in the handbook and release notes.
