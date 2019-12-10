@@ -1,20 +1,31 @@
 Release Notes for CRUX PPC 3.5 Alpha release 
-11/15/2019
+12/15/2019
 
   Introduction
 
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
 
  Supported machines:
- Apple 32bit "NewWorld" G4 and (in theory) G3 machines.   In reality however,
- a G4 machine is used to build the prebuilt packages and in a few of the
- packages, the compiler inserts G4 specific instructions which will cause
- an illegal instruction exception when used on a G3 machine.
+
+ Apple 32bit "NewWorld" G4 and (in theory) G3 machines are supported.
+
+ In this Alpha release, machines which have an NVIDIA graphics card will
+ not function well.   An easy, but ugly, workaround can be performed
+ which will get such machines up to a command line prompt.  So, it can
+ be used on such machines  but if you have a machine with an NVIDIA card, 
+ it may be better off waiting for a fix in a later release.
 
  Other machines which use the G3, G4, or 60X PowerPC processors may be 
  compatible with CRUX PPC 3.5 but are untested. Use on non-MAC machines will 
  likely require the user to improvise installation (and at the least
  will require the user to obtain/build a kernel for their machine).
+
+ This release is built on a G4 machine with CFLAGS set such that the
+ build releases should also function on G3 machines.  In reality however,
+ in a few of the packages, the compiler inserts G4 specific instructions 
+ which will cause an illegal instruction exception when used on a G3 machine.
+ The user can rebuild such packages and they should function properly 
+ once rebuilt on a G3.
 
  Non supported machines:
  64bit PowerPC.
@@ -42,6 +53,7 @@ Release Notes for CRUX PPC 3.5 Alpha release
   Known issues
 
    CRUX PPC does not provide .signature checking on the ppc specific packages.
+   And in fact, in this Alpha release, not even md5sum checking.
 
    The CRUXPPC 3.5 install CD for this Alpha release is a remastered 2.7 
    install CD.  The various install utilities on the CD remain at 2.7 
@@ -61,7 +73,8 @@ Release Notes for CRUX PPC 3.5 Alpha release
    On some monitors, the left most characters are not visible.  Until this
    is solved, a workaround is to install the xorg server packages and then
    run 'startx'.  The xorg server provides a rudimentary set of windows
-   and the whole output will be visible.
+   and the whole output will be visible.   Enabling ssh access to the 
+   machine and using it to access the machine is also a workaround.
 
    The midori browser does not seem to function properly with https
    connections (on ppc only, works fine on x86..).  Until this is solved, 
@@ -76,11 +89,6 @@ Release Notes for CRUX PPC 3.5 Alpha release
    the very first person building a particular opt or xorg package in
    CRUXPPC 3.5.
 
-   The mesa3d package install may fail due to an overlap with files from
-   another package.   If mesa is not desired, then just ignore the error
-   Otherwise, after install is complete Use the -f option to pkgadd to 
-   force the installation of mesa.
-
    When using CRUX PPC on G3 hardware a few packages may need to be
    rebuilt natively on the G3 machine in order to function properly.
    If a package causes illegal instruction exceptions, it may need
@@ -91,7 +99,7 @@ Release Notes for CRUX PPC 3.5 Alpha release
    Package build times can be quite long even on faster powerpc machines.
    Allow for some hours (maybe days on slower machines) when building 
    big packages.  Ensure that your machine has the maximum RAM that it
-   can support.   
+   can support to help reduce build times.
 
    For now, there is no pre-built browser provided.   The shortest path
    to a (somewhat functional) gui browser on CRUX-PPC is the "dillo" browser. 
