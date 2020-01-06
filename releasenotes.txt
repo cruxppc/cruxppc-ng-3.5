@@ -1,5 +1,5 @@
 Release Notes for CRUX PPC 3.5 Alpha release 
-12/15/2019
+01/06/2020
 
   Introduction
 
@@ -7,15 +7,19 @@ Release Notes for CRUX PPC 3.5 Alpha release
 
  Supported machines:
 
- Apple 32bit "NewWorld" G4 and (in theory) G3 machines are supported.
+ Apple 32bit "NewWorld" G4 and (in theory) G3 machines are supported.  In 
+practice however, most of building and testing of CRUX PPC 3.5 is performed
+on G4 machines, and G3 is only minimally tested.
 
  In this Alpha release, machines which have an NVIDIA graphics card will
  not function well.   An easy, but ugly, workaround can be performed
- which will get such machines up to a command line prompt.  So, it can
+ which will get NVIDIA machines up to a command line prompt.  So, it can
  be used on such machines  but if you have a machine with an NVIDIA card, 
- it may be better off waiting for a fix in a later release.
+ it may be better off waiting for a fix in a later release.   Machines with
+ the ATI Rage video cards are not yet functioning with a GUI interface but
+ do support a command line interface.
 
- Other machines which use the G3, G4, or 60X PowerPC processors may be 
+ Non Apple PPC machines which use the G3, G4, or 60X PowerPC processors may be 
  compatible with CRUX PPC 3.5 but are untested. Use on non-MAC machines will 
  likely require the user to improvise installation (and at the least
  will require the user to obtain/build a kernel for their machine).
@@ -41,7 +45,10 @@ Release Notes for CRUX PPC 3.5 Alpha release
   Important changes
 
    CRUX PPC 3.5 is a new port of CRUX to the PowerPC.  There is no support
-   for upgrading from any earlier CRUX PPC releases to 3.5.    
+   for upgrading from any earlier CRUX PPC releases to 3.5.  Likewise, 
+   future CRUX PPC releases will not likely support upgrading from this
+   alpha release, so make notes of any local configuration changes made so
+   that they can be remade when installing later CEUX PPC releases.
 
   Miscellaneous notes
 
@@ -59,16 +66,19 @@ Release Notes for CRUX PPC 3.5 Alpha release
    install CD.  The various install utilities on the CD remain at 2.7 
    versions but the packages that are installed to the target system
    have been updated to 3.5 versions.    This does not cause any known problems
-   but is something the user should be aware of.
+   but is something the user should be aware of.  Future work will update
+   the install CD to be entirely based on 3.5 versions.
 
    It is not uncommon for the footprints to mismatch when building on powerpc.
    The package build utilities provide an option to ignore footprints.  Also
-   /etc/prt-get.conf can be adjusted to ignore footprints by default.
+   /etc/prt-get.conf can be adjusted to ignore footprints by default.   A
+   footprint mismatch is not necessarily indicative of an actual problem in the
+   build.
 
-   The contents of /usr/ports/core-ppc, opt-ppc, and xorg-ppc are not automatically
-   updated when 'ports -u' is run.  For now, the user will have to 
-   manually pull their contents from this repository and update their
-   system with any changes.
+   The contents of /usr/ports/core-ppc, opt-ppc, xorg-ppc, and contrib-ppc
+   are not automatically updated when 'ports -u' is run.  For now, the 
+   user will have to manually pull the contents from this repository 
+   and update their /usr/ports/*-ppc directory with any changes.
 
    On some monitors, the left most characters are not visible.  Until this
    is solved, a workaround is to install the xorg server packages and then
@@ -79,7 +89,8 @@ Release Notes for CRUX PPC 3.5 Alpha release
    The midori browser does not seem to function properly with https
    connections (on ppc only, works fine on x86..).  Until this is solved, 
    it is best to not spend the (long) time needed to build it and it's
-   dependency chain.
+   dependency chain.  netsurf is provided on the install CD and can be
+   used for basic web browsing until a better browser is supported.
 
    All of the applicable core packages have been built on powerpc but 
    only a subset of opt and xorg packages have been built with CRUX PPC.
@@ -87,7 +98,8 @@ Release Notes for CRUX PPC 3.5 Alpha release
    have had to be downreved to build.   Be aware that opt and xorg packages 
    particularly are a work in progress for CRUX PPC and that you may be
    the very first person building a particular opt or xorg package in
-   CRUXPPC 3.5.
+   CRUXPPC 3.5.  Likewise, most contrib ports have not been tried in 
+   CRUX PPC.
 
    When using CRUX PPC on G3 hardware a few packages may need to be
    rebuilt natively on the G3 machine in order to function properly.
@@ -101,10 +113,10 @@ Release Notes for CRUX PPC 3.5 Alpha release
    big packages.  Ensure that your machine has the maximum RAM that it
    can support to help reduce build times.
 
-   For now, there is no pre-built browser provided.   The shortest path
-   to a (somewhat functional) gui browser on CRUX-PPC is the "dillo" browser. 
-   The "dillo" port is not present in 3.5 but previously existed and
-   has been adjusted for 3.5.   It can be found under "misc".
+   For now, netsurf is the browser installed.  Firefox may be  installed
+   from the "extras" packages but is somewhat sluggish even on higher end 
+   PowerPC machines.   netsurf lacks some functionality found in other 
+   browsers but works for most websites and performance is decent.
 
    The lynx or links browser can also be installed quickly if a text based
    browser is sufficient for the users needs.
