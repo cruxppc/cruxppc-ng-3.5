@@ -111,7 +111,10 @@ on G4 machines, and G3 is only minimally tested.
    Package build times can be quite long even on faster powerpc machines.
    Allow for some hours (maybe days on slower machines) when building 
    big packages.  Ensure that your machine has the maximum RAM that it
-   can support to help reduce build times.
+   can support to help reduce build times.   Also selected prebuilt 
+   packages from opt (and sometimes contrib)  may be found and installed 
+   from in the 'extras' section of the repository and this avoids the
+   time needed to build them from source.
 
    For now, netsurf is the browser installed.  Firefox may be  installed
    from the "extras" packages but is somewhat sluggish even on higher end 

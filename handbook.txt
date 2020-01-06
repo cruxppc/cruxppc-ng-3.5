@@ -121,7 +121,7 @@ HANDBOOK FOR CRUX PPC 3.5
 
    Copyright (c) 2001-2004 Per Liden
    Copyright (c) 2004-2005 Giulivo Navigante
-   Copyright (c) 2005-2019 The CRUX PPC team
+   Copyright (c) 2005-2020 The CRUX PPC team
 
    This handbook covers the installation, configuration and administration of
    CRUX PPC  and  most in  general  of  the CRUX  distribution.  For  further
@@ -142,7 +142,7 @@ Introduction
    CRUX PPC is  a port  for the Power  Architecture^(R) platform  of CRUX,  a
    lightweight and optimized GNU/Linux  distribution targeted at  experienced
    GNU/Linux users.  The  primary focus  of  this distribution  is  "keep  it
-   simple", which  it  reflects  in a  simple  tar.gz-based  package  system,
+   simple", which  it  reflects  in a  simple  tar.xz-based  package  system,
    BSD-style initscripts,  and  a  relatively  small  collection  of  trimmed
    packages. The secondary focus is utilization of new Linux kernel  features
    and recent tools  and libraries. CRUX  PPC also has  a ports system  which
@@ -156,7 +156,7 @@ Introduction
    behind CRUX PPC. CRUX PPC is  made with simplicity in mind from  beginning
    to end. Making it easy to create new and update old packages is essential;
    updating a package in CRUX PPC is  often just a matter of typing pkgmk  -d
-   -u (or ilenia -u). The usage of ports helps keep your packages up-to-date;
+   -u (or prt-get update). The usage of ports helps keep your packages up-to-date;
    not the latest bleeding-edge-alpha version, but the latest stable version.
    Other features include creating packages optimized for your processor, eg.
    by  compiling  with   -mcpu=G4  -maltivec   -mabi=altivec,  and   avoiding
@@ -170,7 +170,7 @@ Introduction
    solid GNU/Linux  distribution  as  the foundation  of  your  installation,
    prefers editing configuration  files with an  editor to using  a GUI,  and
    doesn't hesitate  to download  and compile  programs yourself,  then  this
-   istribution might suit you well.
+   distribution might suit you well.
 
   License
 
@@ -253,7 +253,9 @@ Unchecked, possibly inaccurate, table:
    they could be intended for different hardware.
 
    A minimum of 128Meg of RAM is needed to boot the install CD and
-   install CRUX PPC 3.5.
+   install CRUX PPC 3.5.   CRUXPPC can be installed in as little as 
+   2 Gig of disk space although 10 to 20 Gig is a more reasonable value and
+   adding on many packages could require 100Gig or more of disk space.
 
   Installing From CD-ROM
 
@@ -275,10 +277,8 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    2. The ISO  image is bootable,  on Apple computers  just insert the  newly
    burned CD into the first CD-ROM drive, reboot your computer and keep the C
-   key pressed to boot from CD. Select  at the boot prompt the kernel  chrp32
-   for 604e cpu based systems, apple32  for G3/G4 cpu based systems,  apple64
-   and ppc970 for G5 and PPC970 cpu based systems or pseries for  RS64/POWERn
-   cpu based machines.
+   key pressed to boot from CD. Select  at the boot prompt press return 
+   to install on apple32 machines.
 
    Note On all systems you might have to adjust the root= parameter (that
    defaults to /dev/sr0) to your cdrom device. Please keep in mind that
@@ -382,6 +382,10 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    system and used as a quick start kernel.  The other option is to 
    build the initial kernel from source as part of the CRUX install.
 
+   If you are installing onto a machine with smaller amounts of DRAM 
+   (e.g. 128 Meg), you may need to create and add a swap partition prior
+   to making locales, building the kernel, etc.   
+   
    Part of installing CRUX is that the user must generate the locales.  A
    script containing a small subset (of the many possible) locales is
    provided on the install CD (in /crux/makelocales).   Copy it to your
@@ -406,8 +410,8 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
   $ passwd
 
-   10. Edit /etc/fstab to configure your filesystem(s). Editors vim, nano and
-   mcedit are available.
+   10. Edit /etc/fstab to configure your filesystem(s). Editors vim, and nano
+   are available.
 
    NOTE If you want access your computer via serial console (as it should be
    for IBM RS/6000, pSeries, Apple Xserve or Genesi EFIKA users) you also
@@ -423,7 +427,7 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    11. Edit /etc/rc.conf to configure font, keyboard, timezone, hostname  and
    services. See Section 6.1.3,  Configuration Variables in /etc/rc.conf  for
-   details about /etc/rc.conf .   
+   details about /etc/rc.conf .   It may also be useful to enable sshd.
 
    12. Generate  locales  for  your system.  See  Section  6.1.4,  Generating
    Locales for more information.
@@ -431,18 +435,31 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    13. Edit /etc/rc.d/net, /etc/hosts and /etc/resolv.conf to configure  your
    network (ip-address/gateway/hostname/domain/dns).
 
-   14. Go  to  /usr/src/linux-4.19.24.x,  patch  (if  needed),  configure  and
-   compile a new kernel.  
+   14. Install kernel:
 
-   Alternatively, a prebuilt starter kernel for Apple 32 bit machines is 
-   included in the install cd under /crux/kernel.  The user can then compile 
-   their own kernel later to suit their needs.  To install the prebuilt
-   kernel at the top of the target filesystem run the command.
+   Classis CRUX installation expects the user to build and install their own
+   kernel.   This can be quite a long process on PowerPC machiens so
+   CRUX PPC also provides the alternative of installing a prebuilt starter
+   kernel.
+
+   To install the prebuild kernel,  a prebuilt starter kernel for 
+   Apple 32 bit machines is included in the install cd under /crux/kernel.
+   Within the chroot, install it as such:
 
    cd /; tar xvfp <path to prebuilt kernel tarball>
 
+   If you are installing onto a machine with an nvidia graphics card, 
+   remove the modules under drivers/char/agp, otherwise, the screen will
+   be garbled and essentially unusable upon boot.
+
+   The user can then compile their own kernel later to suit their needs. 
+
+
+   If you wish to build your own kernel, unpack the linux-2.19.xx tarball,
+   (typically into /usr/src/linux-4.19.x) configure and compile it.
+
    Note On some systems, you should apply the provided patches; these patches
-   are found in the file /usr/src/
+   are found in the file /usr/src/   (none are provided in this alpha release)
 
    On a 32 bit system:
 
@@ -506,6 +523,9 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    15. On Apple computers, edit /etc/yaboot.conf to boot the kernel you  just
    compiled  and  run  mkofboot  -v  to  install  yaboot  into  the  boostrap
    partition, then ybin -v to make the new system bootable.
+
+   A sample yaboot.conf file can be found under /etc/ and may be useful as
+   a starting point for creating the needed yaboot.conf.
 
    On IBM RS/6000  and pSeries/System_p computers,  edit /etc/yaboot.conf  to
    boot    the     kernel    you     just     compiled    and     type     dd
@@ -624,7 +644,7 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    If you at a later  stage find that you  need some additional packages  you
    can just mount the CRUX  PPC CD-ROM and use  pkgadd to install them  (e.g.
-   pkgadd /mnt/crux/opt/package#1.0-1.pkg.tar.gz).
+   pkgadd /mnt/crux/opt/package#1.0-1.pkg.tar.xz).
 
    7. Now it's time to compile  your kernel. The kernel compilation  requires
    that you "chroot" into your CRUX PPC installation.
@@ -675,14 +695,14 @@ The Package System
   Introduction
 
    The package system (pkgutils) is made  with simplicity in mind, where  all
-   packages are plain  tar.gz files  (i.e. without  any kind  of meta  data).
+   packages are plain  tar.xz files  (i.e. without  any kind  of meta  data).
    Packages          follow          the          naming           convention
-   <name>#<version>-<release>.pkg.tar.gz, where  <name> is  the name  of  the
+   <name>#<version>-<release>.pkg.tar.xz, where  <name> is  the name  of  the
    program, <version> is the version number of the program, and <release>  is
-   the version  number  of the  package.  The pkg.tar.gz  extension  is  used
-   (instead of just  tar.gz) to  indicate that this  is not  just any  tar.gz
-   file, but a tar.gz that is meant to be installed using pkgadd. This way it
-   is easy to tell packages apart from other tar.gz files.
+   the version  number  of the  package.  The pkg.tar.xz  extension  is  used
+   (instead of just  tar.xz) to  indicate that this  is not  just any  tar.gz
+   file, but a tar.xz that is meant to be installed using pkgadd. This way it
+   is easy to tell packages apart from other tar.xz files.
 
    pkgadd(8), pkgrm(8), pkginfo(8), and  pkgmk(8) are the package  management
    utilities. With these utilities you can install, uninstall, inspect,  make
@@ -692,7 +712,9 @@ The Package System
    package database  (stored in  /var/lib/pkg/db). The  basic package  system
    does not have any kind of dependency  checking, thus it will not warn  you
    if you install a package that requires other packages to be installed. The
-   included prt-get and ilenia tools, however, do support dependencies.
+   included prt-get tools, however, do support dependencies when installing
+   from source.   If you pkgadd binary packages dependency checking, 
+   and taking care of any pre or post install requirements is up to the user.
 
    The following  sections will  in short  describe how  to use  the  package
    utilities. Additional information  about these utilities  can be found  on
@@ -705,7 +727,7 @@ The Package System
    Installing a package  is done by  using pkgadd. This  utility requires  at
    least one argument, the package you want to install. Example:
 
-  $ pkgadd bash#3.2.33-1.pkg.tar.gz
+  $ pkgadd bash#3.2.33-1.pkg.tar.xz
 
    When installing  a  package  the  package  manager  will  ensure  that  no
    previously installed  files are  overwritten. If  conflicts are  found  an
@@ -713,7 +735,7 @@ The Package System
    package. The  error message  will  contain the  names of  the  conflicting
    files. Example:
 
-  $ pkgadd bash#3.2.33-1.pkg.tar.gz
+  $ pkgadd bash#3.2.33-1.pkg.tar.xz
   bin/sh
   usr/man/man1/sh.1.gz
   pkgadd error: listed file(s) already installed (use -f to ignore and overwrite)
@@ -721,7 +743,7 @@ The Package System
    To force the installation and overwrite the conflicting files you can  use
    the option -f (or --force). Example:
 
-  $ pkgadd -f bash#3.2.33-1.pkg.tar.gz
+  $ pkgadd -f bash#3.2.33-1.pkg.tar.xz
 
    The package system allows a file to be owned by exactly one package.  When
    forcing an installation  the ownership  of the conflicting  files will  be
@@ -737,17 +759,17 @@ The Package System
    As said earlier the  package file itself does  not contain any meta  data.
    Instead the package  manager uses  the package filename  to determine  the
    package name  and version.  Thus,  when installing  a package  file  named
-   bash#3.2.33-1.pkg.tar.gz the  package manager  will  interpret this  as  a
+   bash#3.2.33-1.pkg.tar.xz the  package manager  will  interpret this  as  a
    package named bash at version 3.2.33-1.  If pkgadd is unable to  interpret
    the filename  (e.g.  #  is missing  or  the  filename does  not  end  with
-   .pkg.tar.gz) an  error  message will  be  printed and  pkgadd  will  abort
+   .pkg.tar.xz) an  error  message will  be  printed and  pkgadd  will  abort
    without installing the package.
 
     Upgrading a Package
 
    Upgrading a package is done using pkgadd with the -u option. Example:
 
-  $ pkgadd -u bash#3.2.33-1.pkg.tar.gz
+  $ pkgadd -u bash#3.2.33-1.pkg.tar.xz
 
    This will replace the previously installed bash package with the new  one.
    If you have  not previously  installed bash,  pkgadd will  print an  error
@@ -802,7 +824,7 @@ The Package System
    rejected version or perform a merge  of the two. Example (using the  above
    /etc/pkgadd.conf):
 
-   $ pkgadd -u bash#3.2.33-1.pkg.tar.gz
+   $ pkgadd -u bash#3.2.33-1.pkg.tar.xz
    pkgadd: rejecting etc/profile, keeping existing version
    $ ls /var/lib/pkg/rejected/
    etc/
@@ -860,7 +882,7 @@ The Package System
    usr/man/man1/bash.1.gz
    usr/man/man1/sh.1.gz
 
-   $ pkginfo -l grep#2.5.3-1.pkg.tar.gz
+   $ pkginfo -l grep#2.5.3-1.pkg.tar.xz
    usr/
    usr/bin/
    usr/bin/egrep
@@ -921,7 +943,7 @@ The Package System
    release=1
 
    # The source(s) used to build this package.
-   source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
+   source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 
    # The build() function below will be called by pkgmk when
    # the listed source files have been unpacked.
@@ -940,7 +962,7 @@ The Package System
       # Install the files, BUT do not install it under /usr, instead
       # we redirect all the files to $PKG/usr by setting the DESTDIR
       # variable. The $PKG variable points to a temporary directory
-      # which will later be made into a tar.gz-file. Note that the
+      # which will later be made into a tar.xz-file. Note that the
       # DESTDIR variable is not used by all Makefiles, some use prefix
       # and others use ROOT, etc. You have to inspect the Makefile in
       # question to find out. Some Makefiles do not support redirection
@@ -961,7 +983,7 @@ The Package System
    name=grep
    version=2.4.2
    release=1
-   source=(ftp://ftp.ibiblio.org/pub/gnu/$name/$name-$version.tar.gz)
+   source=(ftp://ftp.ibiblio.org/pub/gnu/$name/$name-$version.tar.xz)
 
    build() {
      cd $name-$version
@@ -976,7 +998,7 @@ The Package System
    the program is build in some other way, e.g. does not use autoconf.
 
    When the build() function  has been executed, the  $PKG directory will  be
-   made into  a package  named <name>#<version>-<release>.pkg.tar.gz.  Before
+   made into  a package  named <name>#<version>-<release>.pkg.tar.xz.  Before
    the package creation  is completed, pkgmk  will check the  content of  the
    package against the .footprint file. If this file does not exist, it  will
    be created and the test will be skipped. The .footprint file will  contain
@@ -1109,8 +1131,8 @@ The Package System
 
    * Use  the $name  and $version  variables to  make the  package easier  to
    update/maintain.                       For                        example,
-   source=(http://xyz.org/$name-$version.tar.gz)     is      better      than
-   source=(http://xyz.org/myprog-1.0.3.tar.gz)    since    the    URL    will
+   source=(http://xyz.org/$name-$version.tar.xz)     is      better      than
+   source=(http://xyz.org/myprog-1.0.3.tar.xz)    since    the    URL    will
    automatically updated when you modify the $version variable.
 
    * Remember that source  is an array, i.e.  always do source=(...) and  not
@@ -1359,7 +1381,7 @@ The Ports System
    the package will be built. If  the package was built successfully you  can
    use pkgadd to install or upgrade it. Example:
 
-   $ pkgadd gawk#3.1.5-3.pkg.tar.gz
+   $ pkgadd gawk#3.1.5-3.pkg.tar.xz
 
    To make life a bit  easier these two steps can  be made into one by  using
    the options -i (for install) or -u (for upgrade). Example:
