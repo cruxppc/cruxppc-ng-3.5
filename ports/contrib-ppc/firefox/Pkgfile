@@ -1,8 +1,7 @@
 # Description: The Mozilla Firefox browser
 # URL: https://www.mozilla.com/firefox/
-# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
-# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
-# Depends on: nss, unzip, autoconf-2.13, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d
+# Maintainer: TBA
+# Depends on: nss, unzip, autoconf-2.13, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d icu
 
 name=firefox
 version=52.8.0esr
@@ -43,7 +42,7 @@ build() {
   ac_add_options --enable-alsa
   ac_add_options --with-pthreads
   ac_add_options --enable-official-branding
-  ac_add_options --with-distribution-id=nu.crux-arm
+  ac_add_options --with-distribution-id=nu.crux-ppc
   ac_add_options --enable-extensions=default,-gnomevfs
   ac_add_options --disable-tests
   ac_add_options --disable-dbus
@@ -56,6 +55,8 @@ build() {
   ac_add_options --disable-gconf
   ac_add_options --disable-rust
   ac_add_options --disable-optimize 
+  ac_add_options --disable-gold
+  ac_add_options --with-system-icu
 EOF
 
   #ac_add_options --disable-startupcache
