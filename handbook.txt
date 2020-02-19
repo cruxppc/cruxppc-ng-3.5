@@ -1,4 +1,4 @@
-
+ê
 NOTE: This CRUX PPC 3.5 handbook was derived from the CRUX PPC 2.7 handbook.
 Although it is generally useful for the 3.5 CRUX PPC release, it has not
 yet been carefully adjusted to reflect CRUX PPC 3.5.    Various parts of 

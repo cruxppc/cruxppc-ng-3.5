@@ -1,5 +1,5 @@
 Release Notes for CRUX PPC 3.5 Alpha release 
-01/06/2020
+02/21/2020
 
   Introduction
 
@@ -8,8 +8,8 @@ Release Notes for CRUX PPC 3.5 Alpha release
  Supported machines:
 
  Apple 32bit "NewWorld" G4 and (in theory) G3 machines are supported.  In 
-practice however, most of building and testing of CRUX PPC 3.5 is performed
-on G4 machines, and G3 is only minimally tested.
+ practice however, most of building and testing of CRUX PPC 3.5 is performed
+ on G4 machines, and G3 is only minimally tested.
 
  In this Alpha release, machines which have an NVIDIA graphics card will
  not function well.   An easy, but ugly, workaround can be performed
@@ -19,17 +19,8 @@ on G4 machines, and G3 is only minimally tested.
  the ATI Rage video cards are not yet functioning with a GUI interface but
  do support a command line interface.
 
- Non Apple PPC machines which use the G3, G4, or 60X PowerPC processors may be 
- compatible with CRUX PPC 3.5 but are untested. Use on non-MAC machines will 
- likely require the user to improvise installation (and at the least
- will require the user to obtain/build a kernel for their machine).
-
- This release is built on a G4 machine with CFLAGS set such that the
- build releases should also function on G3 machines.  In reality however,
- in a few of the packages, the compiler inserts G4 specific instructions 
- which will cause an illegal instruction exception when used on a G3 machine.
- The user can rebuild such packages and they should function properly 
- once rebuilt on a G3.
+ Machines which have a Radeon graphics card seem to generally work (reasonably 
+ well for an alpha release anyway).
 
  Non supported machines:
  64bit PowerPC.
@@ -70,6 +61,7 @@ on G4 machines, and G3 is only minimally tested.
    the install CD to be entirely based on 3.5 versions.
 
    It is not uncommon for the footprints to mismatch when building on powerpc.
+   Generally this mismatch is benign.
    The package build utilities provide an option to ignore footprints.  Also
    /etc/prt-get.conf can be adjusted to ignore footprints by default.   A
    footprint mismatch is not necessarily indicative of an actual problem in the
