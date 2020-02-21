@@ -1,6 +1,6 @@
 # Description: LLVM + clang compiler
 # URL:         http://llvm.org/
-# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Maintainer: cruxppc at gmail dot com
 # Depends on:  llvm
 
 name=clang
@@ -22,7 +22,7 @@ build() {
     -DLLVM_INCLUDE_TESTS=0 \
     -DLLVM_ENABLE_FFI=1 \
     -DLLVM_ENABLE_RTTI=1 \
-    -DLLVM_TARGETS_TO_BUILD='X86;AMDGPU;BPF' \
+    -DLLVM_TARGETS_TO_BUILD='PowerPC;X86;AMDGPU;BPF' \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLLVM_APPEND_VC_REV=0 \

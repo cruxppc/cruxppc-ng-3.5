@@ -1,6 +1,6 @@
 # Description: The Mozilla Firefox browser
 # URL: https://www.mozilla.com/firefox/
-# Maintainer: TBA
+# Maintainer: cruxppc at gmail dot com
 # Depends on: nss, unzip, autoconf-2.13, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d icu
 
 name=firefox

@@ -1,16 +1,21 @@
 # Description: The GIMP
 # URL:         http://www.gimp.org/
-# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Maintainer: cruxppc at gmail dot com
 # Depends on: gegl glib-networking gtk libart_lgpl mypaint-brushes poppler-data poppler-glib xorg-libxmu xorg-libxpm
 # Optional: gimp-print libsdl ghostscript libmng
 
 name=gimp
 version=2.10.14
 release=1
-source=(https://download.gimp.org/pub/gimp/v${version%.*}/gimp-$version.tar.bz2)
+source=(https://download.gimp.org/pub/gimp/v${version%.*}/gimp-$version.tar.bz2
+   gimp-2.10.14-ppchack.patch)
 
 build() {
   cd gimp-$version
+#
+# hack for building on ppc.
+#
+  patch -p1 -i $SRC/gimp-2.10.14-ppchack.patch
 
   sed -i -e '/$(helpbrowser)/d' plug-ins/Makefile.in
   ./configure --prefix=/usr \

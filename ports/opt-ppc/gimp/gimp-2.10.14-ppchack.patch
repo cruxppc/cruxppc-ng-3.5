@@ -1,0 +1,43 @@
+diff -Naur a/icons/icon-list.mk b/icons/icon-list.mk
+--- a/icons/icon-list.mk	2019-06-12 16:43:38.000000000 +0000
++++ b/icons/icon-list.mk	2019-12-06 14:58:54.032274353 +0000
+@@ -1088,8 +1088,6 @@
+ 
+ icons64_images = \
+ 	64/dialog-information.png				\
+-	64/gimp-frame.png					\
+-	64/gimp-texture.png					\
+ 	64/gimp-user-manual.png					\
+ 	64/gimp-wilber-eek.png					\
+ 	64/gimp-wilber.png					\
+@@ -1128,9 +1126,7 @@
+ 	$(vector24_images)
+ 
+ icons64_DATA = \
+-	$(icons64_system_images)				\
+-	64/gimp-frame.png					\
+-	64/gimp-texture.png
++	$(icons64_system_images)				
+ 
+ scalable_DATA = \
+ 	$(scalable_images)
+diff -Naur a/plug-ins/file-psd/Makefile.am b/plug-ins/file-psd/Makefile.am
+--- a/plug-ins/file-psd/Makefile.am	2018-08-19 16:47:18.000000000 +0000
++++ b/plug-ins/file-psd/Makefile.am	2019-12-06 14:57:47.992977734 +0000
+@@ -10,6 +10,8 @@
+ 
+ if OS_WIN32
+ mwindows = -mwindows
++else
++libm = -lm
+ endif
+ 
+ if HAVE_WINDRES
+@@ -53,6 +55,7 @@
+ 	-I$(includedir)
+ 
+ file_psd_LDADD = \
++	$(libm)			\
+ 	$(libgimpui)		\
+ 	$(libgimpwidgets)	\
+ 	$(libgimpconfig)	\

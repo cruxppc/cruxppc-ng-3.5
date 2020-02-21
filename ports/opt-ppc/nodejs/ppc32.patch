@@ -1,0 +1,29 @@
+--- node-v10.15.3/deps/v8/src/libsampler/sampler.cc.old	2019-03-05 15:16:28.000000000 +0000
++++ node-v10.15.3/deps/v8/src/libsampler/sampler.cc	2019-04-06 13:44:07.224653262 +0000
+@@ -502,9 +502,15 @@
+       reinterpret_cast<void*>(ucontext->uc_mcontext.regs->gpr[PT_R31]);
+ #else
+   // Some C libraries, notably Musl, define the regs member as a void pointer
++  #if !V8_TARGET_ARCH_32_BIT
+   state->pc = reinterpret_cast<void*>(ucontext->uc_mcontext.gp_regs[32]);
+   state->sp = reinterpret_cast<void*>(ucontext->uc_mcontext.gp_regs[1]);
+   state->fp = reinterpret_cast<void*>(ucontext->uc_mcontext.gp_regs[31]);
++  #else
++  state->pc = reinterpret_cast<void*>(ucontext->uc_mcontext.gregs[32]);
++  state->sp = reinterpret_cast<void*>(ucontext->uc_mcontext.gregs[1]);
++  state->fp = reinterpret_cast<void*>(ucontext->uc_mcontext.gregs[31]);
++  #endif
+ #endif
+ #elif V8_HOST_ARCH_S390
+ #if V8_TARGET_ARCH_32_BIT
+--- node-v10.16.3/configure.py.old	2019-08-15 19:20:03.000000000 +0000
++++ node-v10.16.3/configure.py	2019-08-16 14:11:23.086489117 +0000
+@@ -848,7 +848,7 @@
+     '__MIPSEL__'  : 'mipsel',
+     '__mips__'    : 'mips',
+     '__PPC64__'   : 'ppc64',
+-    '__PPC__'     : 'ppc64',
++    '__PPC__'     : 'ppc',
+     '__x86_64__'  : 'x64',
+     '__s390__'    : 's390',
+     '__s390x__'   : 's390x',

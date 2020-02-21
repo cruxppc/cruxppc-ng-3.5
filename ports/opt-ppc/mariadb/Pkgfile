@@ -1,18 +1,20 @@
 # Description: SQL database server, drop-in replacement for MySQL
 # URL:         http://mariadb.org/
-# Maintainer:  Juergen Daubert, jue at crux dot nu 
+# Maintainer: cruxppc at gmail dot com
 # Depends on:  ncurses zlib openssl cmake libaio linux-pam
 
 name=mariadb
 version=10.4.12
 release=1
 source=(https://downloads.mariadb.com/MariaDB//$name-$version/source/$name-$version.tar.gz 
-        mariadb.rc mariadb.pam
+        ppchax.patch
+        mariadb
         pre-install)
 
 build() {
 
 	cd $name-$version
+        patch -p1 -i $SRC/ppchax.patch
 
 	mkdir build && cd build
 
@@ -36,14 +38,13 @@ build() {
 	make DESTDIR=$PKG install
 
 	rm -r $PKG/etc/{init.d,logrotate.d}
-	rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
+# groonga ??
+	#rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
 	rm $PKG/usr/sbin/rcmysql
 	rm $PKG/usr/share/man/man1/mysql-test-run.pl.1
 	find $PKG/usr/share/mysql/* -type d ! -name english ! -name charsets | xargs rm -rf {} \;
 
 	install -d -m 700 -o mysql -g mysql $PKG/var/{lib,log}/mysql
 	install -d -m 755 -o mysql -g mysql $PKG/var/run/mysqld
-
-	install -D -m 755 $SRC/mariadb.rc  $PKG/etc/rc.d/mariadb
-	install -D -m 644 $SRC/mariadb.pam $PKG/etc/pam.d/mysql
+	install -D -m 755 $SRC/mariadb $PKG/etc/rc.d/mariadb
 }

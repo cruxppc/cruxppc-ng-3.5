@@ -1,17 +1,20 @@
 # Description: Small, efficient and fast rendering engine for Web Browsers.
 # URL: https://www.webkitgtk.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: cruxppc at gmail dot com
 # Depends on: gst-plugins-base gtk gtk3 harfbuzz-icu hyphen libsecret libsoup libwebp ruby woff2 xorg-libxt bubblewrap xdg-dbus-proxy libseccomp
 # Optional: enchant libnotify geoclue openjpeg2
 
 name=webkitgtk
 version=2.26.4
 release=1
-source=(https://webkitgtk.org/releases/$name-$version.tar.xz)
+source=(https://webkitgtk.org/releases/$name-$version.tar.xz
+	icu65.patch)
 
 build() {
 	mkdir build
 	cd $name-$version
+
+	patch -p1 -i $SRC/icu65.patch
 
 	# setting CC and CXX breaks compilation
 	prt-get isinst ccache && PKGMK_WEBKITGTK+=' -DCMAKE_CXX_COMPILER_LAUNCHER=ccache' && \
@@ -34,6 +37,7 @@ build() {
 		-DPORT=GTK \
 		-DENABLE_MINIBROWSER=ON \
 		-DUSE_SYSTEM_MALLOC=ON \
+		-DUSE_LD_GOLD=OFF \
 		-Wno-dev
 
 	ninja -j ${JOBS-1}

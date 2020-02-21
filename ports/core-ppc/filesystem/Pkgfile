@@ -1,6 +1,6 @@
 # Description: Root filesystem package
-# URL:         http://crux.nu
-# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# URL:        
+# Maintainer: cruxppc at gmail dot com
 
 name=filesystem
 version=3.5
@@ -72,7 +72,7 @@ build() {
 cat > $PKG/usr/bin/crux << EOF
 #!/bin/sh
 
-echo "CRUX version $version"
+echo "CRUX-PPC version $version"
 
 # End of file
 EOF

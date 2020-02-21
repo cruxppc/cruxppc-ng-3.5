@@ -1,6 +1,6 @@
 # Description: Lightweight and fast web browser.
 # URL:         https://www.netsurf-browser.org/
-# Maintainer:  TBA
+# Maintainer: cruxppc at gmail dot com
 # Depends on:  libidn libmng gtk p5-html-parser
 
 name=netsurf

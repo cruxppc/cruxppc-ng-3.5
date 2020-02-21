@@ -1,15 +1,17 @@
 # Description: Widely used set of C/C++ libraries providing Unicode and Globalization support.
 # URL: http://www.icu-project.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: cruxppc at gmail dot com
 
 name=icu
 version=65.1
 release=1
 source=(https://github.com/unicode-org/icu/releases/download/release-${version//./-}/icu4c-${version/./_}-src.tgz
+        icu-64-data-bigendian.patch
 	icu-65.1-initialized-buffer-uloc_getKeywordValue.patch)
 
 build() {
 	cd icu/source
+        cat $SRC/icu-64-data-bigendian.patch |patch -Np2
 
 	# https://unicode-org.atlassian.net/browse/ICU-20884
 	patch -p2 -d .. -i $SRC/icu-65.1-initialized-buffer-uloc_getKeywordValue.patch

@@ -1,6 +1,6 @@
 # Description: Collection of scripts for CRUX, mainly oriented towards package and port management
 # URL: http://crux.nu/Wiki/PrtUtils
-# Maintainer:  TBA
+# Maintainer: cruxppc at gmail dot com
 # Depends on: elfutils
 
 name=prt-utils

@@ -1,27 +1,37 @@
 # Description: The Rust language with Cargo included.
 # URL: http://www.rust-lang.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: cruxppc at gmail dot com
 # Depends on: llvm
 # Optional: sccache llvm-32
 
 name=rust
-version=1.41.0
+version=1.40.0
 ##cat src/stage0.txt
-_date=2019-12-19
-_rustc=1.40.0
-_cargo=0.41.0
+_date=2019-11-07
+_rustc=1.39.0
+_cargo=0.40.0
 ##
 
 release=1
 source=(
 	https://static.rust-lang.org/dist/${name}c-$version-src.tar.gz
-	https://static.rust-lang.org/dist/$_date/rust-std-$_rustc-x86_64-unknown-linux-gnu.tar.gz
-	https://static.rust-lang.org/dist/$_date/rustc-$_rustc-x86_64-unknown-linux-gnu.tar.gz
-	https://static.rust-lang.org/dist/$_date/cargo-$_cargo-x86_64-unknown-linux-gnu.tar.gz
+	https://static.rust-lang.org/dist/$_date/rust-std-$_rustc-powerpc-unknown-linux-gnu.tar.gz
+	https://static.rust-lang.org/dist/$_date/rustc-$_rustc-powerpc-unknown-linux-gnu.tar.gz
+	https://static.rust-lang.org/dist/$_date/cargo-$_cargo-powerpc-unknown-linux-gnu.tar.gz
+	ppcfixes.patch
+	0007-Fix-C-aggregate-passing-ABI-on-powerpc.patch
+	0008-Fix-zero-sized-aggregate-ABI-on-powerpc.patch
+	0010-test-c-variadic-Fix-patterns-on-powerpc64.patch
+	0040-rls-atomics.patch
 )
  
 build() {
 	cd "${name}c-$version-src"
+	patch -p1 -i $SRC/0040-rls-atomics.patch
+	#patch -p1 -i $SRC/ppcfixes.patch
+	#patch -p1 -i $SRC/0007-Fix-C-aggregate-passing-ABI-on-powerpc.patch
+	#patch -p1 -i $SRC/0008-Fix-zero-sized-aggregate-ABI-on-powerpc.patch
+	#patch -p1 -i $SRC/0010-test-c-variadic-Fix-patterns-on-powerpc64.patch
 
 	local ERROR
 	local DATE="$(awk '/^date: / { print $2 }' src/stage0.txt)"
@@ -43,16 +53,16 @@ build() {
 	unset DATE RUSTC CARGO ERROR
 
 	mkdir -p build/cache/$_date
-	cp $PKGMK_SOURCE_DIR/rust-std-$_rustc-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
-	cp $PKGMK_SOURCE_DIR/rustc-$_rustc-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
-	cp $PKGMK_SOURCE_DIR/cargo-$_cargo-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
+	cp $PKGMK_SOURCE_DIR/rust-std-$_rustc-powerpc-unknown-linux-gnu.tar.gz build/cache/$_date/
+	cp $PKGMK_SOURCE_DIR/rustc-$_rustc-powerpc-unknown-linux-gnu.tar.gz build/cache/$_date/
+	cp $PKGMK_SOURCE_DIR/cargo-$_cargo-powerpc-unknown-linux-gnu.tar.gz build/cache/$_date/
 
 	prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
 
 cat <<- EOF > $SRC/config.toml
 	[llvm]
 	ninja = true
-	targets = "X86"
+	targets = "ppc"
 	experimental-targets = ""
 	link-shared = true
 
@@ -72,7 +82,7 @@ cat <<- EOF > $SRC/config.toml
 EOF
 	# part of [build] options
         if [ -e '/usr/bin/rustc' ]; then
-		if [ -z "$(/usr/bin/ldd /usr/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so | egrep '.*libLLVM-.*.so => not found')" ]; then
+		if [ -z "$(/usr/bin/ldd /usr/lib/rustlib/powerpc-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so | egrep '.*libLLVM-.*.so => not found')" ]; then
 cat <<- EOF >> $SRC/config.toml
 	cargo = "/usr/bin/cargo"
 	rustc = "/usr/bin/rustc"
@@ -83,16 +93,16 @@ EOF
         fi
 
 cat <<- EOF >> $SRC/config.toml
-	[target.x86_64-unknown-linux-gnu]
+	[target.powerpc-unknown-linux-gnu]
 	llvm-config = "/usr/bin/llvm-config"
 EOF
 
-	if [ -e '/usr/bin/llvm-config-32' ]; then
-cat <<- EOF >> $SRC/config.toml
-	[target.i686-unknown-linux-gnu]
-	llvm-config = "/usr/bin/llvm-config-32"
-EOF
-	fi
+#	if [ -e '/usr/bin/llvm-config-32' ]; then
+#cat <<- EOF >> $SRC/config.toml
+#	[target.i686-unknown-linux-gnu]
+#	llvm-config = "/usr/bin/llvm-config-32"
+#EOF
+#	fi
 
 	cat $SRC/config.toml
 

@@ -1,7 +1,6 @@
 # Description: U-Boot tools
 # URL: http://www.denx.de/wiki/U-Boot/WebHome
-# Maintainer: Jose V Beneyto, sepen at crux dot nu
-# Packager: Jose V Beneyto, sepen at crux dot nu
+# Maintainer: cruxppc at gmail dot com
 # Depends on:
 
 name=u-boot-tools
@@ -16,6 +15,7 @@ build() {
   sed -e "/^HOSTCFLAGS/ s/-O2/\$(CUSTOMCFLAGS)/" -i Makefile
 
   make sandbox_config
+  sed -i 's/EFI_LOADER=y/EFI_LOADER=n/' .config
   make V=1 tools CUSTOMCFLAGS="$CFLAGS" TOOLSUBDIRS=""
 
   install -d -m 0755 $PKG/usr/{bin,share/man/man1}

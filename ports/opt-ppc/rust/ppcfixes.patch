@@ -1,0 +1,130 @@
+diff -Naur a/src/librustc/ty/layout.rs b/src/librustc/ty/layout.rs
+--- a/src/librustc/ty/layout.rs	2020-01-01 16:18:44.389220436 +0000
++++ b/src/librustc/ty/layout.rs	2019-12-16 15:38:05.000000000 +0000
+@@ -2638,11 +2638,12 @@
+         };
+ 
+         let target = &cx.tcx().sess.target.target;
+-        let indirect_zst = match target.arch.as_ref() {
+-            "powerpc" | "s390x" | "sparc64" => true,
+-            "x86_64" => target.target_os == "windows" && target.target_env == "gnu",
+-            _ => false,
+-        };
++        let win_x64_gnu =
++            target.target_os == "windows" && target.arch == "x86_64" && target.target_env == "gnu";
++        let linux_s390x =
++            target.target_os == "linux" && target.arch == "s390x" && target.target_env == "gnu";
++        let linux_sparc64 =
++            target.target_os == "linux" && target.arch == "sparc64" && target.target_env == "gnu";
+         let rust_abi = match sig.abi {
+             RustIntrinsic | PlatformIntrinsic | Rust | RustCall => true,
+             _ => false,
+@@ -2709,10 +2710,6 @@
+                 // The same is true for s390x-unknown-linux-gnu
+                 // and sparc64-unknown-linux-gnu.
+                 if is_return || rust_abi || (!win_x64_gnu && !linux_s390x && !linux_sparc64) {
+-                // FIXME: The C ABI case should be handled in adjust_for_cabi.
+-                // Zero-sized struct arguments cannot be ignored in the C ABI
+-                // if they are passed indirectly.
+-                if is_return || rust_abi || !indirect_zst {
+                     arg.mode = PassMode::Ignore;
+                 }
+             }
+@@ -2836,22 +2833,3 @@
+         }
+     }
+ }
+-====
+---- src/librustc/ty/layout.rs
+-+++ src/librustc/ty/layout.rs
+-@@ -2741,11 +2740,10 @@ where
+-             let is_return = arg_idx.is_none();
+-             let mut arg = mk_arg_type(ty, arg_idx);
+-             if arg.layout.is_zst() {
+--                // For some forsaken reason, x86_64-pc-windows-gnu
+--                // doesn't ignore zero-sized struct arguments.
+--                // The same is true for s390x-unknown-linux-gnu
+--                // and sparc64-unknown-linux-gnu.
+--                if is_return || rust_abi || (!win_x64_gnu && !linux_s390x && !linux_sparc64) {
+-+                // FIXME: The C ABI case should be handled in adjust_for_cabi.
+-+                // Zero-sized struct arguments cannot be ignored in the C ABI
+-+                // if they are passed indirectly.
+-+                if is_return || rust_abi || !indirect_zst {
+-                     arg.mode = PassMode::Ignore(IgnoreMode::Zst);
+-                 }
+-             }
+diff -Naur a/src/librustc_target/abi/call/mod.rs b/src/librustc_target/abi/call/mod.rs
+--- a/src/librustc_target/abi/call/mod.rs	2020-01-01 16:13:44.219025573 +0000
++++ b/src/librustc_target/abi/call/mod.rs	2019-12-16 15:38:05.000000000 +0000
+@@ -554,7 +554,7 @@
+             "arm" => arm::compute_abi_info(cx, self),
+             "mips" => mips::compute_abi_info(cx, self),
+             "mips64" => mips64::compute_abi_info(cx, self),
+-            "powerpc" => powerpc::compute_abi_info(self),
++            "powerpc" => powerpc::compute_abi_info(cx, self),
+             "powerpc64" => powerpc64::compute_abi_info(cx, self),
+             "s390x" => s390x::compute_abi_info(cx, self),
+             "msp430" => msp430::compute_abi_info(self),
+diff -Naur a/src/librustc_target/abi/call/powerpc.rs b/src/librustc_target/abi/call/powerpc.rs
+--- a/src/librustc_target/abi/call/powerpc.rs	2020-01-01 16:13:44.219025573 +0000
++++ b/src/librustc_target/abi/call/powerpc.rs	2019-12-16 15:38:05.000000000 +0000
+@@ -1,28 +1,49 @@
+-use crate::abi::call::{ArgType, FnType};
++use crate::abi::call::{ArgType, FnType, Reg, Uniform};
++use crate::abi::{HasDataLayout, LayoutOf, Size, TyLayoutMethods};
+ 
+-fn classify_ret_ty<Ty>(ret: &mut ArgType<'_, Ty>) {
+-    if ret.layout.is_aggregate() {
+-        ret.make_indirect();
+-    } else {
++fn classify_ret_ty<'a, Ty, C>(cx: &C, ret: &mut ArgType<'_, Ty>, offset: &mut Size)
++    where Ty: TyLayoutMethods<'a, C>, C: LayoutOf<Ty = Ty> + HasDataLayout
++{
++    if !ret.layout.is_aggregate() {
+         ret.extend_integer_width_to(32);
++    } else {
++        ret.make_indirect();
++        *offset += cx.data_layout().pointer_size;
+     }
+ }
+ 
+-fn classify_arg_ty<Ty>(arg: &mut ArgType<'_, Ty>) {
++fn classify_arg_ty<'a, Ty, C>(cx: &C, arg: &mut ArgType<'_, Ty>, offset: &mut Size)
++    where Ty: TyLayoutMethods<'a, C>, C: LayoutOf<Ty = Ty> + HasDataLayout
++{
++    let dl = cx.data_layout();
++    let size = arg.layout.size;
++    let align = arg.layout.align.max(dl.i32_align).min(dl.i64_align).abi;
++
+     if arg.layout.is_aggregate() {
+-        arg.make_indirect();
++        arg.cast_to(Uniform {
++            unit: Reg::i32(),
++            total: size
++        });
++        if !offset.is_aligned(align) {
++            arg.pad_with(Reg::i32());
++        }
+     } else {
+         arg.extend_integer_width_to(32);
+     }
++
++    *offset = offset.align_to(align) + size.align_to(align);
+ }
+ 
+-pub fn compute_abi_info<Ty>(fty: &mut FnType<'_, Ty>) {
++pub fn compute_abi_info<'a, Ty, C>(cx: &C, fty: &mut FnType<'_, Ty>)
++    where Ty: TyLayoutMethods<'a, C>, C: LayoutOf<Ty = Ty> + HasDataLayout
++{
++    let mut offset = Size::ZERO;
+     if !fty.ret.is_ignore() {
+-        classify_ret_ty(&mut fty.ret);
++        classify_ret_ty(cx, &mut fty.ret, &mut offset);
+     }
+ 
+     for arg in &mut fty.args {
+         if arg.is_ignore() { continue; }
+-        classify_arg_ty(arg);
++        classify_arg_ty(cx, arg, &mut offset);
+     }
+ }

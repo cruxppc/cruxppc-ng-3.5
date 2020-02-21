@@ -1,25 +1,29 @@
 # Description: Evented I/O for V8 javascript.
 # URL: http://nodejs.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: python c-ares
-# Optional: icu
+# Maintainer: cruxppc at gmail dot com
+# Depends on: python
 
 name=nodejs
-version=12.15.0
+version=8.12.0    # 8.12.0 last one that supports ppc ?
+version=10.16.3
 release=1
-source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
+source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz
+libatomic.patch
+ppc32.patch
+ppc64.patch
+stack-silliness.patch)
 
 build() {
 	cd node-v$version
+	patch -p1 -i $SRC/libatomic.patch
+	patch -p1 -i $SRC/ppc32.patch
+	patch -p1 -i $SRC/ppc64.patch
+	patch -p1 -i $SRC/stack-silliness.patch
 
-	[ -e '/usr/lib/pkgconfig/icu-i18n.pc' ] && PKGMK_NODEJS+=' --with-intl=system-icu'
-
-	./configure ${PKGMK_NODEJS} \
+	./configure \
 		--prefix=/usr \
 		--without-npm \
-		--shared-cares \
-		--shared-zlib \
-		--shared-openssl
+		--shared-zlib
 
 	make
 	make DESTDIR=$PKG install

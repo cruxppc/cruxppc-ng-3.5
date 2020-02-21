@@ -1,0 +1,3 @@
+host=crux-ppc.nu
+collection=ports/crux-3.5/opt-ppc/
+destination=/usr/ports/opt-ppc

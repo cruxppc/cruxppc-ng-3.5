@@ -1,0 +1,14 @@
+--- node-v10.15.3/src/inspector_agent.cc.old	2019-03-05 15:16:32.000000000 +0000
++++ node-v10.15.3/src/inspector_agent.cc	2019-04-06 02:03:11.082016553 +0000
+@@ -104,9 +104,9 @@
+   // Don't shrink the thread's stack on FreeBSD.  Said platform decided to
+   // follow the pthreads specification to the letter rather than in spirit:
+   // https://lists.freebsd.org/pipermail/freebsd-current/2014-March/048885.html
+-#ifndef __FreeBSD__
++#ifdef __GLIBC__
+   CHECK_EQ(0, pthread_attr_setstacksize(&attr, PTHREAD_STACK_MIN));
+-#endif  // __FreeBSD__
++#endif  // __GLIBC__
+   CHECK_EQ(0, pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED));
+   sigset_t sigmask;
+   // Mask all signals.
