@@ -1,0 +1,23 @@
+From fab4c3c719977205a3f005ddfd7fffbb9c19c587 Mon Sep 17 00:00:00 2001
+From: Frank Tang <ftang@chromium.org>
+Date: Wed, 30 Oct 2019 17:45:22 -0700
+Subject: [PATCH] ICU-20884 initialized buffer uloc_getKeywordValue
+
+---
+ icu4c/source/common/uloc.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/icu4c/source/common/uloc.cpp b/icu4c/source/common/uloc.cpp
+index 6a9bfcfbff5..ea81c0ce87f 100644
+--- a/icu4c/source/common/uloc.cpp
++++ b/icu4c/source/common/uloc.cpp
+@@ -766,6 +766,9 @@ uloc_getKeywordValue(const char* localeID,
+                      char* buffer, int32_t bufferCapacity,
+                      UErrorCode* status)
+ {
++    if (buffer != nullptr) {
++        buffer[0] = '\0';
++    }
+     const char* startSearchHere = NULL;
+     const char* nextSeparator = NULL;
+     char keywordNameBuffer[ULOC_KEYWORD_BUFFER_LEN];

@@ -1,0 +1,22 @@
+# Description: A library of simple functions optimized for various CPUs.
+# URL: http://liboil.freedesktop.org/wiki/
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Depends on: glib
+
+name=liboil
+version=0.3.17
+release=1
+source=(http://liboil.freedesktop.org/download/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --disable-static \
+              --disable-gtk-doc
+  
+  make
+  make check
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share 
+}

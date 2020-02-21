@@ -1,0 +1,24 @@
+# Description: U-Boot tools
+# URL: http://www.denx.de/wiki/U-Boot/WebHome
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Packager: Jose V Beneyto, sepen at crux dot nu
+# Depends on:
+
+name=u-boot-tools
+version=2020.01
+release=1
+source=(ftp://ftp.denx.de/pub/u-boot/u-boot-$version.tar.bz2)
+
+build() {
+  cd u-boot-$version
+
+  # use custom compiler flags
+  sed -e "/^HOSTCFLAGS/ s/-O2/\$(CUSTOMCFLAGS)/" -i Makefile
+
+  make sandbox_config
+  make V=1 tools CUSTOMCFLAGS="$CFLAGS" TOOLSUBDIRS=""
+
+  install -d -m 0755 $PKG/usr/{bin,share/man/man1}
+  install -m 0755 tools/mk{,env}image $PKG/usr/bin
+  install -m 0644 doc/mkimage.1 $PKG/usr/share/man/man1
+} 

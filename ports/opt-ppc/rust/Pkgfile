@@ -1,0 +1,114 @@
+# Description: The Rust language with Cargo included.
+# URL: http://www.rust-lang.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: llvm
+# Optional: sccache llvm-32
+
+name=rust
+version=1.41.0
+##cat src/stage0.txt
+_date=2019-12-19
+_rustc=1.40.0
+_cargo=0.41.0
+##
+
+release=1
+source=(
+	https://static.rust-lang.org/dist/${name}c-$version-src.tar.gz
+	https://static.rust-lang.org/dist/$_date/rust-std-$_rustc-x86_64-unknown-linux-gnu.tar.gz
+	https://static.rust-lang.org/dist/$_date/rustc-$_rustc-x86_64-unknown-linux-gnu.tar.gz
+	https://static.rust-lang.org/dist/$_date/cargo-$_cargo-x86_64-unknown-linux-gnu.tar.gz
+)
+ 
+build() {
+	cd "${name}c-$version-src"
+
+	local ERROR
+	local DATE="$(awk '/^date: / { print $2 }' src/stage0.txt)"
+	local RUSTC="$(awk '/^rustc: / { print $2 }' src/stage0.txt)"
+	local CARGO="$(awk '/^cargo: / { print $2 }' src/stage0.txt)"
+	if [ "$DATE" != "$_date" ]; then
+		printf "\e[031mError: _date $_date != $DATE\033[0m\n"
+		ERROR=1
+	fi
+	if [ "$RUSTC" != "$_rustc" ]; then
+		printf "\e[031mError: _rustc $_rustc != $RUSTC\033[0m\n"
+		ERROR=1
+	fi
+	if [ "$CARGO" != "$_cargo" ]; then
+		printf "\e[031mError: _cargo $_cargo != $CARGO\033[0m\n"
+		ERROR=1
+	fi
+	[ $ERROR ] && exit 1
+	unset DATE RUSTC CARGO ERROR
+
+	mkdir -p build/cache/$_date
+	cp $PKGMK_SOURCE_DIR/rust-std-$_rustc-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
+	cp $PKGMK_SOURCE_DIR/rustc-$_rustc-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
+	cp $PKGMK_SOURCE_DIR/cargo-$_cargo-x86_64-unknown-linux-gnu.tar.gz build/cache/$_date/
+
+	prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
+
+cat <<- EOF > $SRC/config.toml
+	[llvm]
+	ninja = true
+	targets = "X86"
+	experimental-targets = ""
+	link-shared = true
+
+	[install]
+	prefix = "/usr"
+
+	[rust]
+	channel = "stable"
+	rpath = false
+	codegen-tests = false
+	backtrace-on-ice = true
+
+	[build]
+	docs = false
+	extended = true
+	python = "python3"
+EOF
+	# part of [build] options
+        if [ -e '/usr/bin/rustc' ]; then
+		if [ -z "$(/usr/bin/ldd /usr/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so | egrep '.*libLLVM-.*.so => not found')" ]; then
+cat <<- EOF >> $SRC/config.toml
+	cargo = "/usr/bin/cargo"
+	rustc = "/usr/bin/rustc"
+EOF
+		else
+			printf "\e[031mllvm broken symlink detected, not using system rust to bootstrap\033[0m\n"
+		fi
+        fi
+
+cat <<- EOF >> $SRC/config.toml
+	[target.x86_64-unknown-linux-gnu]
+	llvm-config = "/usr/bin/llvm-config"
+EOF
+
+	if [ -e '/usr/bin/llvm-config-32' ]; then
+cat <<- EOF >> $SRC/config.toml
+	[target.i686-unknown-linux-gnu]
+	llvm-config = "/usr/bin/llvm-config-32"
+EOF
+	fi
+
+	cat $SRC/config.toml
+
+	mkdir "$PKGMK_SOURCE_DIR/rust" || true
+	export CARGO_HOME="$PKGMK_SOURCE_DIR/rust"
+
+	export RUSTFLAGS="$RUSTFLAGS -C link-args=-lffi"
+	/usr/bin/python3 ./x.py build --config="${SRC}"/config.toml --exclude src/tools/miri -j ${JOBS-1}
+
+	export LIBSSH2_SYS_USE_PKG_CONFIG=1
+	DESTDIR=$PKG /usr/bin/python3 ./x.py --config="${SRC}"/config.toml install
+	unset LIBSSH2_SYS_USE_PKG_CONFIG
+
+	#cleanup
+	rm -r $PKG/usr/share/doc
+	rm -r $PKG/usr/share/zsh
+	rm -r $PKG/etc
+	rm $PKG/usr/lib/rustlib/{components,manifest-rustc,rust-installer-version,uninstall.sh}
+}
