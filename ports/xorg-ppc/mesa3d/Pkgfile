@@ -1,6 +1,6 @@
 # Description: Mesa 3D Graphics Library
 # URL: http://www.mesa3d.org
-# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Maintainer: cruxppc at gmail dot com
 # Depends on: elfutils libdrm libglvnd libvdpau llvm python3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
 # Optional: libva
 
@@ -24,8 +24,9 @@ build() {
 		-Dgallium-vdpau=true \
 		-Dshared-llvm=true \
 		-Dplatforms=x11,drm \
-		-Dgallium-drivers=r300,r600,svga,swrast,radeonsi,nouveau \
-		-Dvulkan-drivers=amd,intel \
+		-Ddri-drivers=r100,r200 \
+		-Dgallium-drivers=r300,r600,swrast,nouveau \
+		-Dvulkan-drivers= \
 		-Dglvnd=true
 
 	DESTDIR=$PKG ninja -C build -j ${JOBS:-1} install
