@@ -1,0 +1,35 @@
+# Description: Mesa 3D Graphics Library
+# URL: http://www.mesa3d.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: elfutils libdrm libglvnd libvdpau llvm python3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
+# Optional: libva
+
+name=mesa3d
+version=19.3.4
+release=1
+source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz)
+
+build() {
+	cd mesa-$version
+
+	meson build \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		-Dllvm=true \
+		-Dgbm=true \
+		-Dgles1=true \
+		-Dgles2=true \
+		-Dosmesa=gallium \
+		-Dgallium-xa=true \
+		-Dgallium-vdpau=true \
+		-Dshared-llvm=true \
+		-Dplatforms=x11,drm \
+		-Dgallium-drivers=r300,r600,svga,swrast,radeonsi,nouveau \
+		-Dvulkan-drivers=amd,intel \
+		-Dglvnd=true
+
+	DESTDIR=$PKG ninja -C build -j ${JOBS:-1} install
+
+	# indirect rendering symlink
+	ln -s libGLX_mesa.so.0 $PKG/usr/lib/libGLX_indirect.so.0
+}
