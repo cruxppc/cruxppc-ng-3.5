@@ -1,0 +1,102 @@
+make  check-am
+make[1]: Entering directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+make  check-TESTS
+make[2]: Entering directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+make[3]: Entering directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+./test/test.sh -b EPOLL
+Running tests:
+EPOLL 
+ test-eof: OKAY
+ test-closed: OKAY
+ test-weof: OKAY
+ test-time: OKAY
+ test-changelist: OKAY
+ test-fdleak: OKAY
+ test-dumpevents: OKAY
+ regress: OKAY
+ regress_debug: OKAY
+PASS: test_runner_epoll
+./test/test.sh -b SELECT
+Running tests:
+SELECT 
+ test-eof: OKAY
+ test-closed: [warn] event_base_new_with_config: no event mechanism available
+OKAY
+ test-weof: OKAY
+ test-time: OKAY
+ test-changelist: OKAY
+ test-fdleak: OKAY
+ test-dumpevents: OKAY
+ regress: OKAY
+ regress_debug: OKAY
+PASS: test_runner_select
+./test/test.sh -b KQUEUE
+Running tests:
+KQUEUE 
+Skipping test
+PASS: test_runner_kqueue
+./test/test.sh -b EVPORT
+Running tests:
+EVPORT 
+Skipping test
+PASS: test_runner_evport
+./test/test.sh -b DEVPOLL
+Running tests:
+DEVPOLL 
+Skipping test
+PASS: test_runner_devpoll
+./test/test.sh -b POLL
+Running tests:
+POLL 
+ test-eof: OKAY
+ test-closed: [warn] event_base_new_with_config: no event mechanism available
+OKAY
+ test-weof: OKAY
+ test-time: OKAY
+ test-changelist: OKAY
+ test-fdleak: OKAY
+ test-dumpevents: OKAY
+ regress: OKAY
+ regress_debug: OKAY
+PASS: test_runner_poll
+./test/test.sh -b WIN32
+Running tests:
+WIN32 
+Skipping test
+PASS: test_runner_win32
+./test/test.sh -b "" -t
+Running tests:
+EPOLL (timerfd)
+ test-eof: OKAY
+ test-closed: OKAY
+ test-weof: OKAY
+ test-time: OKAY
+ test-changelist: OKAY
+ test-fdleak: OKAY
+ test-dumpevents: OKAY
+ regress: OKAY
+ regress_debug: OKAY
+PASS: test_runner_timerfd
+./test/test.sh -b "" -c
+Running tests:
+EPOLL (changelist)
+ test-eof: OKAY
+ test-closed: OKAY
+ test-weof: OKAY
+ test-time: OKAY
+ test-changelist: OKAY
+ test-fdleak: OKAY
+ test-dumpevents: OKAY
+ regress: 
+  FAIL test/regress_http.c:755: assert(test_ok == 2): 1 vs 2http/bad_request: 
+  [bad_request FAILED]
+1/339 TESTS FAILED. (35 skipped)
+FAILED
+ regress_debug: OKAY
+make[3]: *** [Makefile:3011: test_runner_changelist] Error 1
+make[3]: Leaving directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+make[2]: *** [Makefile:2414: check-TESTS] Error 2
+make[2]: Leaving directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+make[1]: *** [Makefile:2683: check-am] Error 2
+make[1]: Leaving directory '/usr/ports/opt/libevent/work/src/libevent-2.1.11-stable'
+make: *** [Makefile:2685: check] Error 2

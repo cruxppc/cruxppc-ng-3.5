@@ -1,0 +1,37 @@
+# Description: Mozilla Web Browser Component
+# URL: http://www.mozilla.com/firefox/
+# Maintainer: Fredrik Rinnestam, fredrik at rinnestam dot se
+# Depends on: xulrunner
+# PPC!= mozconfig
+
+name=firefox
+version=3.6.13
+release=1
+source=(http://releases.mozilla.org/pub/mozilla.org/$name/releases/$version/source/$name-$version.source.tar.bz2 \
+	mozconfig)
+    
+build() {
+    export MOZ_CO_PROJECT=browser
+    export BUILD_OFFICIAL=1
+    export MOZILLA_OFFICIAL=1
+    export MOZILLA_FIVE_HOME=/usr/lib/firefox
+
+    cd mozilla-1.9.2
+    sed -e "s/#CFLAGS#/$CFLAGS/" $SRC/mozconfig > .mozconfig
+
+    ./configure --host=$MACHTYPE
+    make
+
+    install -d \
+	$PKG$MOZILLA_FIVE_HOME \
+	$PKG/usr/bin \
+	$PKG/usr/share/idl/firefox \
+	$PKG/usr/include/firefox
+
+    cp -rL dist/bin/* $PKG$MOZILLA_FIVE_HOME
+    ln -s /usr/lib/firefox/firefox $PKG/usr/bin/firefox
+
+    # devel stuff
+    cp -frL dist/idl/* $PKG/usr/share/idl/firefox/
+    cp -frL dist/include/* $PKG/usr/include/firefox/
+}

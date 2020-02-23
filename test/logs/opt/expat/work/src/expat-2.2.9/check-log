@@ -1,0 +1,51 @@
+Making check in lib
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/lib'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/lib'
+Making check in examples
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/examples'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/examples'
+Making check in tests
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+Making check in .
+make[2]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make  runtests runtestspp
+make[3]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make[3]: 'runtests' is up to date.
+make[3]: 'runtestspp' is up to date.
+make[3]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make  check-TESTS
+make[3]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make[4]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+PASS: runtests
+PASS: runtestspp
+============================================================================
+Testsuite summary for expat 2.2.9
+============================================================================
+# TOTAL: 2
+# PASS:  2
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make[3]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+make[2]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+Making check in benchmark
+make[2]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests/benchmark'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests/benchmark'
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/tests'
+Making check in xmlwf
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/xmlwf'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/xmlwf'
+Making check in doc
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9/doc'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9/doc'
+make[1]: Entering directory '/usr/ports/opt/expat/work/src/expat-2.2.9'
+make[1]: Leaving directory '/usr/ports/opt/expat/work/src/expat-2.2.9'

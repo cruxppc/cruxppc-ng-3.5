@@ -1,0 +1,72 @@
+Making check in .
+make[1]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1'
+make[1]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1'
+Making check in tests
+make[1]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make  test_util_file test_float test1 test2 test4 testReplaceExisting test_parse_int64 test_deep_copy test_null test_cast test_double_serializer test_parse test_locale test_charcase test_printbuf test_set_serializer test_compare test_set_value test_visit test_json_pointer test_int_add test1Formatted test2Formatted
+make[2]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make[2]: 'test_util_file' is up to date.
+make[2]: 'test_float' is up to date.
+make[2]: 'test1' is up to date.
+make[2]: 'test2' is up to date.
+make[2]: 'test4' is up to date.
+make[2]: 'testReplaceExisting' is up to date.
+make[2]: 'test_parse_int64' is up to date.
+make[2]: 'test_deep_copy' is up to date.
+make[2]: 'test_null' is up to date.
+make[2]: 'test_cast' is up to date.
+make[2]: 'test_double_serializer' is up to date.
+make[2]: 'test_parse' is up to date.
+make[2]: 'test_locale' is up to date.
+make[2]: 'test_charcase' is up to date.
+make[2]: 'test_printbuf' is up to date.
+make[2]: 'test_set_serializer' is up to date.
+make[2]: 'test_compare' is up to date.
+make[2]: 'test_set_value' is up to date.
+make[2]: 'test_visit' is up to date.
+make[2]: 'test_json_pointer' is up to date.
+make[2]: 'test_int_add' is up to date.
+make[2]: 'test1Formatted' is up to date.
+make[2]: 'test2Formatted' is up to date.
+make[2]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make  check-TESTS
+make[2]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make[3]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+PASS: test_util_file.test
+PASS: test_float.test
+PASS: test1.test
+PASS: test2.test
+PASS: test4.test
+PASS: testReplaceExisting.test
+PASS: test_parse_int64.test
+PASS: test_deep_copy.test
+PASS: test_null.test
+PASS: test_cast.test
+PASS: test_double_serializer.test
+PASS: test_parse.test
+PASS: test_locale.test
+PASS: test_charcase.test
+PASS: test_printbuf.test
+PASS: test_set_serializer.test
+PASS: test_compare.test
+PASS: test_set_value.test
+PASS: test_visit.test
+PASS: test_json_pointer.test
+PASS: test_int_add.test
+make[4]: Entering directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+============================================================================
+Testsuite summary for json-c 0.13.1
+============================================================================
+# TOTAL: 21
+# PASS:  21
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[3]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make[2]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'
+make[1]: Leaving directory '/usr/ports/opt/json-c/work/src/json-c-0.13.1/tests'

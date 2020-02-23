@@ -1,0 +1,597 @@
+Making check in po
+make[1]: Entering directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/po'
+Making check in tests
+make[1]: Entering directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+make  api-test api-test-2 differ vectors-test unit-utils-io
+make[2]: Entering directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+make[2]: 'api-test' is up to date.
+make[2]: 'api-test-2' is up to date.
+make[2]: 'differ' is up to date.
+make[2]: 'vectors-test' is up to date.
+make[2]: 'unit-utils-io' is up to date.
+make[2]: Leaving directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+make  check-TESTS
+make[2]: Entering directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+Cryptsetup test environment (Mon Dec  9 02:45:53 UTC 2019)
+Linux host 4.19.24-cruxppc-alpha #1 SMP Sun Nov 24 15:43:45 UTC 2019 ppc 7447A, altivec supported PowerMac10,2 GNU/Linux
+Memory
+              total        used        free      shared  buff/cache   available
+Mem:          998Mi        33Mi       713Mi       0.0Ki       250Mi       947Mi
+Swap:            0B          0B          0B
+../cryptsetup 2.2.2
+../veritysetup 2.2.2
+../integritysetup 2.2.2
+../cryptsetup-reencrypt 2.2.2
+Library version:   1.02.164 (2019-08-27)
+Driver version:    4.39.0
+Device mapper targets:
+zero             v1.1.0
+integrity        v1.2.0
+verity           v1.4.0
+raid             v1.14.0
+multipath        v1.13.0
+crypt            v1.18.1
+striped          v1.6.0
+linear           v1.4.0
+error            v1.5.0
+PASS: 00modules-test
+NonFIPSAlg: Crypto is properly initialised in format
+AddDevicePlain: A plain device API creation
+HashDevicePlain: A plain device API hash
+AddDeviceLuks: Format and use LUKS device
+LuksHeaderLoad: Header load
+LuksHeaderRestore: LUKS header restore
+LuksHeaderBackup: LUKS header backup
+ResizeDeviceLuks: LUKS device resize
+UseLuksDevice: Use pre-formated LUKS device
+SuspendDevice: Suspend/Resume
+UseTempVolumes: Format and use temporary encrypted device
+CallbacksTest: API callbacks
+VerityTest: DM verity
+TcryptTest: Tcrypt API
+WARNING: cannot use non-AES encryption, skipping test.
+IntegrityTest: Integrity API
+PASS: api-test
+AddDeviceLuks2: Format and use LUKS2 device
+Luks2MetadataSize: LUKS2 metadata settings
+Luks2HeaderLoad: LUKS2 header load
+Luks2HeaderRestore: LUKS2 header restore
+Luks2HeaderBackup: LUKS2 header backup
+ResizeDeviceLuks2: LUKS2 device resize tests
+UseLuks2Device: Use pre-formated LUKS2 device
+SuspendDevice: LUKS2 Suspend/Resume
+UseTempVolumes: Format and use temporary encrypted device
+Tokens: General tokens API
+TokenActivationByKeyring: Builtin kernel keyring token
+LuksConvert: LUKS1 <-> LUKS2 conversions
+Pbkdf: Default PBKDF manipulation routines
+Luks2KeyslotParams: Add a new keyslot with different encryption
+Luks2KeyslotAdd: Add a new keyslot by unused key
+Luks2ActivateByKeyring: LUKS2 activation by passphrase in keyring
+Luks2Requirements: LUKS2 requirements flags
+Luks2Integrity: LUKS2 with data integrity
+Luks2Refresh: Active device table refresh
+Luks2Flags: LUKS2 persistent flags
+Luks2Reencryption: LUKS2 reencryption
+Luks2Repair: LUKS2 repair
+PASS: api-test-2
+CASE: Image in file tests (root capabilities not required)
+[1] format
+[2] open
+[3] add key
+[4] change key
+[5] remove key
+[6] kill slot
+[7] header backup
+[8] header restore
+[9] luksDump
+[10] uuid
+CASE: [1] open - compat image - acceptance check
+CASE: [2] open - compat image - denial check
+CASE: [3] format
+CASE: [4] format using hash sha512
+CASE: [5] open
+CASE: [6] add key
+CASE: [7] unsuccessful delete
+CASE: [8] successful delete
+CASE: [9] add key test for key files
+CASE: [10] delete key test with key1 as remaining key
+CASE: [11] delete last key
+CASE: [12] parameter variation test
+CASE: [13] open/close - stacked devices
+CASE: [14] format/open - passphrase on stdin & new line
+CASE: [15] UUID - use and report provided UUID
+CASE: [16] luksFormat
+CASE: [17] AddKey volume key, passphrase and keyfile
+CASE: [18] RemoveKey passphrase and keyfile
+CASE: [19] create & status & resize
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: compat-test
+CASE: [0] Detect LUKS2 environment
+CASE: [1] Data offset
+CASE: [2] Sector size and old payload alignment
+CASE: [3] format
+CASE: [4] format using hash sha512
+CASE: [5] open
+CASE: [6] add key
+CASE: [7] unsuccessful delete
+CASE: [8] successful delete
+CASE: [9] add key test for key files
+CASE: [10] delete key test with key1 as remaining key
+CASE: [11] delete last key
+CASE: [12] parameter variation test
+CASE: [13] open/close - stacked devices
+CASE: [14] format/open - passphrase on stdin & new line
+CASE: [15] UUID - use and report provided UUID
+CASE: [16] luksFormat
+CASE: [17] AddKey volume key, passphrase and keyfile
+CASE: [18] RemoveKey passphrase and keyfile
+CASE: [19] create & status & resize
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: compat-test2
+WARNING: test require uuencode binary, test skipped.
+SKIP: loopaes-test
+SKIP: align-test
+SKIP: align-test2
+SKIP: discards-test
+aes                            PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-plain                      PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+null                           PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+cipher_null                    PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+cipher_null-ecb                PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-ecb                        PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+twofish-ecb                    [n/a]
+serpent-ecb                    [n/a]
+aes-cbc-null                   PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-cbc-benbi                  PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-cbc-plain                  PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-cbc-plain64                PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-cbc-essiv:sha256           PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-lrw-null                   [n/a]
+aes-lrw-benbi                  [n/a]
+aes-lrw-plain                  [n/a]
+aes-lrw-plain64                [n/a]
+aes-lrw-essiv:sha256           [n/a]
+aes-xts-null                   PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-xts-benbi                  PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-xts-plain                  PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-xts-plain64                PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+aes-xts-essiv:sha256           PLAIN:[table OK][status OK] LUKS1:[table OK][status OK] LUKS2:[table OK][status OK] CHECKSUM:[OK]
+twofish-cbc-null               [n/a]
+twofish-cbc-benbi              [n/a]
+twofish-cbc-plain              [n/a]
+twofish-cbc-plain64            [n/a]
+twofish-cbc-essiv:sha256       [n/a]
+twofish-lrw-null               [n/a]
+twofish-lrw-benbi              [n/a]
+twofish-lrw-plain              [n/a]
+twofish-lrw-plain64            [n/a]
+twofish-lrw-essiv:sha256       [n/a]
+twofish-xts-null               [n/a]
+twofish-xts-benbi              [n/a]
+twofish-xts-plain              [n/a]
+twofish-xts-plain64            [n/a]
+twofish-xts-essiv:sha256       [n/a]
+serpent-cbc-null               [n/a]
+serpent-cbc-benbi              [n/a]
+serpent-cbc-plain              [n/a]
+serpent-cbc-plain64            [n/a]
+serpent-cbc-essiv:sha256       [n/a]
+serpent-lrw-null               [n/a]
+serpent-lrw-benbi              [n/a]
+serpent-lrw-plain              [n/a]
+serpent-lrw-plain64            [n/a]
+serpent-lrw-essiv:sha256       [n/a]
+serpent-xts-null               [n/a]
+serpent-xts-benbi              [n/a]
+serpent-xts-plain              [n/a]
+serpent-xts-plain64            [n/a]
+serpent-xts-essiv:sha256       [n/a]
+xchacha12,aes-adiantum-plain64 [n/a]
+xchacha20,aes-adiantum-plain64 [n/a]
+PASS: mode-test
+HASH: ripemd160 KSIZE: 0 / pwd [OK]
+HASH: ripemd160 KSIZE: 256 / pwd [OK]
+HASH: ripemd160 KSIZE: 128 / pwd [OK]
+HASH: sha1 KSIZE: 256 / pwd [OK]
+HASH: sha1 KSIZE: 128 / pwd [OK]
+HASH: sha256 KSIZE: 256 / pwd [OK]
+HASH: sha256 KSIZE: 128 / pwd [OK]
+HASH: sha256 KSIZE: 0 / std- [OK]
+HASH: sha256 KSIZE: 256 / std- [OK]
+HASH: sha256 KSIZE: 128 / std- [OK]
+HASH: sha256 KSIZE: 256 / stdin [OK]
+HASH: sha256 KSIZE: 0 / stdin [OK]
+HASH: ripemd160 KSIZE: 256 / file [OK]
+HASH: sha256 KSIZE: 256 / file [OK]
+HASH: unknown* KSIZE: 256 / file [OK]
+HASH: sha256:20 KSIZE: 256 / pwd [OK]
+HASH: sha256:32 KSIZE: 256 / pwd [OK]
+HASH: sha256: KSIZE: 256 / failpwd [OK]
+HASH: sha256:xx KSIZE: 256 / failpwd [OK]
+HASH: ripemd160 KSIZE: 256 / file [OK]
+HASH: sha256 KSIZE: 256 / file [OK]
+HASH: sha256 KSIZE: 128 / file [OK]
+HASH: sha256 KSIZE: 512 / file [OK]
+HASH: plain KSIZE: 128 / cat [OK]
+HASH: plain KSIZE: 128 / cat [OK]
+HASH: plain KSIZE: 128 / cat [OK]
+HASH: plain KSIZE: 128 / cat- [OK]
+HASH: plain KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: sha256 KSIZE: 128 / cat- [OK]
+HASH: plain KSIZE: 256 / pwd [OK]
+HASH: plain:2 KSIZE: 256 / pwd [OK]
+HASH: plain:9 KSIZE: 256 / failpwd [OK]
+HASH: sha256 KSIZE: 128 / cat [OK]
+HASH: sha256:14 KSIZE: 128 / cat [OK]
+HASH: sha256 KSIZE: 128 / pwd [OK]
+HASH: sha256 KSIZE: 128 / pwd [OK]
+HASH: sha256 KSIZE: 128 / pwd [OK]
+HASH: sha1 KSIZE: 256 / pwd [OK]
+HASH: sha224 KSIZE: 256 / pwd [OK]
+HASH: sha256 KSIZE: 256 / pwd [OK]
+HASH: sha384 KSIZE: 256 / pwd [OK]
+HASH: sha512 KSIZE: 256 / pwd [OK]
+HASH: ripemd160 KSIZE: 256 / pwd [OK]
+HASH: whirlpool KSIZE: 256 / pwd [OK]
+HASH: sha3-224 KSIZE: 256 / pwd [OK]
+HASH: sha3-256 KSIZE: 256 / pwd [OK]
+HASH: sha3-384 KSIZE: 256 / pwd [OK]
+HASH: sha3-512 KSIZE: 256 / pwd [OK]
+HASH: sm3 KSIZE: 256 / pwd [OK]
+HASH: stribog512 KSIZE: 256 / pwd [N/A] (1, SKIPPED)
+PASS: password-hash-test
+REQUIRED KDF TEST
+pbkdf2-sha256 [OK]
+pbkdf2-sha512 [OK]
+pbkdf2-ripemd160 [OK]
+pbkdf2-whirlpool [OK]
+pbkdf2-stribog512 [N/A]
+REQUIRED CIPHERS TEST
+aes-cbc [OK]
+aes-lrw [N/A]
+aes-xts [OK]
+twofish-ecb [N/A]
+twofish-cbc [N/A]
+twofish-lrw [N/A]
+twofish-xts [N/A]
+serpent-ecb [N/A]
+serpent-cbc [N/A]
+serpent-lrw [N/A]
+serpent-xts [N/A]
+blowfish-cbc [N/A]
+des3_ede-cbc [OK]
+cast5-cbc [N/A]
+camellia-xts [N/A]
+kuznyechik-xts [N/A]
+HEADER CHECK
+ tcrypt-images/sys_vc_1-sha256-xts-aes [OK]
+ tcrypt-images/tc_1-ripemd160-cbc-aes [OK]
+ tcrypt-images/tc_1-sha1-cbc-aes [OK]
+ tcrypt-images/tc_1-sha1-cbc-des3_ede [OK]
+ tcrypt-images/tc_2-ripemd160-cbc-aes [OK]
+ tcrypt-images/tc_2-ripemd160-cbc-aes-hidden [OK]
+ tcrypt-images/tc_2-whirlpool-cbc-aes [OK]
+ tcrypt-images/tc_3-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_3-sha512-xts-aes [OK]
+ tcrypt-images/tc_3-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_4-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_4-sha512-xts-aes [OK]
+ tcrypt-images/tc_4-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_5-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_5-sha512-xts-aes [OK]
+ tcrypt-images/tc_5-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_5-whirlpool-xts-aes [OK]
+ tcrypt-images/vc_1-ripemd160-xts-aes [OK]
+ tcrypt-images/vc_1-sha256-xts-aes [OK]
+ tcrypt-images/vc_1-sha512-xts-aes [OK]
+ tcrypt-images/vc_1-sha512-xts-aes-hidden [OK]
+ tcrypt-images/vc_1-whirlpool-xts-aes [OK]
+ tcrypt-images/vcpim_1-sha256-xts-aes [OK]
+HEADER CHECK (HIDDEN)
+ tcrypt-images/tc_2-ripemd160-cbc-aes-hidden (hidden) [OK]
+ tcrypt-images/tc_3-sha512-xts-aes-hidden (hidden) [OK]
+ tcrypt-images/tc_4-sha512-xts-aes-hidden (hidden) [OK]
+ tcrypt-images/tc_5-sha512-xts-aes-hidden (hidden) [OK]
+ tcrypt-images/vc_1-sha512-xts-aes-hidden (hidden) [OK]
+HEADER KEYFILES CHECK
+ tcrypt-images/tck_5-sha512-xts-aes [OK]
+ tcrypt-images/vck_1-sha512-xts-aes [OK]
+ACTIVATION FS UUID CHECK
+ tcrypt-images/sys_vc_1-sha256-xts-aes [OK]
+ tcrypt-images/tc_1-ripemd160-cbc-aes [OK]
+ tcrypt-images/tc_1-sha1-cbc-aes [OK]
+ tcrypt-images/tc_1-sha1-cbc-des3_ede [OK]
+ tcrypt-images/tc_2-ripemd160-cbc-aes [OK]
+ tcrypt-images/tc_2-ripemd160-cbc-aes-hidden [OK]
+ tcrypt-images/tc_2-whirlpool-cbc-aes [OK]
+ tcrypt-images/tc_3-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_3-sha512-xts-aes [OK]
+ tcrypt-images/tc_3-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_4-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_4-sha512-xts-aes [OK]
+ tcrypt-images/tc_4-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_5-ripemd160-xts-aes [OK]
+ tcrypt-images/tc_5-sha512-xts-aes [OK]
+ tcrypt-images/tc_5-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_5-whirlpool-xts-aes [OK]
+ tcrypt-images/vc_1-ripemd160-xts-aes [OK]
+ tcrypt-images/vc_1-sha256-xts-aes [OK]
+ tcrypt-images/vc_1-sha512-xts-aes [OK]
+ tcrypt-images/vc_1-sha512-xts-aes-hidden [OK]
+ tcrypt-images/vc_1-whirlpool-xts-aes [OK]
+ tcrypt-images/vcpim_1-sha256-xts-aes [OK]
+ACTIVATION FS UUID (HIDDEN) CHECK
+ tcrypt-images/tc_2-ripemd160-cbc-aes-hidden [OK]
+ tcrypt-images/tc_3-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_4-sha512-xts-aes-hidden [OK]
+ tcrypt-images/tc_5-sha512-xts-aes-hidden [OK]
+ tcrypt-images/vc_1-sha512-xts-aes-hidden [OK]
+PASS: tcrypt-compat-test
+REQUIRED KDF TEST
+REQUIRED CIPHERS TEST
+#     Algorithm | Key |  Encryption |  Decryption
+    aes-xts        256b        23.5 MiB/s        23.8 MiB/s
+Test skipped.
+SKIP: luks1-compat-test
+[1] Using tmpfs for image
+[2] Kernel dmcrypt performance options
+[3] Kernel dmcrypt sector size options
+PLAIN sector size:[512][1024][2048][4096]
+LUKS2 sector size:[512][1024][2048][4096]
+PASS: device-test
+[1] Valid keyring keys
+[2] message ioctl
+[3] bOrked keys
+PASS: keyring-test
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: keyring-compat-test
+Cannot find jq, test skipped.
+SKIP: luks2-validation-test
+[aes-cbc-essiv:sha256:hmac-sha256:128:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha256:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha256:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-cbc-essiv:sha256:hmac-sha256:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha256:512:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha256:512:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-cbc-essiv:sha256:hmac-sha256:128:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha256:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha256:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-cbc-essiv:sha256:hmac-sha256:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha256:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha256:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-cbc-essiv:sha256:hmac-sha512:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-essiv:sha256:hmac-sha512:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha512:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha512:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-plain64:hmac-sha1:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-xts-random:hmac-sha1:512:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-gcm-random:aead:128:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-gcm-random:aead:128:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-gcm-random:aead:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-gcm-random:aead:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-ccm-random:aead:152:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-ccm-random:aead:152:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-ccm-random:aead:280:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aes-ccm-random:aead:280:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[chacha20-plain64:poly1305:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[chacha20-random:poly1305:256:512][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[chacha20-plain64:poly1305:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[chacha20-random:poly1305:256:4096][FORMAT][ACTIVATE][CHECKSUM][REMOVE][DETECT_CORRUPTION][OK]
+[aegis128-random:aead:128:512][FORMAT][N/A]
+[aegis128-random:aead:128:4096][FORMAT][N/A]
+[aegis128l-random:aead:128:512][FORMAT][N/A]
+[aegis128l-random:aead:128:4096][FORMAT][N/A]
+[aegis256-random:aead:256:512][FORMAT][N/A]
+[aegis256-random:aead:256:4096][FORMAT][N/A]
+[morus640-random:aead:128:512][FORMAT][N/A]
+[morus640-random:aead:128:4096][FORMAT][N/A]
+[morus1280-random:aead:128:512][FORMAT][N/A]
+[morus1280-random:aead:128:4096][FORMAT][N/A]
+[morus1280-random:aead:256:512][FORMAT][N/A]
+[morus1280-random:aead:256:4096][FORMAT][N/A]
+PASS: luks2-integrity-test
+Test vectors using OpenSSL 1.1.1d  10 Sep 2019 crypto backend.
+PBKDF vector 00 argon2i [OK]
+PBKDF vector 01 argon2id [OK]
+PBKDF vector 02 pbkdf2 [OK]
+PBKDF vector 03 pbkdf2 [OK]
+PBKDF vector 04 pbkdf2 [OK]
+PBKDF vector 05 pbkdf2 [OK]
+PBKDF vector 06 pbkdf2 [OK]
+PBKDF vector 07 pbkdf2 [OK]
+PBKDF vector 08 pbkdf2 [OK]
+PBKDF vector 09 pbkdf2 [OK]
+PBKDF vector 10 pbkdf2 [OK]
+PBKDF vector 11 pbkdf2 [OK]
+PBKDF vector 12 pbkdf2 [OK]
+PBKDF vector 13 pbkdf2 [OK]
+PBKDF vector 14 pbkdf2 [OK]
+PBKDF vector 15 pbkdf2 [OK]
+PBKDF vector 16 pbkdf2 [OK]
+PBKDF vector 17 pbkdf2 [OK]
+PBKDF vector 18 pbkdf2 [OK]
+Hash vector 00: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 01: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 02: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 03: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 04: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 05: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+Hash vector 06: [crc32][sha1][sha256][sha512][ripemd160][whirlpool]
+HMAC vector 00: [sha1][sha256][sha512]
+HMAC vector 01: [sha1][sha256][sha512]
+HMAC vector 02: [sha1][sha256][sha512]
+HMAC vector 03: [sha1][sha256][sha512]
+HMAC vector 04: [sha1][sha256][sha512]
+HMAC vector 05: [sha1][sha256][sha512]
+CIPHER vector 00: [aes-ecb,128bits][serpent-ecb N/A]
+CIPHER vector 01: [aes-cbc,128bits][serpent-cbc N/A]
+CIPHER vector 02: [aes-ecb,256bits][serpent-ecb N/A]
+CIPHER vector 03: [aes-cbc,256bits][serpent-cbc N/A]
+CIPHER vector 04: [aes-xts,256bits][serpent-xts N/A]
+CIPHER vector 05: [aes-xts,512bits][serpent-xts N/A]
+CIPHER vector 06: [xchacha12,aes-adiantum N/A][xchacha20,aes-adiantum N/A]
+PASS: vectors-test
+System PAGE_SIZE=4096
+Run tests in local filesystem
+# Create classic 512B drive
+# (logical_block_size=512, physical_block_size=512)
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: blockwise-compat
+Verity tests [separate devices]
+V1(sb=yes) sha256 block size 512: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 512: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 512: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 512: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V0(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V0(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V0(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V0(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+Verity tests [one device offset]
+V1(sb=yes) sha256 block size 512: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 512: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 512: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 512: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V0(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V0(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V0(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V0(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha256 block size 4096: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=yes) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][data_dev corruption]
+V1(sb=no) sha1 block size 1024: [root hash][verify][activate][in-kernel verify][hash_dev corruption]
+Verity data corruption options test.
+Option --ignore-corruption [OK]
+Option --restart-on-corruption [OK]
+Option --ignore-zero-blocks [OK]
+Option --ignore-corruption --ignore-zero-blocks [OK]
+Option --check-at-most-once [OK]
+Veritysetup [hash-offset bigger than 2G works] 
+Size :: 3000000000 B | Hash-offset :: 2499997696 blocks | Data-blocks :: 256 [OK]
+Size :: 10000000000 B | Hash-offset :: 8000000000 blocks | Data-blocks :: 128 [OK]
+Veritysetup [overlap-detection] 
+Device-size :: 2097152 B | Data-blocks :: whole device | Block-size :: 4096 B | Hash-offset :: 1433600 B | [OK]
+Device-size :: 2097152 B | Data-blocks :: 350 blocks| Block-size :: 4096 B | Hash-offset :: 1433600 B | [OK]
+Device-size :: 2097152 B | Data-blocks :: 350 blocks| Block-size :: 4096 B | Hash-offset :: 1228800 B | [OK]
+Device-size :: 2097152 B | Data-blocks :: 350 blocks| Block-size :: 4096 B | Hash-offset :: 0 B | FEC-offset :: 1228800 B | [OK]
+Device-size :: 10240000 B | Data-blocks :: 400 blocks| Block-size :: 512 B | Hash-offset :: 256000 B | FEC-offset :: 256512 B | [OK]
+Veritysetup [FEC tests]
+Block_size: 4096, Data_size: 122880B, FEC_roots: 15, Corrupted_bytes: 4 [one_device_test][N/A, test skipped]
+Correction in userspace: 
+[Three separate devices][nroots::2][Errors can be corrected][OK][Errors cannot be corrected][OK]
+[Two separate data/hash and fec devices][nroots::2][Errors can be corrected][OK][Errors cannot be corrected][OK]
+[One device][nroots::2][Errors can be corrected][OK][Errors cannot be corrected][OK]
+[Three separate devices][nroots::2][Errors can be corrected][OK][Errors cannot be corrected][OK]
+[Two separate data/hash and fec devices][nroots::2][Errors can be corrected][OK][Errors cannot be corrected][OK]
+PASS: verity-compat-test
+[1] Reencryption
+[2] Reencryption with data shift
+[3] Reencryption with keyfile
+[4] Encryption of not yet encrypted device
+[5] Reencryption using specific keyslot
+[6] Reencryption using all active keyslots
+[7] Reencryption of block devices with different block size
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: reencryption-compat-test
+[1] Reencryption
+[2] Reencryption with data shift
+[3] Reencryption with keyfile
+[4] Encryption of not yet encrypted device
+[5] Reencryption using specific keyslot
+[6] Reencryption using all active keyslots
+[7] Reencryption of block devices with different block size
+This kernel seems to not support proper scsi_debug module, test skipped.
+SKIP: reencryption-compat-test2
+SKIP: luks2-reencryption-test
+[INTEGRITY:crc32c:4:512][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:crc32:4:512][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:sha1:20:512][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:sha1:16:4096][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:sha256:32:512][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:hmac(sha256):32:512][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:sha256:32:4096][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+[INTEGRITY:hmac(sha256):32:4096][FORMAT][ACTIVATE][CHECKSUM OK][REMOVE][OK]
+Error detection tests:
+[INTEGRITY:J:crc32c:4:512][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:315392][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:crc32c:4:4096][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:335872][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:crc32:4:512][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:315392][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:crc32:4:4096][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:335872][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:sha1:20:512][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:872448][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:sha1:16:512][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:790528][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:sha1:20:4096][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:303104][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:sha256:32:512][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:1277952][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:sha256:32:4096][FORMAT][ACTIVATE][WRITE DATA][CORRUPT DATA:270336][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:hmac-sha256:32:512][FORMAT][ACTIVATE][KEYED HASH][WRITE DATA][CORRUPT DATA:1277952][DETECT ERROR][REMOVE][OK]
+[INTEGRITY:J:hmac-sha256:32:4096][FORMAT][ACTIVATE][KEYED HASH][WRITE DATA][CORRUPT DATA:270336][DETECT ERROR][REMOVE][OK]
+Journal parameters tests:
+[INTEGRITY JOURNAL:hmac-sha256:66%:1000ms][FORMAT][ACTIVATE][KEYED HASH][REMOVE][OK]
+[INTEGRITY JOURNAL:hmac-sha1:34%:5000ms][FORMAT][ACTIVATE][KEYED HASH][REMOVE][OK]
+[INTEGRITY JOURNAL:hmac-sha256:75%:9999ms][FORMAT][ACTIVATE][KEYED HASH][REMOVE][OK]
+Journal encryption tests:
+[JOURNAL CRYPT:cbc-aes:32B][FORMAT][ACTIVATE][OK]
+[JOURNAL CRYPT:cbc-aes:16B][FORMAT][ACTIVATE][OK]
+[JOURNAL CRYPT:ctr-aes:32B][FORMAT][ACTIVATE][OK]
+[JOURNAL CRYPT:ctr-aes:16B][FORMAT][ACTIVATE][OK]
+Mode tests:
+[MODE TESTS:crc32c:4:512][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+[MODE TESTS:crc32:4:512][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+[MODE TESTS:sha1:20:512][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+[MODE TESTS:sha256:32:512][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+[MODE TESTS:hmac-sha256:32:512][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+[MODE TESTS:hmac-sha256:32:4096][JOURNALED WRITES][DIRECT WRITES][RECOVERY MODE][OK]
+Recalculate tags in-kernel:[CHECKSUM OK][OK]
+Separate metadata device:[CHECKSUM OK][OK]
+Bitmap mode parameters:[N/A]
+Big device:[OK]
+PASS: integrity-compat-test
+=======================
+All 12 tests passed
+(13 tests were not run)
+=======================
+make[2]: Leaving directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+make[1]: Leaving directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2/tests'
+make[1]: Entering directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2'
+make[1]: Leaving directory '/usr/ports/opt/cryptsetup/work/src/cryptsetup-2.2.2'

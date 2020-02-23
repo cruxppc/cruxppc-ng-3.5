@@ -1,0 +1,22 @@
+# Description: A graphical web browser known for its speed and small footprint
+# URL:         http://www.dillo.org
+# Maintainer:  TBA
+# Depends on:  fltk
+
+name=dillo
+version=3.0.5
+release=1
+source=(http://www.dillo.org/download/$name-$version.tar.bz2
+        dillo-openssl.patch)
+
+build () {
+    cd $name-$version
+    cat ../dillo-openssl.patch |patch -Np1
+    ./configure --prefix=/usr \
+                --mandir=/usr/man \
+                --enable-ipv6 \
+                --enable-ssl
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share
+}

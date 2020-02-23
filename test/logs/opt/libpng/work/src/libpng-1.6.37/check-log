@@ -1,0 +1,61 @@
+make  check-am
+make[1]: Entering directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make  pngtest pngunknown pngstest pngvalid pngimage pngcp timepng
+make[2]: Entering directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make[2]: 'pngunknown' is up to date.
+make[2]: 'pngstest' is up to date.
+make[2]: 'pngvalid' is up to date.
+make[2]: 'pngimage' is up to date.
+make[2]: 'pngcp' is up to date.
+make[2]: 'timepng' is up to date.
+make[2]: Leaving directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make  check-TESTS
+make[2]: Entering directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make[3]: Entering directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+PASS: tests/pngtest
+PASS: tests/pngtest-badpngs
+PASS: tests/pngvalid-gamma-16-to-8
+PASS: tests/pngvalid-gamma-alpha-mode
+PASS: tests/pngvalid-gamma-background
+PASS: tests/pngvalid-gamma-expand16-alpha-mode
+PASS: tests/pngvalid-gamma-expand16-background
+PASS: tests/pngvalid-gamma-expand16-transform
+PASS: tests/pngvalid-gamma-sbit
+PASS: tests/pngvalid-gamma-threshold
+PASS: tests/pngvalid-gamma-transform
+PASS: tests/pngvalid-progressive-size
+PASS: tests/pngvalid-progressive-interlace-standard
+PASS: tests/pngvalid-transform
+PASS: tests/pngvalid-progressive-standard
+PASS: tests/pngvalid-standard
+PASS: tests/pngstest-1.8
+PASS: tests/pngstest-1.8-alpha
+PASS: tests/pngstest-linear
+PASS: tests/pngstest-linear-alpha
+PASS: tests/pngstest-none
+PASS: tests/pngstest-none-alpha
+PASS: tests/pngstest-sRGB
+PASS: tests/pngstest-sRGB-alpha
+PASS: tests/pngunknown-IDAT
+PASS: tests/pngunknown-discard
+PASS: tests/pngunknown-if-safe
+PASS: tests/pngunknown-sAPI
+PASS: tests/pngunknown-sTER
+PASS: tests/pngunknown-save
+PASS: tests/pngunknown-vpAg
+PASS: tests/pngimage-quick
+PASS: tests/pngimage-full
+============================================================================
+Testsuite summary for libpng 1.6.37
+============================================================================
+# TOTAL: 33
+# PASS:  33
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[3]: Leaving directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make[2]: Leaving directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'
+make[1]: Leaving directory '/usr/ports/opt/libpng/work/src/libpng-1.6.37'

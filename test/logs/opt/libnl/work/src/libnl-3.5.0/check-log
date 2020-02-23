@@ -1,0 +1,103 @@
+make  src/genl-ctrl-list src/idiag-socket-details src/nf-ct-add src/nf-ct-events src/nf-ct-list src/nf-exp-add src/nf-exp-delete src/nf-exp-list src/nf-log src/nf-monitor src/nf-queue src/nl-addr-add src/nl-addr-delete src/nl-addr-list src/nl-class-add src/nl-class-delete src/nl-class-list src/nl-classid-lookup src/nl-cls-add src/nl-cls-delete src/nl-cls-list src/nl-fib-lookup src/nl-link-enslave src/nl-link-ifindex2name src/nl-link-list src/nl-link-name2ifindex src/nl-link-release src/nl-link-set src/nl-link-stats src/nl-list-caches src/nl-list-sockets src/nl-monitor src/nl-neigh-add src/nl-neigh-delete src/nl-neigh-list src/nl-neightbl-list src/nl-pktloc-lookup src/nl-qdisc-add src/nl-qdisc-delete src/nl-qdisc-list src/nl-route-add src/nl-route-delete src/nl-route-get src/nl-route-list src/nl-rule-list src/nl-tctree-list src/nl-util-addr tests/test-complex-HTB-with-hash-filters tests/test-create-bond tests/test-create-bridge tests/test-create-geneve tests/test-create-ifb tests/test-create-ip6tnl tests/test-create-ipgre tests/test-create-ipgretap tests/test-create-ipip tests/test-create-ipvlan tests/test-create-ipvti tests/test-create-macsec tests/test-create-macvlan tests/test-create-macvtap tests/test-create-sit tests/test-create-veth tests/test-create-vlan tests/test-create-vrf tests/test-create-vxlan tests/test-create-xfrmi tests/test-delete-link tests/test-loopback-up-down tests/test-socket-creation tests/test-u32-filter-with-actions tests/test-cache-mngr tests/test-genl tests/test-nf-cache-mngr  lib/cli/cls/basic.la lib/cli/cls/cgroup.la  lib/cli/qdisc/bfifo.la lib/cli/qdisc/blackhole.la lib/cli/qdisc/fq_codel.la lib/cli/qdisc/hfsc.la lib/cli/qdisc/htb.la lib/cli/qdisc/ingress.la lib/cli/qdisc/pfifo.la lib/cli/qdisc/plug.la  src/lib/libnl-cli-3.la
+make[1]: Entering directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'
+make[1]: 'src/idiag-socket-details' is up to date.
+make[1]: 'src/nf-ct-add' is up to date.
+make[1]: 'src/nf-ct-events' is up to date.
+make[1]: 'src/nf-ct-list' is up to date.
+make[1]: 'src/nf-exp-add' is up to date.
+make[1]: 'src/nf-exp-delete' is up to date.
+make[1]: 'src/nf-exp-list' is up to date.
+make[1]: 'src/nf-log' is up to date.
+make[1]: 'src/nf-monitor' is up to date.
+make[1]: 'src/nf-queue' is up to date.
+make[1]: 'src/nl-addr-add' is up to date.
+make[1]: 'src/nl-addr-delete' is up to date.
+make[1]: 'src/nl-addr-list' is up to date.
+make[1]: 'src/nl-class-add' is up to date.
+make[1]: 'src/nl-class-delete' is up to date.
+make[1]: 'src/nl-class-list' is up to date.
+make[1]: 'src/nl-classid-lookup' is up to date.
+make[1]: 'src/nl-cls-add' is up to date.
+make[1]: 'src/nl-cls-delete' is up to date.
+make[1]: 'src/nl-cls-list' is up to date.
+make[1]: 'src/nl-fib-lookup' is up to date.
+make[1]: 'src/nl-link-enslave' is up to date.
+make[1]: 'src/nl-link-ifindex2name' is up to date.
+make[1]: 'src/nl-link-list' is up to date.
+make[1]: 'src/nl-link-name2ifindex' is up to date.
+make[1]: 'src/nl-link-release' is up to date.
+make[1]: 'src/nl-link-set' is up to date.
+make[1]: 'src/nl-link-stats' is up to date.
+make[1]: 'src/nl-list-caches' is up to date.
+make[1]: 'src/nl-list-sockets' is up to date.
+make[1]: 'src/nl-monitor' is up to date.
+make[1]: 'src/nl-neigh-add' is up to date.
+make[1]: 'src/nl-neigh-delete' is up to date.
+make[1]: 'src/nl-neigh-list' is up to date.
+make[1]: 'src/nl-neightbl-list' is up to date.
+make[1]: 'src/nl-pktloc-lookup' is up to date.
+make[1]: 'src/nl-qdisc-add' is up to date.
+make[1]: 'src/nl-qdisc-delete' is up to date.
+make[1]: 'src/nl-qdisc-list' is up to date.
+make[1]: 'src/nl-route-add' is up to date.
+make[1]: 'src/nl-route-delete' is up to date.
+make[1]: 'src/nl-route-get' is up to date.
+make[1]: 'src/nl-route-list' is up to date.
+make[1]: 'src/nl-rule-list' is up to date.
+make[1]: 'src/nl-tctree-list' is up to date.
+make[1]: 'src/nl-util-addr' is up to date.
+make[1]: 'tests/test-complex-HTB-with-hash-filters' is up to date.
+make[1]: 'tests/test-create-bond' is up to date.
+make[1]: 'tests/test-create-bridge' is up to date.
+make[1]: 'tests/test-create-geneve' is up to date.
+make[1]: 'tests/test-create-ifb' is up to date.
+make[1]: 'tests/test-create-ip6tnl' is up to date.
+make[1]: 'tests/test-create-ipgre' is up to date.
+make[1]: 'tests/test-create-ipgretap' is up to date.
+make[1]: 'tests/test-create-ipip' is up to date.
+make[1]: 'tests/test-create-ipvlan' is up to date.
+make[1]: 'tests/test-create-ipvti' is up to date.
+make[1]: 'tests/test-create-macsec' is up to date.
+make[1]: 'tests/test-create-macvlan' is up to date.
+make[1]: 'tests/test-create-macvtap' is up to date.
+make[1]: 'tests/test-create-sit' is up to date.
+make[1]: 'tests/test-create-veth' is up to date.
+make[1]: 'tests/test-create-vlan' is up to date.
+make[1]: 'tests/test-create-vrf' is up to date.
+make[1]: 'tests/test-create-vxlan' is up to date.
+make[1]: 'tests/test-create-xfrmi' is up to date.
+make[1]: 'tests/test-delete-link' is up to date.
+make[1]: 'tests/test-loopback-up-down' is up to date.
+make[1]: 'tests/test-socket-creation' is up to date.
+make[1]: 'tests/test-u32-filter-with-actions' is up to date.
+make[1]: 'tests/test-cache-mngr' is up to date.
+make[1]: 'tests/test-genl' is up to date.
+make[1]: 'tests/test-nf-cache-mngr' is up to date.
+make[1]: 'lib/cli/cls/basic.la' is up to date.
+make[1]: 'lib/cli/cls/cgroup.la' is up to date.
+make[1]: 'lib/cli/qdisc/bfifo.la' is up to date.
+make[1]: 'lib/cli/qdisc/blackhole.la' is up to date.
+make[1]: 'lib/cli/qdisc/fq_codel.la' is up to date.
+make[1]: 'lib/cli/qdisc/hfsc.la' is up to date.
+make[1]: 'lib/cli/qdisc/htb.la' is up to date.
+make[1]: 'lib/cli/qdisc/ingress.la' is up to date.
+make[1]: 'lib/cli/qdisc/pfifo.la' is up to date.
+make[1]: 'lib/cli/qdisc/plug.la' is up to date.
+make[1]: 'src/lib/libnl-cli-3.la' is up to date.
+make[1]: Leaving directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'
+make  check-TESTS
+make[1]: Entering directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'
+make[2]: Entering directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'
+============================================================================
+Testsuite summary for libnl 3.5.0
+============================================================================
+# TOTAL: 0
+# PASS:  0
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[2]: Leaving directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'
+make[1]: Leaving directory '/usr/ports/opt/libnl/work/src/libnl-3.5.0'

@@ -1,0 +1,156 @@
+Making check in doc
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc'
+Making check in pictures
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc/pictures'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc/pictures'
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc'
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/doc'
+Making check in include
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include'
+Making check in sound
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include/sound'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include/sound'
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include'
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/include'
+Making check in src
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src'
+Making check in control
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/control'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/control'
+Making check in mixer
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/mixer'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/mixer'
+Making check in pcm
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/pcm'
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/pcm'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/pcm'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/pcm'
+Making check in timer
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/timer'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/timer'
+Making check in rawmidi
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/rawmidi'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/rawmidi'
+Making check in hwdep
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/hwdep'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/hwdep'
+Making check in seq
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/seq'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/seq'
+Making check in ucm
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/ucm'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/ucm'
+Making check in conf
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf'
+Making check in cards
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf/cards'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf/cards'
+Making check in pcm
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf/pcm'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf/pcm'
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/conf'
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src'
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src'
+Making check in src/topology
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/topology'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/src/topology'
+Making check in modules
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules'
+Making check in mixer
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer'
+Making check in simple
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer/simple'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer/simple'
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules/mixer'
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules'
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/modules'
+Making check in aserver
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/aserver'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/aserver'
+Making check in test
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+Making check in .
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+make  control pcm pcm_min latency seq playmidi1 timer rawmidi midiloop oldapi queue_timer namehint client_event_filter chmap audio_time user-ctl-element-set pcm-multi-thread
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+make[3]: 'control' is up to date.
+make[3]: 'pcm' is up to date.
+make[3]: 'pcm_min' is up to date.
+make[3]: 'latency' is up to date.
+make[3]: 'seq' is up to date.
+make[3]: 'playmidi1' is up to date.
+make[3]: 'timer' is up to date.
+make[3]: 'rawmidi' is up to date.
+make[3]: 'midiloop' is up to date.
+make[3]: 'oldapi' is up to date.
+make[3]: 'queue_timer' is up to date.
+make[3]: 'namehint' is up to date.
+make[3]: 'client_event_filter' is up to date.
+make[3]: 'chmap' is up to date.
+make[3]: 'audio_time' is up to date.
+make[3]: 'user-ctl-element-set' is up to date.
+make[3]: 'pcm-multi-thread' is up to date.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+Making check in lsb
+make[2]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make  config midi_event
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make[3]: 'config' is up to date.
+make[3]: 'midi_event' is up to date.
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make  check-TESTS
+make[3]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make[4]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+PASS: config
+PASS: midi_event
+============================================================================
+Testsuite summary for alsa-lib 1.2.1.2
+============================================================================
+# TOTAL: 2
+# PASS:  2
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make[3]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make[2]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test/lsb'
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/test'
+Making check in utils
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/utils'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2/utils'
+make[1]: Entering directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2'
+make[1]: Nothing to be done for 'check-am'.
+make[1]: Leaving directory '/usr/ports/opt/alsa-lib/work/src/alsa-lib-1.2.1.2'

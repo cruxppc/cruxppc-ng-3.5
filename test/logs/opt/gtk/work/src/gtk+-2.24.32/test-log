@@ -1,0 +1,240 @@
+make[1]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk'
+make[2]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk/x11'
+make[2]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk/x11'
+make[2]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk/tests'
+make[2]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk/tests'
+make[1]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gdk'
+make[1]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk'
+make[2]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk/theme-bits'
+make[2]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk/theme-bits'
+make[2]: Entering directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk/tests'
+
+** (gtester:19594): WARNING **: 23:11:02.928: Deprecated: Since GLib 2.62, gtester and gtester-report are deprecated. Port to TAP.
+TEST: testing... (pid=19643)
+  /tests/statusbar-remove-all:                                         OK
+  /ui-tests/text-access:                                               OK
+  /ui-tests/button-clicks:                                             iterate main loop
+iterate main loop
+iterate main loop
+iterate main loop
+iterate main loop
+iterate main loop
+OK
+  /ui-tests/keys-events:                                               OK
+  /ui-tests/send-shift-key:                                            OK
+  /ui-tests/slider-ranges:                                             OK
+  /ui-tests/xserver-sync:                                              OK
+  /ui-tests/spin-button-arrows:                                        OK
+PASS: testing
+TEST: liststore... (pid=19734)
+  /list-store/insert-high-values:                                      OK
+  /list-store/append:                                                  OK
+  /list-store/prepend:                                                 OK
+  /list-store/insert-after:                                            OK
+  /list-store/insert-after-NULL:                                       OK
+  /list-store/insert-before:                                           OK
+  /list-store/insert-before-NULL:                                      OK
+  /list-store/remove-begin:                                            OK
+  /list-store/remove-middle:                                           OK
+  /list-store/remove-end:                                              OK
+  /list-store/clear:                                                   OK
+  /list-store/reorder:                                                 OK
+  /list-store/swap-begin:                                              OK
+  /list-store/swap-middle-next:                                        OK
+  /list-store/swap-middle-apart:                                       OK
+  /list-store/swap-end:                                                OK
+  /list-store/swap-single:                                             OK
+  /list-store/move-after-from-start:                                   OK
+  /list-store/move-after-next:                                         OK
+  /list-store/move-after-apart:                                        OK
+  /list-store/move-after-end:                                          OK
+  /list-store/move-after-from-end:                                     OK
+  /list-store/move-after-change-ends:                                  OK
+  /list-store/move-after-NULL:                                         OK
+  /list-store/move-after-single:                                       OK
+  /list-store/move-before-next:                                        OK
+  /list-store/move-before-apart:                                       OK
+  /list-store/move-before-to-start:                                    OK
+  /list-store/move-before-from-end:                                    OK
+  /list-store/move-before-change-ends:                                 OK
+  /list-store/move-before-NULL:                                        OK
+  /list-store/move-before-single:                                      OK
+  /list-store/iter-next-invalid:                                       OK
+  /list-store/iter-children-invalid:                                   OK
+  /list-store/iter-nth-child-invalid:                                  OK
+  /list-store/iter-parent-invalid:                                     OK
+PASS: liststore
+TEST: treestore... (pid=19751)
+  /tree-store/insert-high-values:                                      OK
+  /tree-store/append:                                                  OK
+  /tree-store/prepend:                                                 OK
+  /tree-store/insert-after:                                            OK
+  /tree-store/insert-after-NULL:                                       OK
+  /tree-store/insert-before:                                           OK
+  /tree-store/insert-before-NULL:                                      OK
+  /tree-store/remove-begin:                                            OK
+  /tree-store/remove-middle:                                           OK
+  /tree-store/remove-end:                                              OK
+  /tree-store/clear:                                                   OK
+  /tree-store/reorder:                                                 OK
+  /tree-store/swap-begin:                                              OK
+  /tree-store/swap-middle-next:                                        OK
+  /tree-store/swap-middle-apart:                                       OK
+  /tree-store/swap-end:                                                OK
+  /tree-store/swap-single:                                             OK
+  /tree-store/move-after-from-start:                                   OK
+  /tree-store/move-after-next:                                         OK
+  /tree-store/move-after-apart:                                        OK
+  /tree-store/move-after-end:                                          OK
+  /tree-store/move-after-from-end:                                     OK
+  /tree-store/move-after-change-ends:                                  OK
+  /tree-store/move-after-NULL:                                         OK
+  /tree-store/move-after-single:                                       OK
+  /tree-store/move-before-next:                                        OK
+  /tree-store/move-before-apart:                                       OK
+  /tree-store/move-before-to-start:                                    OK
+  /tree-store/move-before-from-end:                                    OK
+  /tree-store/move-before-change-ends:                                 OK
+  /tree-store/move-before-NULL:                                        OK
+  /tree-store/move-before-single:                                      OK
+  /tree-store/iter-next-invalid:                                       OK
+  /tree-store/iter-children-invalid:                                   OK
+  /tree-store/iter-nth-child-invalid:                                  OK
+  /tree-store/iter-parent-invalid:                                     OK
+PASS: treestore
+TEST: treeview... (pid=19768)
+  /TreeView/cursor/bug-546005:                                         OK
+  /TreeView/cursor/bug-539377:                                         OK
+  /TreeView/cursor/select-collapsed_row:                               OK
+PASS: treeview
+TEST: treeview-scrolling... (pid=19785)
+  /TreeView/scrolling/before-realize/constant-height/path-0-no-align:  OK
+  /TreeView/scrolling/before-realize/constant-height/path-2-no-align:  OK
+  /TreeView/scrolling/before-realize/constant-height/path-5-no-align:  OK
+  /TreeView/scrolling/before-realize/constant-height/path-8-no-align:  OK
+  /TreeView/scrolling/before-realize/constant-height/path-10-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-250-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-500-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-750-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-990-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-991-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-995-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-997-no-align: OK
+ /TreeView/scrolling/before-realize/constant-height/path-999-no-align: OK
+  /TreeView/scrolling/before-realize/constant-height/path-0-align-0.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-2-align-0.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-5-align-0.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-8-align-0.0: OK
+ /TreeView/scrolling/before-realize/constant-height/path-10-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-250-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-500-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-750-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-990-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-991-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-995-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-997-align-0.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-999-align-0.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-0-align-0.5: OK
+  /TreeView/scrolling/before-realize/constant-height/path-2-align-0.5: OK
+  /TreeView/scrolling/before-realize/constant-height/path-5-align-0.5: OK
+  /TreeView/scrolling/before-realize/constant-height/path-8-align-0.5: OK
+ /TreeView/scrolling/before-realize/constant-height/path-10-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-250-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-500-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-750-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-990-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-991-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-995-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-997-align-0.5: OK
+/TreeView/scrolling/before-realize/constant-height/path-999-align-0.5: OK
+  /TreeView/scrolling/before-realize/constant-height/path-0-align-1.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-2-align-1.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-5-align-1.0: OK
+  /TreeView/scrolling/before-realize/constant-height/path-8-align-1.0: OK
+ /TreeView/scrolling/before-realize/constant-height/path-10-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-250-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-500-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-750-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-990-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-991-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-995-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-997-align-1.0: OK
+/TreeView/scrolling/before-realize/constant-height/path-999-align-1.0: OK
+  /TreeView/scrolling/after-realize/constant-height/path-0-no-align:   OK
+  /TreeView/scrolling/after-realize/constant-height/path-2-no-align:   OK
+  /TreeView/scrolling/after-realize/constant-height/path-5-no-align:   OK
+  /TreeView/scrolling/after-realize/constant-height/path-8-no-align:   OK
+  /TreeView/scrolling/after-realize/constant-height/path-10-no-align:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-250-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-500-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-750-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-990-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-991-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-995-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-997-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-999-no-align: OK
+  /TreeView/scrolling/after-realize/constant-height/path-0-align-0.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-2-align-0.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-5-align-0.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-8-align-0.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-10-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-250-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-500-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-750-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-990-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-991-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-995-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-997-align-0.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-999-align-0.0: OK
+  /TreeView/scrolling/after-realize/constant-height/path-0-align-0.5:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-2-align-0.5:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-5-align-0.5:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-8-align-0.5:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-10-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-250-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-500-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-750-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-990-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-991-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-995-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-997-align-0.5: OK
+ /TreeView/scrolling/after-realize/constant-height/path-999-align-0.5: OK
+  /TreeView/scrolling/after-realize/constant-height/path-0-align-1.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-2-align-1.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-5-align-1.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-8-align-1.0:  OK
+  /TreeView/scrolling/after-realize/constant-height/path-10-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-250-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-500-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-750-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-990-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-991-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-995-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-997-align-1.0: OK
+ /TreeView/scrolling/after-realize/constant-height/path-999-align-1.0: OK
+  /TreeView/scrolling/single-row/no-align:                             OK
+  /TreeView/scrolling/single-row/align-0.0:                            OK
+  /TreeView/scrolling/single-row/align-0.5:                            OK
+  /TreeView/scrolling/single-row/align-1.0:                            OK
+  /TreeView/scrolling/new-row/path-0:                                  OK
+  /TreeView/scrolling/new-row/path-4:                                  OK
+  /TreeView/scrolling/new-row/path-8:                                  OK
+  /TreeView/scrolling/new-row/path-500:                                OK
+  /TreeView/scrolling/new-row/path-999:                                OK
+  /TreeView/scrolling/new-row/tree:                                    OK
+  /TreeView/scrolling/specific/bug-316689:                             OK
+  /TreeView/scrolling/specific/bug-359231:                             OK
+PASS: treeview-scrolling
+TEST: recentmanager... (pid=19982)
+  /recent-manager/get-default:                                         OK
+  /recent-manager/add:                                                 OK
+  /recent-manager/add-many:                                            
+(/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk/tests/.libs/lt-recentmanager:19982): Gtk-WARNING **: 23:11:34.160: Attempting to store changes into `/root/.local/share/recently-used.xbel', but failed: Failed to create file ?/root/.local/share/recently-used.xbel.VOKLC0?: No such file or directory
+FAIL
+GTester: last random seed: R02S6a7d8fb9e75548c458215e9ef447fc95
+Terminated
+make[2]: *** [Makefile:933: test-cwd] Error 143
+make[2]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk/tests'
+make[1]: *** [Makefile:5589: test-recurse] Error 2
+make[1]: Leaving directory '/usr/ports/opt/gtk/work/src/gtk+-2.24.32/gtk'
+make: *** [Makefile:1169: test-recurse] Error 2

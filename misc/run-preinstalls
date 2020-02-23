@@ -1,0 +1,144 @@
+#!/bin/sh
+# Run all the pre-install scripts.
+
+# ===== ./opt/dovecot/pre-install pre-install
+#!/bin/sh
+
+getent group dovecot   || /usr/sbin/groupadd -r dovecot
+getent passwd dovecot  || /usr/sbin/useradd  -r -g dovecot -d /var/run/dovecot -s /bin/false dovecot
+getent passwd dovenull || /usr/sbin/useradd  -r -g dovecot -d /var/run/dovecot -s /bin/false dovenull
+/usr/bin/passwd -l dovecot
+/usr/bin/passwd -l dovenull
+
+
+# ===== ./opt/pulseaudio/pre-install pre-install
+#!/bin/sh
+
+if [ -z "$(getent group pulse)" ]; then
+	/usr/sbin/groupadd -r pulse
+fi
+
+if [ -z "$(getent passwd pulse)" ]; then
+	/usr/sbin/useradd -r -g pulse -d /var/run/pulse -s /bin/false -c "Pulseaudio System User" pulse
+	/usr/bin/passwd -l pulse
+fi
+
+# ===== ./opt/bitlbee/pre-install pre-install
+#!/bin/sh
+
+getent group bitlbee || /usr/sbin/groupadd bitlbee
+getent passwd bitlbee || /usr/sbin/useradd -g bitlbee -d /etc/bitlbee -s /bin/false bitlbee
+/usr/bin/passwd -l bitlbee
+
+
+# ===== ./opt/stunnel/pre-install pre-install
+#!/bin/sh
+
+getent group stunnel || /usr/sbin/groupadd -g 48 stunnel
+getent passwd stunnel || /usr/sbin/useradd -g stunnel -u 48 -d /var/run/stunnel -s /bin/false stunnel
+/usr/bin/passwd -l stunnel
+
+
+# ===== ./opt/qemu-all/pre-install pre-install
+#!/bin/sh
+getent group kvm || /usr/sbin/groupadd kvm
+
+# ===== ./opt/postfix/pre-install pre-install
+#!/bin/sh
+
+getent group postdrop || /usr/sbin/groupadd postdrop
+
+# ===== ./opt/fcron/pre-install pre-install
+#!/bin/sh
+
+getent group fcron || /usr/sbin/groupadd -g 45 fcron
+getent passwd fcron || /usr/sbin/useradd -g fcron -u 45 -d /var/spool/fcron -s /bin/false fcron
+/usr/bin/passwd -l fcron
+
+
+# ===== ./opt/chrony/pre-install pre-install
+#!/bin/sh
+
+getent group chrony || /usr/sbin/groupadd -g 55 chrony
+getent passwd chrony || /usr/sbin/useradd -g chrony -u 55 -d /var/lib/chrony -s /bin/false chrony
+/usr/bin/passwd -l chrony
+
+
+# ===== ./opt/gitolite/pre-install pre-install
+#!/bin/sh
+
+getent group git >/dev/null || /usr/sbin/groupadd -r git
+
+# default ssh settings requrie an unlocked account with a valid loginshell
+getent passwd git > /dev/null || (/usr/sbin/useradd -g git -r -s /bin/sh git; /usr/sbin/usermod -p x git)
+
+
+# ===== ./opt/squid/pre-install pre-install
+#!/bin/sh
+
+getent group squid || /usr/sbin/groupadd -g 40 squid
+getent passwd squid || /usr/sbin/useradd -g squid -u 40 -d /var/squid -s /bin/false squid
+/usr/bin/passwd -l squid
+
+
+# ===== ./opt/mysql/pre-install pre-install
+#!/bin/sh
+
+getent group mysql || /usr/sbin/groupadd -g 46 mysql
+getent passwd mysql || /usr/sbin/useradd -g mysql -u 46 -d /var/lib/mysql -s /bin/false mysql
+/usr/bin/passwd -l mysql
+
+
+# ===== ./opt/qemu/pre-install pre-install
+#!/bin/sh
+getent group kvm || /usr/sbin/groupadd kvm
+
+# ===== ./opt/mariadb/pre-install pre-install
+#!/bin/sh
+
+getent group mysql || /usr/sbin/groupadd -r mysql
+getent passwd mysql || /usr/sbin/useradd -r -g mysql -d /var/lib/mysql -s /bin/false mysql
+/usr/bin/passwd -l mysql
+
+
+# ===== ./opt/unbound/pre-install pre-install
+#!/bin/sh
+
+getent group unbound || /usr/sbin/groupadd -r unbound
+getent passwd unbound || /usr/sbin/useradd -r -g unbound -d /etc/unbound -s /bin/false unbound
+/usr/bin/passwd -l unbound
+
+
+# ===== ./opt/polkit/pre-install pre-install
+#!/bin/sh
+
+getent group polkitd || /usr/sbin/groupadd -r polkitd
+
+getent passwd polkitd || /usr/sbin/useradd -g polkitd -r -d /var/empty -s /bin/false -c "PolicyKit User" polkitd
+
+/usr/bin/passwd -l polkitd
+
+
+# ===== ./opt/nsd/pre-install pre-install
+#!/bin/sh
+
+getent group nsd || /usr/sbin/groupadd -r nsd
+getent passwd nsd || /usr/sbin/useradd -g nsd -r -d /var/lib/nsd -s /bin/false nsd
+/usr/bin/passwd -l nsd
+
+# ===== ./opt/mailman/pre-install pre-install
+#!/bin/sh
+
+mmuser="mailman"
+mmgroup="mailman"
+mmhome="/usr/lib/mailman"
+
+# make sure the user/group exists or add if not exists
+/usr/bin/getent group $mmgroup || \
+	/usr/sbin/groupadd -g --system $mmgroup
+
+/usr/bin/getent passwd $mmuser || \
+	/usr/sbin/useradd -s /sbin/nologin -d $mmhome --system -g $mmgroup $mmuser
+
+# End of file
+

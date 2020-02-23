@@ -1,0 +1,36 @@
+# Description: Mozilla Web Browser Component
+# URL: http://www.mozilla.com/firefox/
+# Maintainer: Fredrik Rinnestam, fredrik at rinnestam dot se
+# Depends on: libidl, nss, gtk, perl, python, alsa-lib
+# PPC!= mozconfig
+
+name=xulrunner
+version=1.9.2.13
+release=1
+source=(http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.13/source/firefox-3.6.13.source.tar.bz2 \
+	mozconfig)
+
+build() {
+	export MOZ_CO_PROJECT="xulrunner"
+	export CFLAGS=""
+	if [ "$HOSTTYPE" == "powerpc64" ]; then
+		export CFLAGS="-fno-optimize-sibling-calls -mminimal-toc"
+	fi
+	export XCFLAGS="$CFLAGS"
+
+	cd mozilla-1.9.2
+
+	# make configure accept our version of sqlite
+	sed -i -e 's/^SQLITE_VERSION=3.5.9$/SQLITE_VERSION=3.5/' configure
+
+	sed -e "s/#CFLAGS#/$CFLAGS/g" \
+	    -e "s/#MAKEFLAGS#/$MAKEFLAGS/g" \
+	    $SRC/mozconfig > .mozconfig
+	
+	./configure --host=$MACHTYPE
+	make 
+	make DESTDIR=$PKG install
+
+	install -d $PKG/etc/ld.so.conf.d
+	echo "/usr/lib/$name-$version" > $PKG/etc/ld.so.conf.d/$name.conf
+}

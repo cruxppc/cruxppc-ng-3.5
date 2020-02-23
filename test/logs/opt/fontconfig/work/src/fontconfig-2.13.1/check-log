@@ -1,0 +1,127 @@
+Making check in fontconfig
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fontconfig'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fontconfig'
+Making check in fc-case
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-case'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-case'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-case'
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-case'
+Making check in fc-lang
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-lang'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-lang'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-lang'
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-lang'
+Making check in src
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/src'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/src'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/src'
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/src'
+Making check in fc-cache
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-cache'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-cache'
+Making check in fc-cat
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-cat'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-cat'
+Making check in fc-conflist
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-conflist'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-conflist'
+Making check in fc-list
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-list'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-list'
+Making check in fc-match
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-match'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-match'
+Making check in fc-pattern
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-pattern'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-pattern'
+Making check in fc-query
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-query'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-query'
+Making check in fc-scan
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-scan'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-scan'
+Making check in fc-validate
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-validate'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/fc-validate'
+Making check in conf.d
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/conf.d'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/conf.d'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/conf.d'
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/conf.d'
+Making check in its
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/its'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/its'
+Making check in po
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/po'
+Making check in po-conf
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/po-conf'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/po-conf'
+Making check in test
+make[1]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make  test-pthread test-bz89617 test-bz131804 test-migration test-bz96676 test-name-parse test-conf test-bz106618 test-hash test-bz106632 run-test.sh
+make[3]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make[3]: 'test-pthread' is up to date.
+make[3]: 'test-bz89617' is up to date.
+make[3]: 'test-bz131804' is up to date.
+make[3]: 'test-migration' is up to date.
+make[3]: 'test-bz96676' is up to date.
+make[3]: 'test-name-parse' is up to date.
+make[3]: 'test-conf' is up to date.
+make[3]: 'test-bz106618' is up to date.
+make[3]: 'test-hash' is up to date.
+make[3]: 'test-bz106632' is up to date.
+make[3]: Nothing to be done for 'run-test.sh'.
+make[3]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make  check-TESTS
+make[3]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make[4]: Entering directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+PASS: run-test.sh
+PASS: test-bz89617
+PASS: test-bz131804
+PASS: test-bz96676
+PASS: test-name-parse
+FAIL: run-test-conf.sh
+PASS: test-hash
+PASS: test-bz106632
+============================================================================
+Testsuite summary for fontconfig 2.13.1
+============================================================================
+# TOTAL: 8
+# PASS:  7
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  1
+# XPASS: 0
+# ERROR: 0
+============================================================================
+See test/test-suite.log
+Please report to https://gitlab.freedesktop.org/fontconfig/fontconfig/issues/new
+============================================================================
+make[4]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make[3]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make[2]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'
+make[1]: Leaving directory '/usr/ports/opt/fontconfig/work/src/fontconfig-2.13.1/test'

@@ -1,0 +1,12 @@
+Testing on linux-4.19.24-cruxppc-alpha kernel
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00linear... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00multipath... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00names... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid0... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid1... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid10... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid4... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid5... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00raid6... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/00readonly... succeeded
+/usr/ports/opt/mdadm/work/src/mdadm-4.1/tests/01r1fail... FAILED - see /var/tmp/01r1fail.log and /var/tmp/fail01r1fail.log for details

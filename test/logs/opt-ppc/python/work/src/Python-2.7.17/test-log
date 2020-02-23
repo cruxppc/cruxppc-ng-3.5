@@ -1,0 +1,958 @@
+running build
+running build_ext
+building dbm using ndbm
+INFO: Can't locate Tcl/Tk libs and/or headers
+
+Python build finished, but the necessary bits to build these modules were not found:
+_tkinter           bsddb185           sunaudiodev     
+To find the necessary bits, look in setup.py in detect_modules() for the module's name.
+
+running build_scripts
+LD_LIBRARY_PATH=/usr/ports/opt-ppc/python/work/src/Python-2.7.17 ./python -E -c 'import sys ; from sysconfig import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
+find ./Lib -name '*.py[co]' -print | xargs rm -f
+LD_LIBRARY_PATH=/usr/ports/opt-ppc/python/work/src/Python-2.7.17 ./python -Wd -3 -E -tt  ./Lib/test/regrtest.py -l 
+== CPython 2.7.17 (default, Dec 8 2019, 14:38:47) [GCC 8.3.0]
+==   Linux-4.19.24-cruxppc-alpha-ppc-7447A,_altivec_supported-with-glibc2.1.3 big-endian
+==   /usr/ports/opt-ppc/python/work/src/Python-2.7.17/build/test_python_25567
+== CPU count: 1
+Run tests sequentially
+0:00:00 load avg: 1.47 [  1/404] test_grammar
+0:00:00 load avg: 1.47 [  2/404] test_opcodes
+0:00:00 load avg: 1.47 [  3/404] test_dict
+0:00:03 load avg: 1.59 [  4/404] test_builtin
+0:00:04 load avg: 1.59 [  5/404] test_exceptions
+0:00:04 load avg: 1.59 [  6/404] test_types
+0:00:05 load avg: 1.59 [  7/404] test_unittest
+0:00:07 load avg: 1.62 [  8/404] test_doctest
+0:00:11 load avg: 1.65 [  9/404] test_doctest2
+0:00:11 load avg: 1.65 [ 10/404] test_MimeWriter
+0:00:11 load avg: 1.65 [ 11/404] test_SimpleHTTPServer
+0:00:12 load avg: 1.65 [ 12/404] test_StringIO
+0:00:19 load avg: 1.84 [ 13/404] test___all__
+0:00:33 load avg: 1.96 [ 14/404] test___future__
+0:00:33 load avg: 1.96 [ 15/404] test__locale
+0:00:34 load avg: 1.96 [ 16/404] test__osx_support
+0:00:35 load avg: 1.96 [ 17/404] test_abc
+0:00:36 load avg: 1.96 [ 18/404] test_abstract_numbers
+0:00:37 load avg: 1.96 [ 19/404] test_aepack
+test_aepack skipped -- No module named aetypes
+0:00:37 load avg: 1.96 [ 20/404] test_aifc -- test_aepack skipped
+0:00:38 load avg: 1.96 [ 21/404] test_al
+test_al skipped -- No module named al
+0:00:39 load avg: 1.96 [ 22/404] test_anydbm -- test_al skipped
+0:00:40 load avg: 1.96 [ 23/404] test_applesingle
+test_applesingle skipped -- No module named MacOS
+0:00:41 load avg: 1.96 [ 24/404] test_argparse -- test_applesingle skipped
+0:00:56 load avg: 2.19 [ 25/404] test_array
+0:00:59 load avg: 2.19 [ 26/404] test_ascii_formatd
+0:01:00 load avg: 2.19 [ 27/404] test_ast
+0:01:01 load avg: 2.26 [ 28/404] test_asynchat
+0:01:03 load avg: 2.26 [ 29/404] test_asyncore
+0:01:08 load avg: 2.16 [ 30/404] test_atexit
+0:01:09 load avg: 2.16 [ 31/404] test_audioop
+0:01:09 load avg: 2.16 [ 32/404] test_augassign
+0:01:10 load avg: 2.16 [ 33/404] test_base64
+0:01:11 load avg: 2.14 [ 34/404] test_bastion
+0:01:11 load avg: 2.14 [ 35/404] test_bdb
+0:01:12 load avg: 2.14 [ 36/404] test_bigaddrspace
+0:01:13 load avg: 2.14 [ 37/404] test_bigmem
+0:01:14 load avg: 2.14 [ 38/404] test_binascii
+0:01:15 load avg: 2.14 [ 39/404] test_binhex
+0:01:16 load avg: 2.13 [ 40/404] test_binop
+0:01:17 load avg: 2.13 [ 41/404] test_bisect
+0:01:18 load avg: 2.13 [ 42/404] test_bool
+0:01:18 load avg: 2.13 [ 43/404] test_bsddb
+0:01:24 load avg: 2.20 [ 44/404] test_bsddb185
+test_bsddb185 skipped -- No module named bsddb185
+0:01:24 load avg: 2.20 [ 45/404] test_bsddb3 -- test_bsddb185 skipped
+test_bsddb3 skipped -- Use of the `bsddb' resource not enabled
+0:01:25 load avg: 2.20 [ 46/404] test_buffer -- test_bsddb3 skipped (resource denied)
+0:01:25 load avg: 2.20 [ 47/404] test_bufio
+0:01:32 load avg: 2.25 [ 48/404] test_bytes
+0:01:42 load avg: 2.28 [ 49/404] test_bz2
+0:01:56 load avg: 2.29 [ 50/404] test_calendar
+0:02:07 load avg: 2.40 [ 51/404] test_call
+0:02:08 load avg: 2.40 [ 52/404] test_capi
+0:02:12 load avg: 2.28 [ 53/404] test_cd
+test_cd skipped -- No module named cd
+0:02:12 load avg: 2.28 [ 54/404] test_cfgparser -- test_cd skipped
+0:02:15 load avg: 2.28 [ 55/404] test_cgi
+0:02:16 load avg: 2.26 [ 56/404] test_charmapcodec
+0:02:16 load avg: 2.26 [ 57/404] test_cl
+test_cl skipped -- No module named cl
+0:02:17 load avg: 2.26 [ 58/404] test_class -- test_cl skipped
+0:02:18 load avg: 2.26 [ 59/404] test_cmath
+0:02:19 load avg: 2.26 [ 60/404] test_cmd
+0:02:20 load avg: 2.26 [ 61/404] test_cmd_line
+0:02:25 load avg: 2.32 [ 62/404] test_cmd_line_script
+0:02:30 load avg: 2.29 [ 63/404] test_code
+0:02:31 load avg: 2.29 [ 64/404] test_codeccallbacks
+0:02:31 load avg: 2.35 [ 65/404] test_codecencodings_cn
+0:02:36 load avg: 2.35 [ 66/404] test_codecencodings_hk
+0:02:36 load avg: 2.32 [ 67/404] test_codecencodings_iso2022
+0:02:41 load avg: 2.30 [ 68/404] test_codecencodings_jp
+0:02:48 load avg: 2.27 [ 69/404] test_codecencodings_kr
+0:02:51 load avg: 2.25 [ 70/404] test_codecencodings_tw
+0:02:52 load avg: 2.25 [ 71/404] test_codecmaps_cn
+test_codecmaps_cn skipped -- Use of the `urlfetch' resource not enabled
+0:02:53 load avg: 2.25 [ 72/404] test_codecmaps_hk -- test_codecmaps_cn skipped (resource denied)
+test_codecmaps_hk skipped -- Use of the `urlfetch' resource not enabled
+0:02:54 load avg: 2.25 [ 73/404] test_codecmaps_jp -- test_codecmaps_hk skipped (resource denied)
+test_codecmaps_jp skipped -- Use of the `urlfetch' resource not enabled
+0:02:54 load avg: 2.25 [ 74/404] test_codecmaps_kr -- test_codecmaps_jp skipped (resource denied)
+test_codecmaps_kr skipped -- Use of the `urlfetch' resource not enabled
+0:02:55 load avg: 2.25 [ 75/404] test_codecmaps_tw -- test_codecmaps_kr skipped (resource denied)
+test_codecmaps_tw skipped -- Use of the `urlfetch' resource not enabled
+0:02:56 load avg: 2.23 [ 76/404] test_codecs -- test_codecmaps_tw skipped (resource denied)
+0:03:09 load avg: 2.19 [ 77/404] test_codeop
+0:03:09 load avg: 2.19 [ 78/404] test_coercion
+0:03:11 load avg: 2.19 [ 79/404] test_collections
+0:03:16 load avg: 2.16 [ 80/404] test_colorsys
+0:03:17 load avg: 2.16 [ 81/404] test_commands
+0:03:18 load avg: 2.16 [ 82/404] test_compare
+0:03:19 load avg: 2.16 [ 83/404] test_compile
+0:03:21 load avg: 2.16 [ 84/404] test_compileall
+0:03:22 load avg: 2.39 [ 85/404] test_compiler
+0:03:23 load avg: 2.39 [ 86/404] test_complex
+0:03:27 load avg: 2.36 [ 87/404] test_complex_args
+0:03:28 load avg: 2.36 [ 88/404] test_contains
+0:03:29 load avg: 2.36 [ 89/404] test_contextlib
+0:03:29 load avg: 2.36 [ 90/404] test_cookie
+0:03:30 load avg: 2.36 [ 91/404] test_cookielib
+0:03:32 load avg: 2.33 [ 92/404] test_copy
+0:03:33 load avg: 2.33 [ 93/404] test_copy_reg
+0:03:33 load avg: 2.33 [ 94/404] test_cpickle
+0:03:51 load avg: 2.30 [ 95/404] test_cprofile
+0:03:53 load avg: 2.30 [ 96/404] test_crypt
+0:03:54 load avg: 2.30 [ 97/404] test_csv
+0:03:55 load avg: 2.30 [ 98/404] test_ctypes
+0:04:06 load avg: 2.23 [ 99/404] test_curses
+test_curses skipped -- Use of the `curses' resource not enabled
+0:04:07 load avg: 2.23 [100/404] test_datetime -- test_curses skipped (resource denied)
+0:04:10 load avg: 2.23 [101/404] test_dbm
+0:04:11 load avg: 2.29 [102/404] test_decimal
+0:04:26 load avg: 2.23 [103/404] test_decorators
+0:04:27 load avg: 2.23 [104/404] test_defaultdict
+0:04:28 load avg: 2.23 [105/404] test_deque
+0:04:50 load avg: 2.16 [106/404] test_descr
+0:05:09 load avg: 2.12 [107/404] test_descrtut
+0:05:11 load avg: 2.12 [108/404] test_dictcomps
+0:05:12 load avg: 2.11 [109/404] test_dictviews
+0:05:13 load avg: 2.11 [110/404] test_difflib
+0:05:21 load avg: 2.10 [111/404] test_dircache
+0:05:23 load avg: 2.09 [112/404] test_dis
+0:05:26 load avg: 2.09 [113/404] test_distutils
+0:05:32 load avg: 2.16 [114/404] test_dl
+0:05:33 load avg: 2.16 [115/404] test_docxmlrpc
+0:05:36 load avg: 2.16 [116/404] test_dumbdbm
+0:05:37 load avg: 2.14 [117/404] test_dummy_thread
+0:05:38 load avg: 2.14 [118/404] test_dummy_threading
+0:05:39 load avg: 2.14 [119/404] test_email
+0:05:51 load avg: 2.11 [120/404] test_email_codecs
+0:05:52 load avg: 2.11 [121/404] test_email_renamed
+0:05:54 load avg: 2.11 [122/404] test_ensurepip
+0:05:55 load avg: 2.11 [123/404] test_enumerate
+0:05:57 load avg: 2.34 [124/404] test_eof
+0:05:58 load avg: 2.34 [125/404] test_epoll
+0:06:01 load avg: 2.34 [126/404] test_errno
+0:06:02 load avg: 2.31 [127/404] test_exception_variations
+0:06:03 load avg: 2.31 [128/404] test_extcall
+0:06:04 load avg: 2.31 [129/404] test_fcntl
+0:06:05 load avg: 2.31 [130/404] test_file
+0:06:07 load avg: 2.29 [131/404] test_file2k
+0:06:31 load avg: 3.33 [132/404] test_file_eintr
+0:06:34 load avg: 3.22 [133/404] test_filecmp
+0:06:35 load avg: 3.22 [134/404] test_fileinput
+0:06:36 load avg: 3.22 [135/404] test_fileio
+0:06:37 load avg: 3.12 [136/404] test_float
+0:06:40 load avg: 3.12 [137/404] test_fnmatch
+0:06:41 load avg: 3.03 [138/404] test_fork1
+0:06:49 load avg: 2.87 [139/404] test_format
+0:06:50 load avg: 2.87 [140/404] test_fpformat
+0:06:55 load avg: 2.80 [141/404] test_fractions
+0:06:57 load avg: 2.73 [142/404] test_frozen
+0:06:58 load avg: 2.73 [143/404] test_ftplib
+0:07:16 load avg: 2.51 [144/404] test_funcattrs
+0:07:18 load avg: 2.51 [145/404] test_functools
+0:07:19 load avg: 2.51 [146/404] test_future
+0:07:20 load avg: 2.51 [147/404] test_future3
+0:07:21 load avg: 2.51 [148/404] test_future4
+0:07:22 load avg: 2.47 [149/404] test_future5
+0:07:23 load avg: 2.47 [150/404] test_future_builtins
+0:07:24 load avg: 2.47 [151/404] test_gc
+0:07:46 load avg: 2.34 [152/404] test_gdb
+test_gdb skipped -- Couldn't find gdb on the path
+0:07:47 load avg: 2.31 [153/404] test_gdbm -- test_gdb skipped
+0:07:49 load avg: 2.31 [154/404] test_generators
+0:07:51 load avg: 2.31 [155/404] test_genericpath
+0:07:52 load avg: 2.29 [156/404] test_genexps
+0:07:53 load avg: 2.29 [157/404] test_getargs
+0:07:54 load avg: 2.29 [158/404] test_getargs2
+0:07:55 load avg: 2.29 [159/404] test_getopt
+0:07:56 load avg: 2.29 [160/404] test_gettext
+0:07:57 load avg: 2.26 [161/404] test_gl
+test_gl skipped -- No module named gl
+0:07:58 load avg: 2.26 [162/404] test_glob -- test_gl skipped
+0:08:00 load avg: 2.26 [163/404] test_global
+0:08:01 load avg: 2.26 [164/404] test_grp
+0:08:02 load avg: 2.24 [165/404] test_gzip
+0:08:04 load avg: 2.24 [166/404] test_hash
+0:08:08 load avg: 2.22 [167/404] test_hashlib
+0:08:11 load avg: 2.22 [168/404] test_heapq
+0:08:19 load avg: 2.19 [169/404] test_hmac
+0:08:20 load avg: 2.19 [170/404] test_hotshot
+0:08:21 load avg: 2.19 [171/404] test_htmllib
+0:08:22 load avg: 2.25 [172/404] test_htmlparser
+0:08:23 load avg: 2.25 [173/404] test_httplib
+0:08:26 load avg: 2.25 [174/404] test_httpservers
+0:08:28 load avg: 2.63 [175/404] test_idle
+test_idle skipped -- No module named _tkinter
+0:08:29 load avg: 2.63 [176/404] test_imageop -- test_idle skipped
+0:08:30 load avg: 2.63 [177/404] test_imaplib
+0:08:31 load avg: 2.63 [178/404] test_imgfile
+test_imgfile skipped -- No module named imgfile
+0:08:32 load avg: 2.74 [179/404] test_imghdr -- test_imgfile skipped
+0:08:33 load avg: 2.74 [180/404] test_imp
+0:08:34 load avg: 2.74 [181/404] test_import
+0:08:36 load avg: 2.74 [182/404] test_import_magic
+0:08:37 load avg: 2.92 [183/404] test_importhooks
+0:08:38 load avg: 2.92 [184/404] test_importlib
+0:08:39 load avg: 2.92 [185/404] test_index
+0:08:40 load avg: 2.92 [186/404] test_inspect
+0:08:43 load avg: 2.85 [187/404] test_int
+0:08:51 load avg: 2.78 [188/404] test_int_literal
+0:08:52 load avg: 2.80 [189/404] test_io
+0:11:21 load avg: 2.95 [190/404] test_ioctl -- test_io passed in 2 min 28 sec
+0:11:22 load avg: 3.04 [191/404] test_isinstance
+0:11:24 load avg: 3.04 [192/404] test_iter
+0:11:27 load avg: 3.20 [193/404] test_iterlen
+0:11:28 load avg: 3.20 [194/404] test_itertools
+0:12:30 load avg: 3.85 [195/404] test_json -- test_itertools passed in 1 min 1 sec
+0:13:01 load avg: 3.87 [196/404] test_kqueue -- test_json passed in 30 sec 775 ms
+test_kqueue skipped -- test works only on BSD
+0:13:02 load avg: 3.87 [197/404] test_largefile -- test_kqueue skipped
+0:13:04 load avg: 3.72 [198/404] test_lib2to3
+0:16:16 load avg: 2.64 [199/404] test_linecache -- test_lib2to3 passed in 3 min 12 sec
+0:16:17 load avg: 2.64 [200/404] test_linuxaudiodev
+test_linuxaudiodev skipped -- Use of the `audio' resource not enabled
+0:16:19 load avg: 2.59 [201/404] test_list -- test_linuxaudiodev skipped (resource denied)
+0:16:22 load avg: 2.59 [202/404] test_locale
+0:16:23 load avg: 2.54 [203/404] test_logging
+0:16:36 load avg: 2.30 [204/404] test_long
+0:16:50 load avg: 2.32 [205/404] test_long_future
+0:17:06 load avg: 2.46 [206/404] test_longexp
+0:17:08 load avg: 2.58 [207/404] test_macos
+test_macos skipped -- No module named MacOS
+0:17:10 load avg: 2.58 [208/404] test_macostools -- test_macos skipped
+test_macostools skipped -- No module named MacOS
+0:17:11 load avg: 2.58 [209/404] test_macpath -- test_macostools skipped
+0:17:12 load avg: 2.58 [210/404] test_macurl2path
+0:17:14 load avg: 2.70 [211/404] test_mailbox
+0:17:55 load avg: 3.63 [212/404] test_marshal -- test_mailbox passed in 41 sec 490 ms
+0:18:12 load avg: 3.85 [213/404] test_math
+0:18:24 load avg: 4.19 [214/404] test_md5
+0:18:25 load avg: 4.19 [215/404] test_memoryio
+0:18:27 load avg: 4.19 [216/404] test_memoryview
+0:18:29 load avg: 4.25 [217/404] test_mhlib
+0:18:32 load avg: 4.25 [218/404] test_mimetools
+0:18:33 load avg: 4.15 [219/404] test_mimetypes
+0:18:34 load avg: 4.15 [220/404] test_minidom
+0:18:36 load avg: 4.15 [221/404] test_mmap
+0:18:39 load avg: 4.22 [222/404] test_module
+0:18:42 load avg: 4.22 [223/404] test_modulefinder
+0:18:46 load avg: 4.28 [224/404] test_msilib
+test_msilib skipped -- No module named _msi
+0:18:47 load avg: 4.28 [225/404] test_multibytecodec -- test_msilib skipped
+0:19:11 load avg: 4.39 [226/404] test_multifile
+0:19:12 load avg: 4.39 [227/404] test_multiprocessing
+0:20:07 load avg: 4.77 [228/404] test_mutants -- test_multiprocessing passed in 55 sec 80 ms
+0:20:11 load avg: 4.87 [229/404] test_mutex
+0:20:12 load avg: 4.87 [230/404] test_netrc
+0:20:14 load avg: 4.80 [231/404] test_new
+0:20:15 load avg: 4.80 [232/404] test_nis
+0:20:16 load avg: 4.80 [233/404] test_nntplib
+0:20:18 load avg: 4.89 [234/404] test_normalization
+0:20:20 load avg: 4.89 [235/404] test_ntpath
+0:20:21 load avg: 4.89 [236/404] test_old_mailbox
+0:20:22 load avg: 4.89 [237/404] test_openpty
+0:20:24 load avg: 4.98 [238/404] test_operator
+0:20:25 load avg: 4.98 [239/404] test_optparse
+0:20:27 load avg: 4.98 [240/404] test_ordered_dict
+0:20:34 load avg: 5.07 [241/404] test_os
+0:20:37 load avg: 5.07 [242/404] test_ossaudiodev
+test_ossaudiodev skipped -- Use of the `audio' resource not enabled
+0:20:38 load avg: 4.98 [243/404] test_parser -- test_ossaudiodev skipped (resource denied)
+0:20:40 load avg: 4.98 [244/404] test_pdb
+0:20:42 load avg: 4.98 [245/404] test_peepholer
+0:20:43 load avg: 4.82 [246/404] test_pep247
+0:20:44 load avg: 4.82 [247/404] test_pep277
+test_pep277 skipped -- only NT+ and systems with Unicode-friendly filesystem encoding
+0:20:45 load avg: 4.82 [248/404] test_pep352 -- test_pep277 skipped
+0:20:46 load avg: 4.82 [249/404] test_pickle
+0:21:04 load avg: 4.02 [250/404] test_pickletools
+0:21:07 load avg: 4.02 [251/404] test_pipes
+0:21:09 load avg: 3.86 [252/404] test_pkg
+0:21:11 load avg: 3.86 [253/404] test_pkgimport
+0:21:12 load avg: 3.86 [254/404] test_pkgutil
+0:21:13 load avg: 3.71 [255/404] test_platform
+0:21:15 load avg: 3.71 [256/404] test_plistlib
+0:21:17 load avg: 3.71 [257/404] test_poll
+0:21:29 load avg: 3.18 [258/404] test_popen
+0:21:31 load avg: 3.18 [259/404] test_popen2
+0:21:34 load avg: 3.08 [260/404] test_poplib
+0:21:41 load avg: 3.00 [261/404] test_posix
+0:21:42 load avg: 3.00 [262/404] test_posixpath
+0:21:43 load avg: 2.84 [263/404] test_pow
+0:21:45 load avg: 2.84 [264/404] test_pprint
+0:21:46 load avg: 2.84 [265/404] test_print
+0:21:48 load avg: 2.84 [266/404] test_profile
+0:21:49 load avg: 2.77 [267/404] test_property
+0:21:49 load avg: 2.77 [268/404] test_pstats
+0:21:51 load avg: 2.77 [269/404] test_pty
+0:21:52 load avg: 2.77 [270/404] test_pwd
+0:21:53 load avg: 2.77 [271/404] test_py3kwarn
+0:21:55 load avg: 2.71 [272/404] test_py_compile
+0:21:56 load avg: 2.71 [273/404] test_pyclbr
+0:22:02 load avg: 3.05 [274/404] test_pydoc
+0:22:07 load avg: 2.97 [275/404] test_pyexpat
+0:22:09 load avg: 2.89 [276/404] test_queue
+0:22:14 load avg: 2.82 [277/404] test_quopri
+0:22:16 load avg: 2.82 [278/404] test_random
+0:22:19 load avg: 2.75 [279/404] test_re
+0:22:26 load avg: 2.77 [280/404] test_readline
+0:22:28 load avg: 2.77 [281/404] test_regrtest
+0:22:55 load avg: 2.96 [282/404] test_repr
+0:22:56 load avg: 2.96 [283/404] test_resource
+0:22:59 load avg: 2.88 [284/404] test_rfc822
+0:23:00 load avg: 2.88 [285/404] test_richcmp
+0:23:02 load avg: 2.88 [286/404] test_rlcompleter
+0:23:03 load avg: 2.88 [287/404] test_robotparser
+0:23:04 load avg: 2.89 [288/404] test_runpy
+0:23:16 load avg: 2.75 [289/404] test_sax
+0:23:18 load avg: 2.75 [290/404] test_scope
+0:23:19 load avg: 3.01 [291/404] test_scriptpackages
+test_scriptpackages skipped -- No module named aetools
+0:23:20 load avg: 3.01 [292/404] test_select -- test_scriptpackages skipped
+0:23:33 load avg: 2.77 [293/404] test_set
+0:23:40 load avg: 2.88 [294/404] test_setcomps
+0:23:41 load avg: 2.88 [295/404] test_sets
+0:23:43 load avg: 2.88 [296/404] test_sgmllib
+0:23:44 load avg: 3.05 [297/404] test_sha
+0:23:46 load avg: 3.05 [298/404] test_shelve
+0:23:54 load avg: 2.97 [299/404] test_shlex
+0:23:55 load avg: 2.97 [300/404] test_shutil
+0:23:57 load avg: 2.97 [301/404] test_signal
+0:24:07 load avg: 2.83 [302/404] test_site
+0:24:09 load avg: 3.00 [303/404] test_slice
+0:24:11 load avg: 3.00 [304/404] test_smtplib
+0:24:15 load avg: 2.84 [305/404] test_smtpnet
+test_smtpnet skipped -- Use of the `network' resource not enabled
+0:24:16 load avg: 2.84 [306/404] test_socket -- test_smtpnet skipped (resource denied)
+0:24:35 load avg: 2.74 [307/404] test_socketserver
+test_socketserver skipped -- Use of the `network' resource not enabled
+0:24:36 load avg: 2.74 [308/404] test_softspace -- test_socketserver skipped (resource denied)
+0:24:38 load avg: 2.74 [309/404] test_sort
+0:24:39 load avg: 2.68 [310/404] test_source_encoding
+0:24:41 load avg: 2.68 [311/404] test_spwd
+0:24:42 load avg: 2.68 [312/404] test_sqlite
+0:24:48 load avg: 2.62 [313/404] test_ssl
+0:25:11 load avg: 2.62 [314/404] test_startfile
+test_startfile skipped -- module 'os' has no attribute 'startfile'
+0:25:12 load avg: 2.62 [315/404] test_stat -- test_startfile skipped
+0:25:14 load avg: 2.65 [316/404] test_str
+0:25:22 load avg: 2.59 [317/404] test_strftime
+0:25:26 load avg: 2.63 [318/404] test_string
+0:25:34 load avg: 2.53 [319/404] test_stringprep
+0:25:35 load avg: 2.53 [320/404] test_strop
+0:25:36 load avg: 2.53 [321/404] test_strptime
+0:25:38 load avg: 2.53 [322/404] test_strtod
+0:25:48 load avg: 2.67 [323/404] test_struct
+0:25:55 load avg: 2.65 [324/404] test_structmembers
+0:25:56 load avg: 2.65 [325/404] test_structseq
+0:25:57 load avg: 2.65 [326/404] test_subprocess
+0:28:20 load avg: 5.00 [327/404] test_sunau -- test_subprocess passed in 2 min 22 sec
+0:28:21 load avg: 5.00 [328/404] test_sunaudiodev
+test_sunaudiodev skipped -- No module named sunaudiodev
+0:28:22 load avg: 5.00 [329/404] test_sundry -- test_sunaudiodev skipped
+0:28:23 load avg: 5.00 [330/404] test_symtable
+0:28:23 load avg: 5.00 [331/404] test_syntax
+0:28:25 load avg: 5.08 [332/404] test_sys
+0:28:26 load avg: 5.08 [333/404] test_sys_setprofile
+0:28:27 load avg: 5.08 [334/404] test_sys_settrace
+0:28:29 load avg: 5.08 [335/404] test_sysconfig
+0:28:30 load avg: 5.16 [336/404] test_tarfile
+0:28:47 load avg: 5.08 [337/404] test_tcl
+test_tcl skipped -- No module named _tkinter
+0:28:48 load avg: 5.08 [338/404] test_telnetlib -- test_tcl skipped
+0:28:54 load avg: 5.15 [339/404] test_tempfile
+0:28:55 load avg: 5.22 [340/404] test_test_support
+0:28:57 load avg: 5.22 [341/404] test_textwrap
+0:28:58 load avg: 5.22 [342/404] test_thread
+0:29:00 load avg: 5.28 [343/404] test_threaded_import
+0:29:01 load avg: 5.28 [344/404] test_threadedtempfile
+0:29:02 load avg: 5.28 [345/404] test_threading
+0:29:09 load avg: 5.32 [346/404] test_threading_local
+0:29:16 load avg: 5.13 [347/404] test_threadsignals
+0:29:18 load avg: 5.13 [348/404] test_time
+0:29:20 load avg: 5.12 [349/404] test_timeit
+0:29:21 load avg: 5.12 [350/404] test_timeout
+test_timeout skipped -- Use of the `network' resource not enabled
+0:29:22 load avg: 5.12 [351/404] test_tk -- test_timeout skipped (resource denied)
+test_tk skipped -- No module named _tkinter
+0:29:22 load avg: 5.12 [352/404] test_tokenize -- test_tk skipped
+0:29:25 load avg: 5.19 [353/404] test_tools
+0:29:30 load avg: 5.34 [354/404] test_trace
+0:29:41 load avg: 5.59 [355/404] test_traceback
+0:29:46 load avg: 5.63 [356/404] test_transformer
+0:29:48 load avg: 5.63 [357/404] test_ttk_guionly
+test_ttk_guionly skipped -- No module named _tkinter
+0:29:49 load avg: 5.42 [358/404] test_ttk_textonly -- test_ttk_guionly skipped
+test_ttk_textonly skipped -- No module named _tkinter
+0:29:51 load avg: 5.42 [359/404] test_tuple -- test_ttk_textonly skipped
+0:30:27 load avg: 5.45 [360/404] test_turtle -- test_tuple passed in 36 sec 471 ms
+test_turtle skipped -- No module named _tkinter
+0:30:29 load avg: 5.45 [361/404] test_typechecks -- test_turtle skipped
+0:30:30 load avg: 5.50 [362/404] test_ucn
+0:30:32 load avg: 5.50 [363/404] test_unary
+0:30:33 load avg: 5.50 [364/404] test_undocumented_details
+0:30:33 load avg: 5.50 [365/404] test_unicode
+0:30:45 load avg: 5.61 [366/404] test_unicode_file
+test_unicode_file skipped -- No Unicode filesystem semantics on this platform.
+0:30:46 load avg: 5.61 [367/404] test_unicodedata -- test_unicode_file skipped
+0:30:58 load avg: 5.05 [368/404] test_univnewlines
+0:31:00 load avg: 4.97 [369/404] test_univnewlines2k
+0:31:01 load avg: 4.97 [370/404] test_unpack
+0:31:02 load avg: 4.97 [371/404] test_urllib
+0:31:05 load avg: 4.73 [372/404] test_urllib2
+0:31:20 load avg: 4.36 [373/404] test_urllib2_localnet
+0:31:25 load avg: 4.33 [374/404] test_urllib2net
+test_urllib2net skipped -- Use of the `network' resource not enabled
+0:31:26 load avg: 4.33 [375/404] test_urllibnet -- test_urllib2net skipped (resource denied)
+test_urllibnet skipped -- Use of the `network' resource not enabled
+0:31:27 load avg: 4.33 [376/404] test_urlparse -- test_urllibnet skipped (resource denied)
+0:31:29 load avg: 4.33 [377/404] test_userdict
+0:31:37 load avg: 4.05 [378/404] test_userlist
+0:31:39 load avg: 3.89 [379/404] test_userstring
+0:32:06 load avg: 3.59 [380/404] test_uu
+0:32:08 load avg: 3.59 [381/404] test_uuid
+0:32:10 load avg: 3.54 [382/404] test_wait3
+0:32:17 load avg: 3.50 [383/404] test_wait4
+0:32:23 load avg: 3.46 [384/404] test_warnings
+0:32:26 load avg: 3.50 [385/404] test_wave
+0:32:28 load avg: 3.50 [386/404] test_weakref
+0:35:53 load avg: 1.80 [387/404] test_weakset -- test_weakref passed in 3 min 25 sec
+0:35:56 load avg: 1.74 [388/404] test_whichdb
+0:35:57 load avg: 1.74 [389/404] test_winreg
+test_winreg skipped -- No module named _winreg
+0:35:58 load avg: 1.74 [390/404] test_winsound -- test_winreg skipped
+test_winsound skipped -- Use of the `audio' resource not enabled
+0:35:59 load avg: 1.74 [391/404] test_with -- test_winsound skipped (resource denied)
+0:35:59 load avg: 1.74 [392/404] test_wsgiref
+0:36:00 load avg: 1.68 [393/404] test_xdrlib
+0:36:01 load avg: 1.68 [394/404] test_xml_etree
+0:36:04 load avg: 1.68 [395/404] test_xml_etree_c
+0:36:05 load avg: 1.62 [396/404] test_xmllib
+0:36:06 load avg: 1.62 [397/404] test_xmlrpc
+0:36:10 load avg: 1.65 [398/404] test_xpickle
+0:36:12 load avg: 1.65 [399/404] test_xrange
+0:36:13 load avg: 1.65 [400/404] test_zipfile
+0:36:27 load avg: 1.51 [401/404] test_zipfile64
+test_zipfile64 skipped -- test requires loads of disk-space bytes and a long time to run
+0:36:28 load avg: 1.51 [402/404] test_zipimport -- test_zipfile64 skipped (resource denied)
+0:36:29 load avg: 1.51 [403/404] test_zipimport_support
+0:36:31 load avg: 1.47 [404/404] test_zlib
+
+== Tests result: SUCCESS ==
+
+363 tests OK.
+
+41 tests skipped:
+    test_aepack test_al test_applesingle test_bsddb185 test_bsddb3
+    test_cd test_cl test_codecmaps_cn test_codecmaps_hk
+    test_codecmaps_jp test_codecmaps_kr test_codecmaps_tw test_curses
+    test_gdb test_gl test_idle test_imgfile test_kqueue
+    test_linuxaudiodev test_macos test_macostools test_msilib
+    test_ossaudiodev test_pep277 test_scriptpackages test_smtpnet
+    test_socketserver test_startfile test_sunaudiodev test_tcl
+    test_timeout test_tk test_ttk_guionly test_ttk_textonly
+    test_turtle test_unicode_file test_urllib2net test_urllibnet
+    test_winreg test_winsound test_zipfile64
+7 skips unexpected on linux2:
+    test_gdb test_idle test_tcl test_tk test_ttk_guionly
+    test_ttk_textonly test_turtle
+
+Total duration: 36 min 39 sec
+Tests result: SUCCESS
+LD_LIBRARY_PATH=/usr/ports/opt-ppc/python/work/src/Python-2.7.17 ./python -Wd -3 -E -tt  ./Lib/test/regrtest.py -l 
+== CPython 2.7.17 (default, Dec 8 2019, 14:38:47) [GCC 8.3.0]
+==   Linux-4.19.24-cruxppc-alpha-ppc-7447A,_altivec_supported-with-glibc2.1.3 big-endian
+==   /usr/ports/opt-ppc/python/work/src/Python-2.7.17/build/test_python_6532
+== CPU count: 1
+Run tests sequentially
+0:00:00 load avg: 1.43 [  1/404] test_grammar
+0:00:00 load avg: 1.43 [  2/404] test_opcodes
+0:00:00 load avg: 1.43 [  3/404] test_dict
+0:00:01 load avg: 1.40 [  4/404] test_builtin
+0:00:01 load avg: 1.40 [  5/404] test_exceptions
+0:00:01 load avg: 1.40 [  6/404] test_types
+0:00:01 load avg: 1.40 [  7/404] test_unittest
+0:00:02 load avg: 1.40 [  8/404] test_doctest
+0:00:04 load avg: 1.40 [  9/404] test_doctest2
+0:00:04 load avg: 1.40 [ 10/404] test_MimeWriter
+0:00:04 load avg: 1.40 [ 11/404] test_SimpleHTTPServer
+0:00:04 load avg: 1.40 [ 12/404] test_StringIO
+0:00:08 load avg: 1.60 [ 13/404] test___all__
+0:00:09 load avg: 1.60 [ 14/404] test___future__
+0:00:09 load avg: 1.60 [ 15/404] test__locale
+0:00:09 load avg: 1.60 [ 16/404] test__osx_support
+0:00:10 load avg: 1.60 [ 17/404] test_abc
+0:00:10 load avg: 1.56 [ 18/404] test_abstract_numbers
+0:00:11 load avg: 1.56 [ 19/404] test_aepack
+test_aepack skipped -- No module named aetypes
+0:00:11 load avg: 1.56 [ 20/404] test_aifc -- test_aepack skipped
+0:00:11 load avg: 1.56 [ 21/404] test_al
+test_al skipped -- No module named al
+0:00:12 load avg: 1.56 [ 22/404] test_anydbm -- test_al skipped
+0:00:12 load avg: 1.56 [ 23/404] test_applesingle
+test_applesingle skipped -- No module named MacOS
+0:00:13 load avg: 1.56 [ 24/404] test_argparse -- test_applesingle skipped
+0:00:20 load avg: 1.47 [ 25/404] test_array
+0:00:23 load avg: 1.47 [ 26/404] test_ascii_formatd
+0:00:23 load avg: 1.47 [ 27/404] test_ast
+0:00:24 load avg: 1.47 [ 28/404] test_asynchat
+0:00:26 load avg: 1.35 [ 29/404] test_asyncore
+0:00:30 load avg: 1.40 [ 30/404] test_atexit
+0:00:31 load avg: 1.40 [ 31/404] test_audioop
+0:00:31 load avg: 1.40 [ 32/404] test_augassign
+0:00:31 load avg: 1.40 [ 33/404] test_base64
+0:00:32 load avg: 1.40 [ 34/404] test_bastion
+0:00:32 load avg: 1.40 [ 35/404] test_bdb
+0:00:32 load avg: 1.40 [ 36/404] test_bigaddrspace
+0:00:33 load avg: 1.40 [ 37/404] test_bigmem
+0:00:33 load avg: 1.40 [ 38/404] test_binascii
+0:00:33 load avg: 1.40 [ 39/404] test_binhex
+0:00:34 load avg: 1.40 [ 40/404] test_binop
+0:00:34 load avg: 1.40 [ 41/404] test_bisect
+0:00:35 load avg: 1.40 [ 42/404] test_bool
+0:00:35 load avg: 1.37 [ 43/404] test_bsddb
+0:00:40 load avg: 1.37 [ 44/404] test_bsddb185
+test_bsddb185 skipped -- No module named bsddb185
+0:00:40 load avg: 1.34 [ 45/404] test_bsddb3 -- test_bsddb185 skipped
+test_bsddb3 skipped -- Use of the `bsddb' resource not enabled
+0:00:40 load avg: 1.34 [ 46/404] test_buffer -- test_bsddb3 skipped (resource denied)
+0:00:40 load avg: 1.34 [ 47/404] test_bufio
+0:00:44 load avg: 1.34 [ 48/404] test_bytes
+0:00:49 load avg: 1.31 [ 49/404] test_bz2
+0:00:56 load avg: 1.41 [ 50/404] test_calendar
+0:01:03 load avg: 1.38 [ 51/404] test_call
+0:01:04 load avg: 1.38 [ 52/404] test_capi
+0:01:07 load avg: 1.27 [ 53/404] test_cd
+test_cd skipped -- No module named cd
+0:01:07 load avg: 1.27 [ 54/404] test_cfgparser -- test_cd skipped
+0:01:09 load avg: 1.27 [ 55/404] test_cgi
+0:01:09 load avg: 1.27 [ 56/404] test_charmapcodec
+0:01:09 load avg: 1.27 [ 57/404] test_cl
+test_cl skipped -- No module named cl
+0:01:10 load avg: 1.27 [ 58/404] test_class -- test_cl skipped
+0:01:10 load avg: 1.25 [ 59/404] test_cmath
+0:01:11 load avg: 1.25 [ 60/404] test_cmd
+0:01:11 load avg: 1.25 [ 61/404] test_cmd_line
+0:01:13 load avg: 1.25 [ 62/404] test_cmd_line_script
+0:01:16 load avg: 1.23 [ 63/404] test_code
+0:01:16 load avg: 1.23 [ 64/404] test_codeccallbacks
+0:01:16 load avg: 1.23 [ 65/404] test_codecencodings_cn
+0:01:18 load avg: 1.23 [ 66/404] test_codecencodings_hk
+0:01:19 load avg: 1.23 [ 67/404] test_codecencodings_iso2022
+0:01:21 load avg: 1.45 [ 68/404] test_codecencodings_jp
+0:01:25 load avg: 1.45 [ 69/404] test_codecencodings_kr
+0:01:26 load avg: 1.41 [ 70/404] test_codecencodings_tw
+0:01:27 load avg: 1.41 [ 71/404] test_codecmaps_cn
+test_codecmaps_cn skipped -- Use of the `urlfetch' resource not enabled
+0:01:27 load avg: 1.41 [ 72/404] test_codecmaps_hk -- test_codecmaps_cn skipped (resource denied)
+test_codecmaps_hk skipped -- Use of the `urlfetch' resource not enabled
+0:01:28 load avg: 1.41 [ 73/404] test_codecmaps_jp -- test_codecmaps_hk skipped (resource denied)
+test_codecmaps_jp skipped -- Use of the `urlfetch' resource not enabled
+0:01:28 load avg: 1.41 [ 74/404] test_codecmaps_kr -- test_codecmaps_jp skipped (resource denied)
+test_codecmaps_kr skipped -- Use of the `urlfetch' resource not enabled
+0:01:28 load avg: 1.41 [ 75/404] test_codecmaps_tw -- test_codecmaps_kr skipped (resource denied)
+test_codecmaps_tw skipped -- Use of the `urlfetch' resource not enabled
+0:01:29 load avg: 1.41 [ 76/404] test_codecs -- test_codecmaps_tw skipped (resource denied)
+0:01:34 load avg: 1.38 [ 77/404] test_codeop
+0:01:35 load avg: 1.38 [ 78/404] test_coercion
+0:01:35 load avg: 1.35 [ 79/404] test_collections
+0:01:38 load avg: 1.35 [ 80/404] test_colorsys
+0:01:39 load avg: 1.35 [ 81/404] test_commands
+0:01:39 load avg: 1.35 [ 82/404] test_compare
+0:01:39 load avg: 1.35 [ 83/404] test_compile
+0:01:40 load avg: 1.32 [ 84/404] test_compileall
+0:01:41 load avg: 1.32 [ 85/404] test_compiler
+0:01:41 load avg: 1.32 [ 86/404] test_complex
+0:01:43 load avg: 1.32 [ 87/404] test_complex_args
+0:01:43 load avg: 1.32 [ 88/404] test_contains
+0:01:44 load avg: 1.32 [ 89/404] test_contextlib
+0:01:44 load avg: 1.32 [ 90/404] test_cookie
+0:01:44 load avg: 1.32 [ 91/404] test_cookielib
+0:01:45 load avg: 1.29 [ 92/404] test_copy
+0:01:45 load avg: 1.29 [ 93/404] test_copy_reg
+0:01:46 load avg: 1.29 [ 94/404] test_cpickle
+0:01:54 load avg: 1.27 [ 95/404] test_cprofile
+0:01:55 load avg: 1.49 [ 96/404] test_crypt
+0:01:56 load avg: 1.49 [ 97/404] test_csv
+0:01:56 load avg: 1.49 [ 98/404] test_ctypes
+0:02:02 load avg: 1.45 [ 99/404] test_curses
+test_curses skipped -- Use of the `curses' resource not enabled
+0:02:02 load avg: 1.45 [100/404] test_datetime -- test_curses skipped (resource denied)
+0:02:04 load avg: 1.45 [101/404] test_dbm
+0:02:04 load avg: 1.45 [102/404] test_decimal
+0:02:11 load avg: 1.38 [103/404] test_decorators
+0:02:12 load avg: 1.38 [104/404] test_defaultdict
+0:02:12 load avg: 1.38 [105/404] test_deque
+0:02:23 load avg: 1.32 [106/404] test_descr
+0:02:32 load avg: 1.43 [107/404] test_descrtut
+0:02:33 load avg: 1.43 [108/404] test_dictcomps
+0:02:33 load avg: 1.43 [109/404] test_dictviews
+0:02:34 load avg: 1.43 [110/404] test_difflib
+0:02:38 load avg: 1.56 [111/404] test_dircache
+0:02:40 load avg: 1.56 [112/404] test_dis
+0:02:41 load avg: 1.51 [113/404] test_distutils
+0:02:44 load avg: 1.51 [114/404] test_dl
+0:02:44 load avg: 1.51 [115/404] test_docxmlrpc
+0:02:45 load avg: 1.51 [116/404] test_dumbdbm
+0:02:45 load avg: 1.47 [117/404] test_dummy_thread
+0:02:46 load avg: 1.47 [118/404] test_dummy_threading
+0:02:47 load avg: 1.47 [119/404] test_email
+0:02:54 load avg: 1.43 [120/404] test_email_codecs
+0:02:55 load avg: 1.43 [121/404] test_email_renamed
+0:02:56 load avg: 1.40 [122/404] test_ensurepip
+0:02:56 load avg: 1.40 [123/404] test_enumerate
+0:02:57 load avg: 1.40 [124/404] test_eof
+0:02:57 load avg: 1.40 [125/404] test_epoll
+0:03:00 load avg: 1.40 [126/404] test_errno
+0:03:01 load avg: 1.61 [127/404] test_exception_variations
+0:03:01 load avg: 1.61 [128/404] test_extcall
+0:03:02 load avg: 1.61 [129/404] test_fcntl
+0:03:02 load avg: 1.61 [130/404] test_file
+0:03:03 load avg: 1.61 [131/404] test_file2k
+0:03:18 load avg: 2.62 [132/404] test_file_eintr
+0:03:20 load avg: 2.49 [133/404] test_filecmp
+0:03:21 load avg: 2.49 [134/404] test_fileinput
+0:03:21 load avg: 2.49 [135/404] test_fileio
+0:03:22 load avg: 2.49 [136/404] test_float
+0:03:23 load avg: 2.49 [137/404] test_fnmatch
+0:03:24 load avg: 2.49 [138/404] test_fork1
+0:03:31 load avg: 2.11 [139/404] test_format
+0:03:31 load avg: 2.11 [140/404] test_fpformat
+0:03:34 load avg: 2.11 [141/404] test_fractions
+0:03:34 load avg: 2.11 [142/404] test_frozen
+0:03:35 load avg: 2.11 [143/404] test_ftplib
+0:03:46 load avg: 1.86 [144/404] test_funcattrs
+0:03:46 load avg: 1.86 [145/404] test_functools
+0:03:47 load avg: 1.86 [146/404] test_future
+0:03:47 load avg: 1.86 [147/404] test_future3
+0:03:48 load avg: 1.86 [148/404] test_future4
+0:03:48 load avg: 1.86 [149/404] test_future5
+0:03:49 load avg: 1.86 [150/404] test_future_builtins
+0:03:49 load avg: 1.86 [151/404] test_gc
+0:04:01 load avg: 1.75 [152/404] test_gdb
+test_gdb skipped -- Couldn't find gdb on the path
+0:04:02 load avg: 1.75 [153/404] test_gdbm -- test_gdb skipped
+0:04:02 load avg: 1.75 [154/404] test_generators
+0:04:03 load avg: 1.75 [155/404] test_genericpath
+0:04:04 load avg: 1.75 [156/404] test_genexps
+0:04:04 load avg: 1.75 [157/404] test_getargs
+0:04:05 load avg: 1.75 [158/404] test_getargs2
+0:04:05 load avg: 1.69 [159/404] test_getopt
+0:04:06 load avg: 1.69 [160/404] test_gettext
+0:04:07 load avg: 1.69 [161/404] test_gl
+test_gl skipped -- No module named gl
+0:04:07 load avg: 1.69 [162/404] test_glob -- test_gl skipped
+0:04:08 load avg: 1.69 [163/404] test_global
+0:04:08 load avg: 1.69 [164/404] test_grp
+0:04:09 load avg: 1.69 [165/404] test_gzip
+0:04:10 load avg: 1.69 [166/404] test_hash
+0:04:12 load avg: 1.64 [167/404] test_hashlib
+0:04:13 load avg: 1.64 [168/404] test_heapq
+0:04:18 load avg: 1.83 [169/404] test_hmac
+0:04:18 load avg: 1.83 [170/404] test_hotshot
+0:04:19 load avg: 1.83 [171/404] test_htmllib
+0:04:20 load avg: 1.83 [172/404] test_htmlparser
+0:04:20 load avg: 1.83 [173/404] test_httplib
+0:04:22 load avg: 1.76 [174/404] test_httpservers
+0:04:23 load avg: 1.76 [175/404] test_idle
+test_idle skipped -- No module named _tkinter
+0:04:24 load avg: 1.76 [176/404] test_imageop -- test_idle skipped
+0:04:25 load avg: 1.76 [177/404] test_imaplib
+0:04:25 load avg: 1.70 [178/404] test_imgfile
+test_imgfile skipped -- No module named imgfile
+0:04:26 load avg: 1.70 [179/404] test_imghdr -- test_imgfile skipped
+0:04:26 load avg: 1.70 [180/404] test_imp
+0:04:27 load avg: 1.70 [181/404] test_import
+0:04:28 load avg: 1.70 [182/404] test_import_magic
+0:04:29 load avg: 1.70 [183/404] test_importhooks
+0:04:30 load avg: 1.70 [184/404] test_importlib
+0:04:30 load avg: 1.70 [185/404] test_index
+0:04:31 load avg: 1.64 [186/404] test_inspect
+0:04:32 load avg: 1.64 [187/404] test_int
+0:04:36 load avg: 1.59 [188/404] test_int_literal
+0:04:36 load avg: 1.59 [189/404] test_io
+0:05:53 load avg: 1.23 [190/404] test_ioctl -- test_io passed in 1 min 17 sec
+0:05:54 load avg: 1.23 [191/404] test_isinstance
+0:05:55 load avg: 1.23 [192/404] test_iter
+0:05:56 load avg: 1.53 [193/404] test_iterlen
+0:05:56 load avg: 1.53 [194/404] test_itertools
+0:06:19 load avg: 1.38 [195/404] test_json
+0:06:30 load avg: 1.32 [196/404] test_kqueue
+test_kqueue skipped -- test works only on BSD
+0:06:30 load avg: 1.32 [197/404] test_largefile -- test_kqueue skipped
+0:06:31 load avg: 1.30 [198/404] test_lib2to3
+0:07:54 load avg: 1.14 [199/404] test_linecache -- test_lib2to3 passed in 1 min 22 sec
+0:07:54 load avg: 1.14 [200/404] test_linuxaudiodev
+test_linuxaudiodev skipped -- Use of the `audio' resource not enabled
+0:07:55 load avg: 1.14 [201/404] test_list -- test_linuxaudiodev skipped (resource denied)
+0:07:56 load avg: 1.13 [202/404] test_locale
+0:07:57 load avg: 1.13 [203/404] test_logging
+0:08:08 load avg: 0.95 [204/404] test_long
+0:08:15 load avg: 0.96 [205/404] test_long_future
+0:08:24 load avg: 0.96 [206/404] test_longexp
+0:08:25 load avg: 0.96 [207/404] test_macos
+test_macos skipped -- No module named MacOS
+0:08:26 load avg: 0.97 [208/404] test_macostools -- test_macos skipped
+test_macostools skipped -- No module named MacOS
+0:08:26 load avg: 0.97 [209/404] test_macpath -- test_macostools skipped
+0:08:27 load avg: 0.97 [210/404] test_macurl2path
+0:08:28 load avg: 0.97 [211/404] test_mailbox
+0:08:53 load avg: 1.39 [212/404] test_marshal
+0:08:55 load avg: 1.39 [213/404] test_math
+0:09:02 load avg: 1.33 [214/404] test_md5
+0:09:02 load avg: 1.33 [215/404] test_memoryio
+0:09:03 load avg: 1.33 [216/404] test_memoryview
+0:09:05 load avg: 1.33 [217/404] test_mhlib
+0:09:06 load avg: 1.33 [218/404] test_mimetools
+0:09:06 load avg: 1.31 [219/404] test_mimetypes
+0:09:07 load avg: 1.31 [220/404] test_minidom
+0:09:08 load avg: 1.31 [221/404] test_mmap
+0:09:09 load avg: 1.31 [222/404] test_module
+0:09:11 load avg: 1.31 [223/404] test_modulefinder
+0:09:13 load avg: 1.28 [224/404] test_msilib
+test_msilib skipped -- No module named _msi
+0:09:13 load avg: 1.28 [225/404] test_multibytecodec -- test_msilib skipped
+0:09:24 load avg: 1.24 [226/404] test_multifile
+0:09:25 load avg: 1.24 [227/404] test_multiprocessing
+0:10:03 load avg: 1.37 [228/404] test_mutants -- test_multiprocessing passed in 38 sec 132 ms
+0:10:05 load avg: 1.37 [229/404] test_mutex
+0:10:06 load avg: 1.37 [230/404] test_netrc
+0:10:06 load avg: 1.34 [231/404] test_new
+0:10:07 load avg: 1.34 [232/404] test_nis
+0:10:07 load avg: 1.34 [233/404] test_nntplib
+0:10:08 load avg: 1.34 [234/404] test_normalization
+0:10:09 load avg: 1.34 [235/404] test_ntpath
+0:10:10 load avg: 1.34 [236/404] test_old_mailbox
+0:10:10 load avg: 1.34 [237/404] test_openpty
+0:10:11 load avg: 1.34 [238/404] test_operator
+0:10:12 load avg: 1.31 [239/404] test_optparse
+0:10:12 load avg: 1.31 [240/404] test_ordered_dict
+0:10:16 load avg: 1.28 [241/404] test_os
+0:10:18 load avg: 1.28 [242/404] test_ossaudiodev
+test_ossaudiodev skipped -- Use of the `audio' resource not enabled
+0:10:18 load avg: 1.28 [243/404] test_parser -- test_ossaudiodev skipped (resource denied)
+0:10:20 load avg: 1.28 [244/404] test_pdb
+0:10:21 load avg: 1.28 [245/404] test_peepholer
+0:10:22 load avg: 1.42 [246/404] test_pep247
+0:10:22 load avg: 1.42 [247/404] test_pep277
+test_pep277 skipped -- only NT+ and systems with Unicode-friendly filesystem encoding
+0:10:23 load avg: 1.42 [248/404] test_pep352 -- test_pep277 skipped
+0:10:24 load avg: 1.42 [249/404] test_pickle
+0:10:33 load avg: 1.36 [250/404] test_pickletools
+0:10:35 load avg: 1.36 [251/404] test_pipes
+0:10:36 load avg: 1.36 [252/404] test_pkg
+0:10:36 load avg: 1.33 [253/404] test_pkgimport
+0:10:37 load avg: 1.33 [254/404] test_pkgutil
+0:10:38 load avg: 1.33 [255/404] test_platform
+0:10:39 load avg: 1.33 [256/404] test_plistlib
+0:10:40 load avg: 1.33 [257/404] test_poll
+0:10:52 load avg: 1.03 [258/404] test_popen
+0:10:53 load avg: 1.03 [259/404] test_popen2
+0:10:54 load avg: 1.03 [260/404] test_poplib
+0:10:59 load avg: 0.95 [261/404] test_posix
+0:10:59 load avg: 0.95 [262/404] test_posixpath
+0:11:00 load avg: 0.95 [263/404] test_pow
+0:11:01 load avg: 0.95 [264/404] test_pprint
+0:11:02 load avg: 0.95 [265/404] test_print
+0:11:03 load avg: 0.95 [266/404] test_profile
+0:11:04 load avg: 0.95 [267/404] test_property
+0:11:05 load avg: 0.95 [268/404] test_pstats
+0:11:05 load avg: 0.95 [269/404] test_pty
+0:11:06 load avg: 0.96 [270/404] test_pwd
+0:11:07 load avg: 0.96 [271/404] test_py3kwarn
+0:11:08 load avg: 0.96 [272/404] test_py_compile
+0:11:08 load avg: 0.96 [273/404] test_pyclbr
+0:11:12 load avg: 0.96 [274/404] test_pydoc
+0:11:14 load avg: 0.96 [275/404] test_pyexpat
+0:11:15 load avg: 0.96 [276/404] test_queue
+0:11:19 load avg: 0.88 [277/404] test_quopri
+0:11:21 load avg: 0.88 [278/404] test_random
+0:11:22 load avg: 0.89 [279/404] test_re
+0:11:26 load avg: 0.90 [280/404] test_readline
+0:11:27 load avg: 0.90 [281/404] test_regrtest
+0:11:42 load avg: 1.16 [282/404] test_repr
+0:11:42 load avg: 1.16 [283/404] test_resource
+0:11:44 load avg: 1.16 [284/404] test_rfc822
+0:11:44 load avg: 1.16 [285/404] test_richcmp
+0:11:45 load avg: 1.16 [286/404] test_rlcompleter
+0:11:46 load avg: 1.16 [287/404] test_robotparser
+0:11:47 load avg: 1.15 [288/404] test_runpy
+0:11:55 load avg: 1.14 [289/404] test_sax
+0:11:56 load avg: 1.14 [290/404] test_scope
+0:11:56 load avg: 1.13 [291/404] test_scriptpackages
+test_scriptpackages skipped -- No module named aetools
+0:11:57 load avg: 1.13 [292/404] test_select -- test_scriptpackages skipped
+0:12:09 load avg: 1.03 [293/404] test_set
+0:12:14 load avg: 1.03 [294/404] test_setcomps
+0:12:14 load avg: 1.03 [295/404] test_sets
+0:12:16 load avg: 1.03 [296/404] test_sgmllib
+0:12:16 load avg: 1.03 [297/404] test_sha
+0:12:17 load avg: 1.03 [298/404] test_shelve
+0:12:23 load avg: 1.19 [299/404] test_shlex
+0:12:24 load avg: 1.19 [300/404] test_shutil
+0:12:25 load avg: 1.19 [301/404] test_signal
+0:12:34 load avg: 1.00 [302/404] test_site
+0:12:36 load avg: 1.00 [303/404] test_slice
+0:12:37 load avg: 1.00 [304/404] test_smtplib
+0:12:40 load avg: 1.00 [305/404] test_smtpnet
+test_smtpnet skipped -- Use of the `network' resource not enabled
+0:12:40 load avg: 1.00 [306/404] test_socket -- test_smtpnet skipped (resource denied)
+0:12:57 load avg: 0.72 [307/404] test_socketserver
+test_socketserver skipped -- Use of the `network' resource not enabled
+0:12:58 load avg: 0.72 [308/404] test_softspace -- test_socketserver skipped (resource denied)
+0:12:59 load avg: 0.72 [309/404] test_sort
+0:13:00 load avg: 0.72 [310/404] test_source_encoding
+0:13:02 load avg: 0.98 [311/404] test_spwd
+0:13:03 load avg: 0.98 [312/404] test_sqlite
+0:13:06 load avg: 0.98 [313/404] test_ssl
+0:13:18 load avg: 1.04 [314/404] test_startfile
+test_startfile skipped -- module 'os' has no attribute 'startfile'
+0:13:18 load avg: 1.04 [315/404] test_stat -- test_startfile skipped
+0:13:19 load avg: 1.04 [316/404] test_str
+0:13:24 load avg: 1.20 [317/404] test_strftime
+0:13:26 load avg: 1.20 [318/404] test_string
+0:13:30 load avg: 1.18 [319/404] test_stringprep
+0:13:31 load avg: 1.18 [320/404] test_strop
+0:13:32 load avg: 1.17 [321/404] test_strptime
+0:13:33 load avg: 1.17 [322/404] test_strtod
+0:13:38 load avg: 1.23 [323/404] test_struct
+0:13:41 load avg: 1.21 [324/404] test_structmembers
+0:13:42 load avg: 1.21 [325/404] test_structseq
+0:13:43 load avg: 1.21 [326/404] test_subprocess
+0:15:46 load avg: 1.31 [327/404] test_sunau -- test_subprocess passed in 2 min 2 sec
+0:15:46 load avg: 1.31 [328/404] test_sunaudiodev
+test_sunaudiodev skipped -- No module named sunaudiodev
+0:15:47 load avg: 1.29 [329/404] test_sundry -- test_sunaudiodev skipped
+0:15:48 load avg: 1.29 [330/404] test_symtable
+0:15:49 load avg: 1.29 [331/404] test_syntax
+0:15:49 load avg: 1.29 [332/404] test_sys
+0:15:51 load avg: 1.29 [333/404] test_sys_setprofile
+0:15:52 load avg: 1.26 [334/404] test_sys_settrace
+0:15:53 load avg: 1.26 [335/404] test_sysconfig
+0:15:54 load avg: 1.26 [336/404] test_tarfile
+0:16:04 load avg: 1.22 [337/404] test_tcl
+test_tcl skipped -- No module named _tkinter
+0:16:05 load avg: 1.22 [338/404] test_telnetlib -- test_tcl skipped
+0:16:11 load avg: 1.20 [339/404] test_tempfile
+0:16:12 load avg: 1.27 [340/404] test_test_support
+0:16:14 load avg: 1.27 [341/404] test_textwrap
+0:16:15 load avg: 1.27 [342/404] test_thread
+0:16:17 load avg: 1.49 [343/404] test_threaded_import
+0:16:18 load avg: 1.49 [344/404] test_threadedtempfile
+0:16:19 load avg: 1.49 [345/404] test_threading
+0:16:25 load avg: 1.45 [346/404] test_threading_local
+0:16:29 load avg: 1.41 [347/404] test_threadsignals
+0:16:30 load avg: 1.41 [348/404] test_time
+0:16:32 load avg: 1.41 [349/404] test_timeit
+0:16:33 load avg: 1.38 [350/404] test_timeout
+test_timeout skipped -- Use of the `network' resource not enabled
+0:16:34 load avg: 1.38 [351/404] test_tk -- test_timeout skipped (resource denied)
+test_tk skipped -- No module named _tkinter
+0:16:34 load avg: 1.38 [352/404] test_tokenize -- test_tk skipped
+0:16:38 load avg: 1.59 [353/404] test_tools
+0:16:43 load avg: 1.54 [354/404] test_trace
+0:16:52 load avg: 1.46 [355/404] test_traceback
+0:16:57 load avg: 1.34 [356/404] test_transformer
+0:16:58 load avg: 1.34 [357/404] test_ttk_guionly
+test_ttk_guionly skipped -- No module named _tkinter
+0:16:59 load avg: 1.34 [358/404] test_ttk_textonly -- test_ttk_guionly skipped
+test_ttk_textonly skipped -- No module named _tkinter
+0:16:59 load avg: 1.34 [359/404] test_tuple -- test_ttk_textonly skipped
+0:17:30 load avg: 1.21 [360/404] test_turtle -- test_tuple passed in 30 sec 769 ms
+test_turtle skipped -- No module named _tkinter
+0:17:31 load avg: 1.21 [361/404] test_typechecks -- test_turtle skipped
+0:17:32 load avg: 1.21 [362/404] test_ucn
+0:17:34 load avg: 1.19 [363/404] test_unary
+0:17:34 load avg: 1.19 [364/404] test_undocumented_details
+0:17:35 load avg: 1.19 [365/404] test_unicode
+0:17:45 load avg: 1.16 [366/404] test_unicode_file
+test_unicode_file skipped -- No Unicode filesystem semantics on this platform.
+0:17:46 load avg: 1.16 [367/404] test_unicodedata -- test_unicode_file skipped
+0:17:53 load avg: 1.13 [368/404] test_univnewlines
+0:17:54 load avg: 1.13 [369/404] test_univnewlines2k
+0:17:55 load avg: 1.13 [370/404] test_unpack
+0:17:56 load avg: 1.13 [371/404] test_urllib
+0:17:57 load avg: 1.12 [372/404] test_urllib2
+0:18:07 load avg: 1.11 [373/404] test_urllib2_localnet
+0:18:09 load avg: 1.10 [374/404] test_urllib2net
+test_urllib2net skipped -- Use of the `network' resource not enabled
+0:18:10 load avg: 1.10 [375/404] test_urllibnet -- test_urllib2net skipped (resource denied)
+test_urllibnet skipped -- Use of the `network' resource not enabled
+0:18:11 load avg: 1.10 [376/404] test_urlparse -- test_urllibnet skipped (resource denied)
+0:18:12 load avg: 1.10 [377/404] test_userdict
+0:18:16 load avg: 1.10 [378/404] test_userlist
+0:18:18 load avg: 1.09 [379/404] test_userstring
+0:18:33 load avg: 1.07 [380/404] test_uu
+0:18:34 load avg: 1.07 [381/404] test_uuid
+0:18:35 load avg: 1.07 [382/404] test_wait3
+0:18:41 load avg: 0.98 [383/404] test_wait4
+0:18:48 load avg: 0.83 [384/404] test_warnings
+0:18:50 load avg: 0.83 [385/404] test_wave
+0:18:51 load avg: 0.83 [386/404] test_weakref
+0:22:06 load avg: 1.39 [387/404] test_weakset -- test_weakref passed in 3 min 15 sec
+0:22:09 load avg: 1.36 [388/404] test_whichdb
+0:22:10 load avg: 1.36 [389/404] test_winreg
+test_winreg skipped -- No module named _winreg
+0:22:11 load avg: 1.36 [390/404] test_winsound -- test_winreg skipped
+test_winsound skipped -- Use of the `audio' resource not enabled
+0:22:12 load avg: 1.36 [391/404] test_with -- test_winsound skipped (resource denied)
+0:22:13 load avg: 1.33 [392/404] test_wsgiref
+0:22:13 load avg: 1.33 [393/404] test_xdrlib
+0:22:14 load avg: 1.33 [394/404] test_xml_etree
+0:22:17 load avg: 1.33 [395/404] test_xml_etree_c
+0:22:18 load avg: 1.54 [396/404] test_xmllib
+0:22:19 load avg: 1.54 [397/404] test_xmlrpc
+0:22:23 load avg: 1.42 [398/404] test_xpickle
+0:22:25 load avg: 1.42 [399/404] test_xrange
+0:22:27 load avg: 1.42 [400/404] test_zipfile
+0:22:41 load avg: 1.33 [401/404] test_zipfile64
+test_zipfile64 skipped -- test requires loads of disk-space bytes and a long time to run
+0:22:42 load avg: 1.33 [402/404] test_zipimport -- test_zipfile64 skipped (resource denied)
+0:22:43 load avg: 1.30 [403/404] test_zipimport_support
+0:22:45 load avg: 1.30 [404/404] test_zlib
+
+== Tests result: SUCCESS ==
+
+363 tests OK.
+
+41 tests skipped:
+    test_aepack test_al test_applesingle test_bsddb185 test_bsddb3
+    test_cd test_cl test_codecmaps_cn test_codecmaps_hk
+    test_codecmaps_jp test_codecmaps_kr test_codecmaps_tw test_curses
+    test_gdb test_gl test_idle test_imgfile test_kqueue
+    test_linuxaudiodev test_macos test_macostools test_msilib
+    test_ossaudiodev test_pep277 test_scriptpackages test_smtpnet
+    test_socketserver test_startfile test_sunaudiodev test_tcl
+    test_timeout test_tk test_ttk_guionly test_ttk_textonly
+    test_turtle test_unicode_file test_urllib2net test_urllibnet
+    test_winreg test_winsound test_zipfile64
+7 skips unexpected on linux2:
+    test_gdb test_idle test_tcl test_tk test_ttk_guionly
+    test_ttk_textonly test_turtle
+
+Total duration: 22 min 52 sec
+Tests result: SUCCESS

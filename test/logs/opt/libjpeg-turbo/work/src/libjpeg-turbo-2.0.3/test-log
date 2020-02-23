@@ -1,0 +1,616 @@
+Running tests...
+Test project /usr/ports/opt/libjpeg-turbo/work/src/libjpeg-turbo-2.0.3
+        Start   1: tjunittest-shared
+  1/302 Test   #1: tjunittest-shared .................................   Passed   36.74 sec
+        Start   2: tjunittest-shared-alloc
+  2/302 Test   #2: tjunittest-shared-alloc ...........................   Passed   36.38 sec
+        Start   3: tjunittest-shared-yuv
+  3/302 Test   #3: tjunittest-shared-yuv .............................   Passed   29.77 sec
+        Start   4: tjunittest-shared-yuv-alloc
+  4/302 Test   #4: tjunittest-shared-yuv-alloc .......................   Passed   29.96 sec
+        Start   5: tjunittest-shared-yuv-nopad
+  5/302 Test   #5: tjunittest-shared-yuv-nopad .......................   Passed   29.73 sec
+        Start   6: tjunittest-shared-bmp
+  6/302 Test   #6: tjunittest-shared-bmp .............................   Passed    0.11 sec
+        Start   7: tjbench-shared-tile-cp
+  7/302 Test   #7: tjbench-shared-tile-cp ............................   Passed    0.04 sec
+        Start   8: tjbench-shared-tile
+  8/302 Test   #8: tjbench-shared-tile ...............................   Passed    1.01 sec
+        Start   9: tjbench-shared-tile-gray-8x8-cmp
+  9/302 Test   #9: tjbench-shared-tile-gray-8x8-cmp ..................   Passed    0.02 sec
+        Start  10: tjbench-shared-tile-420-8x8-cmp
+ 10/302 Test  #10: tjbench-shared-tile-420-8x8-cmp ...................   Passed    0.01 sec
+        Start  11: tjbench-shared-tile-422-8x8-cmp
+ 11/302 Test  #11: tjbench-shared-tile-422-8x8-cmp ...................   Passed    0.01 sec
+        Start  12: tjbench-shared-tile-444-8x8-cmp
+ 12/302 Test  #12: tjbench-shared-tile-444-8x8-cmp ...................   Passed    0.01 sec
+        Start  13: tjbench-shared-tile-gray-16x16-cmp
+ 13/302 Test  #13: tjbench-shared-tile-gray-16x16-cmp ................   Passed    0.01 sec
+        Start  14: tjbench-shared-tile-420-16x16-cmp
+ 14/302 Test  #14: tjbench-shared-tile-420-16x16-cmp .................   Passed    0.01 sec
+        Start  15: tjbench-shared-tile-422-16x16-cmp
+ 15/302 Test  #15: tjbench-shared-tile-422-16x16-cmp .................   Passed    0.01 sec
+        Start  16: tjbench-shared-tile-444-16x16-cmp
+ 16/302 Test  #16: tjbench-shared-tile-444-16x16-cmp .................   Passed    0.01 sec
+        Start  17: tjbench-shared-tile-gray-32x32-cmp
+ 17/302 Test  #17: tjbench-shared-tile-gray-32x32-cmp ................   Passed    0.01 sec
+        Start  18: tjbench-shared-tile-420-32x32-cmp
+ 18/302 Test  #18: tjbench-shared-tile-420-32x32-cmp .................   Passed    0.01 sec
+        Start  19: tjbench-shared-tile-422-32x32-cmp
+ 19/302 Test  #19: tjbench-shared-tile-422-32x32-cmp .................   Passed    0.01 sec
+        Start  20: tjbench-shared-tile-444-32x32-cmp
+ 20/302 Test  #20: tjbench-shared-tile-444-32x32-cmp .................   Passed    0.01 sec
+        Start  21: tjbench-shared-tile-gray-64x64-cmp
+ 21/302 Test  #21: tjbench-shared-tile-gray-64x64-cmp ................   Passed    0.01 sec
+        Start  22: tjbench-shared-tile-420-64x64-cmp
+ 22/302 Test  #22: tjbench-shared-tile-420-64x64-cmp .................   Passed    0.01 sec
+        Start  23: tjbench-shared-tile-422-64x64-cmp
+ 23/302 Test  #23: tjbench-shared-tile-422-64x64-cmp .................   Passed    0.01 sec
+        Start  24: tjbench-shared-tile-444-64x64-cmp
+ 24/302 Test  #24: tjbench-shared-tile-444-64x64-cmp .................   Passed    0.01 sec
+        Start  25: tjbench-shared-tile-gray-128x128-cmp
+ 25/302 Test  #25: tjbench-shared-tile-gray-128x128-cmp ..............   Passed    0.01 sec
+        Start  26: tjbench-shared-tile-420-128x128-cmp
+ 26/302 Test  #26: tjbench-shared-tile-420-128x128-cmp ...............   Passed    0.01 sec
+        Start  27: tjbench-shared-tile-422-128x128-cmp
+ 27/302 Test  #27: tjbench-shared-tile-422-128x128-cmp ...............   Passed    0.01 sec
+        Start  28: tjbench-shared-tile-444-128x128-cmp
+ 28/302 Test  #28: tjbench-shared-tile-444-128x128-cmp ...............   Passed    0.01 sec
+        Start  29: tjbench-shared-tilem-cp
+ 29/302 Test  #29: tjbench-shared-tilem-cp ...........................   Passed    0.06 sec
+        Start  30: tjbench-shared-tilem
+ 30/302 Test  #30: tjbench-shared-tilem ..............................   Passed    0.97 sec
+        Start  31: tjbench-shared-tile-420m-8x8-cmp
+ 31/302 Test  #31: tjbench-shared-tile-420m-8x8-cmp ..................   Passed    0.01 sec
+        Start  32: tjbench-shared-tile-422m-8x8-cmp
+ 32/302 Test  #32: tjbench-shared-tile-422m-8x8-cmp ..................   Passed    0.01 sec
+        Start  33: tjbench-shared-tile-420m-16x16-cmp
+ 33/302 Test  #33: tjbench-shared-tile-420m-16x16-cmp ................   Passed    0.01 sec
+        Start  34: tjbench-shared-tile-422m-16x16-cmp
+ 34/302 Test  #34: tjbench-shared-tile-422m-16x16-cmp ................   Passed    0.01 sec
+        Start  35: tjbench-shared-tile-420m-32x32-cmp
+ 35/302 Test  #35: tjbench-shared-tile-420m-32x32-cmp ................   Passed    0.01 sec
+        Start  36: tjbench-shared-tile-422m-32x32-cmp
+ 36/302 Test  #36: tjbench-shared-tile-422m-32x32-cmp ................   Passed    0.01 sec
+        Start  37: tjbench-shared-tile-420m-64x64-cmp
+ 37/302 Test  #37: tjbench-shared-tile-420m-64x64-cmp ................   Passed    0.01 sec
+        Start  38: tjbench-shared-tile-422m-64x64-cmp
+ 38/302 Test  #38: tjbench-shared-tile-422m-64x64-cmp ................   Passed    0.01 sec
+        Start  39: tjbench-shared-tile-420m-128x128-cmp
+ 39/302 Test  #39: tjbench-shared-tile-420m-128x128-cmp ..............   Passed    0.01 sec
+        Start  40: tjbench-shared-tile-422m-128x128-cmp
+ 40/302 Test  #40: tjbench-shared-tile-422m-128x128-cmp ..............   Passed    0.01 sec
+        Start  41: cjpeg-shared-rgb-islow
+ 41/302 Test  #41: cjpeg-shared-rgb-islow ............................   Passed    0.11 sec
+        Start  42: cjpeg-shared-rgb-islow-cmp
+ 42/302 Test  #42: cjpeg-shared-rgb-islow-cmp ........................   Passed    0.01 sec
+        Start  43: djpeg-shared-rgb-islow
+ 43/302 Test  #43: djpeg-shared-rgb-islow ............................   Passed    0.06 sec
+        Start  44: djpeg-shared-rgb-islow-cmp
+ 44/302 Test  #44: djpeg-shared-rgb-islow-cmp ........................   Passed    0.01 sec
+        Start  45: djpeg-shared-rgb-islow-icc-cmp
+ 45/302 Test  #45: djpeg-shared-rgb-islow-icc-cmp ....................   Passed    0.01 sec
+        Start  46: jpegtran-shared-icc
+ 46/302 Test  #46: jpegtran-shared-icc ...............................   Passed    0.08 sec
+        Start  47: jpegtran-shared-icc-cmp
+ 47/302 Test  #47: jpegtran-shared-icc-cmp ...........................   Passed    0.01 sec
+        Start  48: djpeg-shared-rgb-islow-565
+ 48/302 Test  #48: djpeg-shared-rgb-islow-565 ........................   Passed    0.01 sec
+        Start  49: djpeg-shared-rgb-islow-565-cmp
+ 49/302 Test  #49: djpeg-shared-rgb-islow-565-cmp ....................   Passed    0.01 sec
+        Start  50: djpeg-shared-rgb-islow-565D
+ 50/302 Test  #50: djpeg-shared-rgb-islow-565D .......................   Passed    0.01 sec
+        Start  51: djpeg-shared-rgb-islow-565D-cmp
+ 51/302 Test  #51: djpeg-shared-rgb-islow-565D-cmp ...................   Passed    0.01 sec
+        Start  52: cjpeg-shared-422-ifast-opt
+ 52/302 Test  #52: cjpeg-shared-422-ifast-opt ........................   Passed    0.01 sec
+        Start  53: cjpeg-shared-422-ifast-opt-cmp
+ 53/302 Test  #53: cjpeg-shared-422-ifast-opt-cmp ....................   Passed    0.01 sec
+        Start  54: djpeg-shared-422-ifast
+ 54/302 Test  #54: djpeg-shared-422-ifast ............................   Passed    0.01 sec
+        Start  55: djpeg-shared-422-ifast-cmp
+ 55/302 Test  #55: djpeg-shared-422-ifast-cmp ........................   Passed    0.01 sec
+        Start  56: djpeg-shared-422m-ifast
+ 56/302 Test  #56: djpeg-shared-422m-ifast ...........................   Passed    0.01 sec
+        Start  57: djpeg-shared-422m-ifast-cmp
+ 57/302 Test  #57: djpeg-shared-422m-ifast-cmp .......................   Passed    0.01 sec
+        Start  58: djpeg-shared-422m-ifast-565
+ 58/302 Test  #58: djpeg-shared-422m-ifast-565 .......................   Passed    0.01 sec
+        Start  59: djpeg-shared-422m-ifast-565-cmp
+ 59/302 Test  #59: djpeg-shared-422m-ifast-565-cmp ...................   Passed    0.01 sec
+        Start  60: djpeg-shared-422m-ifast-565D
+ 60/302 Test  #60: djpeg-shared-422m-ifast-565D ......................   Passed    0.01 sec
+        Start  61: djpeg-shared-422m-ifast-565D-cmp
+ 61/302 Test  #61: djpeg-shared-422m-ifast-565D-cmp ..................   Passed    0.01 sec
+        Start  62: cjpeg-shared-420-q100-ifast-prog
+ 62/302 Test  #62: cjpeg-shared-420-q100-ifast-prog ..................   Passed    0.03 sec
+        Start  63: cjpeg-shared-420-q100-ifast-prog-cmp
+ 63/302 Test  #63: cjpeg-shared-420-q100-ifast-prog-cmp ..............   Passed    0.01 sec
+        Start  64: djpeg-shared-420-q100-ifast-prog
+ 64/302 Test  #64: djpeg-shared-420-q100-ifast-prog ..................   Passed    0.01 sec
+        Start  65: djpeg-shared-420-q100-ifast-prog-cmp
+ 65/302 Test  #65: djpeg-shared-420-q100-ifast-prog-cmp ..............   Passed    0.01 sec
+        Start  66: djpeg-shared-420m-q100-ifast-prog
+ 66/302 Test  #66: djpeg-shared-420m-q100-ifast-prog .................   Passed    0.01 sec
+        Start  67: djpeg-shared-420m-q100-ifast-prog-cmp
+ 67/302 Test  #67: djpeg-shared-420m-q100-ifast-prog-cmp .............   Passed    0.01 sec
+        Start  68: cjpeg-shared-gray-islow
+ 68/302 Test  #68: cjpeg-shared-gray-islow ...........................   Passed    0.01 sec
+        Start  69: cjpeg-shared-gray-islow-cmp
+ 69/302 Test  #69: cjpeg-shared-gray-islow-cmp .......................   Passed    0.01 sec
+        Start  70: djpeg-shared-gray-islow
+ 70/302 Test  #70: djpeg-shared-gray-islow ...........................   Passed    0.01 sec
+        Start  71: djpeg-shared-gray-islow-cmp
+ 71/302 Test  #71: djpeg-shared-gray-islow-cmp .......................   Passed    0.01 sec
+        Start  72: djpeg-shared-gray-islow-rgb
+ 72/302 Test  #72: djpeg-shared-gray-islow-rgb .......................   Passed    0.01 sec
+        Start  73: djpeg-shared-gray-islow-rgb-cmp
+ 73/302 Test  #73: djpeg-shared-gray-islow-rgb-cmp ...................   Passed    0.01 sec
+        Start  74: djpeg-shared-gray-islow-565
+ 74/302 Test  #74: djpeg-shared-gray-islow-565 .......................   Passed    0.01 sec
+        Start  75: djpeg-shared-gray-islow-565-cmp
+ 75/302 Test  #75: djpeg-shared-gray-islow-565-cmp ...................   Passed    0.01 sec
+        Start  76: djpeg-shared-gray-islow-565D
+ 76/302 Test  #76: djpeg-shared-gray-islow-565D ......................   Passed    0.01 sec
+        Start  77: djpeg-shared-gray-islow-565D-cmp
+ 77/302 Test  #77: djpeg-shared-gray-islow-565D-cmp ..................   Passed    0.01 sec
+        Start  78: cjpeg-shared-420s-ifast-opt
+ 78/302 Test  #78: cjpeg-shared-420s-ifast-opt .......................   Passed    0.01 sec
+        Start  79: cjpeg-shared-420s-ifast-opt-cmp
+ 79/302 Test  #79: cjpeg-shared-420s-ifast-opt-cmp ...................   Passed    0.01 sec
+        Start  80: cjpeg-shared-3x2-float-prog
+ 80/302 Test  #80: cjpeg-shared-3x2-float-prog .......................   Passed    0.02 sec
+        Start  81: cjpeg-shared-3x2-float-prog-cmp
+ 81/302 Test  #81: cjpeg-shared-3x2-float-prog-cmp ...................   Passed    0.01 sec
+        Start  82: djpeg-shared-3x2-float-prog
+ 82/302 Test  #82: djpeg-shared-3x2-float-prog .......................   Passed    0.01 sec
+        Start  83: djpeg-shared-3x2-float-prog-cmp
+ 83/302 Test  #83: djpeg-shared-3x2-float-prog-cmp ...................***Failed    0.01 sec
+        Start  84: cjpeg-shared-3x2-ifast-prog
+ 84/302 Test  #84: cjpeg-shared-3x2-ifast-prog .......................   Passed    0.01 sec
+        Start  85: cjpeg-shared-3x2-ifast-prog-cmp
+ 85/302 Test  #85: cjpeg-shared-3x2-ifast-prog-cmp ...................   Passed    0.01 sec
+        Start  86: djpeg-shared-3x2-ifast-prog
+ 86/302 Test  #86: djpeg-shared-3x2-ifast-prog .......................   Passed    0.01 sec
+        Start  87: djpeg-shared-3x2-ifast-prog-cmp
+ 87/302 Test  #87: djpeg-shared-3x2-ifast-prog-cmp ...................   Passed    0.01 sec
+        Start  88: cjpeg-shared-420-islow-ari
+ 88/302 Test  #88: cjpeg-shared-420-islow-ari ........................   Passed    0.01 sec
+        Start  89: cjpeg-shared-420-islow-ari-cmp
+ 89/302 Test  #89: cjpeg-shared-420-islow-ari-cmp ....................   Passed    0.01 sec
+        Start  90: jpegtran-shared-420-islow-ari
+ 90/302 Test  #90: jpegtran-shared-420-islow-ari .....................   Passed    0.01 sec
+        Start  91: jpegtran-shared-420-islow-ari-cmp
+ 91/302 Test  #91: jpegtran-shared-420-islow-ari-cmp .................   Passed    0.01 sec
+        Start  92: cjpeg-shared-444-islow-progari
+ 92/302 Test  #92: cjpeg-shared-444-islow-progari ....................   Passed    0.02 sec
+        Start  93: cjpeg-shared-444-islow-progari-cmp
+ 93/302 Test  #93: cjpeg-shared-444-islow-progari-cmp ................   Passed    0.01 sec
+        Start  94: djpeg-shared-420m-ifast-ari
+ 94/302 Test  #94: djpeg-shared-420m-ifast-ari .......................   Passed    0.01 sec
+        Start  95: djpeg-shared-420m-ifast-ari-cmp
+ 95/302 Test  #95: djpeg-shared-420m-ifast-ari-cmp ...................   Passed    0.01 sec
+        Start  96: jpegtran-shared-420-islow
+ 96/302 Test  #96: jpegtran-shared-420-islow .........................   Passed    0.01 sec
+        Start  97: jpegtran-shared-420-islow-cmp
+ 97/302 Test  #97: jpegtran-shared-420-islow-cmp .....................   Passed    0.01 sec
+        Start  98: djpeg-shared-420m-islow-2_1
+ 98/302 Test  #98: djpeg-shared-420m-islow-2_1 .......................   Passed    0.01 sec
+        Start  99: djpeg-shared-420m-islow-2_1-cmp
+ 99/302 Test  #99: djpeg-shared-420m-islow-2_1-cmp ...................   Passed    0.01 sec
+        Start 100: djpeg-shared-420m-islow-15_8
+100/302 Test #100: djpeg-shared-420m-islow-15_8 ......................   Passed    0.01 sec
+        Start 101: djpeg-shared-420m-islow-15_8-cmp
+101/302 Test #101: djpeg-shared-420m-islow-15_8-cmp ..................   Passed    0.01 sec
+        Start 102: djpeg-shared-420m-islow-13_8
+102/302 Test #102: djpeg-shared-420m-islow-13_8 ......................   Passed    0.01 sec
+        Start 103: djpeg-shared-420m-islow-13_8-cmp
+103/302 Test #103: djpeg-shared-420m-islow-13_8-cmp ..................   Passed    0.01 sec
+        Start 104: djpeg-shared-420m-islow-11_8
+104/302 Test #104: djpeg-shared-420m-islow-11_8 ......................   Passed    0.01 sec
+        Start 105: djpeg-shared-420m-islow-11_8-cmp
+105/302 Test #105: djpeg-shared-420m-islow-11_8-cmp ..................   Passed    0.01 sec
+        Start 106: djpeg-shared-420m-islow-9_8
+106/302 Test #106: djpeg-shared-420m-islow-9_8 .......................   Passed    0.01 sec
+        Start 107: djpeg-shared-420m-islow-9_8-cmp
+107/302 Test #107: djpeg-shared-420m-islow-9_8-cmp ...................   Passed    0.01 sec
+        Start 108: djpeg-shared-420m-islow-7_8
+108/302 Test #108: djpeg-shared-420m-islow-7_8 .......................   Passed    0.01 sec
+        Start 109: djpeg-shared-420m-islow-7_8-cmp
+109/302 Test #109: djpeg-shared-420m-islow-7_8-cmp ...................   Passed    0.01 sec
+        Start 110: djpeg-shared-420m-islow-3_4
+110/302 Test #110: djpeg-shared-420m-islow-3_4 .......................   Passed    0.01 sec
+        Start 111: djpeg-shared-420m-islow-3_4-cmp
+111/302 Test #111: djpeg-shared-420m-islow-3_4-cmp ...................   Passed    0.01 sec
+        Start 112: djpeg-shared-420m-islow-5_8
+112/302 Test #112: djpeg-shared-420m-islow-5_8 .......................   Passed    0.01 sec
+        Start 113: djpeg-shared-420m-islow-5_8-cmp
+113/302 Test #113: djpeg-shared-420m-islow-5_8-cmp ...................   Passed    0.01 sec
+        Start 114: djpeg-shared-420m-islow-1_2
+114/302 Test #114: djpeg-shared-420m-islow-1_2 .......................   Passed    0.01 sec
+        Start 115: djpeg-shared-420m-islow-1_2-cmp
+115/302 Test #115: djpeg-shared-420m-islow-1_2-cmp ...................   Passed    0.01 sec
+        Start 116: djpeg-shared-420m-islow-3_8
+116/302 Test #116: djpeg-shared-420m-islow-3_8 .......................   Passed    0.01 sec
+        Start 117: djpeg-shared-420m-islow-3_8-cmp
+117/302 Test #117: djpeg-shared-420m-islow-3_8-cmp ...................   Passed    0.01 sec
+        Start 118: djpeg-shared-420m-islow-1_4
+118/302 Test #118: djpeg-shared-420m-islow-1_4 .......................   Passed    0.01 sec
+        Start 119: djpeg-shared-420m-islow-1_4-cmp
+119/302 Test #119: djpeg-shared-420m-islow-1_4-cmp ...................   Passed    0.01 sec
+        Start 120: djpeg-shared-420m-islow-1_8
+120/302 Test #120: djpeg-shared-420m-islow-1_8 .......................   Passed    0.01 sec
+        Start 121: djpeg-shared-420m-islow-1_8-cmp
+121/302 Test #121: djpeg-shared-420m-islow-1_8-cmp ...................   Passed    0.01 sec
+        Start 122: djpeg-shared-420-islow-256
+122/302 Test #122: djpeg-shared-420-islow-256 ........................   Passed    0.02 sec
+        Start 123: djpeg-shared-420-islow-256-cmp
+123/302 Test #123: djpeg-shared-420-islow-256-cmp ....................   Passed    0.01 sec
+        Start 124: djpeg-shared-420-islow-565
+124/302 Test #124: djpeg-shared-420-islow-565 ........................   Passed    0.01 sec
+        Start 125: djpeg-shared-420-islow-565-cmp
+125/302 Test #125: djpeg-shared-420-islow-565-cmp ....................   Passed    0.01 sec
+        Start 126: djpeg-shared-420-islow-565D
+126/302 Test #126: djpeg-shared-420-islow-565D .......................   Passed    0.01 sec
+        Start 127: djpeg-shared-420-islow-565D-cmp
+127/302 Test #127: djpeg-shared-420-islow-565D-cmp ...................   Passed    0.01 sec
+        Start 128: djpeg-shared-420m-islow-565
+128/302 Test #128: djpeg-shared-420m-islow-565 .......................   Passed    0.01 sec
+        Start 129: djpeg-shared-420m-islow-565-cmp
+129/302 Test #129: djpeg-shared-420m-islow-565-cmp ...................   Passed    0.01 sec
+        Start 130: djpeg-shared-420m-islow-565D
+130/302 Test #130: djpeg-shared-420m-islow-565D ......................   Passed    0.01 sec
+        Start 131: djpeg-shared-420m-islow-565D-cmp
+131/302 Test #131: djpeg-shared-420m-islow-565D-cmp ..................   Passed    0.01 sec
+        Start 132: djpeg-shared-420-islow-skip15_31
+132/302 Test #132: djpeg-shared-420-islow-skip15_31 ..................   Passed    0.01 sec
+        Start 133: djpeg-shared-420-islow-skip15_31-cmp
+133/302 Test #133: djpeg-shared-420-islow-skip15_31-cmp ..............   Passed    0.01 sec
+        Start 134: djpeg-shared-420-islow-ari-skip16_139
+134/302 Test #134: djpeg-shared-420-islow-ari-skip16_139 .............   Passed    0.01 sec
+        Start 135: djpeg-shared-420-islow-ari-skip16_139-cmp
+135/302 Test #135: djpeg-shared-420-islow-ari-skip16_139-cmp .........   Passed    0.01 sec
+        Start 136: cjpeg-shared-420-islow-prog
+136/302 Test #136: cjpeg-shared-420-islow-prog .......................   Passed    0.01 sec
+        Start 137: djpeg-shared-420-islow-prog-crop62x62_71_71
+137/302 Test #137: djpeg-shared-420-islow-prog-crop62x62_71_71 .......   Passed    0.01 sec
+        Start 138: djpeg-shared-420-islow-prog-crop62x62_71_71-cmp
+138/302 Test #138: djpeg-shared-420-islow-prog-crop62x62_71_71-cmp ...   Passed    0.01 sec
+        Start 139: djpeg-shared-420-islow-ari-crop53x53_4_4
+139/302 Test #139: djpeg-shared-420-islow-ari-crop53x53_4_4 ..........   Passed    0.01 sec
+        Start 140: djpeg-shared-420-islow-ari-crop53x53_4_4-cmp
+140/302 Test #140: djpeg-shared-420-islow-ari-crop53x53_4_4-cmp ......   Passed    0.01 sec
+        Start 141: cjpeg-shared-444-islow
+141/302 Test #141: cjpeg-shared-444-islow ............................   Passed    0.01 sec
+        Start 142: djpeg-shared-444-islow-skip1_6
+142/302 Test #142: djpeg-shared-444-islow-skip1_6 ....................   Passed    0.01 sec
+        Start 143: djpeg-shared-444-islow-skip1_6-cmp
+143/302 Test #143: djpeg-shared-444-islow-skip1_6-cmp ................   Passed    0.01 sec
+        Start 144: cjpeg-shared-444-islow-prog
+144/302 Test #144: cjpeg-shared-444-islow-prog .......................   Passed    0.02 sec
+        Start 145: djpeg-shared-444-islow-prog-crop98x98_13_13
+145/302 Test #145: djpeg-shared-444-islow-prog-crop98x98_13_13 .......   Passed    0.01 sec
+        Start 146: djpeg-shared-444-islow-prog-crop98x98_13_13-cmp
+146/302 Test #146: djpeg-shared-444-islow-prog-crop98x98_13_13-cmp ...   Passed    0.01 sec
+        Start 147: cjpeg-shared-444-islow-ari
+147/302 Test #147: cjpeg-shared-444-islow-ari ........................   Passed    0.01 sec
+        Start 148: djpeg-shared-444-islow-ari-crop37x37_0_0
+148/302 Test #148: djpeg-shared-444-islow-ari-crop37x37_0_0 ..........   Passed    0.01 sec
+        Start 149: djpeg-shared-444-islow-ari-crop37x37_0_0-cmp
+149/302 Test #149: djpeg-shared-444-islow-ari-crop37x37_0_0-cmp ......   Passed    0.01 sec
+        Start 150: jpegtran-shared-crop
+150/302 Test #150: jpegtran-shared-crop ..............................   Passed    0.01 sec
+        Start 151: jpegtran-shared-crop-cmp
+151/302 Test #151: jpegtran-shared-crop-cmp ..........................   Passed    0.01 sec
+        Start 152: tjunittest-static
+152/302 Test #152: tjunittest-static .................................   Passed   36.91 sec
+        Start 153: tjunittest-static-alloc
+153/302 Test #153: tjunittest-static-alloc ...........................   Passed   36.31 sec
+        Start 154: tjunittest-static-yuv
+154/302 Test #154: tjunittest-static-yuv .............................   Passed   29.54 sec
+        Start 155: tjunittest-static-yuv-alloc
+155/302 Test #155: tjunittest-static-yuv-alloc .......................   Passed   30.02 sec
+        Start 156: tjunittest-static-yuv-nopad
+156/302 Test #156: tjunittest-static-yuv-nopad .......................   Passed   29.50 sec
+        Start 157: tjunittest-static-bmp
+157/302 Test #157: tjunittest-static-bmp .............................   Passed    0.10 sec
+        Start 158: tjbench-static-tile-cp
+158/302 Test #158: tjbench-static-tile-cp ............................   Passed    0.02 sec
+        Start 159: tjbench-static-tile
+159/302 Test #159: tjbench-static-tile ...............................   Passed    1.25 sec
+        Start 160: tjbench-static-tile-gray-8x8-cmp
+160/302 Test #160: tjbench-static-tile-gray-8x8-cmp ..................   Passed    0.01 sec
+        Start 161: tjbench-static-tile-420-8x8-cmp
+161/302 Test #161: tjbench-static-tile-420-8x8-cmp ...................   Passed    0.01 sec
+        Start 162: tjbench-static-tile-422-8x8-cmp
+162/302 Test #162: tjbench-static-tile-422-8x8-cmp ...................   Passed    0.01 sec
+        Start 163: tjbench-static-tile-444-8x8-cmp
+163/302 Test #163: tjbench-static-tile-444-8x8-cmp ...................   Passed    0.01 sec
+        Start 164: tjbench-static-tile-gray-16x16-cmp
+164/302 Test #164: tjbench-static-tile-gray-16x16-cmp ................   Passed    0.01 sec
+        Start 165: tjbench-static-tile-420-16x16-cmp
+165/302 Test #165: tjbench-static-tile-420-16x16-cmp .................   Passed    0.01 sec
+        Start 166: tjbench-static-tile-422-16x16-cmp
+166/302 Test #166: tjbench-static-tile-422-16x16-cmp .................   Passed    0.01 sec
+        Start 167: tjbench-static-tile-444-16x16-cmp
+167/302 Test #167: tjbench-static-tile-444-16x16-cmp .................   Passed    0.01 sec
+        Start 168: tjbench-static-tile-gray-32x32-cmp
+168/302 Test #168: tjbench-static-tile-gray-32x32-cmp ................   Passed    0.01 sec
+        Start 169: tjbench-static-tile-420-32x32-cmp
+169/302 Test #169: tjbench-static-tile-420-32x32-cmp .................   Passed    0.01 sec
+        Start 170: tjbench-static-tile-422-32x32-cmp
+170/302 Test #170: tjbench-static-tile-422-32x32-cmp .................   Passed    0.01 sec
+        Start 171: tjbench-static-tile-444-32x32-cmp
+171/302 Test #171: tjbench-static-tile-444-32x32-cmp .................   Passed    0.01 sec
+        Start 172: tjbench-static-tile-gray-64x64-cmp
+172/302 Test #172: tjbench-static-tile-gray-64x64-cmp ................   Passed    0.01 sec
+        Start 173: tjbench-static-tile-420-64x64-cmp
+173/302 Test #173: tjbench-static-tile-420-64x64-cmp .................   Passed    0.01 sec
+        Start 174: tjbench-static-tile-422-64x64-cmp
+174/302 Test #174: tjbench-static-tile-422-64x64-cmp .................   Passed    0.01 sec
+        Start 175: tjbench-static-tile-444-64x64-cmp
+175/302 Test #175: tjbench-static-tile-444-64x64-cmp .................   Passed    0.01 sec
+        Start 176: tjbench-static-tile-gray-128x128-cmp
+176/302 Test #176: tjbench-static-tile-gray-128x128-cmp ..............   Passed    0.01 sec
+        Start 177: tjbench-static-tile-420-128x128-cmp
+177/302 Test #177: tjbench-static-tile-420-128x128-cmp ...............   Passed    0.01 sec
+        Start 178: tjbench-static-tile-422-128x128-cmp
+178/302 Test #178: tjbench-static-tile-422-128x128-cmp ...............   Passed    0.01 sec
+        Start 179: tjbench-static-tile-444-128x128-cmp
+179/302 Test #179: tjbench-static-tile-444-128x128-cmp ...............   Passed    0.01 sec
+        Start 180: tjbench-static-tilem-cp
+180/302 Test #180: tjbench-static-tilem-cp ...........................   Passed    0.02 sec
+        Start 181: tjbench-static-tilem
+181/302 Test #181: tjbench-static-tilem ..............................   Passed    1.47 sec
+        Start 182: tjbench-static-tile-420m-8x8-cmp
+182/302 Test #182: tjbench-static-tile-420m-8x8-cmp ..................   Passed    0.01 sec
+        Start 183: tjbench-static-tile-422m-8x8-cmp
+183/302 Test #183: tjbench-static-tile-422m-8x8-cmp ..................   Passed    0.01 sec
+        Start 184: tjbench-static-tile-420m-16x16-cmp
+184/302 Test #184: tjbench-static-tile-420m-16x16-cmp ................   Passed    0.01 sec
+        Start 185: tjbench-static-tile-422m-16x16-cmp
+185/302 Test #185: tjbench-static-tile-422m-16x16-cmp ................   Passed    0.01 sec
+        Start 186: tjbench-static-tile-420m-32x32-cmp
+186/302 Test #186: tjbench-static-tile-420m-32x32-cmp ................   Passed    0.01 sec
+        Start 187: tjbench-static-tile-422m-32x32-cmp
+187/302 Test #187: tjbench-static-tile-422m-32x32-cmp ................   Passed    0.01 sec
+        Start 188: tjbench-static-tile-420m-64x64-cmp
+188/302 Test #188: tjbench-static-tile-420m-64x64-cmp ................   Passed    0.01 sec
+        Start 189: tjbench-static-tile-422m-64x64-cmp
+189/302 Test #189: tjbench-static-tile-422m-64x64-cmp ................   Passed    0.01 sec
+        Start 190: tjbench-static-tile-420m-128x128-cmp
+190/302 Test #190: tjbench-static-tile-420m-128x128-cmp ..............   Passed    0.01 sec
+        Start 191: tjbench-static-tile-422m-128x128-cmp
+191/302 Test #191: tjbench-static-tile-422m-128x128-cmp ..............   Passed    0.01 sec
+        Start 192: cjpeg-static-rgb-islow
+192/302 Test #192: cjpeg-static-rgb-islow ............................   Passed    0.05 sec
+        Start 193: cjpeg-static-rgb-islow-cmp
+193/302 Test #193: cjpeg-static-rgb-islow-cmp ........................   Passed    0.01 sec
+        Start 194: djpeg-static-rgb-islow
+194/302 Test #194: djpeg-static-rgb-islow ............................   Passed    0.06 sec
+        Start 195: djpeg-static-rgb-islow-cmp
+195/302 Test #195: djpeg-static-rgb-islow-cmp ........................   Passed    0.01 sec
+        Start 196: djpeg-static-rgb-islow-icc-cmp
+196/302 Test #196: djpeg-static-rgb-islow-icc-cmp ....................   Passed    0.01 sec
+        Start 197: jpegtran-static-icc
+197/302 Test #197: jpegtran-static-icc ...............................   Passed    0.08 sec
+        Start 198: jpegtran-static-icc-cmp
+198/302 Test #198: jpegtran-static-icc-cmp ...........................   Passed    0.01 sec
+        Start 199: djpeg-static-rgb-islow-565
+199/302 Test #199: djpeg-static-rgb-islow-565 ........................   Passed    0.01 sec
+        Start 200: djpeg-static-rgb-islow-565-cmp
+200/302 Test #200: djpeg-static-rgb-islow-565-cmp ....................   Passed    0.01 sec
+        Start 201: djpeg-static-rgb-islow-565D
+201/302 Test #201: djpeg-static-rgb-islow-565D .......................   Passed    0.01 sec
+        Start 202: djpeg-static-rgb-islow-565D-cmp
+202/302 Test #202: djpeg-static-rgb-islow-565D-cmp ...................   Passed    0.01 sec
+        Start 203: cjpeg-static-422-ifast-opt
+203/302 Test #203: cjpeg-static-422-ifast-opt ........................   Passed    0.01 sec
+        Start 204: cjpeg-static-422-ifast-opt-cmp
+204/302 Test #204: cjpeg-static-422-ifast-opt-cmp ....................   Passed    0.01 sec
+        Start 205: djpeg-static-422-ifast
+205/302 Test #205: djpeg-static-422-ifast ............................   Passed    0.01 sec
+        Start 206: djpeg-static-422-ifast-cmp
+206/302 Test #206: djpeg-static-422-ifast-cmp ........................   Passed    0.01 sec
+        Start 207: djpeg-static-422m-ifast
+207/302 Test #207: djpeg-static-422m-ifast ...........................   Passed    0.01 sec
+        Start 208: djpeg-static-422m-ifast-cmp
+208/302 Test #208: djpeg-static-422m-ifast-cmp .......................   Passed    0.01 sec
+        Start 209: djpeg-static-422m-ifast-565
+209/302 Test #209: djpeg-static-422m-ifast-565 .......................   Passed    0.01 sec
+        Start 210: djpeg-static-422m-ifast-565-cmp
+210/302 Test #210: djpeg-static-422m-ifast-565-cmp ...................   Passed    0.01 sec
+        Start 211: djpeg-static-422m-ifast-565D
+211/302 Test #211: djpeg-static-422m-ifast-565D ......................   Passed    0.01 sec
+        Start 212: djpeg-static-422m-ifast-565D-cmp
+212/302 Test #212: djpeg-static-422m-ifast-565D-cmp ..................   Passed    0.01 sec
+        Start 213: cjpeg-static-420-q100-ifast-prog
+213/302 Test #213: cjpeg-static-420-q100-ifast-prog ..................   Passed    0.01 sec
+        Start 214: cjpeg-static-420-q100-ifast-prog-cmp
+214/302 Test #214: cjpeg-static-420-q100-ifast-prog-cmp ..............   Passed    0.01 sec
+        Start 215: djpeg-static-420-q100-ifast-prog
+215/302 Test #215: djpeg-static-420-q100-ifast-prog ..................   Passed    0.01 sec
+        Start 216: djpeg-static-420-q100-ifast-prog-cmp
+216/302 Test #216: djpeg-static-420-q100-ifast-prog-cmp ..............   Passed    0.01 sec
+        Start 217: djpeg-static-420m-q100-ifast-prog
+217/302 Test #217: djpeg-static-420m-q100-ifast-prog .................   Passed    0.01 sec
+        Start 218: djpeg-static-420m-q100-ifast-prog-cmp
+218/302 Test #218: djpeg-static-420m-q100-ifast-prog-cmp .............   Passed    0.01 sec
+        Start 219: cjpeg-static-gray-islow
+219/302 Test #219: cjpeg-static-gray-islow ...........................   Passed    0.01 sec
+        Start 220: cjpeg-static-gray-islow-cmp
+220/302 Test #220: cjpeg-static-gray-islow-cmp .......................   Passed    0.01 sec
+        Start 221: djpeg-static-gray-islow
+221/302 Test #221: djpeg-static-gray-islow ...........................   Passed    0.01 sec
+        Start 222: djpeg-static-gray-islow-cmp
+222/302 Test #222: djpeg-static-gray-islow-cmp .......................   Passed    0.01 sec
+        Start 223: djpeg-static-gray-islow-rgb
+223/302 Test #223: djpeg-static-gray-islow-rgb .......................   Passed    0.01 sec
+        Start 224: djpeg-static-gray-islow-rgb-cmp
+224/302 Test #224: djpeg-static-gray-islow-rgb-cmp ...................   Passed    0.01 sec
+        Start 225: djpeg-static-gray-islow-565
+225/302 Test #225: djpeg-static-gray-islow-565 .......................   Passed    0.01 sec
+        Start 226: djpeg-static-gray-islow-565-cmp
+226/302 Test #226: djpeg-static-gray-islow-565-cmp ...................   Passed    0.01 sec
+        Start 227: djpeg-static-gray-islow-565D
+227/302 Test #227: djpeg-static-gray-islow-565D ......................   Passed    0.01 sec
+        Start 228: djpeg-static-gray-islow-565D-cmp
+228/302 Test #228: djpeg-static-gray-islow-565D-cmp ..................   Passed    0.01 sec
+        Start 229: cjpeg-static-420s-ifast-opt
+229/302 Test #229: cjpeg-static-420s-ifast-opt .......................   Passed    0.01 sec
+        Start 230: cjpeg-static-420s-ifast-opt-cmp
+230/302 Test #230: cjpeg-static-420s-ifast-opt-cmp ...................   Passed    0.01 sec
+        Start 231: cjpeg-static-3x2-float-prog
+231/302 Test #231: cjpeg-static-3x2-float-prog .......................   Passed    0.02 sec
+        Start 232: cjpeg-static-3x2-float-prog-cmp
+232/302 Test #232: cjpeg-static-3x2-float-prog-cmp ...................   Passed    0.01 sec
+        Start 233: djpeg-static-3x2-float-prog
+233/302 Test #233: djpeg-static-3x2-float-prog .......................   Passed    0.01 sec
+        Start 234: djpeg-static-3x2-float-prog-cmp
+234/302 Test #234: djpeg-static-3x2-float-prog-cmp ...................***Failed    0.01 sec
+        Start 235: cjpeg-static-3x2-ifast-prog
+235/302 Test #235: cjpeg-static-3x2-ifast-prog .......................   Passed    0.01 sec
+        Start 236: cjpeg-static-3x2-ifast-prog-cmp
+236/302 Test #236: cjpeg-static-3x2-ifast-prog-cmp ...................   Passed    0.01 sec
+        Start 237: djpeg-static-3x2-ifast-prog
+237/302 Test #237: djpeg-static-3x2-ifast-prog .......................   Passed    0.01 sec
+        Start 238: djpeg-static-3x2-ifast-prog-cmp
+238/302 Test #238: djpeg-static-3x2-ifast-prog-cmp ...................   Passed    0.01 sec
+        Start 239: cjpeg-static-420-islow-ari
+239/302 Test #239: cjpeg-static-420-islow-ari ........................   Passed    0.01 sec
+        Start 240: cjpeg-static-420-islow-ari-cmp
+240/302 Test #240: cjpeg-static-420-islow-ari-cmp ....................   Passed    0.01 sec
+        Start 241: jpegtran-static-420-islow-ari
+241/302 Test #241: jpegtran-static-420-islow-ari .....................   Passed    0.01 sec
+        Start 242: jpegtran-static-420-islow-ari-cmp
+242/302 Test #242: jpegtran-static-420-islow-ari-cmp .................   Passed    0.01 sec
+        Start 243: cjpeg-static-444-islow-progari
+243/302 Test #243: cjpeg-static-444-islow-progari ....................   Passed    0.01 sec
+        Start 244: cjpeg-static-444-islow-progari-cmp
+244/302 Test #244: cjpeg-static-444-islow-progari-cmp ................   Passed    0.01 sec
+        Start 245: djpeg-static-420m-ifast-ari
+245/302 Test #245: djpeg-static-420m-ifast-ari .......................   Passed    0.01 sec
+        Start 246: djpeg-static-420m-ifast-ari-cmp
+246/302 Test #246: djpeg-static-420m-ifast-ari-cmp ...................   Passed    0.01 sec
+        Start 247: jpegtran-static-420-islow
+247/302 Test #247: jpegtran-static-420-islow .........................   Passed    0.01 sec
+        Start 248: jpegtran-static-420-islow-cmp
+248/302 Test #248: jpegtran-static-420-islow-cmp .....................   Passed    0.02 sec
+        Start 249: djpeg-static-420m-islow-2_1
+249/302 Test #249: djpeg-static-420m-islow-2_1 .......................   Passed    0.03 sec
+        Start 250: djpeg-static-420m-islow-2_1-cmp
+250/302 Test #250: djpeg-static-420m-islow-2_1-cmp ...................   Passed    0.02 sec
+        Start 251: djpeg-static-420m-islow-15_8
+251/302 Test #251: djpeg-static-420m-islow-15_8 ......................   Passed    0.03 sec
+        Start 252: djpeg-static-420m-islow-15_8-cmp
+252/302 Test #252: djpeg-static-420m-islow-15_8-cmp ..................   Passed    0.02 sec
+        Start 253: djpeg-static-420m-islow-13_8
+253/302 Test #253: djpeg-static-420m-islow-13_8 ......................   Passed    0.02 sec
+        Start 254: djpeg-static-420m-islow-13_8-cmp
+254/302 Test #254: djpeg-static-420m-islow-13_8-cmp ..................   Passed    0.02 sec
+        Start 255: djpeg-static-420m-islow-11_8
+255/302 Test #255: djpeg-static-420m-islow-11_8 ......................   Passed    0.02 sec
+        Start 256: djpeg-static-420m-islow-11_8-cmp
+256/302 Test #256: djpeg-static-420m-islow-11_8-cmp ..................   Passed    0.02 sec
+        Start 257: djpeg-static-420m-islow-9_8
+257/302 Test #257: djpeg-static-420m-islow-9_8 .......................   Passed    0.02 sec
+        Start 258: djpeg-static-420m-islow-9_8-cmp
+258/302 Test #258: djpeg-static-420m-islow-9_8-cmp ...................   Passed    0.01 sec
+        Start 259: djpeg-static-420m-islow-7_8
+259/302 Test #259: djpeg-static-420m-islow-7_8 .......................   Passed    0.02 sec
+        Start 260: djpeg-static-420m-islow-7_8-cmp
+260/302 Test #260: djpeg-static-420m-islow-7_8-cmp ...................   Passed    0.01 sec
+        Start 261: djpeg-static-420m-islow-3_4
+261/302 Test #261: djpeg-static-420m-islow-3_4 .......................   Passed    0.02 sec
+        Start 262: djpeg-static-420m-islow-3_4-cmp
+262/302 Test #262: djpeg-static-420m-islow-3_4-cmp ...................   Passed    0.01 sec
+        Start 263: djpeg-static-420m-islow-5_8
+263/302 Test #263: djpeg-static-420m-islow-5_8 .......................   Passed    0.02 sec
+        Start 264: djpeg-static-420m-islow-5_8-cmp
+264/302 Test #264: djpeg-static-420m-islow-5_8-cmp ...................   Passed    0.01 sec
+        Start 265: djpeg-static-420m-islow-1_2
+265/302 Test #265: djpeg-static-420m-islow-1_2 .......................   Passed    0.02 sec
+        Start 266: djpeg-static-420m-islow-1_2-cmp
+266/302 Test #266: djpeg-static-420m-islow-1_2-cmp ...................   Passed    0.01 sec
+        Start 267: djpeg-static-420m-islow-3_8
+267/302 Test #267: djpeg-static-420m-islow-3_8 .......................   Passed    0.02 sec
+        Start 268: djpeg-static-420m-islow-3_8-cmp
+268/302 Test #268: djpeg-static-420m-islow-3_8-cmp ...................   Passed    0.01 sec
+        Start 269: djpeg-static-420m-islow-1_4
+269/302 Test #269: djpeg-static-420m-islow-1_4 .......................   Passed    0.02 sec
+        Start 270: djpeg-static-420m-islow-1_4-cmp
+270/302 Test #270: djpeg-static-420m-islow-1_4-cmp ...................   Passed    0.01 sec
+        Start 271: djpeg-static-420m-islow-1_8
+271/302 Test #271: djpeg-static-420m-islow-1_8 .......................   Passed    0.02 sec
+        Start 272: djpeg-static-420m-islow-1_8-cmp
+272/302 Test #272: djpeg-static-420m-islow-1_8-cmp ...................   Passed    0.01 sec
+        Start 273: djpeg-static-420-islow-256
+273/302 Test #273: djpeg-static-420-islow-256 ........................   Passed    0.02 sec
+        Start 274: djpeg-static-420-islow-256-cmp
+274/302 Test #274: djpeg-static-420-islow-256-cmp ....................   Passed    0.01 sec
+        Start 275: djpeg-static-420-islow-565
+275/302 Test #275: djpeg-static-420-islow-565 ........................   Passed    0.01 sec
+        Start 276: djpeg-static-420-islow-565-cmp
+276/302 Test #276: djpeg-static-420-islow-565-cmp ....................   Passed    0.01 sec
+        Start 277: djpeg-static-420-islow-565D
+277/302 Test #277: djpeg-static-420-islow-565D .......................   Passed    0.01 sec
+        Start 278: djpeg-static-420-islow-565D-cmp
+278/302 Test #278: djpeg-static-420-islow-565D-cmp ...................   Passed    0.01 sec
+        Start 279: djpeg-static-420m-islow-565
+279/302 Test #279: djpeg-static-420m-islow-565 .......................   Passed    0.01 sec
+        Start 280: djpeg-static-420m-islow-565-cmp
+280/302 Test #280: djpeg-static-420m-islow-565-cmp ...................   Passed    0.01 sec
+        Start 281: djpeg-static-420m-islow-565D
+281/302 Test #281: djpeg-static-420m-islow-565D ......................   Passed    0.01 sec
+        Start 282: djpeg-static-420m-islow-565D-cmp
+282/302 Test #282: djpeg-static-420m-islow-565D-cmp ..................   Passed    0.01 sec
+        Start 283: djpeg-static-420-islow-skip15_31
+283/302 Test #283: djpeg-static-420-islow-skip15_31 ..................   Passed    0.01 sec
+        Start 284: djpeg-static-420-islow-skip15_31-cmp
+284/302 Test #284: djpeg-static-420-islow-skip15_31-cmp ..............   Passed    0.01 sec
+        Start 285: djpeg-static-420-islow-ari-skip16_139
+285/302 Test #285: djpeg-static-420-islow-ari-skip16_139 .............   Passed    0.01 sec
+        Start 286: djpeg-static-420-islow-ari-skip16_139-cmp
+286/302 Test #286: djpeg-static-420-islow-ari-skip16_139-cmp .........   Passed    0.01 sec
+        Start 287: cjpeg-static-420-islow-prog
+287/302 Test #287: cjpeg-static-420-islow-prog .......................   Passed    0.01 sec
+        Start 288: djpeg-static-420-islow-prog-crop62x62_71_71
+288/302 Test #288: djpeg-static-420-islow-prog-crop62x62_71_71 .......   Passed    0.01 sec
+        Start 289: djpeg-static-420-islow-prog-crop62x62_71_71-cmp
+289/302 Test #289: djpeg-static-420-islow-prog-crop62x62_71_71-cmp ...   Passed    0.01 sec
+        Start 290: djpeg-static-420-islow-ari-crop53x53_4_4
+290/302 Test #290: djpeg-static-420-islow-ari-crop53x53_4_4 ..........   Passed    0.01 sec
+        Start 291: djpeg-static-420-islow-ari-crop53x53_4_4-cmp
+291/302 Test #291: djpeg-static-420-islow-ari-crop53x53_4_4-cmp ......   Passed    0.01 sec
+        Start 292: cjpeg-static-444-islow
+292/302 Test #292: cjpeg-static-444-islow ............................   Passed    0.01 sec
+        Start 293: djpeg-static-444-islow-skip1_6
+293/302 Test #293: djpeg-static-444-islow-skip1_6 ....................   Passed    0.01 sec
+        Start 294: djpeg-static-444-islow-skip1_6-cmp
+294/302 Test #294: djpeg-static-444-islow-skip1_6-cmp ................   Passed    0.01 sec
+        Start 295: cjpeg-static-444-islow-prog
+295/302 Test #295: cjpeg-static-444-islow-prog .......................   Passed    0.02 sec
+        Start 296: djpeg-static-444-islow-prog-crop98x98_13_13
+296/302 Test #296: djpeg-static-444-islow-prog-crop98x98_13_13 .......   Passed    0.01 sec
+        Start 297: djpeg-static-444-islow-prog-crop98x98_13_13-cmp
+297/302 Test #297: djpeg-static-444-islow-prog-crop98x98_13_13-cmp ...   Passed    0.01 sec
+        Start 298: cjpeg-static-444-islow-ari
+298/302 Test #298: cjpeg-static-444-islow-ari ........................   Passed    0.01 sec
+        Start 299: djpeg-static-444-islow-ari-crop37x37_0_0
+299/302 Test #299: djpeg-static-444-islow-ari-crop37x37_0_0 ..........   Passed    0.01 sec
+        Start 300: djpeg-static-444-islow-ari-crop37x37_0_0-cmp
+300/302 Test #300: djpeg-static-444-islow-ari-crop37x37_0_0-cmp ......   Passed    0.01 sec
+        Start 301: jpegtran-static-crop
+301/302 Test #301: jpegtran-static-crop ..............................   Passed    0.01 sec
+        Start 302: jpegtran-static-crop-cmp
+302/302 Test #302: jpegtran-static-crop-cmp ..........................   Passed    0.01 sec
+
+99% tests passed, 2 tests failed out of 302
+
+Total Test time (real) = 333.50 sec
+
+The following tests FAILED:
+	 83 - djpeg-shared-3x2-float-prog-cmp (Failed)
+	234 - djpeg-static-3x2-float-prog-cmp (Failed)
+Errors while running CTest
+make: *** [Makefile:96: test] Error 8

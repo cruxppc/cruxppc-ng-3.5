@@ -1,0 +1,76 @@
+make  check-recursive
+make[1]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7'
+Making check in gen.tab
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/gen.tab'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/gen.tab'
+Making check in lib
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/lib'
+make  check-am
+make[3]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/lib'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/lib'
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/lib'
+Making check in bin
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/bin'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/bin'
+Making check in doc
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/doc'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/doc'
+Making check in test
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+Making check in unicode-conformance
+make[3]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make  BidiTest BidiCharacterTest
+make[4]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make[4]: 'BidiTest' is up to date.
+make[4]: 'BidiCharacterTest' is up to date.
+make[4]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make  check-TESTS
+make[4]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make[5]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+PASS: BidiTest.txt
+PASS: BidiCharacterTest.txt
+============================================================================
+Testsuite summary for GNU FriBidi 1.0.7
+============================================================================
+# TOTAL: 2
+# PASS:  2
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make[4]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make[3]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test/unicode-conformance'
+make[3]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make  run.tests
+make[4]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[4]: Nothing to be done for 'run.tests'.
+make[4]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make  check-TESTS
+make[4]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[5]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+PASS: run.tests
+============================================================================
+Testsuite summary for GNU FriBidi 1.0.7
+============================================================================
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[4]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[3]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7/test'
+make[2]: Entering directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7'
+make[2]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7'
+make[1]: Leaving directory '/usr/ports/opt/fribidi/work/src/fribidi-1.0.7'

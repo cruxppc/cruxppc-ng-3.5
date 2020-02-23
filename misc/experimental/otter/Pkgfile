@@ -1,0 +1,24 @@
+# Description: A graphical web browser known for its speed and small footprint
+# URL:         http://www.otter.org
+# Maintainer:  TBA
+# Depends on:  fltk
+
+name=otter
+version=0.9.96
+release=1
+source=(https://sourceforge.net/projects/$name/files/$name-rc6/$name-$version.tar.bz2)
+
+build () {
+    cd $name-$version
+    #cat ../otter-openssl.patch |patch -Np1
+	cmake \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_SHARED_LIBS=True \
+		-DCMAKE_BUILD_TYPE=RelWithDebugInfo \
+		-DCMAKE_CXX_FLAGS="$CXXFLAGS" \
+		-DCMAKE_C_FLAGS="$CFLAGS" 
+	make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share
+}

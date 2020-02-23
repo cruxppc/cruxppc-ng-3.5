@@ -1,0 +1,61 @@
+
+
+To bringup wifi in cruxppc:
+
+1) If needed, install linux-firmware package.  This should
+   not be needed if using builtin ppc machine wifi and
+   also using the builtin firmware.
+2) Modify the /etc/rc.d/wlan startup script as needed.  
+   Specifically change the defintion of "DEV" to the
+   name of appropriate interface.   The builtin wifi on ppc 
+   machines is normally named "wlan0"
+3) Add wlan to /etc/rc.conf to enable auto startup of wifi
+   at boot.   It may display an ERROR during startup but should
+   complete connection shortly after startup is complete.
+
+
+For reference README file from wpa_supplicant follows.   It contains
+useful information:
+========================================
+README for wpa_supplicant
+
+
+REQUIREMENTS
+
+Kernel driver for your wireless card, e.g. ndiswrapper or ipw2100. 
+See the wpa_supplicant homepage for supported drivers.
+
+
+PRE-INSTALL
+
+
+POST-INSTALL
+
+1. Create a network setup for wpa_supplicant:
+
+   wpa_passphrase <ssid> <your_secret> >> /etc/wpa.conf
+
+   See the sample configuration file wpa_supplicant.conf in the
+   sources for a complete description of the available options 
+   for wpa_supplicant. 
+
+2. Change your wlan start script to use wpa_supplicant.
+
+   Following an example for the centrino ipw2100 driver, no need 
+   to do anything with iwconfig:
+
+   /sbin/modprobe ipw2100
+   /sbin/ifconfig eth1 xxx.xxx.xxx.xxx netmask 255.255.255.xxx
+   /sbin/route add default gw xxx.xxx.xxx.xxx
+   /usr/sbin/wpa_supplicant -B -Dnl80211 -ieth1 -c/etc/wpa.conf
+
+   Note: the above configuration makes use of the generic nl80211
+         wpa_supplicant driver, which is the preferred nowadays 
+         and supersedes the wext (wireless extensions) driver.
+
+PRECAUTION
+
+As off version 0.6.8 the -w option of wpa_supplicant was removed.
+See the ChangeLog for more infos. This may cause troubles because
+using the -w option was the recommend way to start wpa_supplicant
+until version 0.6.

@@ -1,0 +1,19 @@
+# Description: Dejagnu
+# URL:         
+# Maintainer:  
+# Arch Maintainer: TBA
+
+name=dejagnu
+version=1.6.1
+release=1
+source=(https://ftp.gnu.org/gnu/dejagnu/dejagnu-${version}.tar.gz)
+
+
+build() {
+    cd dejagnu-$version
+    ./configure --prefix=/usr 
+    make
+    #make check
+    make DESTDIR=$PKG install
+    #rm -r $PKG/usr/share
+}

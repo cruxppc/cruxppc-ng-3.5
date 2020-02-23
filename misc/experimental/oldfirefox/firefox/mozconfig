@@ -1,0 +1,50 @@
+# use an OBJDIR
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-shared
+
+# parallel build
+mk_add_options MOZ_MAKE_FLAGS=-j2
+
+# grab the defaults from the firefox tarball
+. $topsrcdir/browser/config/mozconfig
+
+# crux options
+
+ac_add_options --prefix=/usr
+ac_add_options --with-system-nss
+ac_add_options --with-system-nspr
+ac_add_options --with-system-jpeg
+ac_add_options --with-system-zlib
+ac_add_options --with-system-mng
+ac_add_options --with-pthreads
+ac_add_options --with-libxul-sdk=/usr/lib/xulrunner-devel-1.9.2.13
+ac_add_options --enable-system-cairo
+ac_add_options --enable-optimize="#CFLAGS#"
+ac_add_options --enable-official-branding
+ac_add_options --enable-extensions=default,-gnomevfs
+ac_add_options --enable-shared
+ac_add_options --disable-static
+ac_add_options --disable-tests
+ac_add_options --disable-mochitest
+ac_add_options --disable-debug
+ac_add_options --disable-installer
+ac_add_options --disable-updater
+ac_add_options --disable-xprint
+ac_add_options --disable-profilesharing
+ac_add_options --disable-gnomevfs
+ac_add_options --disable-gnomeui
+ac_add_options --disable-mailnews
+ac_add_options --disable-crashreporter
+ac_add_options --disable-necko-wifi
+ac_add_options --disable-libnotify
+ac_add_options --disable-ipc
+ac_add_options --enable-svg
+ac_add_options --enable-canvas
+ac_add_options --enable-crypto
+ac_add_options --enable-single-profile
+ac_add_options --enable-places
+ac_add_options --enable-storage
+ac_add_options --enable-places_bookmarks
+ac_add_options --enable-image-encoder=all
+ac_add_options --enable-xft
+ac_add_options --disable-dbus
+

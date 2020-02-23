@@ -1,0 +1,1053 @@
+Running tests...
+Test project /usr/ports/opt/cmake/work/src/cmake-3.16.0
+Guessing configuration NoConfig
+        Start   1: SystemInformationNew
+  1/518 Test   #1: SystemInformationNew .............................   Passed    3.14 sec
+        Start   2: kwsys.testEncode
+  2/518 Test   #2: kwsys.testEncode .................................   Passed    0.02 sec
+        Start   3: kwsys.testTerminal
+  3/518 Test   #3: kwsys.testTerminal ...............................   Passed    0.01 sec
+        Start   4: kwsys.testConfigure
+  4/518 Test   #4: kwsys.testConfigure ..............................   Passed    0.02 sec
+        Start   5: kwsys.testSystemTools
+  5/518 Test   #5: kwsys.testSystemTools ............................***Failed    0.04 sec
+        Start   6: kwsys.testCommandLineArguments
+  6/518 Test   #6: kwsys.testCommandLineArguments ...................   Passed    0.01 sec
+        Start   7: kwsys.testCommandLineArguments1
+  7/518 Test   #7: kwsys.testCommandLineArguments1 ..................   Passed    0.01 sec
+        Start   8: kwsys.testDirectory
+  8/518 Test   #8: kwsys.testDirectory ..............................   Passed    0.04 sec
+        Start   9: kwsys.testEncoding
+  9/518 Test   #9: kwsys.testEncoding ...............................   Passed    0.03 sec
+        Start  10: kwsys.testFStream
+ 10/518 Test  #10: kwsys.testFStream ................................   Passed    0.03 sec
+        Start  11: kwsys.testConsoleBuf
+ 11/518 Test  #11: kwsys.testConsoleBuf .............................   Passed    0.03 sec
+        Start  12: kwsys.testSystemInformation
+ 12/518 Test  #12: kwsys.testSystemInformation ......................   Passed    0.21 sec
+        Start  13: kwsys.testDynamicLoader
+ 13/518 Test  #13: kwsys.testDynamicLoader ..........................   Passed    0.07 sec
+        Start  14: kwsys.testProcess-1
+ 14/518 Test  #14: kwsys.testProcess-1 ..............................   Passed    0.94 sec
+        Start  15: kwsys.testProcess-2
+ 15/518 Test  #15: kwsys.testProcess-2 ..............................   Passed    0.01 sec
+        Start  16: kwsys.testProcess-3
+ 16/518 Test  #16: kwsys.testProcess-3 ..............................   Passed   10.01 sec
+        Start  17: kwsys.testProcess-4
+ 17/518 Test  #17: kwsys.testProcess-4 ..............................   Passed    0.01 sec
+        Start  18: kwsys.testProcess-5
+ 18/518 Test  #18: kwsys.testProcess-5 ..............................   Passed    0.01 sec
+        Start  19: kwsys.testProcess-6
+ 19/518 Test  #19: kwsys.testProcess-6 ..............................   Passed   10.01 sec
+        Start  20: kwsys.testProcess-7
+ 20/518 Test  #20: kwsys.testProcess-7 ..............................   Passed    1.21 sec
+        Start  21: kwsys.testProcess-9
+ 21/518 Test  #21: kwsys.testProcess-9 ..............................   Passed    6.02 sec
+        Start  22: kwsys.testProcess-10
+ 22/518 Test  #22: kwsys.testProcess-10 .............................   Passed    2.01 sec
+        Start  23: kwsys.testSharedForward
+ 23/518 Test  #23: kwsys.testSharedForward ..........................   Passed    0.91 sec
+        Start  24: kwiml.test
+ 24/518 Test  #24: kwiml.test .......................................   Passed    0.01 sec
+        Start  25: CMake.Copyright
+ 25/518 Test  #25: CMake.Copyright ..................................   Passed    0.02 sec
+        Start  26: CommandLineTest
+ 26/518 Test  #26: CommandLineTest ..................................   Passed   12.67 sec
+        Start  27: FindPackageTest
+ 27/518 Test  #27: FindPackageTest ..................................   Passed    4.08 sec
+        Start  28: FindModulesExecuteAll
+ 28/518 Test  #28: FindModulesExecuteAll ............................   Passed   22.39 sec
+        Start  29: StringFileTest
+ 29/518 Test  #29: StringFileTest ...................................   Passed    2.39 sec
+        Start  30: TryCompile
+ 30/518 Test  #30: TryCompile .......................................   Passed   14.25 sec
+        Start  31: SystemInformation
+ 31/518 Test  #31: SystemInformation ................................   Passed    1.22 sec
+        Start  32: MathTest
+ 32/518 Test  #32: MathTest .........................................   Passed    1.05 sec
+        Start  33: CompileFeatures
+ 33/518 Test  #33: CompileFeatures ..................................   Passed   18.39 sec
+        Start  34: CMakeCommands.target_compile_features
+ 34/518 Test  #34: CMakeCommands.target_compile_features ............   Passed    5.66 sec
+        Start  35: MSManifest
+ 35/518 Test  #35: MSManifest .......................................   Passed    0.60 sec
+        Start  36: Simple
+ 36/518 Test  #36: Simple ...........................................   Passed    1.43 sec
+        Start  37: PreOrder
+ 37/518 Test  #37: PreOrder .........................................   Passed    1.18 sec
+        Start  38: MissingSourceFile
+ 38/518 Test  #38: MissingSourceFile ................................   Passed    0.07 sec
+        Start  39: COnly
+ 39/518 Test  #39: COnly ............................................   Passed    2.85 sec
+        Start  40: CxxOnly
+ 40/518 Test  #40: CxxOnly ..........................................   Passed    2.49 sec
+        Start  41: CxxSubdirC
+ 41/518 Test  #41: CxxSubdirC .......................................   Passed    1.11 sec
+        Start  42: OutDir
+ 42/518 Test  #42: OutDir ...........................................   Passed    2.46 sec
+        Start  43: OutName
+ 43/518 Test  #43: OutName ..........................................   Passed    0.53 sec
+        Start  44: ObjectLibrary
+ 44/518 Test  #44: ObjectLibrary ....................................   Passed    7.78 sec
+        Start  45: NewlineArgs
+ 45/518 Test  #45: NewlineArgs ......................................   Passed    1.18 sec
+        Start  46: SetLang
+ 46/518 Test  #46: SetLang ..........................................   Passed    1.26 sec
+        Start  47: EmptyProperty
+ 47/518 Test  #47: EmptyProperty ....................................   Passed    2.10 sec
+        Start  48: ExternalOBJ
+ 48/518 Test  #48: ExternalOBJ ......................................   Passed    2.69 sec
+        Start  49: LoadCommand
+ 49/518 Test  #49: LoadCommand ......................................   Passed    1.69 sec
+        Start  50: LinkDirectory
+ 50/518 Test  #50: LinkDirectory ....................................   Passed    2.73 sec
+        Start  51: LinkLanguage
+ 51/518 Test  #51: LinkLanguage .....................................   Passed    1.43 sec
+        Start  52: LinkLine
+ 52/518 Test  #52: LinkLine .........................................   Passed    1.14 sec
+        Start  53: MacroTest
+ 53/518 Test  #53: MacroTest ........................................   Passed    0.67 sec
+        Start  54: FunctionTest
+ 54/518 Test  #54: FunctionTest .....................................   Passed    0.72 sec
+        Start  55: ReturnTest
+ 55/518 Test  #55: ReturnTest .......................................   Passed    0.69 sec
+        Start  56: Properties
+ 56/518 Test  #56: Properties .......................................   Passed    1.56 sec
+        Start  57: Assembler
+ 57/518 Test  #57: Assembler ........................................   Passed    0.62 sec
+        Start  58: SourceGroups
+ 58/518 Test  #58: SourceGroups .....................................   Passed    1.91 sec
+        Start  59: Preprocess
+ 59/518 Test  #59: Preprocess .......................................   Passed    1.15 sec
+        Start  60: ExportImport
+ 60/518 Test  #60: ExportImport .....................................   Passed   13.50 sec
+        Start  61: Unset
+ 61/518 Test  #61: Unset ............................................   Passed    0.58 sec
+        Start  62: PolicyScope
+ 62/518 Test  #62: PolicyScope ......................................   Passed    0.57 sec
+        Start  63: EmptyLibrary
+ 63/518 Test  #63: EmptyLibrary .....................................   Passed    0.11 sec
+        Start  64: CompileDefinitions
+ 64/518 Test  #64: CompileDefinitions ...............................   Passed    4.46 sec
+        Start  65: CompileOptions
+ 65/518 Test  #65: CompileOptions ...................................   Passed    1.17 sec
+        Start  66: CompatibleInterface
+ 66/518 Test  #66: CompatibleInterface ..............................   Passed    2.79 sec
+        Start  67: AliasTarget
+ 67/518 Test  #67: AliasTarget ......................................   Passed    6.01 sec
+        Start  68: StagingPrefix
+ 68/518 Test  #68: StagingPrefix ....................................   Passed   10.20 sec
+        Start  69: ImportedSameName
+ 69/518 Test  #69: ImportedSameName .................................   Passed    1.20 sec
+        Start  70: InterfaceLibrary
+ 70/518 Test  #70: InterfaceLibrary .................................   Passed    5.36 sec
+        Start  71: ConfigSources
+ 71/518 Test  #71: ConfigSources ....................................   Passed    1.07 sec
+        Start  72: SourcesProperty
+ 72/518 Test  #72: SourcesProperty ..................................   Passed    1.10 sec
+        Start  73: SourceFileProperty
+ 73/518 Test  #73: SourceFileProperty ...............................   Passed    0.65 sec
+        Start  74: SourceFileIncludeDirProperty
+ 74/518 Test  #74: SourceFileIncludeDirProperty .....................   Passed    0.63 sec
+        Start  75: CxxDialect
+ 75/518 Test  #75: CxxDialect .......................................   Passed    2.70 sec
+        Start  76: CrossCompile
+ 76/518 Test  #76: CrossCompile .....................................   Passed    0.42 sec
+        Start  77: Policy0002
+ 77/518 Test  #77: Policy0002 .......................................   Passed    0.93 sec
+        Start  78: BundleUtilities
+ 78/518 Test  #78: BundleUtilities ..................................   Passed    6.30 sec
+        Start  79: CMakeBuildTest
+ 79/518 Test  #79: CMakeBuildTest ...................................   Passed    2.21 sec
+        Start  80: CMakeDoubleProject
+ 80/518 Test  #80: CMakeDoubleProject ...............................   Passed    3.89 sec
+        Start  81: Module.CheckTypeSize
+ 81/518 Test  #81: Module.CheckTypeSize .............................   Passed    1.44 sec
+        Start  82: Module.CheckIPOSupported-C
+ 82/518 Test  #82: Module.CheckIPOSupported-C .......................   Passed    3.51 sec
+        Start  83: Module.CheckIPOSupported-CXX
+ 83/518 Test  #83: Module.CheckIPOSupported-CXX .....................   Passed    4.31 sec
+        Start  84: Module.ExternalData
+ 84/518 Test  #84: Module.ExternalData ..............................   Passed    7.95 sec
+        Start  85: Module.FindDependency
+ 85/518 Test  #85: Module.FindDependency ............................   Passed    0.91 sec
+        Start  86: Module.WriteCompilerDetectionHeader
+ 86/518 Test  #86: Module.WriteCompilerDetectionHeader ..............   Passed    7.29 sec
+        Start  87: PositionIndependentTargets
+ 87/518 Test  #87: PositionIndependentTargets .......................   Passed    8.31 sec
+        Start  88: Visibility
+ 88/518 Test  #88: Visibility .......................................   Passed    4.63 sec
+        Start  89: LinkFlags-prepare
+ 89/518 Test  #89: LinkFlags-prepare ................................   Passed    1.34 sec
+        Start  90: LinkFlags-lib
+ 90/518 Test  #90: LinkFlags-lib ....................................   Passed    0.30 sec
+        Start  91: LinkFlags-dll
+ 91/518 Test  #91: LinkFlags-dll ....................................   Passed    0.28 sec
+        Start  92: LinkFlags-mod
+ 92/518 Test  #92: LinkFlags-mod ....................................   Passed    0.29 sec
+        Start  93: LinkFlags-exe
+ 93/518 Test  #93: LinkFlags-exe ....................................   Passed    0.56 sec
+        Start  94: LinkFlags-lib_config
+ 94/518 Test  #94: LinkFlags-lib_config .............................   Passed    0.30 sec
+        Start  95: LinkFlags-dll_config
+ 95/518 Test  #95: LinkFlags-dll_config .............................   Passed    0.28 sec
+        Start  96: LinkFlags-mod_config
+ 96/518 Test  #96: LinkFlags-mod_config .............................   Passed    0.28 sec
+        Start  97: LinkFlags-exe_config
+ 97/518 Test  #97: LinkFlags-exe_config .............................   Passed    0.28 sec
+        Start  98: LinkFlags-lib_flags
+ 98/518 Test  #98: LinkFlags-lib_flags ..............................   Passed    0.31 sec
+        Start  99: LinkFlags-dll_flags
+ 99/518 Test  #99: LinkFlags-dll_flags ..............................   Passed    0.28 sec
+        Start 100: LinkFlags-mod_flags
+100/518 Test #100: LinkFlags-mod_flags ..............................   Passed    0.28 sec
+        Start 101: LinkFlags-exe_flags
+101/518 Test #101: LinkFlags-exe_flags ..............................   Passed    0.29 sec
+        Start 102: LinkFlags-lib_flags_config
+102/518 Test #102: LinkFlags-lib_flags_config .......................   Passed    0.31 sec
+        Start 103: LinkFlags-dll_flags_config
+103/518 Test #103: LinkFlags-dll_flags_config .......................   Passed    0.28 sec
+        Start 104: LinkFlags-mod_flags_config
+104/518 Test #104: LinkFlags-mod_flags_config .......................   Passed    0.29 sec
+        Start 105: LinkFlags-exe_flags_config
+105/518 Test #105: LinkFlags-exe_flags_config .......................   Passed    0.30 sec
+        Start 106: SubProject
+106/518 Test #106: SubProject .......................................   Passed    0.98 sec
+        Start 107: SubProject-Stage2
+107/518 Test #107: SubProject-Stage2 ................................   Passed    1.20 sec
+        Start 108: Framework
+108/518 Test #108: Framework ........................................   Passed    3.05 sec
+        Start 109: TargetName
+109/518 Test #109: TargetName .......................................   Passed    0.70 sec
+        Start 110: LibName
+110/518 Test #110: LibName ..........................................   Passed    2.16 sec
+        Start 111: CustComDepend
+111/518 Test #111: CustComDepend ....................................   Passed    1.31 sec
+        Start 112: ArgumentExpansion
+112/518 Test #112: ArgumentExpansion ................................   Passed    0.19 sec
+        Start 113: GeneratorExpression
+113/518 Test #113: GeneratorExpression ..............................   Passed   11.24 sec
+        Start 114: CustomCommand
+114/518 Test #114: CustomCommand ....................................   Passed   10.96 sec
+        Start 115: CustomCommandByproducts
+115/518 Test #115: CustomCommandByproducts ..........................   Passed    5.55 sec
+        Start 116: CommandLength
+116/518 Test #116: CommandLength ....................................   Passed   20.41 sec
+        Start 117: EmptyDepends
+117/518 Test #117: EmptyDepends .....................................   Passed    1.60 sec
+        Start 118: CustomCommandWorkingDirectory
+118/518 Test #118: CustomCommandWorkingDirectory ....................   Passed    2.36 sec
+        Start 119: OutOfSource
+119/518 Test #119: OutOfSource ......................................   Passed    2.78 sec
+        Start 120: BuildDepends
+120/518 Test #120: BuildDepends .....................................   Passed   21.41 sec
+        Start 121: MissingInstall
+121/518 Test #121: MissingInstall ...................................   Passed    4.05 sec
+        Start 122: CPackUseDefaultVersion
+122/518 Test #122: CPackUseDefaultVersion ...........................   Passed    0.25 sec
+        Start 123: CPackUseProjectVersion
+123/518 Test #123: CPackUseProjectVersion ...........................   Passed    0.25 sec
+        Start 124: CPackUseShortProjectVersion
+124/518 Test #124: CPackUseShortProjectVersion ......................   Passed    0.25 sec
+        Start 125: CPackComponents
+125/518 Test #125: CPackComponents ..................................   Passed    6.05 sec
+        Start 126: CPackComponentsForAll-ZIP-default
+126/518 Test #126: CPackComponentsForAll-ZIP-default ................   Passed    5.56 sec
+        Start 127: CPackComponentsForAll-ZIP-OnePackPerGroup
+127/518 Test #127: CPackComponentsForAll-ZIP-OnePackPerGroup ........   Passed    5.28 sec
+        Start 128: CPackComponentsForAll-ZIP-IgnoreGroup
+128/518 Test #128: CPackComponentsForAll-ZIP-IgnoreGroup ............   Passed    5.47 sec
+        Start 129: CPackComponentsForAll-ZIP-AllInOne
+129/518 Test #129: CPackComponentsForAll-ZIP-AllInOne ...............   Passed    5.50 sec
+        Start 130: CPackTestAllGenerators
+130/518 Test #130: CPackTestAllGenerators ...........................   Passed    7.80 sec
+        Start 131: CPackComponentsPrefix
+131/518 Test #131: CPackComponentsPrefix ............................   Passed    0.73 sec
+        Start 132: X11
+132/518 Test #132: X11 ..............................................   Passed    7.68 sec
+        Start 133: CMakeTestAllGenerators
+133/518 Test #133: CMakeTestAllGenerators ...........................   Passed    8.86 sec
+        Start 134: CMakeTestMultipleConfigures
+134/518 Test #134: CMakeTestMultipleConfigures ......................   Passed   23.59 sec
+        Start 135: LoadedCommandOneConfig
+135/518 Test #135: LoadedCommandOneConfig ...........................   Passed    7.61 sec
+        Start 137: complexOneConfig
+136/518 Test #137: complexOneConfig .................................   Passed   11.47 sec
+        Start 136: complex
+137/518 Test #136: complex ..........................................   Passed   11.45 sec
+        Start 138: Environment
+138/518 Test #138: Environment ......................................   Passed    4.02 sec
+        Start 139: QtAutomocNoQt
+139/518 Test #139: QtAutomocNoQt ....................................   Passed    3.58 sec
+        Start 140: ExternalProject
+140/518 Test #140: ExternalProject ..................................   Passed   53.71 sec
+        Start 141: ExternalProjectSubdir
+141/518 Test #141: ExternalProjectSubdir ............................   Passed    1.09 sec
+        Start 142: ExternalProjectSourceSubdir
+142/518 Test #142: ExternalProjectSourceSubdir ......................   Passed    4.28 sec
+        Start 143: ExternalProjectSourceSubdirNotCMake
+143/518 Test #143: ExternalProjectSourceSubdirNotCMake ..............   Passed    0.91 sec
+        Start 144: ExternalProjectLocal
+144/518 Test #144: ExternalProjectLocal .............................   Passed   49.70 sec
+        Start 145: ExternalProjectUpdateSetup
+145/518 Test #145: ExternalProjectUpdateSetup .......................   Passed   13.58 sec
+        Start 146: ExternalProjectUpdate
+146/518 Test #146: ExternalProjectUpdate ............................   Passed   50.26 sec
+        Start 147: TutorialStep2
+147/518 Test #147: TutorialStep2 ....................................   Passed    5.66 sec
+        Start 148: TutorialStep3
+148/518 Test #148: TutorialStep3 ....................................   Passed    6.83 sec
+        Start 149: TutorialStep4
+149/518 Test #149: TutorialStep4 ....................................   Passed    7.04 sec
+        Start 150: TutorialStep5
+150/518 Test #150: TutorialStep5 ....................................   Passed    6.86 sec
+        Start 151: TutorialStep6
+151/518 Test #151: TutorialStep6 ....................................   Passed    8.14 sec
+        Start 152: TutorialStep7
+152/518 Test #152: TutorialStep7 ....................................   Passed    9.50 sec
+        Start 153: TutorialStep8
+153/518 Test #153: TutorialStep8 ....................................   Passed    9.84 sec
+        Start 154: TutorialStep9
+154/518 Test #154: TutorialStep9 ....................................   Passed   10.33 sec
+        Start 155: TutorialStep10
+155/518 Test #155: TutorialStep10 ...................................   Passed   11.26 sec
+        Start 156: TutorialStep11
+156/518 Test #156: TutorialStep11 ...................................   Passed   10.85 sec
+        Start 157: TutorialComplete
+157/518 Test #157: TutorialComplete .................................   Passed   11.15 sec
+        Start 158: TutorialStep3_MYMATH
+158/518 Test #158: TutorialStep3_MYMATH .............................   Passed    5.56 sec
+        Start 159: TutorialStep4_MYMATH
+159/518 Test #159: TutorialStep4_MYMATH .............................   Passed    5.23 sec
+        Start 160: TutorialStep5_MYMATH
+160/518 Test #160: TutorialStep5_MYMATH .............................   Passed    5.44 sec
+        Start 161: TutorialStep6_MYMATH
+161/518 Test #161: TutorialStep6_MYMATH .............................   Passed    5.53 sec
+        Start 162: TutorialStep7_MYMATH
+162/518 Test #162: TutorialStep7_MYMATH .............................   Passed    5.22 sec
+        Start 163: TutorialStep8_MYMATH
+163/518 Test #163: TutorialStep8_MYMATH .............................   Passed    5.68 sec
+        Start 164: TutorialStep9_MYMATH
+164/518 Test #164: TutorialStep9_MYMATH .............................   Passed    6.09 sec
+        Start 165: TutorialStep10_MYMATH
+165/518 Test #165: TutorialStep10_MYMATH ............................   Passed    7.07 sec
+        Start 166: TutorialStep11_MYMATH
+166/518 Test #166: TutorialStep11_MYMATH ............................   Passed    6.42 sec
+        Start 167: TutorialComplete_MYMATH
+167/518 Test #167: TutorialComplete_MYMATH ..........................   Passed    6.30 sec
+        Start 168: testing
+168/518 Test #168: testing ..........................................   Passed    6.95 sec
+        Start 169: wrapping
+169/518 Test #169: wrapping .........................................   Passed    7.26 sec
+        Start 170: qtwrapping
+170/518 Test #170: qtwrapping .......................................   Passed    3.53 sec
+        Start 171: testdriver1
+171/518 Test #171: testdriver1 ......................................   Passed    5.01 sec
+        Start 172: testdriver2
+172/518 Test #172: testdriver2 ......................................   Passed    1.65 sec
+        Start 173: testdriver3
+173/518 Test #173: testdriver3 ......................................   Passed    1.63 sec
+        Start 174: Dependency
+174/518 Test #174: Dependency .......................................   Passed   16.32 sec
+        Start 175: JumpWithLibOut
+175/518 Test #175: JumpWithLibOut ...................................   Passed    4.77 sec
+        Start 176: JumpNoLibOut
+176/518 Test #176: JumpNoLibOut .....................................   Passed    5.07 sec
+        Start 177: Plugin
+177/518 Test #177: Plugin ...........................................   Passed    9.91 sec
+        Start 178: RuntimePath
+178/518 Test #178: RuntimePath ......................................   Passed    4.06 sec
+        Start 179: linkorder1
+179/518 Test #179: linkorder1 .......................................   Passed    6.49 sec
+        Start 180: linkorder2
+180/518 Test #180: linkorder2 .......................................   Passed    3.79 sec
+        Start 181: LinkStatic
+181/518 Test #181: LinkStatic .......................................   Passed    1.84 sec
+        Start 182: SubDirSpaces
+182/518 Test #182: SubDirSpaces .....................................   Passed    6.32 sec
+        Start 183: SubDir
+183/518 Test #183: SubDir ...........................................   Passed    5.86 sec
+        Start 184: CheckCompilerRelatedVariables
+184/518 Test #184: CheckCompilerRelatedVariables ....................   Passed    3.94 sec
+        Start 185: MakeClean
+185/518 Test #185: MakeClean ........................................   Passed    6.17 sec
+        Start 186: WarnUnusedUnusedViaSet
+186/518 Test #186: WarnUnusedUnusedViaSet ...........................   Passed    3.45 sec
+        Start 187: WarnUnusedUnusedViaUnset
+187/518 Test #187: WarnUnusedUnusedViaUnset .........................   Passed    3.66 sec
+        Start 188: WarnUnusedCliUnused
+188/518 Test #188: WarnUnusedCliUnused ..............................   Passed    3.53 sec
+        Start 189: WarnUnusedCliUsed
+189/518 Test #189: WarnUnusedCliUsed ................................   Passed    3.20 sec
+        Start 190: WarnUninitialized
+190/518 Test #190: WarnUninitialized ................................   Passed    3.19 sec
+        Start 191: TestsWorkingDirectory
+191/518 Test #191: TestsWorkingDirectory ............................   Passed    3.85 sec
+        Start 192: CTest.NoNewline
+192/518 Test #192: CTest.NoNewline ..................................   Passed    0.02 sec
+        Start 193: CTest.BuildCommand.ProjectInSubdir
+193/518 Test #193: CTest.BuildCommand.ProjectInSubdir ...............   Passed    0.32 sec
+        Start 194: CTest.UpdateGIT
+194/518 Test #194: CTest.UpdateGIT ..................................   Passed   19.92 sec
+        Start 195: CTestTestNoBuild
+195/518 Test #195: CTestTestNoBuild .................................   Passed    3.82 sec
+        Start 196: CTestTestNoExe
+196/518 Test #196: CTestTestNoExe ...................................   Passed    0.06 sec
+        Start 197: CTestTestUpload
+197/518 Test #197: CTestTestUpload ..................................   Passed    6.91 sec
+        Start 198: CTestCoverageCollectGCOV
+198/518 Test #198: CTestCoverageCollectGCOV .........................   Passed    3.26 sec
+        Start 199: CTestTestEmptyBinaryDirectory
+199/518 Test #199: CTestTestEmptyBinaryDirectory ....................   Passed    0.06 sec
+        Start 200: CTestGTMCoverage
+200/518 Test #200: CTestGTMCoverage .................................   Passed    0.10 sec
+        Start 201: CTestCacheCoverage
+201/518 Test #201: CTestCacheCoverage ...............................   Passed    0.06 sec
+        Start 202: CTestPythonCoverage
+202/518 Test #202: CTestPythonCoverage ..............................   Passed    0.05 sec
+        Start 203: CTestCoberturaCoverage
+203/518 Test #203: CTestCoberturaCoverage ...........................   Passed    0.06 sec
+        Start 204: CTestJacocoCoverage
+204/518 Test #204: CTestJacocoCoverage ..............................   Passed    0.06 sec
+        Start 205: CTestJavascriptCoverage
+205/518 Test #205: CTestJavascriptCoverage ..........................   Passed    0.05 sec
+        Start 206: CTestDelphiCoverage
+206/518 Test #206: CTestDelphiCoverage ..............................   Passed    0.05 sec
+        Start 207: CTestConfig.Script.Debug
+207/518 Test #207: CTestConfig.Script.Debug .........................   Passed    4.24 sec
+        Start 208: CTestConfig.Dashboard.Debug
+208/518 Test #208: CTestConfig.Dashboard.Debug ......................   Passed    4.68 sec
+        Start 209: CTestConfig.Script.MinSizeRel
+209/518 Test #209: CTestConfig.Script.MinSizeRel ....................   Passed    4.05 sec
+        Start 210: CTestConfig.Dashboard.MinSizeRel
+210/518 Test #210: CTestConfig.Dashboard.MinSizeRel .................   Passed    4.40 sec
+        Start 211: CTestConfig.Script.Release
+211/518 Test #211: CTestConfig.Script.Release .......................   Passed    4.14 sec
+        Start 212: CTestConfig.Dashboard.Release
+212/518 Test #212: CTestConfig.Dashboard.Release ....................   Passed    4.36 sec
+        Start 213: CTestConfig.Script.RelWithDebInfo
+213/518 Test #213: CTestConfig.Script.RelWithDebInfo ................   Passed    3.91 sec
+        Start 214: CTestConfig.Dashboard.RelWithDebInfo
+214/518 Test #214: CTestConfig.Dashboard.RelWithDebInfo .............   Passed    4.40 sec
+        Start 215: CTestConfig.ScriptWithArgs
+215/518 Test #215: CTestConfig.ScriptWithArgs .......................   Passed    0.09 sec
+        Start 216: CMakeCommands.add_compile_definitions
+216/518 Test #216: CMakeCommands.add_compile_definitions ............   Passed    2.70 sec
+        Start 217: CMakeCommands.add_compile_options
+217/518 Test #217: CMakeCommands.add_compile_options ................   Passed    4.11 sec
+        Start 218: CMakeCommands.target_link_libraries
+218/518 Test #218: CMakeCommands.target_link_libraries ..............   Passed   21.21 sec
+        Start 219: CMakeCommands.target_include_directories
+219/518 Test #219: CMakeCommands.target_include_directories .........   Passed    4.87 sec
+        Start 220: CMakeCommands.target_compile_definitions
+220/518 Test #220: CMakeCommands.target_compile_definitions .........   Passed    5.05 sec
+        Start 221: CMakeCommands.target_compile_options
+221/518 Test #221: CMakeCommands.target_compile_options .............   Passed    5.01 sec
+        Start 222: CMakeCommands.target_sources
+222/518 Test #222: CMakeCommands.target_sources .....................   Passed    6.35 sec
+        Start 223: CMakeCommands.add_link_options
+223/518 Test #223: CMakeCommands.add_link_options ...................   Passed    1.27 sec
+        Start 224: CMakeCommands.target_link_options
+224/518 Test #224: CMakeCommands.target_link_options ................   Passed    1.68 sec
+        Start 225: CMakeCommands.link_directories
+225/518 Test #225: CMakeCommands.link_directories ...................   Passed    1.26 sec
+        Start 226: CMakeCommands.target_link_directories
+226/518 Test #226: CMakeCommands.target_link_directories ............   Passed    1.93 sec
+        Start 227: Server
+227/518 Test #227: Server ...........................................   Passed   22.05 sec
+        Start 228: CTestTestCrash
+228/518 Test #228: CTestTestCrash ...................................   Passed    4.36 sec
+        Start 229: CTestTestBadExe
+229/518 Test #229: CTestTestBadExe ..................................   Passed    3.47 sec
+        Start 230: CTestTestBadGenerator
+230/518 Test #230: CTestTestBadGenerator ............................   Passed    0.08 sec
+        Start 231: CTestTestParallel
+231/518 Test #231: CTestTestParallel ................................   Passed    3.98 sec
+        Start 232: CTestTestVerboseOutput
+232/518 Test #232: CTestTestVerboseOutput ...........................   Passed    4.01 sec
+        Start 233: CTestTestSkipReturnCode
+233/518 Test #233: CTestTestSkipReturnCode ..........................   Passed    3.43 sec
+        Start 234: CTestTestSerialInDepends
+234/518 Test #234: CTestTestSerialInDepends .........................   Passed    9.47 sec
+        Start 235: CTestTestMissingDependsExe
+235/518 Test #235: CTestTestMissingDependsExe .......................   Passed    3.33 sec
+        Start 236: CTestTestSerialOrder
+236/518 Test #236: CTestTestSerialOrder .............................   Passed    3.88 sec
+        Start 237: CTestLimitDashJ
+237/518 Test #237: CTestLimitDashJ ..................................   Passed   31.58 sec
+        Start 238: CTestTestPrintLabels
+238/518 Test #238: CTestTestPrintLabels .............................   Passed    0.15 sec
+        Start 239: CTestTestLabelRegExp
+239/518 Test #239: CTestTestLabelRegExp .............................   Passed    0.27 sec
+        Start 240: CTestTestResourceLock
+240/518 Test #240: CTestTestResourceLock ............................   Passed    3.98 sec
+        Start 241: CTestTestScheduler
+241/518 Test #241: CTestTestScheduler ...............................   Passed   35.86 sec
+        Start 242: CTestTestCostSerial
+242/518 Test #242: CTestTestCostSerial ..............................   Passed    9.80 sec
+        Start 243: CTestTestStopTime
+243/518 Test #243: CTestTestStopTime ................................   Passed   18.70 sec
+        Start 244: CTestTestSubdir
+244/518 Test #244: CTestTestSubdir ..................................   Passed    4.59 sec
+        Start 245: CTestTestTimeout
+245/518 Test #245: CTestTestTimeout .................................   Passed   15.81 sec
+        Start 246: CTestTestRerunFailed
+246/518 Test #246: CTestTestRerunFailed .............................   Passed    4.04 sec
+        Start 247: CTestTestZeroTimeout
+247/518 Test #247: CTestTestZeroTimeout .............................   Passed    8.92 sec
+        Start 248: CTestTestDepends
+248/518 Test #248: CTestTestDepends .................................   Passed    4.05 sec
+        Start 249: CTestTestCycle
+249/518 Test #249: CTestTestCycle ...................................   Passed    4.00 sec
+        Start 250: CTestTestRunScript
+250/518 Test #250: CTestTestRunScript ...............................   Passed    0.08 sec
+        Start 251: CTestTestShowOnly
+251/518 Test #251: CTestTestShowOnly ................................   Passed    0.27 sec
+        Start 252: CTestTestFdSetSize
+252/518 Test #252: CTestTestFdSetSize ...............................   Passed    4.17 sec
+        Start 253: CompileCommandOutput
+253/518 Test #253: CompileCommandOutput .............................   Passed    3.97 sec
+        Start 254: IncludeDirectories
+254/518 Test #254: IncludeDirectories ...............................   Passed   18.53 sec
+        Start 255: IncludeDirectoriesCPATH
+255/518 Test #255: IncludeDirectoriesCPATH ..........................   Passed    3.46 sec
+        Start 256: InterfaceLinkLibraries
+256/518 Test #256: InterfaceLinkLibraries ...........................   Passed   12.61 sec
+        Start 257: CMakeLib.testArgumentParser
+257/518 Test #257: CMakeLib.testArgumentParser ......................   Passed    0.17 sec
+        Start 258: CMakeLib.testCTestBinPacker
+258/518 Test #258: CMakeLib.testCTestBinPacker ......................   Passed    0.02 sec
+        Start 259: CMakeLib.testCTestResourceAllocator
+259/518 Test #259: CMakeLib.testCTestResourceAllocator ..............   Passed    0.02 sec
+        Start 260: CMakeLib.testCTestResourceSpec
+260/518 Test #260: CMakeLib.testCTestResourceSpec ...................   Passed    0.04 sec
+        Start 261: CMakeLib.testCTestResourceGroups
+261/518 Test #261: CMakeLib.testCTestResourceGroups .................   Passed    0.03 sec
+        Start 262: CMakeLib.testGeneratedFileStream
+262/518 Test #262: CMakeLib.testGeneratedFileStream .................   Passed    0.02 sec
+        Start 263: CMakeLib.testRST
+263/518 Test #263: CMakeLib.testRST .................................   Passed    0.03 sec
+        Start 264: CMakeLib.testRange
+264/518 Test #264: CMakeLib.testRange ...............................   Passed    0.02 sec
+        Start 265: CMakeLib.testOptional
+265/518 Test #265: CMakeLib.testOptional ............................   Passed    0.04 sec
+        Start 266: CMakeLib.testString
+266/518 Test #266: CMakeLib.testString ..............................   Passed    0.03 sec
+        Start 267: CMakeLib.testStringAlgorithms
+267/518 Test #267: CMakeLib.testStringAlgorithms ....................   Passed    0.02 sec
+        Start 268: CMakeLib.testSystemTools
+268/518 Test #268: CMakeLib.testSystemTools .........................   Passed    0.02 sec
+        Start 269: CMakeLib.testUTF8
+269/518 Test #269: CMakeLib.testUTF8 ................................   Passed    0.02 sec
+        Start 270: CMakeLib.testXMLParser
+270/518 Test #270: CMakeLib.testXMLParser ...........................   Passed    0.02 sec
+        Start 271: CMakeLib.testXMLSafe
+271/518 Test #271: CMakeLib.testXMLSafe .............................   Passed    0.02 sec
+        Start 272: CMakeLib.testFindPackageCommand
+272/518 Test #272: CMakeLib.testFindPackageCommand ..................   Passed    0.02 sec
+        Start 273: CMakeLib.testUVProcessChain
+273/518 Test #273: CMakeLib.testUVProcessChain ......................   Passed   27.10 sec
+        Start 274: CMakeLib.testUVRAII
+274/518 Test #274: CMakeLib.testUVRAII ..............................   Passed    2.04 sec
+        Start 275: CMakeLib.testUVStreambuf
+275/518 Test #275: CMakeLib.testUVStreambuf .........................   Passed    0.23 sec
+        Start 276: CMakeServerLib.testServerBuffering
+276/518 Test #276: CMakeServerLib.testServerBuffering ...............   Passed    0.33 sec
+        Start 277: CMakeOnly.LinkInterfaceLoop
+277/518 Test #277: CMakeOnly.LinkInterfaceLoop ......................   Passed    1.30 sec
+        Start 278: CMakeOnly.CheckSymbolExists
+278/518 Test #278: CMakeOnly.CheckSymbolExists ......................   Passed    3.20 sec
+        Start 279: CMakeOnly.CheckCXXSymbolExists
+279/518 Test #279: CMakeOnly.CheckCXXSymbolExists ...................   Passed    7.33 sec
+        Start 280: CMakeOnly.CheckCXXCompilerFlag
+280/518 Test #280: CMakeOnly.CheckCXXCompilerFlag ...................   Passed    4.37 sec
+        Start 281: CMakeOnly.CheckLanguage
+281/518 Test #281: CMakeOnly.CheckLanguage ..........................   Passed    3.79 sec
+        Start 282: CMakeOnly.CheckStructHasMember
+282/518 Test #282: CMakeOnly.CheckStructHasMember ...................   Passed   15.40 sec
+        Start 283: CMakeOnly.CompilerIdC
+283/518 Test #283: CMakeOnly.CompilerIdC ............................   Passed    1.21 sec
+        Start 284: CMakeOnly.CompilerIdCXX
+284/518 Test #284: CMakeOnly.CompilerIdCXX ..........................   Passed    2.04 sec
+        Start 285: CMakeOnly.AllFindModules
+285/518 Test #285: CMakeOnly.AllFindModules .........................   Passed   30.47 sec
+        Start 286: CMakeOnly.SelectLibraryConfigurations
+286/518 Test #286: CMakeOnly.SelectLibraryConfigurations ............   Passed    0.09 sec
+        Start 287: CMakeOnly.TargetScope
+287/518 Test #287: CMakeOnly.TargetScope ............................   Passed    0.10 sec
+        Start 288: CMakeOnly.find_library
+288/518 Test #288: CMakeOnly.find_library ...........................   Passed    0.13 sec
+        Start 289: CMakeOnly.find_path
+289/518 Test #289: CMakeOnly.find_path ..............................   Passed    0.09 sec
+        Start 290: CMakeOnly.ProjectInclude
+290/518 Test #290: CMakeOnly.ProjectInclude .........................   Passed    0.08 sec
+        Start 291: CMakeOnly.ProjectIncludeAny
+291/518 Test #291: CMakeOnly.ProjectIncludeAny ......................   Passed    0.08 sec
+        Start 292: CMakeOnly.ProjectIncludeBefore
+292/518 Test #292: CMakeOnly.ProjectIncludeBefore ...................   Passed    0.08 sec
+        Start 293: CMakeOnly.MajorVersionSelection-PythonLibs_2
+293/518 Test #293: CMakeOnly.MajorVersionSelection-PythonLibs_2 .....   Passed    3.24 sec
+        Start 294: CMakeOnly.MajorVersionSelection-PythonLibs_3
+294/518 Test #294: CMakeOnly.MajorVersionSelection-PythonLibs_3 .....   Passed    3.41 sec
+        Start 295: CMakeOnly.MajorVersionSelection-PythonInterp_3
+295/518 Test #295: CMakeOnly.MajorVersionSelection-PythonInterp_3 ...   Passed    0.19 sec
+        Start 296: CMakeOnly.MajorVersionSelection-Qt_3
+296/518 Test #296: CMakeOnly.MajorVersionSelection-Qt_3 .............   Passed    3.51 sec
+        Start 297: CMakeOnly.MajorVersionSelection-Qt_4
+297/518 Test #297: CMakeOnly.MajorVersionSelection-Qt_4 .............   Passed    3.22 sec
+        Start 298: RunCMake.CMP0019
+298/518 Test #298: RunCMake.CMP0019 .................................   Passed    0.26 sec
+        Start 299: RunCMake.CMP0022
+299/518 Test #299: RunCMake.CMP0022 .................................   Passed   34.40 sec
+        Start 300: RunCMake.CMP0026
+300/518 Test #300: RunCMake.CMP0026 .................................   Passed   26.48 sec
+        Start 301: RunCMake.CMP0027
+301/518 Test #301: RunCMake.CMP0027 .................................   Passed    6.09 sec
+        Start 302: RunCMake.CMP0028
+302/518 Test #302: RunCMake.CMP0028 .................................   Passed   12.56 sec
+        Start 303: RunCMake.CMP0037
+303/518 Test #303: RunCMake.CMP0037 .................................   Passed   17.50 sec
+        Start 304: RunCMake.CMP0038
+304/518 Test #304: RunCMake.CMP0038 .................................   Passed    6.17 sec
+        Start 305: RunCMake.CMP0039
+305/518 Test #305: RunCMake.CMP0039 .................................   Passed    6.28 sec
+        Start 306: RunCMake.CMP0040
+306/518 Test #306: RunCMake.CMP0040 .................................   Passed   10.52 sec
+        Start 307: RunCMake.CMP0041
+307/518 Test #307: RunCMake.CMP0041 .................................   Passed   12.80 sec
+        Start 308: RunCMake.CMP0043
+308/518 Test #308: RunCMake.CMP0043 .................................   Passed    6.29 sec
+        Start 309: RunCMake.CMP0045
+309/518 Test #309: RunCMake.CMP0045 .................................   Passed    6.28 sec
+        Start 310: RunCMake.CMP0046
+310/518 Test #310: RunCMake.CMP0046 .................................   Passed   12.51 sec
+        Start 311: RunCMake.CMP0049
+311/518 Test #311: RunCMake.CMP0049 .................................   Passed    6.28 sec
+        Start 312: RunCMake.CMP0050
+312/518 Test #312: RunCMake.CMP0050 .................................   Passed    6.06 sec
+        Start 313: RunCMake.CMP0051
+313/518 Test #313: RunCMake.CMP0051 .................................   Passed    6.33 sec
+        Start 314: RunCMake.CMP0053
+314/518 Test #314: RunCMake.CMP0053 .................................   Passed    6.35 sec
+        Start 315: RunCMake.CMP0054
+315/518 Test #315: RunCMake.CMP0054 .................................   Passed    0.78 sec
+        Start 316: RunCMake.CMP0055
+316/518 Test #316: RunCMake.CMP0055 .................................   Passed    0.40 sec
+        Start 317: RunCMake.CMP0057
+317/518 Test #317: RunCMake.CMP0057 .................................   Passed    0.21 sec
+        Start 318: RunCMake.CMP0059
+318/518 Test #318: RunCMake.CMP0059 .................................   Passed    0.22 sec
+        Start 319: RunCMake.CMP0060
+319/518 Test #319: RunCMake.CMP0060 .................................   Passed    7.27 sec
+        Start 320: RunCMake.CMP0064
+320/518 Test #320: RunCMake.CMP0064 .................................   Passed    0.24 sec
+        Start 321: RunCMake.CMP0069
+321/518 Test #321: RunCMake.CMP0069 .................................   Passed    8.05 sec
+        Start 322: RunCMake.CMP0081
+322/518 Test #322: RunCMake.CMP0081 .................................   Passed    5.87 sec
+        Start 323: RunCMake.CMP0065
+323/518 Test #323: RunCMake.CMP0065 .................................   Passed    8.42 sec
+        Start 324: RunCMake.Make
+324/518 Test #324: RunCMake.Make ....................................   Passed    3.84 sec
+        Start 325: RunCMake.CTest
+325/518 Test #325: RunCMake.CTest ...................................   Passed    0.16 sec
+        Start 326: RunCMake.ctest_memcheck
+326/518 Test #326: RunCMake.ctest_memcheck ..........................   Passed    9.23 sec
+        Start 327: RunCMake.AndroidTestUtilities
+327/518 Test #327: RunCMake.AndroidTestUtilities ....................   Passed    1.22 sec
+        Start 328: RunCMake.Autogen
+328/518 Test #328: RunCMake.Autogen .................................   Passed    2.39 sec
+        Start 329: RunCMake.BuildDepends
+329/518 Test #329: RunCMake.BuildDepends ............................   Passed   15.52 sec
+        Start 330: RunCMake.Byproducts
+330/518 Test #330: RunCMake.Byproducts ..............................   Passed   66.22 sec
+        Start 331: RunCMake.CMakeRoleGlobalProperty
+331/518 Test #331: RunCMake.CMakeRoleGlobalProperty .................   Passed    1.32 sec
+        Start 332: RunCMake.CompilerChange
+332/518 Test #332: RunCMake.CompilerChange ..........................   Passed    4.90 sec
+        Start 333: RunCMake.CompilerNotFound
+333/518 Test #333: RunCMake.CompilerNotFound ........................   Passed    3.81 sec
+        Start 334: RunCMake.Configure
+334/518 Test #334: RunCMake.Configure ...............................   Passed    6.14 sec
+        Start 335: RunCMake.DisallowedCommands
+335/518 Test #335: RunCMake.DisallowedCommands ......................   Passed    1.79 sec
+        Start 336: RunCMake.ExternalData
+336/518 Test #336: RunCMake.ExternalData ............................   Passed    3.35 sec
+        Start 337: RunCMake.FeatureSummary
+337/518 Test #337: RunCMake.FeatureSummary ..........................   Passed    2.75 sec
+        Start 338: RunCMake.FPHSA
+338/518 Test #338: RunCMake.FPHSA ...................................   Passed    1.46 sec
+        Start 339: RunCMake.FileAPI
+339/518 Test #339: RunCMake.FileAPI .................................   Passed   12.42 sec
+        Start 340: RunCMake.FindBoost
+340/518 Test #340: RunCMake.FindBoost ...............................   Passed    1.70 sec
+        Start 341: RunCMake.FindLua
+341/518 Test #341: RunCMake.FindLua .................................   Passed    1.83 sec
+        Start 342: RunCMake.FindOpenGL
+342/518 Test #342: RunCMake.FindOpenGL ..............................   Passed    0.30 sec
+        Start 343: RunCMake.GenerateExportHeader
+343/518 Test #343: RunCMake.GenerateExportHeader ....................   Passed   51.63 sec
+        Start 344: RunCMake.GeneratorExpression
+344/518 Test #344: RunCMake.GeneratorExpression .....................   Passed   34.94 sec
+        Start 345: RunCMake.GeneratorInstance
+345/518 Test #345: RunCMake.GeneratorInstance .......................   Passed    0.19 sec
+        Start 346: RunCMake.GeneratorPlatform
+346/518 Test #346: RunCMake.GeneratorPlatform .......................   Passed    0.22 sec
+        Start 347: RunCMake.GeneratorToolset
+347/518 Test #347: RunCMake.GeneratorToolset ........................   Passed    0.26 sec
+        Start 348: RunCMake.GetPrerequisites
+348/518 Test #348: RunCMake.GetPrerequisites ........................   Passed    0.17 sec
+        Start 349: RunCMake.GNUInstallDirs
+349/518 Test #349: RunCMake.GNUInstallDirs ..........................   Passed    0.35 sec
+        Start 350: RunCMake.GoogleTest
+350/518 Test #350: RunCMake.GoogleTest ..............................   Passed   17.63 sec
+        Start 351: RunCMake.TargetPropertyGeneratorExpressions
+351/518 Test #351: RunCMake.TargetPropertyGeneratorExpressions ......   Passed   19.28 sec
+        Start 352: RunCMake.Languages
+352/518 Test #352: RunCMake.Languages ...............................   Passed    3.81 sec
+        Start 353: RunCMake.LinkStatic
+353/518 Test #353: RunCMake.LinkStatic ..............................   Passed    3.41 sec
+        Start 354: RunCMake.ObjectLibrary
+354/518 Test #354: RunCMake.ObjectLibrary ...........................   Passed   42.77 sec
+        Start 355: RunCMake.ParseImplicitIncludeInfo
+355/518 Test #355: RunCMake.ParseImplicitIncludeInfo ................   Passed    2.08 sec
+        Start 356: RunCMake.ParseImplicitLinkInfo
+356/518 Test #356: RunCMake.ParseImplicitLinkInfo ...................   Passed    3.04 sec
+        Start 357: RunCMake.RuntimePath
+357/518 Test #357: RunCMake.RuntimePath .............................   Passed    9.30 sec
+        Start 358: RunCMake.ScriptMode
+358/518 Test #358: RunCMake.ScriptMode ..............................   Passed    0.05 sec
+        Start 359: RunCMake.Swift
+359/518 Test #359: RunCMake.Swift ...................................   Passed    0.09 sec
+        Start 360: RunCMake.TargetObjects
+360/518 Test #360: RunCMake.TargetObjects ...........................   Passed    6.59 sec
+        Start 361: RunCMake.TargetSources
+361/518 Test #361: RunCMake.TargetSources ...........................   Passed   22.01 sec
+        Start 362: RunCMake.ToolchainFile
+362/518 Test #362: RunCMake.ToolchainFile ...........................   Passed    5.18 sec
+        Start 363: RunCMake.find_dependency
+363/518 Test #363: RunCMake.find_dependency .........................   Passed    0.40 sec
+        Start 364: RunCMake.CompileDefinitions
+364/518 Test #364: RunCMake.CompileDefinitions ......................   Passed    0.11 sec
+        Start 365: RunCMake.CompileFeatures
+365/518 Test #365: RunCMake.CompileFeatures .........................   Passed   26.76 sec
+        Start 366: RunCMake.PolicyScope
+366/518 Test #366: RunCMake.PolicyScope .............................   Passed    4.41 sec
+        Start 367: RunCMake.WriteBasicConfigVersionFile
+367/518 Test #367: RunCMake.WriteBasicConfigVersionFile .............   Passed   11.67 sec
+        Start 368: RunCMake.WriteCompilerDetectionHeader
+368/518 Test #368: RunCMake.WriteCompilerDetectionHeader ............   Passed   31.42 sec
+        Start 369: RunCMake.SourceProperties
+369/518 Test #369: RunCMake.SourceProperties ........................   Passed    1.25 sec
+        Start 370: RunCMake.PositionIndependentCode
+370/518 Test #370: RunCMake.PositionIndependentCode .................   Passed   33.56 sec
+        Start 371: RunCMake.VisibilityPreset
+371/518 Test #371: RunCMake.VisibilityPreset ........................   Passed   14.31 sec
+        Start 372: RunCMake.CompatibleInterface
+372/518 Test #372: RunCMake.CompatibleInterface .....................   Passed   26.34 sec
+        Start 373: RunCMake.Syntax
+373/518 Test #373: RunCMake.Syntax ..................................   Passed   11.75 sec
+        Start 374: RunCMake.WorkingDirectory
+374/518 Test #374: RunCMake.WorkingDirectory ........................   Passed    0.41 sec
+        Start 375: RunCMake.MaxRecursionDepth
+375/518 Test #375: RunCMake.MaxRecursionDepth .......................   Passed   23.91 sec
+        Start 376: RunCMake.add_custom_command
+376/518 Test #376: RunCMake.add_custom_command ......................   Passed    5.16 sec
+        Start 377: RunCMake.add_custom_target
+377/518 Test #377: RunCMake.add_custom_target .......................   Passed    1.00 sec
+        Start 378: RunCMake.add_dependencies
+378/518 Test #378: RunCMake.add_dependencies ........................   Passed    2.35 sec
+        Start 379: RunCMake.add_executable
+379/518 Test #379: RunCMake.add_executable ..........................   Passed    4.24 sec
+        Start 380: RunCMake.add_library
+380/518 Test #380: RunCMake.add_library .............................   Passed   25.59 sec
+        Start 381: RunCMake.add_subdirectory
+381/518 Test #381: RunCMake.add_subdirectory ........................   Passed    5.34 sec
+        Start 382: RunCMake.build_command
+382/518 Test #382: RunCMake.build_command ...........................   Passed    0.40 sec
+        Start 383: RunCMake.execute_process
+383/518 Test #383: RunCMake.execute_process .........................   Passed    0.84 sec
+        Start 384: RunCMake.export
+384/518 Test #384: RunCMake.export ..................................   Passed   12.92 sec
+        Start 385: RunCMake.cmake_minimum_required
+385/518 Test #385: RunCMake.cmake_minimum_required ..................   Passed    0.47 sec
+        Start 386: RunCMake.cmake_parse_arguments
+386/518 Test #386: RunCMake.cmake_parse_arguments ...................   Passed    0.86 sec
+        Start 387: RunCMake.continue
+387/518 Test #387: RunCMake.continue ................................   Passed    0.47 sec
+        Start 388: RunCMake.ctest_build
+388/518 Test #388: RunCMake.ctest_build .............................   Passed    1.70 sec
+        Start 389: RunCMake.ctest_cmake_error
+389/518 Test #389: RunCMake.ctest_cmake_error .......................   Passed    0.11 sec
+        Start 390: RunCMake.ctest_configure
+390/518 Test #390: RunCMake.ctest_configure .........................   Passed    0.25 sec
+        Start 391: RunCMake.ctest_coverage
+391/518 Test #391: RunCMake.ctest_coverage ..........................   Passed    0.41 sec
+        Start 392: RunCMake.ctest_start
+392/518 Test #392: RunCMake.ctest_start .............................   Passed    2.06 sec
+        Start 393: RunCMake.ctest_submit
+393/518 Test #393: RunCMake.ctest_submit ............................   Passed    7.64 sec
+        Start 394: RunCMake.ctest_test
+394/518 Test #394: RunCMake.ctest_test ..............................   Passed    4.08 sec
+        Start 395: RunCMake.ctest_disabled_test
+395/518 Test #395: RunCMake.ctest_disabled_test .....................   Passed    2.37 sec
+        Start 396: RunCMake.ctest_skipped_test
+396/518 Test #396: RunCMake.ctest_skipped_test ......................   Passed    6.10 sec
+        Start 397: RunCMake.ctest_update
+397/518 Test #397: RunCMake.ctest_update ............................   Passed    0.22 sec
+        Start 398: RunCMake.ctest_upload
+398/518 Test #398: RunCMake.ctest_upload ............................   Passed    0.10 sec
+        Start 399: RunCMake.ctest_fixtures
+399/518 Test #399: RunCMake.ctest_fixtures ..........................   Passed    7.04 sec
+        Start 400: RunCMake.file
+400/518 Test #400: RunCMake.file ....................................   Passed   14.81 sec
+        Start 401: RunCMake.find_file
+401/518 Test #401: RunCMake.find_file ...............................   Passed    0.30 sec
+        Start 402: RunCMake.find_library
+402/518 Test #402: RunCMake.find_library ............................   Passed    0.43 sec
+        Start 403: RunCMake.find_package
+403/518 Test #403: RunCMake.find_package ............................   Passed    2.88 sec
+        Start 404: RunCMake.find_path
+404/518 Test #404: RunCMake.find_path ...............................   Passed    0.43 sec
+        Start 405: RunCMake.find_program
+405/518 Test #405: RunCMake.find_program ............................   Passed    0.29 sec
+        Start 406: RunCMake.foreach
+406/518 Test #406: RunCMake.foreach .................................   Passed    0.09 sec
+        Start 407: RunCMake.get_filename_component
+407/518 Test #407: RunCMake.get_filename_component ..................   Passed    0.16 sec
+        Start 408: RunCMake.get_property
+408/518 Test #408: RunCMake.get_property ............................   Passed    3.57 sec
+        Start 409: RunCMake.if
+409/518 Test #409: RunCMake.if ......................................   Passed    0.75 sec
+        Start 410: RunCMake.include
+410/518 Test #410: RunCMake.include .................................   Passed    4.66 sec
+        Start 411: RunCMake.include_directories
+411/518 Test #411: RunCMake.include_directories .....................   Passed   10.83 sec
+        Start 412: RunCMake.include_guard
+412/518 Test #412: RunCMake.include_guard ...........................   Passed    0.36 sec
+        Start 413: RunCMake.list
+413/518 Test #413: RunCMake.list ....................................   Passed    5.69 sec
+        Start 414: RunCMake.math
+414/518 Test #414: RunCMake.math ....................................   Passed    0.49 sec
+        Start 415: RunCMake.message
+415/518 Test #415: RunCMake.message .................................   Passed    1.42 sec
+        Start 416: RunCMake.option
+416/518 Test #416: RunCMake.option ..................................   Passed    7.79 sec
+        Start 417: RunCMake.project
+417/518 Test #417: RunCMake.project .................................   Passed    6.74 sec
+        Start 418: RunCMake.project_injected
+418/518 Test #418: RunCMake.project_injected ........................   Passed    3.17 sec
+        Start 419: RunCMake.return
+419/518 Test #419: RunCMake.return ..................................   Passed    0.09 sec
+        Start 420: RunCMake.separate_arguments
+420/518 Test #420: RunCMake.separate_arguments ......................   Passed    0.35 sec
+        Start 421: RunCMake.set_property
+421/518 Test #421: RunCMake.set_property ............................   Passed    2.02 sec
+        Start 422: RunCMake.string
+422/518 Test #422: RunCMake.string ..................................   Passed    3.38 sec
+        Start 423: RunCMake.test_include_dirs
+423/518 Test #423: RunCMake.test_include_dirs .......................   Passed    4.22 sec
+        Start 424: RunCMake.BundleUtilities
+424/518 Test #424: RunCMake.BundleUtilities .........................   Passed    0.38 sec
+        Start 425: RunCMake.try_compile
+425/518 Test #425: RunCMake.try_compile .............................   Passed   30.31 sec
+        Start 426: RunCMake.try_run
+426/518 Test #426: RunCMake.try_run .................................   Passed    3.29 sec
+        Start 427: RunCMake.set
+427/518 Test #427: RunCMake.set .....................................   Passed    0.42 sec
+        Start 428: RunCMake.variable_watch
+428/518 Test #428: RunCMake.variable_watch ..........................   Passed    0.36 sec
+        Start 429: RunCMake.while
+429/518 Test #429: RunCMake.while ...................................   Passed    0.37 sec
+        Start 430: RunCMake.CMP0004
+430/518 Test #430: RunCMake.CMP0004 .................................   Passed    0.26 sec
+        Start 431: RunCMake.TargetPolicies
+431/518 Test #431: RunCMake.TargetPolicies ..........................   Passed    2.24 sec
+        Start 432: RunCMake.alias_targets
+432/518 Test #432: RunCMake.alias_targets ...........................   Passed   35.64 sec
+        Start 433: RunCMake.interface_library
+433/518 Test #433: RunCMake.interface_library .......................   Passed    4.18 sec
+        Start 434: RunCMake.no_install_prefix
+434/518 Test #434: RunCMake.no_install_prefix .......................   Passed    0.19 sec
+        Start 435: RunCMake.configure_file
+435/518 Test #435: RunCMake.configure_file ..........................   Passed    8.04 sec
+        Start 436: RunCMake.CTestTimeoutAfterMatch
+436/518 Test #436: RunCMake.CTestTimeoutAfterMatch ..................   Passed   13.42 sec
+        Start 437: RunCMake.CTestResourceAllocation
+437/518 Test #437: RunCMake.CTestResourceAllocation .................   Passed   95.01 sec
+        Start 438: RunCMake.FindPkgConfig
+438/518 Test #438: RunCMake.FindPkgConfig ...........................   Passed   10.58 sec
+        Start 439: RunCMake.File_Generate
+439/518 Test #439: RunCMake.File_Generate ...........................   Passed   15.00 sec
+        Start 440: RunCMake.ExportWithoutLanguage
+440/518 Test #440: RunCMake.ExportWithoutLanguage ...................   Passed    0.13 sec
+        Start 441: RunCMake.target_link_directories
+441/518 Test #441: RunCMake.target_link_directories .................   Passed    0.15 sec
+        Start 442: RunCMake.target_link_libraries
+442/518 Test #442: RunCMake.target_link_libraries ...................   Passed   29.37 sec
+        Start 443: RunCMake.add_link_options
+443/518 Test #443: RunCMake.add_link_options ........................   Passed    7.00 sec
+        Start 444: RunCMake.target_link_options
+444/518 Test #444: RunCMake.target_link_options .....................   Passed    7.45 sec
+        Start 445: RunCMake.target_compile_definitions
+445/518 Test #445: RunCMake.target_compile_definitions ..............   Passed    0.19 sec
+        Start 446: RunCMake.target_compile_features
+446/518 Test #446: RunCMake.target_compile_features .................   Passed   20.07 sec
+        Start 447: RunCMake.target_compile_options
+447/518 Test #447: RunCMake.target_compile_options ..................   Passed    0.09 sec
+        Start 448: RunCMake.target_include_directories
+448/518 Test #448: RunCMake.target_include_directories ..............   Passed    0.09 sec
+        Start 449: RunCMake.target_sources
+449/518 Test #449: RunCMake.target_sources ..........................   Passed    0.09 sec
+        Start 450: RunCMake.CheckModules
+450/518 Test #450: RunCMake.CheckModules ............................   Passed   34.10 sec
+        Start 451: RunCMake.CheckIPOSupported
+451/518 Test #451: RunCMake.CheckIPOSupported .......................   Passed    8.03 sec
+        Start 452: RunCMake.CommandLine
+452/518 Test #452: RunCMake.CommandLine .............................   Passed   15.21 sec
+        Start 453: RunCMake.CommandLineTar
+453/518 Test #453: RunCMake.CommandLineTar ..........................***Failed    2.02 sec
+        Start 454: RunCMake.install
+454/518 Test #454: RunCMake.install .................................   Passed   57.81 sec
+        Start 455: RunCMake.CPackCommandLine
+455/518 Test #455: RunCMake.CPackCommandLine ........................   Passed    0.11 sec
+        Start 456: RunCMake.CPackConfig
+456/518 Test #456: RunCMake.CPackConfig .............................   Passed   22.52 sec
+        Start 457: RunCMake.CPackInstallProperties
+457/518 Test #457: RunCMake.CPackInstallProperties ..................   Passed   14.94 sec
+        Start 458: RunCMake.ExternalProject
+458/518 Test #458: RunCMake.ExternalProject .........................   Passed    8.77 sec
+        Start 459: RunCMake.FetchContent
+459/518 Test #459: RunCMake.FetchContent ............................   Passed   19.42 sec
+        Start 460: RunCMake.CTestCommandLine
+460/518 Test #460: RunCMake.CTestCommandLine ........................   Passed    1.61 sec
+        Start 461: RunCMake.CacheNewline
+461/518 Test #461: RunCMake.CacheNewline ............................   Passed    0.09 sec
+        Start 462: RunCMake.CPackSymlinks
+462/518 Test #462: RunCMake.CPackSymlinks ...........................   Passed    0.32 sec
+        Start 463: RunCMake.IfacePaths_INCDIRS
+463/518 Test #463: RunCMake.IfacePaths_INCDIRS ......................   Passed   35.60 sec
+        Start 464: RunCMake.IfacePaths_SOURCES
+464/518 Test #464: RunCMake.IfacePaths_SOURCES ......................   Passed   27.46 sec
+        Start 465: RunCMake.CrosscompilingEmulator
+465/518 Test #465: RunCMake.CrosscompilingEmulator ..................   Passed   20.37 sec
+        Start 466: RunCMake.LinkWhatYouUse
+466/518 Test #466: RunCMake.LinkWhatYouUse ..........................   Passed    9.29 sec
+        Start 467: RunCMake.ClangTidy
+467/518 Test #467: RunCMake.ClangTidy ...............................   Passed   10.06 sec
+        Start 468: RunCMake.IncludeWhatYouUse
+468/518 Test #468: RunCMake.IncludeWhatYouUse .......................   Passed    8.76 sec
+        Start 469: RunCMake.Cpplint
+469/518 Test #469: RunCMake.Cpplint .................................   Passed   17.54 sec
+        Start 470: RunCMake.Cppcheck
+470/518 Test #470: RunCMake.Cppcheck ................................   Passed   11.61 sec
+        Start 471: RunCMake.MultiLint
+471/518 Test #471: RunCMake.MultiLint ...............................   Passed    8.96 sec
+        Start 472: RunCMake.CompilerLauncher
+472/518 Test #472: RunCMake.CompilerLauncher ........................   Passed    8.59 sec
+        Start 473: RunCMake.ctest_labels_for_subprojects
+473/518 Test #473: RunCMake.ctest_labels_for_subprojects ............   Passed   16.09 sec
+        Start 474: RunCMake.CPack_7Z
+474/518 Test #474: RunCMake.CPack_7Z ................................   Passed    9.68 sec
+        Start 475: RunCMake.CPack_TBZ2
+475/518 Test #475: RunCMake.CPack_TBZ2 ..............................   Passed    9.36 sec
+        Start 476: RunCMake.CPack_TGZ
+476/518 Test #476: RunCMake.CPack_TGZ ...............................   Passed   39.48 sec
+        Start 477: RunCMake.CPack_TXZ
+477/518 Test #477: RunCMake.CPack_TXZ ...............................   Passed    9.38 sec
+        Start 478: RunCMake.CPack_TZ
+478/518 Test #478: RunCMake.CPack_TZ ................................   Passed    9.58 sec
+        Start 479: RunCMake.CPack_ZIP
+479/518 Test #479: RunCMake.CPack_ZIP ...............................   Passed   16.00 sec
+        Start 480: RunCMake.CPack_STGZ
+480/518 Test #480: RunCMake.CPack_STGZ ..............................   Passed    9.97 sec
+        Start 481: RunCMake.CPack_External
+481/518 Test #481: RunCMake.CPack_External ..........................   Passed   43.41 sec
+        Start 482: RunCMake.AutoExportDll
+482/518 Test #482: RunCMake.AutoExportDll ...........................   Passed    6.08 sec
+        Start 483: RunCMake.AndroidMK
+483/518 Test #483: RunCMake.AndroidMK ...............................   Passed    3.36 sec
+        Start 484: RunCMake.CTestCommandExpandLists
+484/518 Test #484: RunCMake.CTestCommandExpandLists .................   Passed    0.86 sec
+        Start 485: RunCMake.PrecompileHeaders
+485/518 Test #485: RunCMake.PrecompileHeaders .......................   Passed   18.57 sec
+        Start 486: RunCMake.UnityBuild
+486/518 Test #486: RunCMake.UnityBuild ..............................   Passed   15.47 sec
+        Start 487: FindPackageModeMakefileTest
+487/518 Test #487: FindPackageModeMakefileTest ......................   Passed    0.76 sec
+        Start 488: FindThreads.C-only
+488/518 Test #488: FindThreads.C-only ...............................   Passed    2.99 sec
+        Start 489: FindThreads.CXX-only
+489/518 Test #489: FindThreads.CXX-only .............................   Passed    5.15 sec
+        Start 490: CMake.List
+490/518 Test #490: CMake.List .......................................   Passed    0.44 sec
+        Start 491: CMake.VariableWatch
+491/518 Test #491: CMake.VariableWatch ..............................   Passed    0.03 sec
+        Start 492: CMake.Include
+492/518 Test #492: CMake.Include ....................................   Passed    0.05 sec
+        Start 493: CMake.FindBase
+493/518 Test #493: CMake.FindBase ...................................   Passed    0.03 sec
+        Start 494: CMake.Toolchain
+494/518 Test #494: CMake.Toolchain ..................................   Passed    0.10 sec
+        Start 495: CMake.GetFilenameComponentRealpath
+495/518 Test #495: CMake.GetFilenameComponentRealpath ...............   Passed    0.04 sec
+        Start 496: CMake.Version
+496/518 Test #496: CMake.Version ....................................   Passed    0.03 sec
+        Start 497: CMake.Message
+497/518 Test #497: CMake.Message ....................................   Passed    0.05 sec
+        Start 498: CMake.File
+498/518 Test #498: CMake.File .......................................   Passed    2.61 sec
+        Start 499: CMake.ImplicitLinkInfo
+499/518 Test #499: CMake.ImplicitLinkInfo ...........................   Passed    0.85 sec
+        Start 500: CMake.ModuleNotices
+500/518 Test #500: CMake.ModuleNotices ..............................   Passed    0.34 sec
+        Start 501: CMake.GetProperty
+501/518 Test #501: CMake.GetProperty ................................   Passed    0.02 sec
+        Start 502: CMake.If
+502/518 Test #502: CMake.If .........................................   Passed    0.06 sec
+        Start 503: CMake.String
+503/518 Test #503: CMake.String .....................................   Passed    2.65 sec
+        Start 504: CMake.Math
+504/518 Test #504: CMake.Math .......................................   Passed    0.16 sec
+        Start 505: CMake.CMakeMinimumRequired
+505/518 Test #505: CMake.CMakeMinimumRequired .......................   Passed    0.44 sec
+        Start 506: CMake.CompilerIdVendor
+506/518 Test #506: CMake.CompilerIdVendor ...........................   Passed    0.11 sec
+        Start 507: CMake.ProcessorCount
+507/518 Test #507: CMake.ProcessorCount .............................   Passed    0.33 sec
+        Start 508: CMake.PushCheckState
+508/518 Test #508: CMake.PushCheckState .............................   Passed    0.03 sec
+        Start 509: CMake.While
+509/518 Test #509: CMake.While ......................................   Passed    0.02 sec
+        Start 510: CMake.CMakeHostSystemInformation
+510/518 Test #510: CMake.CMakeHostSystemInformation .................   Passed    0.33 sec
+        Start 511: CMake.FileDownload
+511/518 Test #511: CMake.FileDownload ...............................   Passed    0.09 sec
+        Start 512: CMake.FileDownloadBadHash
+512/518 Test #512: CMake.FileDownloadBadHash ........................   Passed    0.03 sec
+        Start 513: CMake.FileUpload
+513/518 Test #513: CMake.FileUpload .................................   Passed    0.07 sec
+        Start 514: CMake.ELF
+514/518 Test #514: CMake.ELF ........................................   Passed    0.06 sec
+        Start 515: CMake.EndStuff
+515/518 Test #515: CMake.EndStuff ...................................   Passed    0.36 sec
+        Start 516: CMake.GetPrerequisites
+516/518 Test #516: CMake.GetPrerequisites ...........................   Passed    0.85 sec
+        Start 517: CMake.PolicyCheck
+517/518 Test #517: CMake.PolicyCheck ................................   Passed    0.03 sec
+        Start 518: CMake.CheckSourceTree
+518/518 Test #518: CMake.CheckSourceTree ............................   Passed    0.03 sec
+
+99% tests passed, 2 tests failed out of 518
+
+Label Time Summary:
+Label1    =   0.15 sec*proc (1 test)
+Label2    =   0.15 sec*proc (1 test)
+
+Total Test time (real) = 3192.86 sec
+
+The following tests FAILED:
+	  5 - kwsys.testSystemTools (Failed)
+	453 - RunCMake.CommandLineTar (Failed)
+Errors while running CTest
+make: *** [Makefile:141: test] Error 8

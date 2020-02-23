@@ -1,0 +1,64 @@
+Making check in m4
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/m4'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/m4'
+Making check in src
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+make  check-am
+make[2]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+make  check-TESTS
+make[3]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+PASS: gpg-error-config-test.sh
+=============
+1 test passed
+=============
+make[3]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+make[2]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/src'
+Making check in doc
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/doc'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/doc'
+Making check in tests
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/tests'
+make  check-TESTS
+make[2]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/tests'
+PASS: t-version
+Unspecified source: Success
+gcrypt: Invalid length specifier in S-expression
+GnuPG: Unknown packet
+GpgSM: Certificate too young
+GPG Agent: Bad CA certificate
+Pinentry: Operation cancelled
+SCD: Card removed
+GPGME: Bad secret key
+Keybox: Too late to cancel LDAP
+PASS: t-strerror
+PASS: t-syserror
+PASS: t-lock
+PASS: t-printf
+PASS: t-poll
+PASS: t-b64
+PASS: t-argparse
+PASS: t-logging
+==================
+All 9 tests passed
+==================
+make[2]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/tests'
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/tests'
+Making check in po
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/po'
+Making check in lang
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang'
+Making check in cl
+make[2]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang/cl'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang/cl'
+make[2]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang'
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36/lang'
+make[1]: Entering directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36'
+make[1]: Leaving directory '/usr/ports/opt/libgpg-error/work/src/libgpg-error-1.36'

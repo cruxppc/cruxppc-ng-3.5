@@ -1,0 +1,1672 @@
+	BASERUBY = /usr/bin/ruby --disable=gems
+	CC = gcc
+	LD = ld
+	LDSHARED = gcc -shared
+	CFLAGS = -O2 -pipe -mcpu=powerpc -mtune=750 -msecure-plt -mno-altivec -fPIC 
+	XCFLAGS = -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fno-strict-overflow -fvisibility=hidden -fexcess-precision=standard -DRUBY_EXPORT -DCANONICALIZATION_FOR_MATHN
+	CPPFLAGS =   -I. -I.ext/include/powerpc-linux -I./include -I. -I./enc/unicode/12.1.0 
+	DLDFLAGS = -Wl,--compress-debug-sections=zlib -Wl,-soname,libruby.so.2.6  -fstack-protector-strong  
+	SOLIBS = -lz -lpthread -lrt -lrt -lgmp -ldl -lcrypt -lm 
+	LANG = 
+	LC_ALL = 
+	LC_CTYPE = 
+gcc (CRUX-PPC) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+./revision.h unchanged
+generating enc.mk
+making srcs under enc
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Nothing to be done for 'srcs'.
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+generating transdb.h
+transdb.h unchanged
+generating makefiles ext/configure-ext.mk
+ext/configure-ext.mk updated
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+generating makefile exts.mk
+exts.mk unchanged
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/date'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/date'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/digest'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/digest'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/digest/sha2'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/digest/sha2'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/json'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/json'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/socket'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/socket'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/nkf'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/nkf'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/rubyvm'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/rubyvm'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/psych'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/psych'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/pty'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/pty'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/pathname'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/pathname'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/syslog'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/syslog'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/fiddle'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/fiddle'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/openssl'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/openssl'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/coverage'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/coverage'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/ripper'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/ripper'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/io/console'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/io/console'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/bigdecimal'
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5/ext/bigdecimal'
+make[2]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+./revision.h unchanged
+make[2]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Nothing to be done for 'note'.
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+making enc
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Nothing to be done for 'enc'.
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+making trans
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Nothing to be done for './enc/trans'.
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+making encs
+make[1]: Entering directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+make[1]: Nothing to be done for 'encs'.
+make[1]: Leaving directory '/usr/ports/opt/ruby/work/src/ruby-2.6.5'
+test_attr.rb             ..
+                         test_autoload.rb         ........
+                         test_block.rb            ..........................................................
+                         test_class.rb            ................................................
+                         test_env.rb              ..
+                         test_eval.rb             .....................................
+                         test_exception.rb        ..................................
+                         test_finalizer.rb        .
+                         test_flip.rb             .
+                         test_flow.rb             ..............................................................
+                         test_fork.rb             ....
+                         test_gc.rb               ..
+                         test_insns.rb            ................................................................................................................................................................................................................................................................................................................................................................................................
+                         test_io.rb               .........
+                         test_jump.rb             .............................
+                         test_literal.rb          ............................................................................................................................................................
+                         test_literal_suffix.rb   ................................................
+                         test_load.rb             ..
+                         test_marshal.rb          .
+                         test_massign.rb          ..................................
+                         test_method.rb           ...............................................................................................................................................................................................................................
+                         test_objectspace.rb      .....
+                         test_proc.rb             .......................................
+                         test_string.rb           .
+                         test_struct.rb           .
+                         test_syntax.rb           ............................................................................................................................................................
+                         test_thread.rb           ..................................................
+                         PASS all 1397 tests
+exec ./miniruby -I./lib -I. -I.ext/common  ./tool/runruby.rb --extout=.ext  -- --disable-gems "./bootstraptest/runner.rb" --ruby="ruby --disable-gems"   ./KNOWNBUGS.rb
+2019-12-09 09:15:14 +0000
+Driver is ruby 2.6.5p114 (2019-10-01 revision 67812) [powerpc-linux]
+Target is ruby 2.6.5p114 (2019-10-01 revision 67812) [powerpc-linux]
+
+KNOWNBUGS.rb   
+No tests, no problem
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:assignment ....................................................................................................................................................................................................................................................................................................................................................................................OK 372
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:condition ..OK 2
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:if/unless ...OK 3
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:case .....OK 5
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:while/until ........OK 8
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:exception ..........OK 10
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:array .......................................OK 39
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:hash ...........................OK 27
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:iterator ...............................................................................................................OK 111
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:float ................................................................................OK 80
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:bignum ...............................OK 31
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:string & char ..............................................................OK 62
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:assignment ..........OK 10
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:call ......OK 6
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:proc .........OK 9
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:signal ..OK 2
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:eval ...........................OK 27
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:system ........OK 8
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:const .....OK 5
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:clone .....OK 5
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:marshal ....OK 4
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:pack ....OK 4
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:math ..OK 2
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:struct ......OK 6
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:variable ...........OK 11
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:trace ...OK 3
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:defined? ............OK 12
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:alias ......OK 6
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:path .......................OK 23
+/usr/ports/opt/ruby/work/src/ruby-2.6.5/basictest/test.rb:gc ....OK 4
+
+test succeeded
+Run options: "--ruby=./miniruby -I./lib -I. -I.ext/common  ./tool/runruby.rb --extout=.ext  -- --disable-gems"
+
+# Running tests:
+
+Finished tests in 14.998179s, 14.8018 tests/s, 30.7371 assertions/s.
+222 tests, 461 assertions, 0 failures, 0 errors, 0 skips
+
+ruby -v: ruby 2.6.5p114 (2019-10-01 revision 67812) [powerpc-linux]
+config.status: creating ruby-runner.h
+making mjit_build_dir.so
+Run options: "--ruby=./miniruby -I./lib -I. -I.ext/common  ./tool/runruby.rb --extout=.ext  -- --disable-gems" --excludes-dir=./test/excludes --name=!/memory_leak/ --exclude=/testunit/ --exclude=/minitest/
+
+# Running tests:
+
+
+  1) Failure:
+TestJIT#test_attr_reader [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:701]:
+Expected 2 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+class A
+  attr_reader :a, :b
+
+  def initialize
+    @a = 2
+  end
+
+  def test
+    a
+  end
+
+  def undefined
+    b
+  end
+end
+
+a = A.new
+print(a.test * a.test)
+p(a.undefined)
+p(a.undefined)
+
+# redefinition
+class A
+  def test
+    3
+  end
+end
+
+print(2 * a.test)
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p30912u0.o: in function `_mjit0':
+_ruby_mjit_p30912u0.c:(.text+0x354): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p30912u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p30912u1.o: in function `_mjit1':
+_ruby_mjit_p30912u1.c:(.text+0x354): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p30912u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<0>.
+
+  2) Failure:
+TestJIT#test_catching_deep_exception [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:661]:
+Expected 4 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def catch_true(paths, prefixes) # catch_except_p: TRUE
+  prefixes.each do |prefix| # catch_except_p: TRUE
+    paths.each do |path| # catch_except_p: FALSE
+      return path
+    end
+  end
+end
+
+def wrapper(paths, prefixes)
+  catch_true(paths, prefixes)
+end
+
+print wrapper(['1'], ['2'])
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u0.o: in function `_mjit0':
+_ruby_mjit_p31020u0.c:(.text+0x380): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u1.o: in function `method_missing.constprop.18':
+_ruby_mjit_p31020u1.c:(.text+0x308): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u1.o: in function `_mjit1':
+_ruby_mjit_p31020u1.c:(.text+0xca4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u2.o: in function `method_missing.constprop.18':
+_ruby_mjit_p31020u2.c:(.text+0x308): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u2.o: in function `_mjit2':
+_ruby_mjit_p31020u2.c:(.text+0xcd4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31020u2.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (364.0ms): block (2 levels) in catch_true@-e:4 -> /tmp/_ruby_mjit_p31020u3.c
+Successful MJIT finish
+
+```
+
+.
+<4> expected but was
+<1>.
+
+  3) Failure:
+TestJIT#test_compile_insn_adjuststack [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:292]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  x = [true]
+  x[0] ||= nil
+  x[0]
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31123u0.o: in function `_mjit0':
+_ruby_mjit_p31123u0.c:(.text+0x538): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31123u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+  4) Failure:
+TestJIT#test_compile_insn_blockparam [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:82]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def foo(&b)
+  a = b
+  b = 2
+  a.call + 2
+end
+
+print foo { 1 }
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31133u0.o: in function `_mjit0':
+_ruby_mjit_p31133u0.c:(.text+0x544): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31133u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (195.8ms): block in <main>@-e:8 -> /tmp/_ruby_mjit_p31133u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+  5) Failure:
+TestJIT#test_compile_insn_checkkeyword [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:305]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+def test(x: rand)
+  x
+end
+print test(x: true)
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31244u0.o: in function `_mjit0':
+_ruby_mjit_p31244u0.c:(.text+0x4a8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31244u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+  6) Failure:
+TestJIT#test_compile_insn_checkmatch_opt_case_dispatch [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:455]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  case 'hello'
+  when 'hello'
+    'world'
+  end
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31254u0.o: in function `_mjit0':
+_ruby_mjit_p31254u0.c:(.text+0x34c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31254u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+  7) Failure:
+TestJIT#test_compile_insn_checktype [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:439]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  a = '2'
+  "4#{a}"
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31264u0.o: in function `_mjit0':
+_ruby_mjit_p31264u0.c:(.text+0x4e4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31264u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+  8) Failure:
+TestJIT#test_compile_insn_concatarray [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:231]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { ["t", "r", *x = "u", "e"].join }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31359u0.o: in function `_mjit0':
+_ruby_mjit_p31359u0.c:(.text+0x600): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31359u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+  9) Failure:
+TestJIT#test_compile_insn_constant [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:154]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  FOO = 1
+  FOO
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31369u0.o: in function `_mjit0':
+_ruby_mjit_p31369u0.c:(.text+0x8ac): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31369u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 10) Failure:
+TestJIT#test_compile_insn_defined [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:301]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { defined?(a) }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31379u0.o: in function `_mjit0':
+_ruby_mjit_p31379u0.c:(.text+0x1fc): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31379u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 11) Failure:
+TestJIT#test_compile_insn_dupn [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:268]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  klass = Class.new
+  klass::X ||= true
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31426u0.o: in function `_mjit0':
+_ruby_mjit_p31426u0.c:(.text+0x116c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31426u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 12) Failure:
+TestJIT#test_compile_insn_expandarray [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:227]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { y = [ true, false, nil ]; x, = y; x }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31436u0.o: in function `_mjit0':
+_ruby_mjit_p31436u0.c:(.text+0x28c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31436u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 13) Failure:
+TestJIT#test_compile_insn_freezestring [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:203]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+# frozen_string_literal: true
+print proc { "#{true}".frozen? }.call
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31446u0.o: in function `_mjit0':
+_ruby_mjit_p31446u0.c:(.text+0x59c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31446u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 14) Failure:
+TestJIT#test_compile_insn_inlinecache [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:447]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { Struct }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31552u0.o: in function `_mjit0':
+_ruby_mjit_p31552u0.c:(.text+0x698): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31552u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 15) Failure:
+TestJIT#test_compile_insn_instancevariable [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:113]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  @foo = 1
+  @foo
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31562u0.o: in function `_mjit0':
+_ruby_mjit_p31562u0.c:(.text+0x3c4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31562u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 16) Failure:
+TestJIT#test_compile_insn_intern_duparray [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:223]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { [:"#{0}"] + [1,2,3] }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31647u0.o: in function `_mjit0':
+_ruby_mjit_p31647u0.c:(.text+0x514): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31647u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 17) Failure:
+TestJIT#test_compile_insn_invokeblock_leave [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:384]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def foo
+  yield
+end
+print foo { 2 }
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31657u0.o: in function `setup_parameters_complex.constprop.37':
+_ruby_mjit_p31657u0.c:(.text+0x17a8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31657u0.o: in function `_mjit0':
+_ruby_mjit_p31657u0.c:(.text+0x238c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31657u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (194.5ms): block in <main>@-e:5 -> /tmp/_ruby_mjit_p31657u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+ 18) Failure:
+TestJIT#test_compile_insn_invokesuper [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:366]:
+Expected 4 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+mod = Module.new {
+  def test
+    super + 2
+  end
+}
+klass = Class.new {
+  prepend mod
+  def test
+    1
+  end
+}
+print klass.new.test
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u0.o: in function `_mjit0':
+_ruby_mjit_p31673u0.c:(.text+0x388): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u1.o: in function `_mjit1':
+_ruby_mjit_p31673u1.c:(.text+0x57c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o: in function `vm_call_ivar':
+_ruby_mjit_p31673u2.c:(.text+0x270): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o: in function `vm_call_attrset':
+_ruby_mjit_p31673u2.c:(.text+0x8f8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o: in function `method_missing.constprop.55':
+_ruby_mjit_p31673u2.c:(.text+0x2088): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o: in function `vm_call_cfunc':
+_ruby_mjit_p31673u2.c:(.text+0x27b4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o: in function `vm_call_bmethod':
+_ruby_mjit_p31673u2.c:(.text+0x2a5c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.o:_ruby_mjit_p31673u2.c:(.text+0x3f6c): more undefined references to `__stack_chk_fail_local' follow
+/usr/bin/ld: /tmp/_ruby_mjit_p31673u2.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (193.8ms): test@-e:9 -> /tmp/_ruby_mjit_p31673u3.c
+Successful MJIT finish
+
+```
+
+.
+<4> expected but was
+<1>.
+
+ 19) Failure:
+TestJIT#test_compile_insn_local [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:64]:
+Expected 3 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def foo
+  a = 0
+  [1, 2].each do |i|
+    a += i
+    [3, 4].each do |j|
+      a *= j
+    end
+  end
+  a
+end
+
+print foo
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u0.o: in function `method_missing.constprop.18':
+_ruby_mjit_p31890u0.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u0.o: in function `_mjit0':
+_ruby_mjit_p31890u0.c:(.text+0xd20): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u1.o: in function `method_missing.constprop.18':
+_ruby_mjit_p31890u1.c:(.text+0x36c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u1.o: in function `_mjit1':
+_ruby_mjit_p31890u1.c:(.text+0xf18): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31890u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (298.7ms): block (2 levels) in foo@-e:6 -> /tmp/_ruby_mjit_p31890u2.c
+Successful MJIT finish
+
+```
+
+.
+<3> expected but was
+<1>.
+
+ 20) Failure:
+TestJIT#test_compile_insn_newarray [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:215]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  a, b, c = 1, 2, 3
+  [a, b, c]
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31912u0.o: in function `_mjit0':
+_ruby_mjit_p31912u0.c:(.text+0x1ec): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31912u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 21) Failure:
+TestJIT#test_compile_insn_newhash [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:239]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { a = 1; { a: a } }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p31997u0.o: in function `_mjit0':
+_ruby_mjit_p31997u0.c:(.text+0x1b8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p31997u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 22) Failure:
+TestJIT#test_compile_insn_once [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:451]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { /#{true}/o =~ "true" && $~.to_a }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32027u0.o: in function `_mjit0':
+_ruby_mjit_p32027u0.c:(.text+0x750): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32027u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 23) Failure:
+TestJIT#test_compile_insn_opt_aset [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:524]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  hash = { '1' => 2 }
+  (hash['2'] = 2) + (hash[1.to_s] = 3)
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32176u0.o: in function `_mjit0':
+_ruby_mjit_p32176u0.c:(.text+0x618): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32176u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 24) Failure:
+TestJIT#test_compile_insn_opt_empty_p [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:540]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { [].empty? }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32243u0.o: in function `_mjit0':
+_ruby_mjit_p32243u0.c:(.text+0x200): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32243u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 25) Failure:
+TestJIT#test_compile_insn_opt_newarray_max [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:344]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  a = 1
+  b = 2
+  [a, b].max
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32349u0.o: in function `_mjit0':
+_ruby_mjit_p32349u0.c:(.text+0x3a4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32349u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 26) Failure:
+TestJIT#test_compile_insn_opt_newarray_min [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:353]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  a = 1
+  b = 2
+  [a, b].min
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32434u0.o: in function `_mjit0':
+_ruby_mjit_p32434u0.c:(.text+0x394): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32434u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 27) Failure:
+TestJIT#test_compile_insn_opt_regexpmatch1 [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:552]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { /true/ =~ 'true' }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32464u0.o: in function `_mjit0':
+_ruby_mjit_p32464u0.c:(.text+0x148): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32464u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 28) Failure:
+TestJIT#test_compile_insn_opt_send_without_block [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:362]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { print }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32569u0.o: in function `_mjit0':
+_ruby_mjit_p32569u0.c:(.text+0x354): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32569u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 29) Failure:
+TestJIT#test_compile_insn_putself [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:174]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+proc { print "hello" }.call
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p32752u0.o: in function `_mjit0':
+_ruby_mjit_p32752u0.c:(.text+0x374): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p32752u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 30) Failure:
+TestJIT#test_compile_insn_putspecialobject_putiseq [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:187]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+print 2.times.map {
+  def method_definition
+    'hello'
+  end
+  method_definition
+}.join
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p369u0.o: in function `_mjit0':
+_ruby_mjit_p369u0.c:(.text+0x55c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p369u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (192.2ms): method_definition@-e:3 -> /tmp/_ruby_mjit_p369u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+ 31) Failure:
+TestJIT#test_compile_insn_putstring_concatstrings_tostring [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:199]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { "a#{}b" + "c" }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p392u0.o: in function `_mjit0':
+_ruby_mjit_p392u0.c:(.text+0x52c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p392u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 32) Failure:
+TestJIT#test_compile_insn_reverse [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:280]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { q, (w, e), r = 1, [2, 3], 4; [q, w, e, r] }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p479u0.o: in function `_mjit0':
+_ruby_mjit_p479u0.c:(.text+0x360): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p479u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 33) Failure:
+TestJIT#test_compile_insn_send [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:323]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+print proc { yield_self { 1 } }.call
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p489u0.o: in function `method_missing.constprop.18':
+_ruby_mjit_p489u0.c:(.text+0x308): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p489u0.o: in function `_mjit0':
+_ruby_mjit_p489u0.c:(.text+0xca0): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p489u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (194.3ms): block (2 levels) in <main>@-e:2 -> /tmp/_ruby_mjit_p489u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+ 34) Failure:
+TestJIT#test_compile_insn_setspecial [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:104]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc {  
+  true if nil.nil?..nil.nil?
+}.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p515u0.o: in function `_mjit0':
+_ruby_mjit_p515u0.c:(.text+0x978): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p515u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 35) Failure:
+TestJIT#test_compile_insn_splatarray [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:235]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { [*(1..2)] }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p526u0.o: in function `_mjit0':
+_ruby_mjit_p526u0.c:(.text+0x144): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p526u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 36) Failure:
+TestJIT#test_compile_insn_throw [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:394]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def test
+  proc do
+    if 1+1 == 1
+      return 3
+    else
+      return 4
+    end
+    5
+  end.call
+end
+print test
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p642u0.o: in function `method_missing.constprop.18':
+_ruby_mjit_p642u0.c:(.text+0x308): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p642u0.o: in function `_mjit0':
+_ruby_mjit_p642u0.c:(.text+0xef0): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p642u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (600.5ms): block in test@-e:3 -> /tmp/_ruby_mjit_p642u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+ 37) Failure:
+TestJIT#test_compile_insn_toregexp [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:211]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+p proc { /#{true}/ =~ "true" }.call
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p660u0.o: in function `_mjit0':
+_ruby_mjit_p660u0.c:(.text+0x4a4): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p660u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 38) Failure:
+TestJIT#test_inlined_undefined_ivar [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:680]:
+Expected 2 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+class Foo
+  def initialize
+    @a = :a
+  end
+
+  def bar
+    if @b.nil?
+      @b = :b
+    end
+  end
+end
+
+print(Foo.new.bar)
+print(Foo.new.bar)
+print(Foo.new.bar)
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p773u0.o: in function `_mjit0':
+_ruby_mjit_p773u0.c:(.text+0x20c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p773u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p773u1.o: in function `_mjit1':
+_ruby_mjit_p773u1.c:(.text+0x51c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p773u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<0>.
+
+ 39) Failure:
+TestJIT#test_jit_output [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:566]:
+Expected /^JIT success \(\d+\.\dms\): block in <main>@-e:1 -> .+_ruby_mjit_p\d+u\d+\.c$/ to match "/usr/bin/ld: /tmp/_ruby_mjit_p792u0.o: in function `_mjit0':\n" +
+"_ruby_mjit_p792u0.c:(.text+0x374): undefined reference to `__stack_chk_fail_local'\n" +
+"/usr/bin/ld: /tmp/_ruby_mjit_p792u0.so: hidden symbol `__stack_chk_fail_local' isn't defined\n" +
+"/usr/bin/ld: final link failed: bad value\n" +
+"collect2: error: ld returned 1 exit status\n" +
+"Successful MJIT finish\n".
+
+ 40) Failure:
+TestJIT#test_lambda_longjmp [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:796]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+fib = lambda do |x|
+  return x if x == 0 || x == 1
+  fib.call(x-1) + fib.call(x-2)
+end
+print fib.call(5)
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p884u0.o: in function `_mjit0':
+_ruby_mjit_p884u0.c:(.text+0xca8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p884u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 41) Failure:
+TestJIT#test_local_stack_on_exception [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:621]:
+Expected 2 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+def b
+  raise
+rescue
+  2
+end
+
+def a
+  # Calling #b should be vm_exec, not direct mjit_exec.
+  # Otherwise `1` on local variable would be purged.
+  1 + b
+end
+
+print a
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p894u0.o: in function `_mjit0':
+_ruby_mjit_p894u0.c:(.text+0x3d0): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p894u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/_ruby_mjit_p894u1.o: in function `_mjit1':
+_ruby_mjit_p894u1.c:(.text+0x360): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p894u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<0>.
+
+ 42) Failure:
+TestJIT#test_local_stack_with_sp_motion_by_blockargs [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:640]:
+Expected 2 times of JIT success, but succeeded 1 times.
+
+script:
+```
+
+def b(base)
+  1
+end
+
+# This method is simple enough to have false in catch_except_p.
+# So local_stack_p would be true in JIT compiler.
+def a
+  m = method(:b)
+
+  # ci->flag has VM_CALL_ARGS_BLOCKARG and cfp->sp is moved in vm_caller_setup_arg_block.
+  # So, for this send insn, JIT-ed code should use cfp->sp instead of local variables for stack.
+  Module.module_eval(&m)
+end
+
+print a
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p910u0.o: in function `method_missing.constprop.24':
+_ruby_mjit_p910u0.c:(.text+0x36c): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p910u0.o: in function `_mjit0':
+_ruby_mjit_p910u0.c:(.text+0x1508): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p910u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (191.6ms): b@-e:2 -> /tmp/_ruby_mjit_p910u1.c
+Successful MJIT finish
+
+```
+
+.
+<2> expected but was
+<1>.
+
+ 43) Failure:
+TestJIT#test_program_counter_with_regexpmatch [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:817]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+2.times do
+  break if /a/ =~ "ab" && !$~[0]
+  print $~[0]
+end
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p1007u0.o: in function `_mjit0':
+_ruby_mjit_p1007u0.c:(.text+0xa34): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p1007u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 44) Failure:
+TestJIT#test_pushed_values_with_opt_aref_with [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:836]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+2.times do
+  p(Thread.current["a"])
+end
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p1017u0.o: in function `_mjit0':
+_ruby_mjit_p1017u0.c:(.text+0xb94): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p1017u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 45) Failure:
+TestJIT#test_pushed_values_with_opt_aset_with [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:827]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+2.times do
+  print(Thread.current["a"] = {})
+end
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p1028u0.o: in function `_mjit0':
+_ruby_mjit_p1028u0.c:(.text+0xbe8): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p1028u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 46) Failure:
+TestJIT#test_stack_pointer_with_assignment [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:807]:
+Expected 1 times of JIT success, but succeeded 0 times.
+
+script:
+```
+
+2.times do
+  a, _ = nil
+  p a
+end
+
+```
+
+
+stderr:
+```
+/usr/bin/ld: /tmp/_ruby_mjit_p1113u0.o: in function `_mjit0':
+_ruby_mjit_p1113u0.c:(.text+0x504): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/_ruby_mjit_p1113u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+Successful MJIT finish
+
+```
+
+.
+<1> expected but was
+<0>.
+
+ 47) Failure:
+TestJIT#test_unload_units_and_compaction [/usr/ports/opt/ruby/work/src/ruby-2.6.5/test/ruby/test_jit.rb:599]:
+stdout:
+```
+012345678910
+```
+
+stderr:
+```
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u0.o: in function `_mjit0':
+_ruby_mjit_p1123u0.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u0.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u1.o: in function `_mjit1':
+_ruby_mjit_p1123u1.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u1.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u2.o: in function `_mjit2':
+_ruby_mjit_p1123u2.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u2.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u3.o: in function `_mjit3':
+_ruby_mjit_p1123u3.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u3.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u4.o: in function `_mjit4':
+_ruby_mjit_p1123u4.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u4.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u5.o: in function `_mjit5':
+_ruby_mjit_p1123u5.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u5.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u6.o: in function `_mjit6':
+_ruby_mjit_p1123u6.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u6.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u7.o: in function `_mjit7':
+_ruby_mjit_p1123u7.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u7.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u8.o: in function `_mjit8':
+_ruby_mjit_p1123u8.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u8.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u9.o: in function `_mjit9':
+_ruby_mjit_p1123u9.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u9.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u10.o: in function `_mjit10':
+_ruby_mjit_p1123u10.c:(.text+0x364): undefined reference to `__stack_chk_fail_local'
+/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u10.so: hidden symbol `__stack_chk_fail_local' isn't defined
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+JIT success (194.7ms): block in <main>@-e:16 -> /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1268u11.c
+Successful MJIT finish
+Successful MJIT finish
+```
+.
+Expected /\AJIT success \(\d+\.\dms\): mjit0@\(eval\):/ to match "/usr/bin/ld: /tmp/jit_test_unload_units_20191209-11546-1io8paz/_ruby_mjit_p1123u0.o: in function `_mjit0':\n".
+
+Finished tests in 2700.798792s, 7.5537 tests/s, 846.6347 assertions/s.
+20401 tests, 2286590 assertions, 47 failures, 0 errors, 52 skips
+
+ruby -v: ruby 2.6.5p114 (2019-10-01 revision 67812) [powerpc-linux]
+make: *** [uncommon.mk:768: yes-test-almost] Error 47

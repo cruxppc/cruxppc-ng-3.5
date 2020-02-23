@@ -1,0 +1,8 @@
+#
+# /etc/ports/xfce_4.14.httpup: David L. Craig's Xfce 4.14 port collection
+#
+
+ROOT_DIR=/usr/ports/xfce_4.14
+URL=http://dlcusa.net/CRUX/xfce_4.14/
+
+# End of file
