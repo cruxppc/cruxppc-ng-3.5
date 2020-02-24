@@ -22,9 +22,6 @@ development team.   If you are using CRUX-PPC and run into problems, please DO N
 There are still a fair number of Linux distributions supporting G5 machines but distros 
 supporting 32bit PowerPC are getting scarce.  Hence, for now at least, CRUX-PPC efforts are focused on the 32bit PowerPC machines.   
 
-  At the current time CRUX-PPC does not run properly on G3 systems.   Until this issue is resolved, CRUX-PPC should only be used with
-G4 machines.
-
   This project is not a continuation of the (now defunct) CRUX-PPC project which existed previously (until 2012 or so).   This project is a 
   new port of CRUX-3.5 to the PowerPC.  Although similarities exist and pieces from the previous CRUX-PPC may be reused in this project, this is a
   fresh port of CRUX to the PowerPC and backwards compatibility with the previous CRUX PPC is not a goal of this project.
