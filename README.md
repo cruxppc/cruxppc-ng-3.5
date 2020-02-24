@@ -75,9 +75,8 @@ included in this repository but instead are sourced from the main (x86/64) crux 
   This repository provides release notes, an installation handbook
 and various notes and materials related to crux ppc development.
 
-  The 'releases' section of this repository provides a starter 
-crux ppc 3.5 root filesystem.  This rootfs is the seed from which a user
-grows the remainder of their crux system.   As time passes, additional pre-built
+  The 'releases' section of this repository provides bootable CD images and
+selected pre-built "extra" packages.  As time passes, additional pre-built
 packabges from opt, xorg and contrib may also be added to the releases
 section of this repository.
 
