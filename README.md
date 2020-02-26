@@ -55,10 +55,9 @@ provided.
 
    Create a port of CRUX to the Apple PowerPC 32 bit machines.   
 
-   Provide the same functionality for PowerPC as is provide by mainline Crux for x86 machines.   This will be done in stages.   The initial focus is
-on providing a solid set of core packages.   Subsequent efforts will be towards building a set of prebuilt packages from opt and xorg that are
-equivalent to what is on the Crux install ISO.   Later stages will work on creating a CRUX PPC installation CD and validation of additional 
-packages from opt, xorg and contrib.
+   Provide the same functionality for PowerPC as is provide by mainline Crux for x86 machines.   This will be done in stages.   
+The initial focus is on providing a solid set of packages that are generally equivalent to what is provided by the mainline crux install CD.
+Later stages will work on validation of additional packages from opt, xorg and contrib.
 
    Crux PPC will generally be kept consistent with Crux mainline as much 
 as possible.   Changes certainly are required for the PowerPC but  
@@ -68,32 +67,30 @@ differences between Crux PPC and Crux mainline will be minimized.
 
   This repository provides the crux core, opt and xorg ports that are
 known to require changes to work for the powerpc.  These can be found 
-in the 'core-ppc', 'opt-ppc' and 'xorg-ppc' directories (and maybe
-contrib-ppc later..).  Ports which are unchanged for powerpc are not 
-included in this repository but instead are sourced from the main (x86/64) crux project.
+in the 'core-ppc', 'opt-ppc', 'xorg-ppc' and contrib-ppc directories 
+Ports which are unchanged for powerpc are not included in this repository but instead
+ are sourced from the main (x86/64) crux project.
 
   This repository provides release notes, an installation handbook
 and various notes and materials related to crux ppc development.
 
-  The 'releases' section of this repository provides bootable CD images and
-selected pre-built "extra" packages.  As time passes, additional pre-built
-packabges from opt, xorg and contrib may also be added to the releases
-section of this repository.
+  The 'releases' section of this repository provides installation CD
+image(s) and some pre-built 'extra' packages that may be particularly useful.
 
 
 ### Usage overview:
 
 
   The handbook provides details of the CRUXPPC install process.  Essentially,
-  download the CD iso file, burn a CD and boot it.   
+  download the CD iso file, burn a CD and boot it with the normal 'c' key boot.
 
   The user will may need to install a number of additional packages beyond what
   is provided by the install CD to have a crux system that meets their needs.
 
   Selected prebuilt packages from "opt", "xorg" and maybe "contrib" 
   may be found in the releases area.   These are optional, not required,
-  packages, typically requiring a long build time and are provided to help 
-  speed up the creation of the final CRUX PPC system.
+  packages, typically requiring a long build time, or maybe difficult to build,
+  and are provided to help speed up the creation of the final CRUX PPC system.
 
   A more detailed description of installing and configuring CRUX PPC can be
   found in the handbook and release notes.
