@@ -67,5 +67,7 @@ Test as many packages as possible.  Particulary those that are provided on
 the install CD.
 
 
+## replace yaboot with grub
 
+Initially this project re-uses the yaboot package from the Debian project as the bootloader.   yaboot has not been re-buildable from source for some time now.   So, although the yaboot binary still functions properly it cannot be changed if needed (although one could probably go back to a distro from about a decade ago and rebuild it in that way).   Some other ppc distros have started using grub instead of yaboot.   
 
