@@ -1,6 +1,6 @@
 # Description: Generate C bindings from rust code
 # URL: https://github.com/eqrion/cbindgen
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: cruxppc@gmail.com
 # Depends on: rust
 # Optional: sccache
 
@@ -19,5 +19,5 @@ build() {
 	cargo fetch
 	cargo build --release
 	cargo install --path . --root $PKG/usr
-	rm $PKG/usr/.crates.toml $PKG/usr/.crates2.json
+	#rm $PKG/usr/.crates.toml $PKG/usr/.crates2.json   # crate2.json not on ppc32
 }
