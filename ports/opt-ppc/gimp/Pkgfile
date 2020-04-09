@@ -5,7 +5,7 @@
 # Optional: gimp-print libsdl ghostscript libmng
 
 name=gimp
-version=2.10.14
+version=2.10.18
 release=1
 source=(https://download.gimp.org/pub/gimp/v${version%.*}/gimp-$version.tar.bz2
    gimp-2.10.14-ppchack.patch)
