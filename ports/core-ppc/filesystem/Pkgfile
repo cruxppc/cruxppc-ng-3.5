@@ -4,7 +4,7 @@
 
 name=filesystem
 version=3.5
-release=1
+release=2
 source=(issue motd shells group passwd shadow securetty fstab mime.types)
 
 build() {
