@@ -4,7 +4,7 @@
 # Depends on:  db gdbm openssl bzip2 zlib sqlite3
 
 name=python
-version=2.7.17
+version=2.7.18
 release=2
 source=(http://www.python.org/ftp/$name/$version/Python-$version.tar.xz \
         pyconfig.h)
