@@ -1,7 +1,7 @@
 # Description: U-Boot tools
 # URL: http://www.denx.de/wiki/U-Boot/WebHome
 # Maintainer: cruxppc at gmail dot com
-# Depends on:
+# Depends on: openssl
 
 name=u-boot-tools
 version=2020.07
@@ -10,9 +10,6 @@ source=(ftp://ftp.denx.de/pub/u-boot/u-boot-$version.tar.bz2)
 
 build() {
   cd u-boot-$version
-
-  # use custom compiler flags
-  sed -e "/^HOSTCFLAGS/ s/-O2/\$(CUSTOMCFLAGS)/" -i Makefile
 
   make sandbox_config
   sed -i 's/EFI_LOADER=y/EFI_LOADER=n/' .config
