@@ -4,15 +4,17 @@
 # Depends on:  libidn libmng gtk p5-html-parser
 
 name=netsurf
-version=3.9
+version=3.10
 release=1
 source=(http://download.netsurf-browser.org/netsurf/releases/source-full/netsurf-all-$version.tar.gz 
     netsurf-3.9_download_callback_crash.patch )
 
 build() {
-	cd netsurf-all-$version
-	patch -p1 -i $SRC/netsurf-3.9_download_callback_crash.patch
-	cd ..
+
+	# following patch is obsolete now.
+	#cd netsurf-all-$version
+	#patch -p1 -i $SRC/netsurf-3.9_download_callback_crash.patch
+	#cd ..
 
 	make -C */ install "DESTDIR=$PKG" PREFIX=/usr
 	( cd "$PKG/usr/bin" && ln -s netsurf-gtk netsurf )
