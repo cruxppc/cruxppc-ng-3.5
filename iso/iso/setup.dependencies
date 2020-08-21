@@ -155,7 +155,6 @@ libvpx: yasm libvpx
 libyaml: libyaml
 libtirpc: libtirpc 
 libxml2: zlib xz libxml2 
-libxml2-python: db ncurses openssl bzip2 zlib xz readline libxml2 gdbm sqlite3 python libxml2-python 
 libxslt: zlib xz libxml2 libxslt 
 llvm: openssl zlib bzip2 xz attr lzo expat ncurses libffi db curl acl readline libarchive gdbm sqlite3 cmake python ninja llvm 
 lvm2: kmod ncurses zlib libaio eudev util-linux libdevmapper lvm2 
