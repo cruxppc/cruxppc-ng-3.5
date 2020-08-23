@@ -1,0 +1,23 @@
+# Description:	Exif and Iptc metadata manipulation library and tools.
+# URL:		http://www.exiv2.org/
+# Maintainer: cruxppc at gmail dot com
+# Depends on:	cmake
+
+name=exiv2
+version=0.27.2
+release=1
+source=(https://github.com/Exiv2/exiv2/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	mkdir build; cd build
+
+	cmake ../$name-$version \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DEXIV2_ENABLE_BUILD_PO=OFF \
+		-DEXIV2_ENABLE_BUILD_SAMPLES=OFF \
+
+	make
+	make DESTDIR=$PKG install
+}
