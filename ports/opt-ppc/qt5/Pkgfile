@@ -1,16 +1,24 @@
 # Description: Qt Free Edition, version 5.x.
 # URL: http://www.qt.io/
 # Maintainer: cruxppc at gmail dot com
-# Depends on: dbus gdk-pixbuf gst-plugins-base libepoxy libmng libxkbcommon xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama xorg-xcb-util-image xorg-xcb-util-keysyms xorg-xcb-util-wm
+# Depends on: dbus gdk-pixbuf gst-plugins-base libepoxy libmng libxkbcommon xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama xorg-xcb-util-image xorg-xcb-util-keysyms xorg-xcb-util-wm xorg-xcb-util-renderutil
+# Optional: icu
 
 name=qt5
-version=5.14.2
+version=5.15.0
 release=1
 source=(https://download.qt.io/official_releases/qt/${version::4}/$version/single/qt-everywhere-src-$version.tar.xz
-	qt5-logo.png)
+	qt5-logo.png
+	qt5-base-QTBUG-82910.patch
+	qtbug-74252.patch
+	qtbug-78966.patch)
 
 build() {
 	cd qt-everywhere-src-$version
+
+	patch -d qtbase -p1 -i $SRC/qt5-base-QTBUG-82910.patch # https://codereview.qt-project.org/c/qt/qtbase/+/299182
+	patch -d qtbase -p1 -i $SRC/qtbug-74252.patch # Fix displaying custom icons
+	patch -d qtbase -p1 -i $SRC/qtbug-78966.patch # Fix QToolButton menus on multi-screen systems
 
 	export PYTHON='/usr/bin/python3'
 	mkdir $SRC/bin
@@ -76,7 +84,7 @@ build() {
 
 	sed 's|/usr/bin/python|/usr/bin/python3|g' \
 		-i $PKG/usr/lib/qt5/mkspecs/features/uikit/devices.py
-	2to3-3.7 --write --nobackups $PKG/usr/lib/qt5/mkspecs/features/uikit/devices.py
+	2to3 --write --nobackups $PKG/usr/lib/qt5/mkspecs/features/uikit/devices.py
     
 	# Fix paths
 	find $PKG/usr/lib/ -type f -name '*.prl' \
