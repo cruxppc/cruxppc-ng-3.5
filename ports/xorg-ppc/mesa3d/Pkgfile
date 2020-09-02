@@ -1,11 +1,11 @@
 # Description: Mesa 3D Graphics Library
-# URL: http://www.mesa3d.org
+# URL: https://www.mesa3d.org/
 # Maintainer: cruxppc at gmail dot com
 # Depends on: elfutils libdrm libglvnd libvdpau llvm python3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
 # Optional: libva
 
 name=mesa3d
-version=20.1.5
+version=20.1.6
 release=1
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz)
 
