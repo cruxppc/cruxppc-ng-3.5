@@ -4,11 +4,12 @@
 # Depends on:	cmake
 
 name=exiv2
-version=0.27.2
+version=0.27.3
 release=1
 source=(https://github.com/Exiv2/exiv2/archive/v$version/$name-$version.tar.gz)
 
 build() {
+        sed -i $name-$version/cmake/compilerFlags.cmake -e 's/-fcf-protection//'
 	mkdir build; cd build
 
 	cmake ../$name-$version \
