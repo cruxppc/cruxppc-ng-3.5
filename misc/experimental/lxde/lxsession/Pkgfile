@@ -4,7 +4,7 @@
 # Depends on: dbus-glib libunique lsb-release polkit gtk vala
 
 name=lxsession
-version=0.5.4
+version=0.5.5
 release=1
 source=(https://downloads.sourceforge.net/lxde/$name-$version.tar.xz)
 
