@@ -1,6 +1,6 @@
 # Description: Complete solution to record, convert and stream audio and video.
 # URL: http://ffmpeg.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: cruxppc at gmail com
 # Depends on: yasm
 # Optional: alsa-lib fdk-aac ffnvcodec-headers gnutls lame libass libsdl2 libtheora libva libvdpau libvorbis libvpx libwebp opus x264 x265 pulseaudio gsm
 
@@ -17,7 +17,7 @@ build() {
 	#https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6621
 	patch -p1 -i $SRC/CVE-2018-6621.patch
 
-[ -e '/usr/lib/pkgconfig/ffnvcodec.pc' ] && PKGMK_FFMPEG+=' --enable-nvdec --enable-nvenc'
+#[ -e '/usr/lib/pkgconfig/ffnvcodec.pc' ] && PKGMK_FFMPEG+=' --enable-nvdec --enable-nvenc'
 [ -e '/usr/lib/pkgconfig/libwebp.pc' ] && PKGMK_FFMPEG+=' --enable-libwebp'
 [ -e '/usr/lib/pkgconfig/vdpau.pc' ] && PKGMK_FFMPEG+=' --enable-vdpau'
 [ -e '/usr/lib/pkgconfig/freetype2.pc' ] && PKGMK_FFMPEG+=' --enable-libfreetype'
@@ -52,7 +52,8 @@ build() {
 		--enable-postproc \
 		--enable-pthreads \
 		--enable-swresample \
-		--enable-avresample
+		--disable-altivec \
+		--enable-avresample 
 
 	make
 	make DESTDIR=$PKG install install-man
