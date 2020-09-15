@@ -4,7 +4,7 @@
 # Depends on: nss, unzip, autoconf-2.13, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d icu
 
 name=firefox
-version=52.8.0esr
+version=52.9.0esr
 release=1
 source=(https://ftp.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
         firefox-install-dir.patch firefox.desktop)
