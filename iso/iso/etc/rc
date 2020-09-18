@@ -5,15 +5,11 @@
 
 echo "The system is coming up.  Please wait."
 
-# Set the hostname
-hostname crux
-
-# Mount proc pseudo-fs and sysfs
-/bin/mount -t proc none /proc
-/bin/mount -t sysfs none /sys
-
 # Start udev
+/bin/mount -n -t proc none /proc
+/bin/mount -n -t sysfs none /sys
 /sbin/start_udev
+#/sbin/udevd --daemon
 
 # Mount filesystems
 /bin/mount -n -a &> /dev/null
@@ -24,18 +20,11 @@ hostname crux
 /bin/mkdir /var/lock /var/log /var/run /var/tmp
 /bin/touch /var/run/utmp
 
-# Create /run/cryptsetup for cryptsetup
-/bin/mkdir /run/cryptsetup
-
 # Start log daemons
 /usr/sbin/syslogd
+/usr/sbin/klogd -c 4
 
 # Setup network
 /sbin/ifconfig lo 127.0.0.1
-
-# mount efivarfs if possible
-if [ -d /sys/firmware/efi/efivars ]; then
-	/bin/mount /sys/firmware/efi/efivars &> /dev/null
-fi
 
 # End of file
