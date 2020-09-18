@@ -56,9 +56,6 @@ lzo
 zstd
 parted
 xz
-efibootmgr
-efivar
-gnu-efi
 libmpfr
 dosfstools
 libgcrypt
@@ -66,7 +63,6 @@ libgpg-error
 popt
 cryptsetup
 start-stop-daemon
-linux-firmware
 wpa_supplicant
 dbus
 libnl
