@@ -2,6 +2,9 @@
 # post setup
 #
 # Johannes Winkelmann, jw at tks6 dot net
+# 
+# modified for CRUX PPC use
+# acrux, acrux at cruxppc dot org
 
 ROOT=$1
 DB=$ROOT/var/lib/pkg/db
@@ -24,7 +27,7 @@ rename_packages() {
 	return
     fi
     pkg=$@
-
+    
     filter="sed "
     runfilter="no"
     for tuple in $@; do
@@ -71,17 +74,14 @@ remove_packages() {
 
 inject_packages() {
     for package in $@; do
-    pkg="`find core opt xorg \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \)&2> /dev/null`"
-	if [ -z "$pkg" ]; then
+	if [ -z `is_installed $package` ]; then
+	    echo "Package injected: $package"
+	    pkg="`find core opt xorg \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \)&2> /dev/null`"
+	    if [ -n "$pkg" ]; then
+		$PKGADD -r $ROOT -f $pkg
+	    else
 		echo "  ERROR: package $package not found on ISO"
-	else
-		if [ -z `is_installed $package` ]; then
-		    echo "Package injected: $package"
-			$PKGADD -r $ROOT -f $pkg
-		else
-			echo "Package upgraded: $package"
-			$PKGADD -r $ROOT -u -f $pkg
-		fi
+	    fi
 	fi
     done
 }
@@ -93,38 +93,23 @@ if [ -z "$1" ]; then
     exit -1
 fi
 
+# 3.4 -> 3.5
+echo "* CRUX PPC 3.4 -> 3.5 setup-helper"
 
-##### # 3.4 -> 3.5 #####
-echo "* CRUX 3.4 -> 3.5 setup-helper"
+rename_packages "libattr:attr"
+remove_packages portmap glitz links
+inject_packages libmpc glib attr acl libcap
 
-inject_packages linux-pam
+if [ `is_installed nfs-utils` ]; then
+    inject_packages keyutils libtirpc libnfsidmap libevent rpcbind
+fi
 
-if [ `is_installed cryptsetup` ]; then
-	inject_packages json-c
+if [ `is_installed gtk` ]; then
+    inject_packages gdk-pixbuf
 fi
 
 if [ `is_installed mesa3d` ]; then
-	inject_packages libglvnd
-	inject_packages python3-mako
-	inject_packages python3-markupsafe
-	inject_packages python3-setuptools
-	inject_packages xorg-libxrandr
+    inject_packages libxml2-python talloc
 fi
 
-if [ `is_installed meson` ]; then
-	inject_packages python3-setuptools
-fi
-
-if [ `is_installed python3-mako` ]; then
-	inject_packages python3-markupsafe
-	inject_packages python3-setuptools
-fi
-
-if [ `is_installed python3-markupsafe` ]; then
-	inject_packages python3-setuptools
-fi
-
-if [ `is_installed xorg-mkfontdir` ]; then
-	remove_packages xorg-mkfontdir
-	inject_packages xorg-mkfontscale
-fi
+# End Of File
