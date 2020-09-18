@@ -1,0 +1,4 @@
+#CRUXMEDIA# /media auto ro 0 0
+devpts /dev/pts devpts noexec,nosuid,gid=tty,mode=0620 0 0
+tmpfs /tmp tmpfs defaults 0 0
+none /sys/firmware/efi/efivars efivarfs defaults,noauto 0 0

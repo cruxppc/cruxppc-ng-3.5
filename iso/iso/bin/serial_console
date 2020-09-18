@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# /usr/bin/serial_console
+#
+# This script opens a tty on /dev/tts/0 if it is a valid terminal, otherwise
+# goes to sleep for a year. This script is needed to prevent init(1) from
+# respawning agetty over and over again on machines that doesn't have a serial
+# port.
+#
+
+if stty -F /dev/ttyS0 > /dev/null 2>&1; then
+	exec /sbin/agetty 38400 ttyS0 vt100
+else
+	exec /bin/sleep 365d
+fi
+
+# End of file
