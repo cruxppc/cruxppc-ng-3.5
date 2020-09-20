@@ -19,6 +19,10 @@ build ()
                                   $PKG/var/lib/pkg/xfce/$xfcerel/$name
   # Build the canonical package:
   cd $name-$version
+
+  # Fix for building against vala version 48 and later.
+  echo "PanelPlugin.remote_event skip" >> libxfce4panel/libxfce4panel-2.0.metadata
+
   ./configure --prefix=/usr \
               --libexecdir=/usr/lib \
               --disable-nls \
