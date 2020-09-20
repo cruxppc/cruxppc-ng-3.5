@@ -1,0 +1,31 @@
+# Description: Thumbnail management per D-Bus specification for Xfce
+# URL: https://docs.xfce.org/xfce/thunar/tumbler http://git.xfce.org/xfce/tumbler/tree/README
+# Maintainer: cruxppc at gmail dot com
+# Depends on: dbus-glib gdk-pixbuf poppler-glib util-linux xfce4-dev-tools
+# Xfce git (https://git.xfce.org/) group: xfce
+xfcerel=4.14
+name=tumbler
+version=0.2.8
+release=1
+source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Install the canonical package:
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --disable-nls \
+              --disable-dependency-tracking \
+              --disable-gtk-doc \
+              --disable-gstreamer-thumbnailer \
+              --disable-odf-thumbnailer
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/{gtk-doc,locale}
+}

@@ -1,0 +1,88 @@
+From baf23e096da712084e54b47faa49c1ca99665b75 Mon Sep 17 00:00:00 2001
+From: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date: Wed, 17 Oct 2018 09:24:39 +0200
+Subject: Add support for xfce4-screensaver to xflock4
+
+While this can be overridden in the session's xfconf channel, we want to
+call xfce4-screensaver first.
+---
+ scripts/xflock4 | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/scripts/xflock4 b/scripts/xflock4
+index 32770b4..fcca730 100644
+--- a/scripts/xflock4
++++ b/scripts/xflock4
+@@ -30,6 +30,7 @@ LOCK_CMD=$(xfconf-query -c xfce4-session -p /general/LockCommand)
+ # Lock by xscreensaver or gnome-screensaver, if a respective daemon is running
+ for lock_cmd in \
+     "$LOCK_CMD" \
++    "xfce4-screensaver-command -lock" \
+     "xscreensaver-command -lock" \
+     "gnome-screensaver-command --lock"
+ do
+-- 
+cgit v1.2.1
+
+From b863b3befc2734c277a22060af8bc3d891974f53 Mon Sep 17 00:00:00 2001
+From: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date: Wed, 28 Nov 2018 14:38:01 +0100
+Subject: Fix xfce4-screensaver command in xflock4
+
+---
+ scripts/xflock4 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/scripts/xflock4 b/scripts/xflock4
+index fcca730..525e6e2 100644
+--- a/scripts/xflock4
++++ b/scripts/xflock4
+@@ -30,7 +30,7 @@ LOCK_CMD=$(xfconf-query -c xfce4-session -p /general/LockCommand)
+ # Lock by xscreensaver or gnome-screensaver, if a respective daemon is running
+ for lock_cmd in \
+     "$LOCK_CMD" \
+-    "xfce4-screensaver-command -lock" \
++    "xfce4-screensaver-command --lock" \
+     "xscreensaver-command -lock" \
+     "gnome-screensaver-command --lock"
+ do
+-- 
+cgit v1.2.1
+
+From 28302d453f9f7407051bb4fea2a37de0d266fdad Mon Sep 17 00:00:00 2001
+From: Jonas Zetterberg <jozz@jozz.se>
+Date: Fri, 7 Dec 2018 10:53:17 +0100
+Subject: Support scaling in logout dialog (Bug #14951)
+
+When session is scaled the root window needs scaled coordinates, otherwise
+only the top-left quarter of the root window is faded.
+---
+ xfce4-session/xfsm-fadeout.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/xfce4-session/xfsm-fadeout.c b/xfce4-session/xfsm-fadeout.c
+index 6233fa2..73e0aba 100644
+--- a/xfce4-session/xfsm-fadeout.c
++++ b/xfce4-session/xfsm-fadeout.c
+@@ -63,6 +63,7 @@ xfsm_x11_fadeout_new_window (GdkDisplay *display,
+   gulong                mask = 0;
+   gulong                opacity;
+   gboolean              composited;
++  gint                  scale;
+ 
+   gdk_error_trap_push ();
+ 
+@@ -77,6 +78,10 @@ xfsm_x11_fadeout_new_window (GdkDisplay *display,
+ 
+   cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
+ 
++  scale = gdk_window_get_scale_factor (root);
++  width *= scale;
++  height *= scale;
++
+   if (!composited)
+     {
+       /* create a copy of root window before showing the fadeout */
+-- 
+cgit v1.2.1
+

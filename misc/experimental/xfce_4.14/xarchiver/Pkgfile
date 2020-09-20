@@ -1,0 +1,33 @@
+# Description: Archive manager for XFce among others
+# URL: https://github.com/ib/xarchiver
+# Maintainer: cruxppc at gmail dot com
+# Depends on: desktop-file-utils gtk gtk3
+# Xfce git (https://git.xfce.org/) group: N/A
+xfcerel=4.14
+name=xarchiver
+version=0.5.4.14
+release=1
+source=(https://github.com/ib/xarchiver/archive/$version/$name-$version.tar.gz
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the right
+  # state to build and/or deploy this port.
+  #
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical package:
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --libexecdir=/usr/lib/thunar \
+              --disable-debug
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/{doc,locale}
+  find $PKG/usr/share -type f -name '*.desktop' \
+      -exec sed -r '/\[.+\]=/d' -i {} \;
+  sed -i $PKG/usr/share/applications/$name.desktop \
+      -e 's|multipart|application|g'
+}

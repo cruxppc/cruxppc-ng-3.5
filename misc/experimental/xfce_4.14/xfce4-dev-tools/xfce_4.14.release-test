@@ -1,0 +1,25 @@
+#!/bin/bash
+set +xv
+# /var/lib/pkg/release-test
+# This logic must be run by the superuser on the build and/or deploy system to ensure
+# this build and/or deploy occurs in a system that is installing or has installed the
+# same release of Xfce as the package calling this script from its pre-install script.
+#
+# $1 is the $xfcerel variable of the caller--it should agree with the current
+# /var/lib/pkg/xfce directory; e.g., if 4.14, then 4.14 should be the only directory
+# in /var/lib/pkg/xfce.
+test -d /var/lib/pkg/xfce \
+|| { echo "There is no /var/lib/pkg/xfce directory!"
+     echo "xfce4-dev-tools has not been installed!"
+     return 2 2>/dev/null
+     exit   2
+   }
+reld=$(cd /var/lib/pkg/xfce && echo *)
+test ".$1" != ".$reld" \
+|| { echo "The /var/lib/pkg/xfce directory contains <$reld>"
+     echo "That is not the same as the parameter received <$1>!"
+     return 4 2>/dev/null
+     exit   4
+   }
+return 0 2>/dev/null
+exit   0 # only executed if return is inappropriate for how this script was invoked

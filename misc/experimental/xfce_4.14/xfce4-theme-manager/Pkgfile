@@ -1,0 +1,27 @@
+# Description: A theme manager for xfce4
+# URL: https://github.com/KeithDHedger/Xfce-Theme-Manager
+# Maintainer: cruxppc at gmail dot com
+# Depends on: libxfce4ui unzip
+# Xfce git (https://git.xfce.org/) group: N/A
+xfcerel=4.14
+name=xfce4-theme-manager
+version=0.3.8
+release=1
+source=(https://github.com/KeithDHedger/Xfce-Theme-Manager/archive/xfce-theme-manager-0.3.8.tar.gz
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical package:
+  cd Xfce-Theme-Manager-xfce-theme-manager-$version
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/man/??
+}

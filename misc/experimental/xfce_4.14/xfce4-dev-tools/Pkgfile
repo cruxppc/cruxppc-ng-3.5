@@ -1,0 +1,52 @@
+# Description: Autoconf macros and scripts to augment app build systems
+# URL: https://git.xfce.org/xfce/xfce4-dev-tools/tree/README
+# Maintainer: cruxppc at gmail dot com
+# Depends on: glib
+# Xfce git (https://git.xfce.org/) group: xfce
+# Note:  This port is depended upon by all ports in all xfce_?.?? collections
+#        (explicitly only by tumbler) for purposes of installing the associated
+#        CRUX package files into CRUX systems whether they are built locally or
+#        just pkgadded using CRUX package files built elsewhere.  As this port's
+#        Xfce.org tools are needed only for building the packages, it might appear
+#        requiring this port on pkgadd-only systems causes packages to be installed
+#        that are build-only requirements. However, this package does not depend on
+#        any packages not automatically installed or not needed to run Xfce on such
+#        systems, so its bloat factor for pkgadd-only installs is negligible.
+#
+#        The non-Xfce.org script installed is called by every port via its
+#        pre-install script to ensure no software maintenance is attempted for
+#        xfce_?.?? ports that would mix packages of different XFce releases or in
+#        situations where non-xfce_?.?? ports have been installed when one or more
+#        Xfce_?.?? ports had already been installed.
+xfcerel=4.14
+name=xfce4-dev-tools
+version=4.14.0
+release=2
+source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2
+      # xfce_$xfcerel.release-test
+        xfce_$xfcerel.uninstall
+        xfce_$xfcerel.$name
+       )
+build()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port (if updating, the script did
+  # nothing).
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+# # Install the xfce release test script called by all other Xfce pre-install scripts:
+# install -T -m0754 -groot -oroot $SRC/xfce_$xfcerel.release-test \
+#                                 $PKG/var/lib/pkg/xfce/$xfcerel/release-test
+  # Install the xfce uninstall script that simplifies removal of the installed Xfce
+  # release preparatory to installing a newer stable release in its place (because
+  # running this script deletes the script, the first thing it does is copy itself
+  # to the /root directory and execs the copy):
+  install -T -m0754 -groot -oroot $SRC/xfce_$xfcerel.uninstall \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/uninstall
+  # Build the canonical package:
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

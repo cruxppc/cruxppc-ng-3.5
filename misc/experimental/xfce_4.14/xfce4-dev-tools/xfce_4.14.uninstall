@@ -1,0 +1,132 @@
+#!/bin/bash
+set +xv
+# This logic can be run by the superuser on the build and/or deploy system to uninstall the
+# Xfce packages of the current release to enable the new release to be installed.
+#
+xfcerel=4.14
+# Run this script from /root so it will not be uninstalled by itself
+test ".$0" != "./root/xfce_$xfcerel.uninstall \
+&& { test -x /root/xfce_$xfcerel.uninstall \
+     || cp -p /var/lib/pkg/xfce/$xfcerel/uninstall /root/xfce_$xfcerel.uninstall
+     exec /root/xfce_$xfcerel.uninstall
+   }
+/bin/ps aeo comm \
+| sed -e '
+/^Thunar$/b;
+/^X$/b;
+/^panel-14-action$/b;
+/^panel-18-fsguar$/b;
+/^panel-19-netloa$/b;
+/^panel-20-netloa$/b;
+/^panel-21-fsguar$/b;
+/^panel-22-system$/b;
+/^panel-23-diskpe$/b;
+/^panel-24-diskpe$/b;
+/^panel-25-diskpe$/b;
+/^panel-26-diskpe$/b;
+/^panel-27-diskpe$/b;
+/^panel-6-systray$/b;
+/^panel-9-power-m$/b;
+/^xfce4-clipman$/b;
+/^xfce4-notes$/b;
+/^xfce4-panel$/b;
+/^xfce4-screensav$/b;
+/^xfce4-session$/b;
+/^xfce4-terminal$/b;
+/^xfdesktop$/b;
+/^xfwm4$/b;
+/^xinit$/b;
+d' | LANG=C sort | uniq >/tmp/xfce-processes 2>/dev/null
+test $(cat /tmp/xfce-processes | wc -l) -gt 0 \
+&& { echo "# # #  Probable Xfce processes are currently running these components:"
+     cat /tmp/xfce-processes
+     echo "# # #  Quiesce the Xfce instance and retry"
+     return 1 2>/dev/null
+     exit   1
+   }
+for pkg in \
+xfce4-taskmanager \
+xfce4 \
+xfdesktop \
+xfce4-places-plugin \
+xfburn \
+thunarx-python \
+thunar-volman \
+thunar-vcs-plugin \
+thunar-shares-plugin \
+thunar-media-tags-plugin \
+thunar-archive-plugin \
+ristretto \
+xfce4-xkb-plugin \
+xfce4-whiskermenu-plugin \
+xfce4-weather-plugin \
+xfce4-wavelan-plugin \
+xfce4-verve-plugin \
+xfce4-time-out-plugin \
+xfce4-systemload-plugin \
+xfce4-statusnotifier-plugin \
+xfce4-smartbookmark-plugin \
+xfce4-sensors-plugin \
+xfce4-screenshooter \
+xfce4-pulseaudio-plugin \
+xfce4-power-manager \
+xfce4-panel-profiles \
+xfce4-notifyd \
+xfce4-notes-plugin \
+xfce4-netload-plugin \
+xfce4-mpc-plugin \
+xfce4-mount-plugin \
+xfce4-mailwatch-plugin \
+xfce4-indicator-plugin \
+xfce4-genmon-plugin \
+xfce4-fsguard-plugin \
+xfce4-eyes-plugin \
+xfce4-embed-plugin \
+xfce4-diskperf-plugin \
+xfce4-dict \
+xfce4-datetime-plugin \
+xfce4-cpufreq-plugin \
+xfce4-clipman-plugin \
+xfce4-battery-plugin \
+thunar \
+parole \
+xfwm4-themes \
+xfce4-settings \
+xfce4-screensaver \
+xfce4-appfinder \
+xfce4-panel \
+xfce4-terminal \
+xfmpc \
+xfce4-theme-manager \
+xfwm4 \
+xfce4-session \
+garcon \
+exo \
+mousepad \
+libxfce4ui \
+xfconf \
+libxfce4util \
+xarchiver \
+elementary-xfce-icon-theme \
+tumbler \
+xfce4-dev-tools
+do  prt-get isinst $pkg 1>/dev/null 2>&1 \
+    && { prt-get remove $ii ; rc=$?
+         echo "prt-get remove of $pkg ended with status $rc"
+       }
+done
+gawk -F : 'index(";/bin/sh;/bin/bash;/bin/tsh;/bin/zsh;", ";" $7 ";") > 0 {print $1 " " $6}' \
+     /etc/passwd \
+| while read usr hdir
+  do for ii in $hdir/.cache/sessions $hdir/.config/xfce* $hdir/.config/Thunar
+     do  test -d $ii \
+         && { test -d $hdir/.xfce_$xfcerel \
+              || sudo -u mkdir $hdir/.xfce_$xfcerel
+              mv $ii $hdir/.xfce_$xfcerel
+              echo "moved $ii into $hdir/.xfce_$xfcerel"
+            }
+     done
+  done
+/usr/ports/xfce_$xfcerel/xfce4-dev-tools/pre-install ; rc=$?
+return $rc
+exit   $rc # only executed if return is inappropriate for how this script was invoked

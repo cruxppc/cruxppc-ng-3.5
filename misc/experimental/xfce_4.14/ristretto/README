@@ -1,0 +1,15 @@
+
+README for ristretto
+
+
+POST-INSTALL
+
+To update your icon cache remember to run
+
+    prt-get isinst gtk >/dev/null 2>&1 \
+    && gtk-update-icon-cache -f -t /usr/share/icons/hicolor
+
+post-install script will do the same, if you have
+
+'runscripts' set to 'yes' in etc/prt-get.conf
+

@@ -1,0 +1,30 @@
+# Description: Xfce D-Bus-based configuration storage system
+# URL: https://docs.xfce.org/xfce/xfconf/start
+# Maintainer: cruxppc at gmail dot com
+# Depends on: dbus-glib libxfce4util p5-glib
+# Xfce git (https://git.xfce.org/) group: xfce
+xfcerel=4.14
+name=xfconf
+version=4.14.1
+release=1
+source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical package:
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --libexecdir=/usr/bin
+  make
+  make DESTDIR=$PKG install
+  install -d $PKG/usr/bin
+  ln -sf /usr/lib/xfce4/xfconf/xfconfd $PKG/usr/bin/xfconfd
+  rm -r $PKG/usr/share/{gtk-doc,locale}
+  # find $PKG -name perllocal.pod -o -name .packlist | xargs rm
+}

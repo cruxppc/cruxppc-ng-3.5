@@ -1,0 +1,30 @@
+# Description: Application library for the Xfce desktop environment
+# URL: http://docs.xfce.org/xfce/exo/start
+# Maintainer: cruxppc at gmail dot com
+# Depends on: libxfce4ui p5-uri
+# Xfce git (https://git.xfce.org/) group: xfce
+xfcerel=4.14
+name=exo
+version=0.12.11
+release=1
+source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical package:
+  cd $SRC/$name-$version
+  ./configure --prefix=/usr \
+              --disable-nls \
+              --libexecdir=/usr/lib/exo
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/{locale,gtk-doc}
+  find $PKG/usr/share -type f -name '*.desktop' \
+       -exec sed -r '/\[.+\]=/d' -i {} \;
+}

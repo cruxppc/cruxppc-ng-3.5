@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# post-install: update all icon theme cache files
+
+for theme in /usr/share/icons/elementary-xfce*
+do
+    prt-get isinst gtk >/dev/null 2>&1 \
+    && gtk-update-icon-cache $theme
+done

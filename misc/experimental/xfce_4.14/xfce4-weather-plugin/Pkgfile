@@ -1,0 +1,30 @@
+# Description: Display weather data in the panel
+# URL: http://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin
+# Maintainer: cruxppc at gmail dot com
+# Depends on: libsoup upower xfce4-panel
+# Xfce git (https://git.xfce.org/) group: panel-plugins
+xfcerel=4.14
+name=xfce4-weather-plugin
+version=0.10.0
+release=2
+source=(http://archive.xfce.org/src/panel-plugins/$name/${version%.*}/$name-$version.tar.bz2
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical package:
+  cd $name-$version
+  sed -i panel-plugin/* -e 's|panel-plugins|panel/plugins|g'
+  ./configure --prefix=/usr \
+              --libexecdir=/usr/lib
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/locale
+  find $PKG/usr/share/xfce4/panel/plugins -type f -name '*.desktop' \
+       -exec sed -r '/\[.+\]=/d' -i {} \;
+}

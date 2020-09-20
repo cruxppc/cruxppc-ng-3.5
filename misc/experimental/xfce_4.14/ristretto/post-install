@@ -1,0 +1,6 @@
+#!/bin/sh
+
+update-mime-database /usr/share/mime
+update-desktop-database -q /usr/share/applications
+prt-get isinst gtk >/dev/null 2>&1 \
+&& gtk-update-icon-cache /usr/share/icons/hicolor/

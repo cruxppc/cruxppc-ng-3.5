@@ -1,0 +1,24 @@
+# Description: Icon theme forked from the elementary project
+# URL: https://github.com/shimmerproject/elementary-xfce/blob/master/README.md
+# Maintainer: cruxppc at gmail dot com
+# Depends on: librsvg
+# Xfce git (https://git.xfce.org/) group: N/A
+xfcerel=4.14
+name=elementary-xfce-icon-theme
+version=0.14
+release=2
+source=(https://github.com/shimmerproject/elementary-xfce/archive/v"$version"/$name-$version.tar.gz
+        xfce_$xfcerel.$name
+       )
+build ()
+{ # The port's pre-install script ensured the build and/or deploy system is in the
+  # right state to build and/or deploy this port.
+  # Establish the $xfcerel $name file for this port:
+  install -d -m0755 -groot -oroot $PKG/var/lib/pkg/xfce/$xfcerel
+  install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
+                                  $PKG/var/lib/pkg/xfce/$xfcerel/$name
+  # Build the canonical port:
+  install -d -m 0755 $PKG/usr/share/icons
+  mv elementary-xfce-$version/elementary-xfce{,-dark} $PKG/usr/share/icons
+  find $PKG \( -name 'AUTHORS' -o -name 'README*' -o -name 'CONTRIBUTORS' \) -exec rm '{}' \;
+}
