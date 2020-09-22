@@ -44,7 +44,6 @@ iproute2: db iptables attr linux-pam libcap iproute2
 iptables: iptables 
 kbd: kbd 
 kmod: kmod 
-lcms2: xz libtiff lcms2
 less: ncurses libpcre less 
 libarchive: bzip2 xz zlib attr lzo acl libarchive 
 libcap: attr linux-pam libcap 
@@ -110,6 +109,7 @@ btrfs-progs: lzo zlib xz zstd btrfs-progs
 cairo: zlib expat db ncurses openssl bzip2 xorg-xorgproto xz libpthread-stubs mtdev libffi libtirpc mpdecimal xorg-util-macros xorg-libpixman libpcre libpng readline xorg-libxdmcp xorg-libxau libxml2 xorg-xtrans freetype gdbm sqlite3 libxslt fontconfig python python3 xorg-xcb-proto xorg-libevdev ninja python3-setuptools meson libinput glib xorg-libxcb xorg-libx11 xorg-xcb-util xorg-libxext xorg-libxrender cairo 
 cdrkit: zlib openssl bzip2 xz attr lzo expat ncurses linux-pam file curl acl libcap libarchive cmake cdrkit 
 cmake: openssl zlib bzip2 xz attr lzo expat ncurses curl acl libarchive cmake 
+consolekit: consolekit 
 cryptsetup: kmod ncurses zlib libgpg-error attr json-c eudev libgcrypt acl util-linux gettext libdevmapper popt cryptsetup 
 dbus: expat dbus 
 dbus-glib: expat libpcre libffi db ncurses openssl bzip2 zlib libtirpc mpdecimal xz dbus readline gdbm sqlite3 python python3 ninja python3-setuptools meson glib dbus-glib 
@@ -140,6 +140,7 @@ keyutils: keyutils
 libaio: libaio 
 libcroco: libcroco
 libevent: openssl libevent 
+libexif: libexif 
 libffi: libffi 
 libgcrypt: libgpg-error libgcrypt 
 libgpg-error: libgpg-error 
@@ -175,6 +176,7 @@ p5-html-tagset: p5-html-tagset
 p5-xml-parser: expat db ncurses readline gdbm perl p5-xml-parser 
 pango: xorg-xorgproto xorg-util-macros zlib expat db ncurses openssl bzip2 xz libpthread-stubs mtdev libffi libtirpc mpdecimal xorg-libpixman libpcre fribidi xorg-libxdmcp xorg-libxau xorg-xtrans libpng readline libxml2 xorg-libice freetype gdbm sqlite3 libxslt xorg-libsm fontconfig python python3 xorg-xcb-proto xorg-libevdev ninja python3-setuptools meson libinput glib xorg-libxcb gobject-introspection xorg-libx11 xorg-xcb-util xorg-libxext xorg-libxrender cairo harfbuzz xorg-libxft pango 
 parted: kmod ncurses zlib eudev readline util-linux libdevmapper parted 
+polkit: polkit 
 popt: ncurses attr acl gettext popt 
 ppp: zlib openssl ppp 
 prt-utils: bzip2 xz zlib elfutils prt-utils 
@@ -203,6 +205,20 @@ xterm: kmod ncurses zlib xorg-xorgproto xorg-util-macros db openssl bzip2 xz lib
 yasm: yasm 
 zip: bzip2 zip 
 zstd: zlib xz zstd 
+adwaita-icon-theme: librsvg-compat adwaita-icon-theme
+desktop-file-utils: glib pkg-config meson desktop-file-utils
+lcms2: xz libtiff lcms2
+libglade: gtk xorg-libxdamage python libglade
+libogg: libogg
+librsvg-compat: gtk3 libcroco librsvg-compat
+libvorbis: libogg libvorbis
+libwnck: gtk gobject-introspection libwnck
+lxappearance: gtk dbus-glib lxappearance
+pango-compat: xorg-libsm xorg-libxft pango-compat
+poppler: cmake cairo lcms2 poppler
+poppler-glib: gobject-introspection poppler poppler-glib
+python-cairo: cairo python python-cairo
+vte: gtk util-linux vte
 glu: bzip2 xz zlib libpthread-stubs xorg-libpciaccess db ncurses openssl xorg-xorgproto mtdev expat libffi libtirpc mpdecimal xorg-util-macros attr lzo elfutils libxml2 libdrm readline curl xorg-libxdmcp xorg-libxau xorg-xtrans xorg-libxshmfence acl libxslt gdbm sqlite3 libarchive python python3 cmake xorg-xcb-proto xorg-libevdev ninja python3-setuptools llvm meson python3-markupsafe libinput python3-mako xorg-libxcb xorg-libx11 xorg-libxext xorg-libxfixes xorg-libxrender libglvnd libvdpau xorg-libxv xorg-libxxf86vm xorg-libxdamage xorg-libxrandr xorg-libxvmc mesa3d glu 
 libdrm: libpthread-stubs xorg-libpciaccess libdrm 
 libepoxy: bzip2 xz zlib libpthread-stubs xorg-libpciaccess db ncurses openssl xorg-xorgproto mtdev expat libffi libtirpc mpdecimal xorg-util-macros attr lzo elfutils libxml2 libdrm readline curl xorg-libxdmcp xorg-libxau xorg-xtrans xorg-libxshmfence acl libxslt gdbm sqlite3 libarchive python python3 cmake xorg-xcb-proto xorg-libevdev ninja python3-setuptools llvm meson python3-markupsafe libinput python3-mako xorg-libxcb xorg-libx11 xorg-libxext xorg-libxfixes xorg-libxrender libglvnd libvdpau xorg-libxv xorg-libxxf86vm xorg-libxdamage xorg-libxrandr xorg-libxvmc mesa3d libepoxy 
