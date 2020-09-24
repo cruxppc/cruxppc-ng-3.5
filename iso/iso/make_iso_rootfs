@@ -4,18 +4,19 @@ set -e
 date
 export CRUXVERSION=3.5
 export CUSTOMVERSION=
-export PORTS_DIR=/usr/ports
-export ROOTFS_DIR=`$(PWD)`/tmp/rootfs
+export PORTS_DIR=/mnt/hd/crux
+export PWD=`pwd`
+export ROOTFS_DIR=$PWD/tmp/rootfs
 export ROOTFS_KERNEL=/root/cruxppc*.tar.xz
 rm -fr $ROOTFS_DIR
-mkdir $ROOTFS_DIR
+mkdir -pv $ROOTFS_DIR
 mkdir -pv $ROOTFS_DIR/var/lib/pkg
 >$ROOTFS_DIR/var/lib/pkg/db
 
 #
 # Populate ISO rootfs
 #
-pkgadd --root=$ROOTFS_DIR $PORTS_DIR/*/filesystem#.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/filesystem#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/acl#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/attr#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bash#*.pkg.tar.xz
@@ -26,7 +27,6 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/coreutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/cryptsetup#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dash#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dbus#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dhcpcd#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dialog#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dosfstools#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/e2fsprogs#*.pkg.tar.xz
@@ -85,18 +85,19 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/tar#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/usbutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/util-linux#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/vim#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/wget#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/which#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/xfsprogs#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/xz#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/yaboot#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zlib#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zstd#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/exfat-utils*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/fuse*.pkg.tar.xz
 
 #
 # Install kernel
 #
-tar xvfp -C $ROOTFS_DIR $ROOTFS_KERNEL
+tar xvfp $ROOTFS_KERNEL -C $ROOTFS_DIR 
 
 #
 # Install CRUX install scripts and
