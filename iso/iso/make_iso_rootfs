@@ -1,0 +1,112 @@
+#!/bin/bash
+set -e
+
+date
+export CRUXVERSION=3.5
+export CUSTOMVERSION=
+export PORTS_DIR=/usr/ports
+export ROOTFS_DIR=`$(PWD)`/tmp/rootfs
+export ROOTFS_KERNEL=/root/cruxppc*.tar.xz
+rm -fr $ROOTFS_DIR
+mkdir $ROOTFS_DIR
+mkdir -pv $ROOTFS_DIR/var/lib/pkg
+>$ROOTFS_DIR/var/lib/pkg/db
+
+#
+# Populate ISO rootfs
+#
+pkgadd --root=$ROOTFS_DIR $PORTS_DIR/*/filesystem#.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/acl#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/attr#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bash#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bc#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/btrfs-progs#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bzip2#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/coreutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/cryptsetup#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dash#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dbus#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dhcpcd#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dialog#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dosfstools#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/e2fsprogs#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/ed#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/elfutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/eudev#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/file#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/findutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/gawk#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/glibc#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/grep#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/gzip#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/hfsutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/inetutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/iproute2#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/iputils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/jfsutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/json-c#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/kbd#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/kmod#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/less#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libaio#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libcap#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libdevmapper#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libgcrypt#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libgmp#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libgpg-error#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libmpfr#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libnl#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libpcre#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/libusb#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/linux-pam#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/lvm2#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/lzo#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/mac-fdisk#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/mdadm#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/nano#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/ncurses#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/nvsetenv#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/parted#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/patch#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/pciutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/pkgutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/popt#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/procps#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/rc#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/readline#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/reiserfsprogs#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/sed#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/shadow#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/start-stop-daemon#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/sysfsutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/sysklogd#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/sysvinit#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/tar#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/usbutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/util-linux#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/vim#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/wget#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/which#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/xfsprogs#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/xz#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/yaboot#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zlib#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zstd#*.pkg.tar.xz
+
+#
+# Install kernel
+#
+tar xvfp -C $ROOTFS_DIR $ROOTFS_KERNEL
+
+#
+# Install CRUX install scripts and
+# bootcd startup scripts
+#
+git clone https://www.github.com/cruxppc/cruxppc-ng-3.5
+cp -r cruxppc-ng-3.5/iso/iso/bin/* $ROOTFS_DIR/usr/bin
+cp -r cruxppc-ng-3.5/iso/iso/etc/* $ROOTFS_DIR/etc
+
+#
+# Add CRUX payload
+#
+mkdir $ROOTFS_DIR/crux

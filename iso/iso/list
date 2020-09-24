@@ -49,8 +49,6 @@ mdadm
 nano
 ncurses
 nvsetenv
-openssh
-openssl
 parted
 patch
 pciutils
@@ -72,8 +70,6 @@ util-linux
 vim
 wget
 which
-wireless-tools
-wpa_supplicant
 xfsprogs
 xz
 yaboot
