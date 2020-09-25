@@ -1,11 +1,11 @@
 # Description: Evented I/O for V8 javascript.
-# URL: http://nodejs.org/
+# URL: https://nodejs.org/
 # Maintainer: cruxppc at gmail dot com
 # Depends on: python
 
 name=nodejs
 version=8.12.0    # 8.12.0 last one that supports ppc ?
-version=10.16.3
+version=10.22.1
 release=1
 source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz
 libatomic.patch
@@ -18,7 +18,7 @@ build() {
 	patch -p1 -i $SRC/libatomic.patch
 	patch -p1 -i $SRC/ppc32.patch
 	patch -p1 -i $SRC/ppc64.patch
-	patch -p1 -i $SRC/stack-silliness.patch
+#	patch -p1 -i $SRC/stack-silliness.patch
 
 	./configure \
 		--prefix=/usr \

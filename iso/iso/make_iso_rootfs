@@ -16,14 +16,18 @@ mkdir -pv $ROOTFS_DIR/var/lib/pkg
 #
 # Populate ISO rootfs
 #
+echo "- Installing rootfs packages..."
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/filesystem#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/glibc#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/readline#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/ncurses#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/coreutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/acl#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/attr#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bash#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bc#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/btrfs-progs#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/bzip2#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/coreutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/cryptsetup#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dash#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/dbus#*.pkg.tar.xz
@@ -33,16 +37,15 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/e2fsprogs#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/ed#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/elfutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/eudev#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/exfat-utils*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/file#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/findutils#*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/fuse*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/gawk#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/glibc#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/grep#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/gzip#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/hfsutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/inetutils#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/iproute2#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/iputils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/jfsutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/json-c#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/kbd#*.pkg.tar.xz
@@ -63,17 +66,12 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/lvm2#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/lzo#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/mac-fdisk#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/mdadm#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/nano#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/ncurses#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/nvsetenv#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/parted#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/patch#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/pciutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/pkgutils#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/popt#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/procps#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/rc#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/readline#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/reiserfsprogs#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/sed#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/shadow#*.pkg.tar.xz
@@ -91,13 +89,25 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/xz#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/yaboot#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zlib#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zstd#*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/exfat-utils*.pkg.tar.xz
-pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/fuse*.pkg.tar.xz
 
 #
 # Install kernel
 #
-tar xvfp $ROOTFS_KERNEL -C $ROOTFS_DIR 
+echo "- Installing kernel..."
+tar xfp $ROOTFS_KERNEL -C $ROOTFS_DIR 
+
+#
+# Remove unneeded files to reduce size.
+#
+echo "- Deleting superfluous files..."
+cd $ROOTFS_DIR && rm -rf var opt home
+mkdir -p $ROOTFS_DIR/var/empty $ROOTFS_DIR/var/lib
+cd $ROOTFS_DIR/usr && rm -rf man include lib/*.a lib/*.o lib/gconv lib/locale src
+cd $ROOTFS_DIR/usr/share && mkdir l v x; cp terminfo/l/linux l; cp terminfo/v/vt100 v; cp terminfo/x/xterm x; rm -rf terminfo/*; mv l v x terminfo
+cd $ROOTFS_DIR/usr/share && rm -rf et ss vim i18n zoneinfo
+cd $ROOTFS_DIR/usr/bin && rm cal locale localedef rpcgen compile_et mk_cmds
+cd $ROOTFS_DIR/usr/sbin && rm groupadd groupdel groupmod useradd userdel usermod grpck pwck iconvconfig
+cd $ROOTFS_DIR/etc && rm -rf cron resolv.conf lilo.conf sysctl.conf pkgadd.conf pkgmk.conf securetty
 
 #
 # Install CRUX install scripts and
