@@ -1,11 +1,11 @@
 # Description: Secure Sockets Layer and Transport Layer Security tools
-# URL:         http://www.openssl.org/
+# URL:         https://www.openssl.org/
 # Maintainer: cruxppc at gmail dot com
 
 name=openssl
-version=1.1.1g
+version=1.1.1h
 release=1
-source=(http://www.openssl.org/source/$name-$version.tar.gz \
+source=(https://www.openssl.org/source/$name-$version.tar.gz \
         mksslcert.sh)
 
 build() {
