@@ -97,6 +97,16 @@ echo "- Installing kernel..."
 tar xfp $ROOTFS_KERNEL -C $ROOTFS_DIR 
 
 #
+# Adjust bootloader/kernel for CD boot.
+#
+mkdir -pv $ROOTFS_DIR/ppc/mac
+mkdir -pv $ROOTFS_DIR/ppc/ppc32
+mkdir -pv $ROOTFS_DIR/ppc/chrp   # may not be needed...
+mv $ROOTFS_DIR/boot/vmlinux-* $ROOTFS_DIR/ppc/ppc32/zImage.pmac
+mv $ROOTFS_DIR/boot/System-* $ROOTFS_DIR/ppc/ppc32/System.map
+cp $ROOTFS_DIR/usr/lib/yaboot/yaboot $ROOTFS_DIR/ppc/mac/yaboot
+
+#
 # Remove unneeded files to reduce size.
 #
 echo "- Deleting superfluous files..."
@@ -116,6 +126,7 @@ cd $ROOTFS_DIR/etc && rm -rf cron resolv.conf lilo.conf sysctl.conf pkgadd.conf 
 git clone https://www.github.com/cruxppc/cruxppc-ng-3.5
 cp -r cruxppc-ng-3.5/iso/iso/bin/* $ROOTFS_DIR/usr/bin
 cp -r cruxppc-ng-3.5/iso/iso/etc/* $ROOTFS_DIR/etc
+cp -r cruxppc-ng-3.5/iso/iso/ppc/* $ROOTFS_DIR/ppc
 
 #
 # Add CRUX payload
