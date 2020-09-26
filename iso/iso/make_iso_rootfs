@@ -95,6 +95,10 @@ pkgadd --root $ROOTFS_DIR $PORTS_DIR/*/zstd#*.pkg.tar.xz
 #
 echo "- Installing kernel..."
 tar xfp $ROOTFS_KERNEL -C $ROOTFS_DIR 
+#
+# remove the modules under drivers/char/agp, otherwise, the screen will garbled on
+# systems with nvidia graphics.
+cd $ROOTFS_DIR && rm -fr lib/modules/*/kernel/drivers/char/agp
 
 #
 # Adjust bootloader/kernel for CD boot.
