@@ -1,5 +1,5 @@
 Release Notes for CRUX PPC 3.5 Alpha release 
-02/21/2020
+09/27/2020
 
   Introduction
 
@@ -27,11 +27,11 @@ Release Notes for CRUX PPC 3.5 Alpha release
 
   Toolchain updates
 
-   CRUX PPC 3.5 includes glibc 2.28, gcc 8.3.0 and binutils 2.32 .
+   CRUX PPC 3.5 includes glibc 2.28, gcc 8.4.0 and binutils 2.32 .
 
   Kernel
 
-   Linux-4.19.24
+   Linux-4.19.145
 
   Important changes
 
@@ -53,13 +53,6 @@ Release Notes for CRUX PPC 3.5 Alpha release
    CRUX PPC does not provide .signature checking on the ppc specific packages.
    And in fact, in this Alpha release, not even md5sum checking.
 
-   The CRUXPPC 3.5 install CD for this Alpha release is a remastered 2.7 
-   install CD.  The various install utilities on the CD remain at 2.7 
-   versions but the packages that are installed to the target system
-   have been updated to 3.5 versions.    This does not cause any known problems
-   but is something the user should be aware of.  Future work will update
-   the install CD to be entirely based on 3.5 versions.
-
    It is not uncommon for the footprints to mismatch when building on powerpc.
    Generally this mismatch is benign.
    The package build utilities provide an option to ignore footprints.  Also
@@ -72,7 +65,9 @@ Release Notes for CRUX PPC 3.5 Alpha release
    user will have to manually pull the contents from this repository 
    and update their /usr/ports/*-ppc directory with any changes.
 
-   On some monitors, the left most characters are not visible.  Until this
+   On some monitors, the left most characters are not visible.  In some
+   cases, this can be resolved by selecting auto adjust on the monitor
+   controls.  However this does not always work.   Until this
    is solved, a workaround is to install the xorg server packages and then
    run 'startx'.  The xorg server provides a rudimentary set of windows
    and the whole output will be visible.   Enabling ssh access to the 
@@ -103,7 +98,7 @@ Release Notes for CRUX PPC 3.5 Alpha release
    Package build times can be quite long even on faster powerpc machines.
    Allow for some hours (maybe days on slower machines) when building 
    big packages.  Ensure that your machine has the maximum RAM that it
-   can support to help reduce build times.   Also selected prebuilt 
+   can support to help reduce build times.   Also some selected prebuilt 
    packages from opt (and sometimes contrib)  may be found and installed 
    from in the 'extras' section of the repository and this avoids the
    time needed to build them from source.
