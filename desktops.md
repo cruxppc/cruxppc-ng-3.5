@@ -2,18 +2,22 @@
 
 # Desktops
 
-Like mainline crux, the crux-ppc install CD does not provide a desktop.   THe x-server is provided but not a desktop.
-
-The user selects a desktop and adds it themselves.  
+CRUX does not normally provide a desktop.  The CRUX user selects a desktop and 
+adds it themselves.  
 
 A google search will find a number of repositories that support building a desktop for crux.   Some of them work, some don't.   
 
 
 ## LXDE
 
-A repository for adding a simple LXDE desktop can be found under 'experimental'.   LXDE is a lightweight desktop and
-works well if all you need is something simple.   An error message of "Could not connect.." initially pops up during startup
-but it seems benign and also occurs on x86 CRUX so is something to fix but not crucial.
+A repository for adding a simple LXDE desktop is included under ports.
+LXDE is a lightweight desktop and works well if all you need is 
+something simple.   An error message of "Could not connect.." initially 
+pops up during startup but it seems benign and also occurs on x86 CRUX so 
+is something to fix but not crucial.
+
+If you want lxde, modify prt-get.conf to enable it.   The install CD 
+may also provide pre-built lxde ports.  (See the handbook).
 
 ## XFCE
 
