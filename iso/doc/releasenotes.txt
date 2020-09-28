@@ -1,9 +1,14 @@
 Release Notes for CRUX PPC 3.5 Alpha release 2
-09/27/2020
+10/01/2020
 
   Introduction
 
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
+
+   This is the second alpha release of CRUX PPC 3.5.   Changes since
+ the first alpha release include version updates to packages, additional
+ packages on the install CD, and the install CD is now created from 
+ current CRUX PPC packages and so is no longer based on a remastered 2.7.
 
  Supported machines:
 
@@ -20,14 +25,14 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
  do support a command line interface.
 
  Machines which have a Radeon graphics card seem to generally work (reasonably 
- well for an alpha release anyway).
+ well for an alpha release anyway).  
 
  Non supported machines:
  64bit PowerPC.
 
   Toolchain updates
 
-   CRUX PPC 3.5 includes glibc 2.28, gcc 8.4.0 and binutils 2.32 .
+   CRUX PPC 3.5 includes glibc 2.28, gcc 8.4.0 and binutils 2.32.
 
   Kernel
 
@@ -50,11 +55,16 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
 
   Known issues
 
+
+   A few warnings will be displayed during boot of the install CD.   These do not
+   cause the install to fail and can be ignored.   The install CD startup
+   scripts need some adjusting and will be corrected in future work.
+
    CRUX PPC does not provide .signature checking on the ppc specific packages.
    And in fact, in this Alpha release, not even md5sum checking.
 
    It is not uncommon for the footprints to mismatch when building on powerpc.
-   Generally this mismatch is benign.
+   Generally this footprint mismatch is benign but may halt package building tools.
    The package build utilities provide an option to ignore footprints.  Also
    /etc/prt-get.conf can be adjusted to ignore footprints by default.   A
    footprint mismatch is not necessarily indicative of an actual problem in the
@@ -66,7 +76,7 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
    and update their /usr/ports/*-ppc directory with any changes.
 
    On some monitors, the left most characters are not visible.  In some
-   cases, this can be resolved by selecting auto adjust on the monitor
+   cases, this can be resolved by adjusting settings on the monitor
    controls.  However this does not always work.   Until this
    is solved, a workaround is to install the xorg server packages and then
    run 'startx'.  The xorg server provides a rudimentary set of windows
