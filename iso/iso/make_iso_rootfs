@@ -18,6 +18,11 @@ mkdir -pv $ROOTFS_DIR/var/lib/pkg
 >$ROOTFS_DIR/var/lib/pkg/db
 
 #
+# Add CRUX payload area
+#
+mkdir $ROOTFS_DIR/crux
+
+#
 # Populate ISO rootfs
 #
 echo "- Installing rootfs packages..."
@@ -137,8 +142,8 @@ git clone https://www.github.com/cruxppc/cruxppc-ng-3.5
 cp -r cruxppc-ng-3.5/iso/iso/bin/* $ROOTFS_DIR/usr/bin
 cp -r cruxppc-ng-3.5/iso/iso/etc/* $ROOTFS_DIR/etc
 cp -r cruxppc-ng-3.5/iso/iso/ppc/* $ROOTFS_DIR/ppc
-
-#
-# Add CRUX payload
-#
-mkdir $ROOTFS_DIR/crux
+cp cruxppc-ng-3.5/iso/license/* $ROOTFS_DIR/crux
+cp cruxppc-ng-3.5/iso/doc/* $ROOTFS_DIR/crux
+cp cruxppc-ng-3.5/iso/iso/setup.dependencies $ROOTFS_DIR/crux
+cp cruxppc-ng-3.5/misc/makelocales $ROOTFS_DIR/crux
+cp -r cruxppc-ng-3.5/misc/post-installs $ROOTFS_DIR/crux
