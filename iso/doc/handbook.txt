@@ -6,7 +6,7 @@ this handbook are not yet entirely accurate in regards to CRUXPPC3.5.   When
 using this handbook, keep in mind:
 
 1) CRUX PPC 3.5 only supports Apple 32bit PowerPC machines.  All references
-  to non Apple machines in this handbook should be disregarded.
+  to non Apple machines in this handbook should be disregarded.  
 
 2) Alenia was part of the previous CRUX PPC project.   It is not part of
   3.5 nor is it planned to be.  The regular CRUX prt-get utility is 
@@ -20,6 +20,7 @@ using this handbook, keep in mind:
 
   git can be installed from the install CD by either selecting the entire
   opt set or by selecting git manually.  
+
 
 
 HANDBOOK FOR CRUX PPC 3.5
@@ -54,7 +55,7 @@ HANDBOOK FOR CRUX PPC 3.5
               3. Removing a Package
               4. Querying the Package Database
 
-         3. Package management frontend: ilenia
+         3. Package management frontend: ilenia  (NA)
 
               1. prt-get and CRUX PPC
               2. ilenia and CRUX PPC
@@ -252,7 +253,7 @@ Unchecked, possibly inaccurate, table:
    solution in  Section 3.4,  Alternative Installation  Methods but  consider
    they could be intended for different hardware.
 
-   A minimum of 128Meg of RAM is needed to boot the install CD and
+   A minimum of 192Meg of RAM is needed to boot the install CD and
    install CRUX PPC 3.5.   CRUXPPC can be installed in as little as 
    2 Gig of disk space although 10 to 20 Gig is a more reasonable value and
    adding on many packages could require 100Gig or more of disk space.
@@ -268,7 +269,7 @@ Unchecked, possibly inaccurate, table:
 Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    1.   Download   the   CRUX    PPC   ISO   image   (crux-ppc-3.5.iso    or
-   crux-ppc64-3.5.iso). To  ensure  that  the download  was  successful  you
+   similar naming). To  ensure  that  the download  was  successful  you
    should examine its checksum using md5sum.
    Compare   the   output   with    the   file   crux-ppc-3.5.iso.md5    (or
    crux-ppc64-3.5.iso.md5), which can be found in the same directory as  the
@@ -280,7 +281,7 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    key pressed to boot from CD. Select  at the boot prompt press return 
    to install on apple32 machines.
 
-   Note On all systems you might have to adjust the root= parameter (that
+   Note On some systems you might have to adjust the root= parameter (that
    defaults to /dev/sr0) to your cdrom device. Please keep in mind that
    device names vary according to your hardware configuration: The first
    SCSI, SATA (or EFIKA IDE) disk is called /dev/sda, while the first SCSI
@@ -293,9 +294,8 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    3. Login as root (no password required).
 
-   4. Use mac-fdisk (on Macs), parted (on PegasosII, EFIKA and Sam4x0), fdisk
-   or cfdisk (on RISC/6000 and pSeries) to create and format the partition(s)
-   you want CRUX PPC to be installed on.
+   4. Use mac-fdisk (on Macs) to create and then format the partition(s)
+   you want CRUX PPC to be installed on.  
 
   $ mac-fdisk /dev/sd?
   $ mkfs.ext4 /dev/sd??
@@ -311,19 +311,11 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    recognize MacOS partition table and will destroy it creating a PC
    compatible table from which you won't be able to boot, so use mac-fdisk on
    Apple computers.
-   Note If you're using a PegasosII system or an EFIKA embedded board, you
-   should use parted to create an Amiga partition table; the partition where
-   the kernel image resides should be a primary one and formatted as ext2
-   with 128-byte inodes.
-   Note If you're using a Sam4x0, you should use parted to create an Amiga
-   partition table; the partition where the kernel image resides should be
-   formatted as ext2 with 128-byte inodes.
-   Note If you're using an IBM Power System, creating PC-Style partition
-   table is recommended; cfdisk or fidks are suitable for this. You will need
-   a special PReP Boot partition (type 41) of 8 megabytes.
+
+   
 
    The amount of disk space you need depends on how many packages you  choose
-   to install. I recommend having at least a 5G root partition (CRUX PPC will
+   to install. It is recommend to have at least a 5G root partition (CRUX PPC will
    use about 500MB-1.5GB depending on your configuration).   
 
    Using   ReiserFS   is    possible,   but   there    is   support    for
@@ -343,7 +335,7 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
   $ mkdir /mnt/var
   $ mount -t type /dev/sd?? /mnt/var
 
-   6. Activate your swap partition(s).
+   6. Activate your swap partition(s).   (Not needed on larger RAM systems)
 
   $ swapon /dev/sd??
 
@@ -364,6 +356,16 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    If you at a later  stage find that you  need some additional packages  you
    can just mount the CRUX PPC CD-ROM and use pkgadd to install them.
 
+   Additionally, on this CD, packages to implement an LXDE desktop can
+   be found in /crux/lxde.   Ater installation, if an LXDE desktop is
+   desired, these packages can be installed by hand (via pkgadd) from
+   the install CD.    Note that LXDE has dependencies on packages from
+   core, opt and xorg.   If you select all of core, opt and xorg, all
+   LXDE dependencies should be met but if you install only subsets, you 
+   will need to manually ensure that you have installed all dependency
+   requirements.   Future work will be to allow lxde as an automatic install
+   menu selection.
+
    Note There is only a simple package dependency checking. This means that
    it is up to you to figure out that if you for example install the exim
    package you also need to install the db package.
@@ -373,14 +375,16 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    $ mknod /mnt/dev/ttyPSC0 c 204 148
 
    Note that unlike previous crux ppc install cds, the kernel source is
-   not automatically installed into the target system.   The kernel source
-   tarball is included under /crux/kernel and if desired, the user may 
-   copy this tarball to the target system and unpack and build it.
+   not automatically installed into the target system.  A pre built
+   kernel is included under /crux/kernel.   
 
    A prebuilt starter kernel tarball is provided on the install CD
    (look in /crux/kernel).   If desired, it can be copied to the target 
    system and used as a quick start kernel.  The other option is to 
    build the initial kernel from source as part of the CRUX install.
+   The kernel source is not included on the install CD so if a kernel
+   build is desired, the kernel source will need to be loaded via
+   USB stick or otherwise.
 
    If you are installing onto a machine with smaller amounts of DRAM 
    (e.g. 128 Meg), you may need to create and add a swap partition prior
@@ -440,15 +444,16 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
    details about /etc/rc.conf .   It may also be useful to enable sshd.
 
    12. Generate  locales  for  your system.  See  Section  6.1.4,  Generating
-   Locales for more information.
+   Locales for more information.  A 'makelocales' script is provided which
+   may be helpful in this process.
 
-   13. Edit /etc/rc.d/net, /etc/hosts and /etc/resolv.conf to configure  your
-   network (ip-address/gateway/hostname/domain/dns).
+   13. If needed, edit /etc/rc.d/net, /etc/hosts and /etc/resolv.conf to 
+   configure  your network (ip-address/gateway/hostname/domain/dns).   
 
    14. Install kernel:
 
    Classis CRUX installation expects the user to build and install their own
-   kernel.   This can be quite a long process on PowerPC machiens so
+   kernel.   This can be quite a long process on PowerPC macheins so
    CRUX PPC also provides the alternative of installing a prebuilt starter
    kernel.
 
@@ -458,25 +463,23 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
 
    cd /; tar xvfp <path to prebuilt kernel tarball>
 
-   If you are installing onto a machine with an nvidia graphics card, 
+   If you are installing onto a machine with an nvidia graphics card (not likely), 
    remove the modules under drivers/char/agp, otherwise, the screen will
-   be garbled and essentially unusable upon boot.
+   be garbled and essentially unusable upon boot.   This is an ugly 
+   workaround and hopefully will be fixed in some future release.
 
-   The user can then compile their own kernel later to suit their needs. 
+   The user can start with the pre-built starter kernel and then compile their own
+   kernel later to better suit their needs. 
 
-
-   If you wish to build your own kernel, unpack the linux-2.19.xx tarball,
+   If you wish to build your own kernel, unpack the linux-4.19.xx tarball,
    (typically into /usr/src/linux-4.19.x) configure and compile it.
-
-   Note On some systems, you should apply the provided patches; these patches
-   are found in the file /usr/src/   (none are provided in this alpha release)
 
    On a 32 bit system:
 
      * for IBM RS/6000
 
   $ cd /usr/src/linux-4.19.24.x
-  $ patch -p1 < ../your_patch
+  $ patch -p1 < ../your_patch   (if needed)
   $ make menuconfig
   $ make all
   $ make modules_install
@@ -527,15 +530,19 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
   $ cp vmlinux /boot/vmlinux
   $ cp System.map /boot/System.map
 
-   Useful kernel  config  files and  patches  are placed  into  the  /usr/src
-   directory. They are the config files used to build the boot kernels.
+   Useful kernel  config  files and  (maybe) patches  can be found in 
+   /crux/kernel/*config.
 
    15. On Apple computers, edit /etc/yaboot.conf to boot the kernel you  just
    compiled  and  run  mkofboot  -v  to  install  yaboot  into  the  boostrap
    partition, then ybin -v to make the new system bootable.
 
-   A sample yaboot.conf file can be found under /etc/ and may be useful as
+   A sample.yaboot.conf file can be found under /etc/ and may be useful as
    a starting point for creating the needed yaboot.conf.
+
+   Note that if you are installing CRUX-PPC in a dual boot configuration
+   with an other OS, you will need to obtain and modify the other OSs existing
+   yaboot.conf file rather than writing a new one.
 
    On IBM RS/6000  and pSeries/System_p computers,  edit /etc/yaboot.conf  to
    boot    the     kernel    you     just     compiled    and     type     dd
@@ -575,7 +582,7 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
   Upgrading From CD-ROM
 
    Upgrading from a previous crux ppc to crux ppc 3.5 is not supported.  
-   It is not likely to work.   
+   You may try it if you wish but it is not likely to work.   
 
    1.   Download   the   CRUX    PPC   ISO   image   (crux-ppc-3.5.iso    or
    crux-ppc64-3.5.iso). To  ensure  that  the download  was  successful  you
@@ -693,6 +700,8 @@ Fix this.  Only 32 bit G3/G4 Apple is supported:
   Alternative Installation Methods
 
     Network Installation
+
+   Not supported.
 
    If you do not have a CD burner, are unable to boot your machine using  the
    CRUX CD-ROM or for any other reason are unable to install CRUX the  normal
