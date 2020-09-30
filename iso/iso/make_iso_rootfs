@@ -116,10 +116,11 @@ cd $ROOTFS_DIR && rm -fr lib/modules/*/kernel/drivers/char/agp
 #
 mkdir -pv $ROOTFS_DIR/ppc/mac
 mkdir -pv $ROOTFS_DIR/ppc/ppc32
-mkdir -pv $ROOTFS_DIR/ppc/chrp   # may not be needed...
+mkdir -pv $ROOTFS_DIR/ppc/chrp  
 mv $ROOTFS_DIR/boot/vmlinux-* $ROOTFS_DIR/ppc/ppc32/zImage.pmac
 mv $ROOTFS_DIR/boot/System* $ROOTFS_DIR/ppc/ppc32/System.map
 cp $ROOTFS_DIR/usr/lib/yaboot/yaboot $ROOTFS_DIR/ppc/mac/yaboot
+cp $ROOTFS_DIR/usr/lib/yaboot/yaboot $ROOTFS_DIR/ppc/chrp/yaboot.chrp
 
 #
 # Remove unneeded files to reduce size.
@@ -147,3 +148,10 @@ cp cruxppc-ng-3.5/iso/doc/* $ROOTFS_DIR/crux
 cp cruxppc-ng-3.5/iso/iso/setup.dependencies $ROOTFS_DIR/crux
 cp cruxppc-ng-3.5/misc/makelocales $ROOTFS_DIR/crux
 cp -r cruxppc-ng-3.5/misc/post-installs $ROOTFS_DIR/crux
+rm -fr cruxppc-ng-3.5
+
+#
+# Next step is to populate the crux install payload directories:
+# crux/core, crux/opt, crux/xorg, crux/kernel, crux/lxde and
+# any other packages available for installation.
+#
