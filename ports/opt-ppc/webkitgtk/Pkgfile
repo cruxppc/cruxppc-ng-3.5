@@ -1,34 +1,24 @@
 # Description: Small, efficient and fast rendering engine for Web Browsers.
 # URL: https://www.webkitgtk.org/
 # Maintainer: cruxppc at gmail dot com
-# Depends on: gst-plugins-base gtk gtk3 harfbuzz-icu hyphen libsecret libsoup libwebp ruby woff2 xorg-libxt bubblewrap xdg-dbus-proxy libseccomp
+# Depends on: bubblewrap gst-plugins-base gtk gtk3 harfbuzz-icu hyphen libseccomp libsecret libsoup libwebp libxslt ruby woff2 xdg-dbus-proxy xorg-libxt
 # Optional: enchant libnotify geoclue openjpeg2
 
 name=webkitgtk
-version=2.26.4
+version=2.30.1
 release=1
-source=(https://webkitgtk.org/releases/$name-$version.tar.xz
-	icu65.patch)
+source=(https://webkitgtk.org/releases/$name-$version.tar.xz)
 
 build() {
-	mkdir build
-	cd $name-$version
-
-	patch -p1 -i $SRC/icu65.patch
-
-	# setting CC and CXX breaks compilation
-	prt-get isinst ccache && PKGMK_WEBKITGTK+=' -DCMAKE_CXX_COMPILER_LAUNCHER=ccache' && \
-		PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+	# Make sure we do not have ccache masquerade directory in PATH.
+	[ -e '/usr/bin/ccache' ] && PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
 
 	prt-get isinst openjpeg2 || PKGMK_WEBKITGTK+=' -DUSE_OPENJPEG=OFF'
 	prt-get isinst enchant || PKGMK_WEBKITGTK+=' -DENABLE_SPELLCHECK=OFF'
 	prt-get isinst libnotify && PKGMK_WEBKITGTK+=' -DUSE_LIBNOTIFY=ON' || PKGMK_WEBKITGTK+=' -DUSE_LIBNOTIFY=OFF'
 	prt-get isinst geoclue && PKGMK_WEBKITGTK+=' -DENABLE_GEOLOCATION=ON' || PKGMK_WEBKITGTK+=' -DENABLE_GEOLOCATION=OFF'
 
-	cd ../build
-
-	cmake ../$name-$version ${PKGMK_WEBKITGTK} \
-		-G Ninja \
+	cmake -S$name-$version -Bbuild -GNinja ${PKGMK_WEBKITGTK} \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr \
 		-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib \
@@ -37,11 +27,12 @@ build() {
 		-DPORT=GTK \
 		-DENABLE_MINIBROWSER=ON \
 		-DUSE_SYSTEM_MALLOC=ON \
+		-DUSE_SYSTEMD=OFF \
 		-DUSE_LD_GOLD=OFF \
 		-Wno-dev
 
-	ninja -j ${JOBS-1}
-	DESTDIR=$PKG ninja install
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
 
 	rm -r $PKG/usr/share/locale
 }
