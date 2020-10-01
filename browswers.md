@@ -42,7 +42,7 @@ Not able to build it yet.   The prebuilt powerpc deb binary can be downloaded,
 unpacked and installed by hand.   It seems to run without problem but
 directly installing binaries built on one system onto another different 
 system which has a different toolset is not a good practice and I don't
-recommend doing it.
+recommend doing it.  
 
 ## midori
 
