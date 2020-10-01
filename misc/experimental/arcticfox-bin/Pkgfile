@@ -1,0 +1,15 @@
+# Description: Javascript engine library
+# URL:         https:/www.github.com/wicknix/Arctic-Fox
+# Maintainer:  cruxppc at gmail 
+# Depends on:
+# This is very experimental...
+
+name=arcticfox-bin
+version=27.10.1
+release=1
+source=(arcticfox-27.10.1-linux-powerpc.deb)
+
+build() {
+        ar x arcticfox-27.10.1-linux-powerpc.deb
+        tar xvfp data.tar.gz -C $PKG
+}
