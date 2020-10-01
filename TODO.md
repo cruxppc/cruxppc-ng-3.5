@@ -8,8 +8,6 @@ A high level list of what remains to be done for CRUX PPC 3.5
 
 Fix handbook errors and clarify installation.
 
-Document how to add lxde and xfce4 desktops.
-
 
 ## ports -u
 
@@ -43,9 +41,6 @@ machines which only have a CD drive.
 Initial install image is a hand remastered adaption of the CRUX PPC 2.7 iso.   
 
 Identify/remove any graphics pkgs which are never applicable to powerpc.
-
-Create a script which builds the CRUXPPC 3.5 installation iso from scratch using 
-only 3.5 materials.
 
 Check setup.dependencies file for accuracy.
 
