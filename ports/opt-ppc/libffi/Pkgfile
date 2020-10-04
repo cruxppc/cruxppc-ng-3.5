@@ -3,7 +3,8 @@
 # Maintainer: cruxppc at gmail dot com
 
 name=libffi
-version=3.3
+#version=3.3
+version=3.2.1
 release=1
 source=(https://sourceware.org/pub/$name/$name-$version.tar.gz
         powerpc-fix-2.patch
@@ -12,10 +13,11 @@ source=(https://sourceware.org/pub/$name/$name-$version.tar.gz
 build() {
 
     cd $name-$version
-    cd src
-    patch -p1 -i ${SRC}/powerpc-fix.patch
-    patch -p1 -i ${SRC}/powerpc-fix-2.patch
-    cd ..
+    # Patches for 3.3 only, not 3.2.1
+    #cd src
+    #patch -p1 -i ${SRC}/powerpc-fix.patch
+    #patch -p1 -i ${SRC}/powerpc-fix-2.patch
+    #cd ..
 
 
     sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' \
