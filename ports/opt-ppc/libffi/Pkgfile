@@ -5,7 +5,7 @@
 name=libffi
 #version=3.3
 version=3.2.1
-release=1
+release=4
 source=(https://sourceware.org/pub/$name/$name-$version.tar.gz
         powerpc-fix-2.patch
         powerpc-fix.patch)

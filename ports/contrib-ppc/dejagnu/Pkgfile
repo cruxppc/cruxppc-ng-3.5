@@ -1,7 +1,7 @@
-# Description: Dejagnu
-# URL:         
-# Maintainer:  
-# Arch Maintainer: TBA
+# Description: DejaGnu is a framework for running test suites on GNU tools.
+# URL: https://www.gnu.org/software/dejagnu/
+# Maintainer:  cruxppc at gmail dot com
+# Depends on: expect
 
 name=dejagnu
 version=1.6.2

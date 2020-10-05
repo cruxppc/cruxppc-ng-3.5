@@ -13,6 +13,7 @@ echo "The system is coming up.  Please wait."
 
 # Mount filesystems
 /bin/mount -n -a &> /dev/null
+sleep 1
 
 # Create /tmp/var
 /bin/mkdir /tmp/var
@@ -22,7 +23,7 @@ echo "The system is coming up.  Please wait."
 
 # Start log daemons
 /usr/sbin/syslogd
-/usr/sbin/klogd -c 4
+#/usr/sbin/klogd -c 4
 
 # Setup network
 /sbin/ifconfig lo 127.0.0.1
