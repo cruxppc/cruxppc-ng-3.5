@@ -1,7 +1,7 @@
 # Description: Meta port for xfce4 desktop
 # URL: http://dlc.casita.net/~dlc/CRUX/xfce_4.14/
 # Maintainer: cruxppc at gmail.com
-# Depends on: xfdesktop xfce4-settings xfwm4 xfce4-session xfce4-terminal
+# Depends on: xfdesktop xfce4-settings xfwm4 xfce4-session xfce4-terminal xfce4-cpugraph-plugin
 
 name=xfce4
 version=1.0
