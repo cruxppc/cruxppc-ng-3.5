@@ -1,0 +1,14 @@
+# Description: ArcticFox Browser.
+# URL: https://github.com/wicknix/Arctic-Fox/
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: 
+
+name=arcticfox
+version=27.10.1
+release=1
+source=(https://codeload.github.com/wicknix/Arctic-Fox/tar.gz/v27.10.1)
+
+build() {
+# Not yet working.
+	exit 1   
+}
