@@ -45,5 +45,5 @@ build() {
     rm -r $PKG/usr/local/bin/*-linux-gnu-*
     rm -r $PKG/usr/local/lib/gcc/*/$version/{install-tools,include-fixed} 
 
-    sed -i "s|-L$SRC[^ ]* ||g" $PKG/usr/local/lib{,32}/{libstdc++.la,libsupc++.la}
+    sed -i "s|-L$SRC[^ ]* ||g" $PKG/usr/local/lib/{libstdc++.la,libsupc++.la}
 }
