@@ -6,9 +6,14 @@
 name=arcticfox
 version=27.10.1
 release=1
-source=(https://codeload.github.com/wicknix/Arctic-Fox/tar.gz/v27.10.1)
+source=(https://codeload.github.com/wicknix/Arctic-Fox/tar.gz/v27.10.1
+    mozconfig)
 
 build() {
 # Not yet working.
 	exit 1   
+        tar xvf v$version
+	cd Ar*.1
+	cp $SRC/mozconfig .mozconfig
+	./mach build
 }
