@@ -1,13 +1,13 @@
 # Description: The GNU Compiler Collection
 # URL:         http://gcc.gnu.org
-# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Maintainer:  cruxppc at gmail
 # Depends on:  zlib libmpc
 
 name=gcc6
 version=6.5.0
 release=1
 source=(ftp://gcc.gnu.org/pub/gcc/releases/gcc-$version/gcc-$version.tar.xz \
-	gcc-nocheck-fixincludes.patch gcc-4.7.3-multilib-dirs.patch)
+	gcc-nocheck-fixincludes.patch )
 
 
 build() {
@@ -25,12 +25,13 @@ build() {
                                 --enable-clocale=gnu \
                                 --enable-shared \
                                 --disable-nls \
-                                --disable-bootstrap \
                                 --with-x=no \
                                 --with-system-zlib \
                                 --disable-multilib \
-                                --with-pkgversion="CRUX-x86_64"
-    make #bootstrap
+                                --disable-bootstrap \
+                                --with-pkgversion="CRUX-PPC"
+    #make bootstrap
+    make
     make -j1 DESTDIR=$PKG install
 
     #install -d $PKG/lib
