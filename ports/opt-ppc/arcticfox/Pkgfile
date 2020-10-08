@@ -1,7 +1,7 @@
 # Description: ArcticFox Browser.
 # URL: https://github.com/wicknix/Arctic-Fox/
 # Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
-# Depends on: 
+# Depends on: autoconf-2.13 ccache gcc6
 
 name=arcticfox
 version=27.10.1
@@ -16,4 +16,10 @@ build() {
 	cd Ar*.1
 	cp $SRC/mozconfig .mozconfig
 	./mach build
+	./mach package
+
+        install -d -m 755 $PKG/usr/lib
+        tar xvfp obj-ff-dbg/dist/arcticfox-27.10.1.linux-powerpc.tar.bz2 -C $PKG/usr/lib
+
+        ln -sf /usr/lib/arcticfox/arcticfox ${PKG}/usr/bin/arcticfox
 }
