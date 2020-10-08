@@ -2,6 +2,7 @@
 # URL: https://github.com/wicknix/Arctic-Fox/
 # Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
 # Depends on: autoconf-2.13 ccache gcc6
+# PATH needs to include /usr/local/bin for gcc6.
 
 name=arcticfox
 version=27.10.1
@@ -10,10 +11,8 @@ source=(https://codeload.github.com/wicknix/Arctic-Fox/tar.gz/v27.10.1
     mozconfig)
 
 build() {
-# Not yet working.
-	exit 1   
         tar xvf v$version
-	cd Ar*.1
+	cd Arctic*.1
 	cp $SRC/mozconfig .mozconfig
 	./mach build
 	./mach package
