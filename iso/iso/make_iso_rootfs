@@ -127,7 +127,7 @@ cp $ROOTFS_DIR/usr/lib/yaboot/yaboot $ROOTFS_DIR/ppc/chrp/yaboot.chrp
 #
 echo "- Deleting superfluous files..."
 cd $ROOTFS_DIR && rm -rf var opt home
-mkdir -p $ROOTFS_DIR/var/empty $ROOTFS_DIR/var/lib
+ln -s  /tmp/var $ROOTFS_DIR/var
 cd $ROOTFS_DIR/usr && rm -rf man include lib/*.a lib/*.o lib/gconv lib/locale src
 cd $ROOTFS_DIR/usr/share && mkdir l v x; cp terminfo/l/linux l; cp terminfo/v/vt100 v; cp terminfo/x/xterm x; rm -rf terminfo/*; mv l v x terminfo
 cd $ROOTFS_DIR/usr/share && rm -rf et ss vim i18n zoneinfo
