@@ -11,5 +11,5 @@ yaboot Raw 'unix' 'boot' "bootstrap"
 * Raw '????' '????' "unknown" 
 EOF
 #
-rm -f lfsbootcd.iso
-mkisofs -r -V "CRUXPPC_3.5_ALPHA__$(date +%Y%m%d)" -iso-level 4 -chrp-boot -hfs -part -probe -no-desktop -hfs-bless $LFS/ppc/mac -map $LFS/boot/map.hfs -b ppc/mac/yaboot -no-emul-boot -hide-rr-moved -o lfsbootcd.iso $LFS
+rm -f cruxppc3.5.iso
+genisoimage -r -V "CRUXPPC_3.5_ALPHA__$(date +%Y%m%d)" -iso-level 4 -chrp-boot -hfs -part -probe -no-desktop -hfs-bless $LFS/ppc/mac -map $LFS/boot/map.hfs -b ppc/mac/yaboot -no-emul-boot -hide-rr-moved -o cruxppc3.5.iso.iso $LFS
