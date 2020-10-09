@@ -17,8 +17,9 @@ build() {
 	./mach build
 	./mach package
 
-        install -d -m 755 $PKG/usr/lib
-        tar xvfp obj-ff-dbg/dist/arcticfox-${version}.linux-powerpc.tar.bz2 -C $PKG/usr/lib
+        install -d $PKG/usr/lib
+        tar xfp obj-ff-dbg/dist/arcticfox-${version}.linux-powerpc.tar.bz2 -C $PKG/usr/lib
 
+        install -d $PKG/usr/bin
         ln -sf /usr/lib/arcticfox/arcticfox ${PKG}/usr/bin/arcticfox
 }
