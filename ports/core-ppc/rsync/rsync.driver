@@ -10,6 +10,7 @@ use File::Basename;
 my $host = '';
 my $collection = '';
 my $destination = '';
+my $excludes = 'noexcludes';
 my %new_checkouts;
 my %old_checkouts;
 
@@ -39,6 +40,7 @@ while (<FILE>)
 	if    (/^host=(.*)/)        { $host = $1; }
 	elsif (/^collection=(.*)/)  { $collection = $1; }
 	elsif (/^destination=(.*)/) { $destination = $1; }
+	elsif (/^excludes=(.*)/) { $excludes = $1; }
 }
 close(FILE);
 
@@ -61,7 +63,7 @@ if (-e "$destination/.checkouts")
 print "Updating file list from " . $host . "::$collection\n";
 
 # get the remote file list (new .checkouts)
-open(PIPE, 'rsync -crz --no-human-readable ' . $host . '::' . $collection . '|') or error("Couldn't open pipe to rsync");
+open(PIPE, 'rsync -crz --no-human-readable --exclude-from=' . $excludes . ' ' . $host . '::' . $collection . '|') or error("Couldn't open pipe to rsync");
 while (<PIPE>)
 {
 	chomp;
@@ -78,7 +80,7 @@ error("Running rsync failed") unless $? == 0;
 print "Updating collection " . basename($destination) . "\n";
 
 # now really run rsync
-open(PIPE, 'rsync -crz --no-human-readable --log-format "%o %n" ' . $host . "::$collection $destination|") or error("Couldn't open pipe to rsync");
+open(PIPE, 'rsync -crz --no-human-readable --exclude-from=' . $excludes . ' --log-format "%o %n" ' . $host . "::$collection $destination|") or error("Couldn't open pipe to rsync");
 while (<PIPE>)
 {
 	chomp;
