@@ -1,0 +1,9 @@
+chmod a+x powerpc-unknown-linux-gnu-wrapper
+ln -s powerpc-unknown-linux-gnu-wrapper cc
+ln -s powerpc-unknown-linux-gnu-wrapper gcc
+ln -s powerpc-unknown-linux-gnu-wrapper g++
+ln -s powerpc-unknown-linux-gnu-wrapper c++
+ln -s /usr/bin/distcc powerpc-unknown-linux-gnu-cc
+ln -s /usr/bin/distcc powerpc-unknown-linux-gnu-gcc
+ln -s /usr/bin/distcc powerpc-unknown-linux-gnu-g++
+ln -s /usr/bin/distcc powerpc-unknown-linux-gnu-c++

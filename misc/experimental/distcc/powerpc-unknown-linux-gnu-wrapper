@@ -1,0 +1,3 @@
+#!/bin/bash
+export PATH=/opt/x-tools/powerpc-unknown-linux/gnu/bin:$PATH
+exec /usr/lib/distcc/powerpc-unknown-linux-gnu-g${0:$[-2]} "$@"
