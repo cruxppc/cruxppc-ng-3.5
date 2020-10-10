@@ -103,6 +103,7 @@ zlib: zlib
 adwaita-icon-theme: librsvg-compat adwaita-icon-theme
 alsa-lib: alsa-lib 
 apr: util-linux expat db gdbm apr
+arcticfox: arcticfox 
 at-spi2-atk: libpcre bzip2 expat ncurses libffi libtirpc mpdecimal zlib xz db xorg-xorgproto xorg-util-macros dbus readline libxml2 xorg-libxau xorg-libxdmcp xorg-xtrans gdbm sqlite3 perl python3 p5-xml-parser python3-setuptools ninja xorg-xcb-proto intltool meson xorg-libxcb glib xorg-libx11 gobject-introspection xorg-libxext xorg-libxfixes atk xorg-libxi xorg-libxtst at-spi2-core at-spi2-atk 
 at-spi2-core: expat libpcre bzip2 ncurses libffi libtirpc mpdecimal zlib xz db xorg-xorgproto xorg-util-macros dbus readline xorg-libxau xorg-libxdmcp xorg-xtrans gdbm sqlite3 perl python3 p5-xml-parser python3-setuptools ninja xorg-xcb-proto intltool meson xorg-libxcb glib xorg-libx11 gobject-introspection xorg-libxext xorg-libxfixes xorg-libxi xorg-libxtst at-spi2-core 
 atk: libpcre bzip2 expat ncurses libffi libtirpc mpdecimal zlib xz readline gdbm sqlite3 python3 python3-setuptools ninja meson glib gobject-introspection atk 
