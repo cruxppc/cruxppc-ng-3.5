@@ -11,19 +11,27 @@ Firefox (an older version) is provided as a pre-built binary that you can downlo
 quite slow.
 
 Neither netsurf nor firefox is great.    Netsurf is speedy but does not support javascript and so some websites do not work.   
-firefox supports more websites but it is quite slow.   And it also sometimes crashes.
+firefox supports more websites but it is quite slow.  
 
-Hopefully Arcticfox will provide a good browser solution for crux ppc but haven't done much with it yet.
-
-## firefox
-
-The version provided is 52.8.   Later versions have not been tried.   A build of firefox swaps like crazy even with 2Gig of RAM.   Later
-versions require even more RAM during build so building a later version may not be feasible.
 
 
 ## netsurf
 
 Lightweight browser.  Easy to build and works for general browsing but doesn't support everything.
+
+## Arcticfox
+
+ArcticFox builds now work and will be added to the install CD.   It does not work with youtube videos and perhaps
+other websites and consumes a large fraction of the CPU cycles.  But it seemes to be a better choice than firefox.
+
+A port is provided to download the pre=built ArcticFox binary from the website and repackage it into a CRUX package.
+It is not recommended to use the pre-built binary but it seems to function properly and may be useful for comparison 
+and other experimental purposes.
+
+## firefox
+
+The version provided is 52.9.   Later versions have not been tried.   A build of firefox swaps like crazy even with 2Gig of RAM.   Later
+versions require even more RAM during build so building a later version may not be feasible.
 
 ## dillo
 
@@ -36,13 +44,6 @@ Seamonkey seems to function (sluggish but works) but haven't tried it much.
 A port to build it can be found under experimental.  Seamonkey build is 
 multiple hours (best done overnight).
 
-## Arcticfox
-
-Not able to build it yet.   The prebuilt powerpc deb binary can be downloaded, 
-unpacked and installed by hand.   It seems to run without problem but
-directly installing binaries built on one system onto another different 
-system which has a different toolset is not a good practice and I don't
-recommend doing it.  
 
 ## midori
 
