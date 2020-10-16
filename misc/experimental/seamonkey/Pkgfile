@@ -45,7 +45,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --enable-official-branding
 	ac_add_options --with-distribution-id=nu.crux
 
-	ac_add_options --enable-extensions=default,-gnomevfs,-irc
+	ac_add_options --enable-extensions=default
 	ac_add_options --enable-url-classifier
 	ac_add_options --enable-gio
 	ac_add_options --enable-elf-hack
