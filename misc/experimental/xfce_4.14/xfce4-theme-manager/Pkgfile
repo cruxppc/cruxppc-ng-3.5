@@ -5,9 +5,9 @@
 # Xfce git (https://git.xfce.org/) group: N/A
 xfcerel=4.14
 name=xfce4-theme-manager
-version=0.3.8
+version=3.8
 release=1
-source=(https://github.com/KeithDHedger/Xfce-Theme-Manager/archive/xfce-theme-manager-0.3.8.tar.gz
+source=(https://github.com/KeithDHedger/Xfce-Theme-Manager/archive/v3.8.tar.gz
         xfce_$xfcerel.$name
        )
 build ()
@@ -18,7 +18,7 @@ build ()
   install -T -m0644 -groot -oroot $SRC/xfce_$xfcerel.$name \
                                   $PKG/var/lib/pkg/xfce/$xfcerel/$name
   # Build the canonical package:
-  cd Xfce-Theme-Manager-xfce-theme-manager-$version
+  cd Xfce-Theme-Manager-$version
   ./configure --prefix=/usr \
               --mandir=/usr/share/man
   make
