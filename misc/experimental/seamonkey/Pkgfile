@@ -5,12 +5,14 @@
 # Optional:    ffmpeg gvfs
 
 name=seamonkey
-version=2.49.3
+version=2.49.5
 release=1
-source=(https://archive.mozilla.org/pub/$name/releases/$version/source/$name-$version.source.tar.xz)
+source=(https://archive.mozilla.org/pub/$name/releases/$version/source/$name-$version.source.tar.xz
+    remove_crmf.patch)
 
 build() {
 	cd $name-$version
+	patch -p1 -i$SRC/remove_crmf.patch
 
 cat <<- EOF > .mozconfig
 	ac_add_options --enable-application=suite
