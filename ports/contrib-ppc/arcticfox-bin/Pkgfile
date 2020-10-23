@@ -2,10 +2,10 @@
 # URL:         https:/www.github.com/wicknix/Arctic-Fox
 # Maintainer:  cruxppc at gmail dot com
 # Depends on:
-# This is very experimental...
+# This is experimental and not recommended except for testing purposes.
 
 name=arcticfox-bin
-version=27.10.1
+version=27.11.0
 release=1
 source=(arcticfox-${version}-linux-powerpc.deb)
 
