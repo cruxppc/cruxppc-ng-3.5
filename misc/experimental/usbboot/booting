@@ -1,0 +1,2 @@
+
+boot usb1/disk@1:2,\\yaboot
