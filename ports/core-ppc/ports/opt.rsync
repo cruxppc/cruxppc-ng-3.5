@@ -1,4 +1,4 @@
 host=crux.nu
 collection=ports/crux-3.5/opt/
 destination=/usr/ports/opt
-excludes=opt.excludes
+excludes=/etc/ports/opt.excludes

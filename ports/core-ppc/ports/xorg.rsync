@@ -1,4 +1,4 @@
 host=crux.nu
 collection=ports/crux-3.5/xorg/
 destination=/usr/ports/xorg
-excludes=emptyexcludelist
+excludes=/etc/ports/emptyexcludelist
