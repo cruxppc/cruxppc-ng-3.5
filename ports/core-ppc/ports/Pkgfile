@@ -9,8 +9,9 @@ release=1
 source=(http://crux.nu/files/tools/ports/$name-$version.tar.gz \
         core.pub opt.pub xorg.pub contrib.pub \
         core.rsync opt.rsync xorg.rsync \
+        contrib.rsync.inactive
         core-ppc.rsync.inactive opt-ppc.rsync.inactive xorg-ppc.rsync.inactive \
-        contrib.rsync.inactive)
+        core.excludes opt.excludes contrib.excludes emptyexcludelist)
 
 build () {
     cd $name-$version
@@ -28,4 +29,8 @@ build () {
     install -m 0644 $SRC/core-ppc.rsync.inactive $PKG/etc/ports
     install -m 0644 $SRC/opt-ppc.rsync.inactive $PKG/etc/ports
     install -m 0644 $SRC/xorg-ppc.rsync.inactive $PKG/etc/ports
+    install -m 0644 $SRC/core.excludes $PKG/etc/ports
+    install -m 0644 $SRC/opt.excludes $PKG/etc/ports
+    install -m 0644 $SRC/contrib.excludes $PKG/etc/ports
+    install -m 0644 $SRC/emptyexcludelist $PKG/etc/ports
 }
