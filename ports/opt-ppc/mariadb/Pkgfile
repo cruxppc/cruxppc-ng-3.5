@@ -1,29 +1,26 @@
 # Description: SQL database server, drop-in replacement for MySQL
-# URL:         http://mariadb.org/
-# Maintainer:  Juergen Daubert, jue at crux dot nu 
+# URL:         https://mariadb.org/
+# Maintainer:  cruxppc at gmail dot com
 # Depends on:  ncurses zlib openssl cmake libaio linux-pam
 
 name=mariadb
-version=10.4.12
+version=10.5.6
 release=1
 source=(https://downloads.mariadb.com/MariaDB//$name-$version/source/$name-$version.tar.gz 
-        ppchax.patch
         mariadb.rc mariadb.pam
+        ppchax.patch
         pre-install)
 
 build() {
-
-	cd $name-$version
-        patch -p1 -i $SRC/ppchax.patch
-
-	mkdir build && cd build
-
-	cmake .. \
+pwd
+        (cd $name-$version; patch -p1 -i $SRC/ppchax.patch)
+	cmake -S $name-$version -B build \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DINSTALL_LAYOUT=RPM \
 		-DINSTALL_LIBDIR=lib \
 		-DINSTALL_PLUGINDIR=lib/mysql/plugin \
 		-DINSTALL_PCDIR=/usr/lib/pkgconfig \
+		-DINSTALL_PAMDIR=/lib/security \
 		-DMYSQL_DATADIR=/var/lib/mysql \
 		-DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
 		-DWITH_READLINE=ON \
@@ -34,12 +31,11 @@ build() {
 		-DWITH_UNIT_TESTS=OFF \
 		-DSKIP_TESTS=ON
 
-	make
-	make DESTDIR=$PKG install
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
 
 	rm -r $PKG/etc/{init.d,logrotate.d}
-# groonga ??
-	#rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
+	rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
 	rm $PKG/usr/sbin/rcmysql
 	rm $PKG/usr/share/man/man1/mysql-test-run.pl.1
 	find $PKG/usr/share/mysql/* -type d ! -name english ! -name charsets | xargs rm -rf {} \;
