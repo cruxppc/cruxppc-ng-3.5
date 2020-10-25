@@ -35,7 +35,8 @@ pwd
 	DESTDIR=$PKG cmake --install build
 
 	rm -r $PKG/etc/{init.d,logrotate.d}
-	rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
+# groonga ?
+	#rm -r $PKG/usr/share/{doc,groonga*,mysql-test}
 	rm $PKG/usr/sbin/rcmysql
 	rm $PKG/usr/share/man/man1/mysql-test-run.pl.1
 	find $PKG/usr/share/mysql/* -type d ! -name english ! -name charsets | xargs rm -rf {} \;
