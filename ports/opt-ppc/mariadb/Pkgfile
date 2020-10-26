@@ -1,7 +1,7 @@
 # Description: SQL database server, drop-in replacement for MySQL
 # URL:         https://mariadb.org/
 # Maintainer:  cruxppc at gmail dot com
-# Depends on:  ncurses zlib openssl cmake libaio linux-pam
+# Depends on:  ncurses zlib openssl cmake libaio linux-pam libpcre2
 
 name=mariadb
 version=10.5.6
