@@ -64,8 +64,8 @@ build() {
 	done
 
 	rm $PKG/usr/bin/*-linux-gnu-*
-	rm -r $PKG/usr/share/{info,gcc-$version}
-	rm -r $PKG/usr/lib/gcc/*/$version/{install-tools,include-fixed}
+	rm -fr $PKG/usr/share/info
+	rm -fr $PKG/usr/lib/gcc/*/$version/{install-tools,include-fixed}
 
 	# Remove empty directories
 	find $PKG -depth -empty -exec rm -r {} \;
