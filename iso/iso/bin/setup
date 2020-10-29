@@ -79,15 +79,16 @@ select_collections() {
 	if [ "$ACTION" != "INSTALL" ]; then
 		return 0
 	fi
-	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d kernel ]; then
-		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg or kernel) were not found in $crux_dir. Aborting." 0 0
+	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde] || [ ! -d kernel ]; then
+		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg, lxde, or kernel) were not found in $crux_dir. Aborting." 0 0
 		exit 1
 	fi
 	TITLE="Select collections to install:\n(detailed package selection will follow)"
 	do_select --separate-output --checklist "$TITLE" 13 60 6 \
 		core "The core packages (required)" ON \
 		opt "Optional packages" OFF \
-		xorg "X.org packages" OFF 2> $collfile
+		xorg "X.org packages" OFF \
+		lxde "LXDE packages" OFF 2> $collfile
 	sed -i 's|\"||g' $collfile
 }
 
@@ -99,13 +100,13 @@ ask_detailed() {
 }
 
 select_packages() {
-	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d kernel ]; then
-		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg, and kernel) were not found in $crux_dir. Aborting." 0 0
+	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde] || [ ! -d kernel ]; then
+		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg, lxde, and kernel) were not found in $crux_dir. Aborting." 0 0
 		exit 1
 	fi
 	if [ "$ACTION" = "INSTALL" ]; then
 		if [ "$DO_DETAILED" = "yes" ]; then
-			for collection in core opt xorg; do
+			for collection in core opt xorg lxde; do
 				presel=`grep $collection $collfile`
 				if [ "$presel" == "$collection" ]; then
 					checked=ON
@@ -119,7 +120,7 @@ select_packages() {
 				do_select --separate-output --checklist "$TITLE" 19 60 12 $PKG_LIST 2>> $pkgfile
 			done
 		else # no detailed selection
-			for collection in core opt xorg; do
+			for collection in core opt xorg lxde; do
 				presel=`grep $collection $collfile`
 				if [ "$presel" == "$collection" ]; then
 					find $collection \( -name '*.pkg.tar.gz' -o -name '*.pkg.tar.bz2' -o -name '*.pkg.tar.xz' \) -printf "%f\n" | sed 's/.pkg.tar.*//g' | sort >> $pkgfile
@@ -135,6 +136,7 @@ select_packages() {
 			CORE_LIST="$CORE_LIST `find core \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \) -printf '%f (core) ON\n' | sed 's/.pkg.tar.[^ ]*/ /g' | sort | xargs echo ' '`"
 			OPT_LIST="$OPT_LIST `find opt \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \) -printf '%f (opt) ON\n' | sed 's/.pkg.tar.[^ ]*/ /g' | sort | xargs echo ' '`"
 			XORG_LIST="$XORG_LIST `find xorg \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \) -printf '%f (xorg) ON\n' | sed 's/.pkg.tar.[^ ]*/ /g' | sort | xargs echo ' '`"
+			LXDE_LIST="$LXDE_LIST `find lxde \( -name \"${package}#*.pkg.tar.gz\" -o -name \"${package}#*.pkg.tar.bz2\" -o -name \"${package}#*.pkg.tar.xz\" \) -printf '%f (lxde) ON\n' | sed 's/.pkg.tar.[^ ]*/ /g' | sort | xargs echo ' '`"
 		done
 		do_select --separate-output --checklist "$TITLE" 19 60 12 $CORE_LIST $OPT_LIST $XORG_LIST 2> $pkgfile
 	fi

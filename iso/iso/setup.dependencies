@@ -112,7 +112,6 @@ btrfs-progs: lzo zlib xz zstd btrfs-progs
 cairo: zlib expat xorg-xorgproto bzip2 ncurses libffi libtirpc mpdecimal xz xorg-util-macros xorg-libpixman libpcre libpng xorg-libxau xorg-libxdmcp readline xorg-xtrans freetype gdbm sqlite3 fontconfig python3 xorg-xcb-proto python3-setuptools ninja xorg-libxcb meson xorg-libx11 xorg-xcb-util glib xorg-libxext xorg-libxrender cairo 
 cdrkit: zlib openssl bzip2 xz attr lzo expat ncurses linux-pam file curl acl libcap libarchive cmake cdrkit 
 cmake: openssl zlib bzip2 xz attr lzo expat ncurses curl acl libarchive cmake 
-consolekit: dbus gobject-introspection linux-pam util-linux xorg-libx11 consolekit
 cryptsetup: kmod ncurses zlib openssl attr bzip2 xz lzo expat eudev curl acl util-linux gettext libarchive libdevmapper popt cmake json-c cryptsetup 
 dbus-glib: expat libpcre bzip2 ncurses libffi libtirpc mpdecimal zlib xz dbus readline gdbm sqlite3 python3 python3-setuptools ninja meson glib dbus-glib 
 dbus: expat dbus 
@@ -339,3 +338,29 @@ xorg-xf86-video-sis: xorg-server xorg-xf86-video-sis
 xorg-xf86-video-vboxvideo: xorg-server xorg-xf86-video-vboxvideo 
 xorg-xf86-video-vmware: xorg-server xorg-xf86-video-vmware 
 xorg-xf86-video-r128: xorg-server xorg-xf86-video-r128 
+autoconf-2.13: autoconf-2.13
+consolekit2: consolekit2
+gpicview: gpicview
+keybinder: keybinder
+libcanberra: libcanberra
+libfm: libfm
+libfm-extra: libfm-extra
+libglade-compat: libglade-compat
+lsb-release: lsb-release
+lxappearance-obconf: lxappearance-obconf
+lxde: lxde
+lxde-common: lxde-common
+lxde-icon-theme: lxde-icon-theme
+lxinput: lxinput
+lxmenu-data: lxmenu-data
+lxpanel: lxpanel
+lxrandr: lxrandr
+lxsession: lxsession
+lxtask: lxtask
+lxterminal: lxterminal
+menu-cache: menu-cache
+notification-daemon: notification-daemon
+pcmanfm: pcmanfm
+pygtk: pygtk
+python-gobject-compat: python-gobject-compat
+vala: vala
