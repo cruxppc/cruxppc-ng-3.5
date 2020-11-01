@@ -1,31 +1,29 @@
-Release Notes for CRUX PPC 3.5 Alpha release 2
-10/01/2020
+Release Notes for CRUX PPC 3.5 Beta Release 1
+11/02/2020
 
   Introduction
 
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
 
-   This is the second alpha release of CRUX PPC 3.5.   Changes since
- the first alpha release include version updates to packages, additional
- packages on the install CD, and the install CD is now created from 
- current CRUX PPC packages and so is no longer based on a remastered 2.7.
+   This is the first Beta release of CRUX PPC 3.5.   Changes since
+ the prior (alpha) release include addition of the arcticfox 
+ browser, version updates to several packages, and the LXDE desktop
+ is now selectable as an install option.
 
  Supported machines:
 
  Apple 32bit "NewWorld" G4 and (in theory) G3 machines are supported.  In 
- practice however, most of building and testing of CRUX PPC 3.5 is performed
- on G4 machines, and G3 is only minimally tested.
+ practice however, most of building and testing of CRUX PPC 3.5 is 
+ performed on G4 machines, and G3 is only minimally tested.
 
  In this Alpha release, machines which have an NVIDIA graphics card will
- not function well.   An easy, but ugly, workaround can be performed
- which will get NVIDIA machines up to a command line prompt.  So, it can
- be used on such machines  but if you have a machine with an NVIDIA card, 
- it may be better off waiting for a fix in a later release.   Machines with
- the ATI Rage video cards are not yet functioning with a GUI interface but
- do support a command line interface.
+ not function well.  Machines which have an NVIDIA card are not supported.
 
  Machines which have a Radeon graphics card seem to generally work (reasonably 
  well for an alpha release anyway).  
+
+ Older G3 machines with ATI Rage graphics cards don't start a GUI desktop but
+ otherwise function as expected.
 
  Non supported machines:
  64bit PowerPC.
@@ -61,12 +59,12 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
    scripts need some adjusting and will be corrected in future work.
 
    CRUX PPC does not provide .signature checking on the ppc specific packages.
-   And in fact, in this Alpha release, not even md5sum checking.
+   In this Beta release, md5sums checking is provided.
 
    It is not uncommon for the footprints to mismatch when building on powerpc.
    Generally this footprint mismatch is benign but may halt package building tools.
    The package build utilities provide an option to ignore footprints.  Also
-   /etc/prt-get.conf can be adjusted to ignore footprints by default.   A
+   /etc/pkgmk.conf can be adjusted to ignore footprints by default.   A
    footprint mismatch is not necessarily indicative of an actual problem in the
    build.
 
@@ -89,19 +87,14 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
    dependency chain.  netsurf is provided on the install CD and can be
    used for basic web browsing until a better browser is supported.
 
-   All of the applicable core packages have been built on powerpc but 
-   only a subset of opt and xorg packages have been built with CRUX PPC.
-   Some of the opt and xorg packages have not been built at all, and others 
-   have had to be downreved to build.   Be aware that opt and xorg packages 
-   particularly are a work in progress for CRUX PPC and that you may be
-   the very first person building a particular opt or xorg package in
-   CRUXPPC 3.5.  Likewise, most contrib ports have not been tried in 
-   CRUX PPC.
+   All of the applicable core packages, most of the opt and xorg packages
+   have been built on powerpc but only a subset of contrib packages have been 
+   built with CRUX PPC.
 
    When using CRUX PPC on G3 hardware a few packages may need to be
    rebuilt natively on the G3 machine in order to function properly.
    If a package causes illegal instruction exceptions, it may need
-   to be rebuilt on the G3 machine to function properly.
+   to be rebuilt on the G3 machine to function properly.   
 
   Tips
 
@@ -113,11 +106,10 @@ Release Notes for CRUX PPC 3.5 Alpha release 2
    from in the 'extras' section of the repository and this avoids the
    time needed to build them from source.
 
-   For now, netsurf is the browser installed.  Firefox may be  installed
-   from the "extras" packages but is somewhat sluggish even on higher end 
-   PowerPC machines.   netsurf lacks some functionality found in other 
-   browsers but works for most websites and performance is decent.
+   Netsurf and ArcticFox browsers are provided on the install CD.   Other
+   browsers (firefox, seamonkey, etc.) can be built and used if desired.
+   However none of them work really well.   
 
-   The lynx or links browser can also be installed quickly if a text based
+   The lynx or links browser can also be installed if a text based
    browser is sufficient for the users needs.
 
