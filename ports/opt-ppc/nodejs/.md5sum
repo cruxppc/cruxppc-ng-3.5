@@ -1,0 +1,5 @@
+a1c73a2571b3f6e288382223516e64d9  libatomic.patch
+b981c34c91c5d78e96194ae46ea2a11f  node-v10.22.1.tar.xz
+6ac6e92a93a34a31e81c2ffb50359e2b  ppc32.patch
+3fe66a78fe4558be502395494bd90ec2  ppc64.patch
+0fb594744ed29547500fea91906eec4e  stack-silliness.patch

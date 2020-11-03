@@ -1,0 +1,16 @@
+702685e5afca8393ad2421ee9f440be6  contrib.excludes
+804bb419e539a70ad80e4c03df3c3411  contrib.pub
+a4c1fc9d60000f9196a3f1d3d138ed53  contrib.rsync.inactive
+1656e7d41f978a30a3a16e011baeb955  core-ppc.rsync.inactive
+f9a6ffb2c145cf688deca9d900800e3a  core.excludes
+b8dd0aad383810cad920d6548cd1cb56  core.pub
+0187e66070ffe3cc61dded411e2fee0f  core.rsync
+813766c37c0ee511dbbf838bbf4e877f  emptyexcludelist
+5154ffca638d77cfeb617cf787e22226  opt-ppc.rsync.inactive
+773ace270e1564c61f39e2342bf48aa2  opt.excludes
+0d1f1fde50a9bd743d9cac6b235f038c  opt.pub
+f73e168a4c847e8d07f280ebccff9188  opt.rsync
+902e3ddb9b4930975c7edb5c3c749c8c  ports-1.6.tar.gz
+4aecfbfcb163e06367068dd179a7307e  xorg-ppc.rsync.inactive
+69927e5d0ae5dc3455faeaac916c4db2  xorg.pub
+147b92b5b87fbee0bb277c2b505f352d  xorg.rsync

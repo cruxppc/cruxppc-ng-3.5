@@ -1,0 +1,9 @@
+bcddaf40e8af79eb705d220247f3513a  0007-Fix-C-aggregate-passing-ABI-on-powerpc.patch
+c346c49a8ac4267eb9364d7ee45b4593  0008-Fix-zero-sized-aggregate-ABI-on-powerpc.patch
+dddc5d1887ca1131a09f20ddf680ea28  0010-test-c-variadic-Fix-patterns-on-powerpc64.patch
+1c26c6abf0bbb2494e7ad18e72a27a76  0040-rls-atomics.patch
+a5c78c2e73f05126daa4f58684d4a45e  cargo-0.40.0-powerpc-unknown-linux-gnu.tar.gz
+9ed9e64862f3df9f1eb2f2312b228e38  ppcfixes.patch
+19a332ac2b62e5c3470753eefee5aafb  rust-std-1.39.0-powerpc-unknown-linux-gnu.tar.gz
+bfea8bf98540c227510e17e5a628b8ee  rustc-1.39.0-powerpc-unknown-linux-gnu.tar.gz
+cb573163d3371894ffcde5efe5a7e793  rustc-1.40.0-src.tar.gz

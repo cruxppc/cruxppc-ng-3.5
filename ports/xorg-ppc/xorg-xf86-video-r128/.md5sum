@@ -1,0 +1,4 @@
+b7cec8a9befe4037a8d43d7e58533d35  fix-non-x86.patch
+07ecad74242e24a168bb185f89a76ecb  ppc.patch
+901af8f56b1219e7541cd218fbbb432c  xaa.patch
+105ebcfe1bac06fe84645ac3def91184  xf86-video-r128-6.12.0.tar.bz2
