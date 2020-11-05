@@ -1,13 +1,13 @@
 # TODO
 
-01Oct2020
+05Nov2020
 
 A high level list of what remains to be done for CRUX PPC 3.5
 
 ## Documentation 
 
-Fix handbook errors and clarify installation.
-
+Handbook has been updated.   More work is needed but it is now significantly better than previous versions.
+Some howto documents would be useful for various configuration tasks.
 
 ## ports -u
 
@@ -26,26 +26,25 @@ driver problems to fix.
 
 ## Browsers
 
-Fix netsurf and firefox crashes.
+ArcticFox now functions and is part of the installation.
 
-Investigate Arcticfox as possible replacement for netsurf and firefox.
-
-Investigate other browsers as well.
-
+Performance improvements, testing, maybe bug fixes still needed.
 
 ## Clean up and update install CD image.
 
 Keep install iso size under 700Meg so that it is compatible with older
 machines which only have a CD drive.
 
-Initial install image is a hand remastered adaption of the CRUX PPC 2.7 iso.   
+Install ISO is now built from 3.5 packages.  
 
 Identify/remove any graphics pkgs which are never applicable to powerpc.
+
+Identify and add any additional packages that would be useful as part of the install CD.
 
 Check setup.dependencies file for accuracy.
 
 Figure out how to install CRUX PPC from USB instead of CD and write a 
-howto or such on it.
+howto or such on it.   Started.
 
 
 ## core/opt/contrib/xorg package building/testing.
@@ -64,5 +63,5 @@ the install CD.
 
 ## replace yaboot with grub
 
-Initially this project re-uses the yaboot package from the Debian project as the bootloader.   yaboot has not been re-buildable from source for some time now.   So, although the yaboot binary still functions properly it cannot be changed if needed (although one could probably go back to a distro from about a decade ago and rebuild it in that way).   Some other ppc distros have started using grub instead of yaboot.   
+Initially this project re-uses the yaboot package from the Debian project as the bootloader.   yaboot has not been re-buildable from source for some time now.   So, although the yaboot binary still functions properly it cannot be changed if needed (although one could probably go back to a distro from about a decade ago and rebuild it in that way).   Some other ppc distros have started using grub instead of yaboot.    This task is very low priority and not likely to be addressed. 
 
