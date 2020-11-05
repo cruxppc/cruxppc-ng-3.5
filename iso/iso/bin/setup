@@ -79,7 +79,7 @@ select_collections() {
 	if [ "$ACTION" != "INSTALL" ]; then
 		return 0
 	fi
-	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde] || [ ! -d kernel ]; then
+	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde ] || [ ! -d kernel ]; then
 		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg, lxde, or kernel) were not found in $crux_dir. Aborting." 0 0
 		exit 1
 	fi
@@ -100,7 +100,7 @@ ask_detailed() {
 }
 
 select_packages() {
-	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde] || [ ! -d kernel ]; then
+	if [ ! -d core ] || [ ! -d opt ] || [ ! -d xorg ] || [ ! -d lxde ] || [ ! -d kernel ]; then
 		do_dialog --aspect 50 --msgbox "Package directories (core, opt, xorg, lxde, and kernel) were not found in $crux_dir. Aborting." 0 0
 		exit 1
 	fi
