@@ -2,16 +2,40 @@
 
 To bringup wifi in cruxppc:
 
-1) If needed, install linux-firmware package.  This should
-   not be needed if using builtin ppc machine wifi and
-   also using the builtin firmware.
-2) Modify the /etc/rc.d/wlan startup script as needed.  
+1) If using a USB wifi adapter, install the linux-firmware package and
+   depending on the adapter, you may need to rebuild kernel with support
+   for that device enabled.
+   If using builtin wifi adapter, linux-firmware should not be needed.
+   Reboot after installing linux-firmware package.
+
+2) Add password protected entries to /etc/wpa_supplicant.conf by using
+   wpa_passphrase like so:
+
+  "wpa_passphrase yourssidname yourwifipassword >>/etc/wpa_supplicant.conf"
+
+
+   Manually add wpa_supplicant.conf entry for non password wifi like so:
+
+   network={
+	ssid="CoffeeShop_Public_WIFI"
+        key_mgmt=NONE
+   }
+   
+
+3) Modify the /etc/rc.d/wlan startup script as needed.  
    Specifically change the defintion of "DEV" to the
    name of appropriate interface.   The builtin wifi on ppc 
-   machines is normally named "wlan0"
-3) Add wlan to /etc/rc.conf to enable auto startup of wifi
+   machines is normally named "wlan0".  e.g. change:
+
+   DEV=wlan0
+
+
+4) Add wlan to /etc/rc.conf to enable auto startup of wifi
    at boot.   It may display an ERROR during startup but should
    complete connection shortly after startup is complete.
+
+   Alternatively, wifi can be brought up manually by running
+   "/etc/rc.d/wlan start".
 
 
 For reference README file from wpa_supplicant follows.   It contains
@@ -33,7 +57,7 @@ POST-INSTALL
 
 1. Create a network setup for wpa_supplicant:
 
-   wpa_passphrase <ssid> <your_secret> >> /etc/wpa.conf
+   wpa_passphrase <ssid> <your_secret> >> /etc/wpa_supplicant.conf
 
    See the sample configuration file wpa_supplicant.conf in the
    sources for a complete description of the available options 
