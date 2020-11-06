@@ -1,0 +1,14 @@
+diff -Naur a/src/CMakeLists.txt b/src/CMakeLists.txt
+--- a/src/CMakeLists.txt	2020-10-18 18:55:03.000000000 +0000
++++ b/src/CMakeLists.txt	2020-11-05 21:53:40.656902201 +0000
+@@ -52,6 +52,10 @@
+ 
+ add_library(ccache_lib STATIC ${source_files})
+ 
++IF(CMAKE_SYSTEM_PROCESSOR MATCHES "ppc")
++  target_link_libraries(ccache_lib PRIVATE "atomic")
++ENDIF()
++
+ if(WIN32)
+   target_link_libraries(ccache_lib PRIVATE ws2_32 "psapi")
+ 
