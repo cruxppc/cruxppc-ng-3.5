@@ -5,31 +5,32 @@
 # Optional: libva
 
 name=mesa3d
-version=20.2.1
+version=20.2.2
 release=1
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz)
 
 build() {
-	cd mesa-$version
-
-	meson build \
+	meson setup build mesa-$version \
 		--prefix=/usr \
 		--sysconfdir=/etc \
-		-Dllvm=true \
-		-Dgbm=true \
-		-Dgles1=true \
-		-Dgles2=true \
-		-Dosmesa=gallium \
-		-Dgallium-xa=true \
-		-Dgallium-vdpau=true \
-		-Dshared-llvm=true \
-		-Dplatforms=x11,drm \
-		-Ddri-drivers=r100,r200 \
-		-Dgallium-drivers=r300,r600,swrast,nouveau \
-		-Dvulkan-drivers= \
-		-Dglvnd=true
+		--buildtype=plain \
+		-D llvm=enabled \
+		-D shared-llvm=enabled \
+		-D gbm=enabled \
+		-D gles1=enabled \
+		-D gles2=enabled \
+		-D osmesa=gallium \
+		-D gallium-xa=enabled \
+		-D gallium-vdpau=enabled \
+		-D platforms=x11,drm \
+		-D dri-drivers=r100,r200 \
+		-D gallium-drivers=r300,r600,svga,swrast,radeonsi,nouveau \
+		-D gallium-drivers=r300,r600,swrast,nouveau \
+		-D vulkan-drivers= \
+		-D glvnd=true
 
-	DESTDIR=$PKG ninja -C build -j ${JOBS:-1} install
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
 
 	# indirect rendering symlink
 	ln -s libGLX_mesa.so.0 $PKG/usr/lib/libGLX_indirect.so.0
