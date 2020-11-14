@@ -1,3 +1,9 @@
 bin86
 *-bin
-*efi*
+efibootmgr
+efivar
+gnu-efi
+grub2-efi
+elilo
+lilo
+syslinux
