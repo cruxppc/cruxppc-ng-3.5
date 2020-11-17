@@ -7,7 +7,7 @@ b8dd0aad383810cad920d6548cd1cb56  core.pub
 0187e66070ffe3cc61dded411e2fee0f  core.rsync
 813766c37c0ee511dbbf838bbf4e877f  emptyexcludelist
 5154ffca638d77cfeb617cf787e22226  opt-ppc.rsync.inactive
-773ace270e1564c61f39e2342bf48aa2  opt.excludes
+0093bb97237d8da69d33ead97a4b7bf1  opt.excludes
 0d1f1fde50a9bd743d9cac6b235f038c  opt.pub
 f73e168a4c847e8d07f280ebccff9188  opt.rsync
 902e3ddb9b4930975c7edb5c3c749c8c  ports-1.6.tar.gz
