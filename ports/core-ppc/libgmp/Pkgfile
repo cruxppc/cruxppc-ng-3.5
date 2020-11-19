@@ -4,7 +4,7 @@
 # Arch Maintainer: CRUX-PPC System Team, devel at crux-ppc dot tba
 
 name=libgmp
-version=6.2.0
+version=6.2.1
 release=1
 source=(http://gmplib.org/download/gmp/gmp-$version.tar.xz \
         gmp.h)
