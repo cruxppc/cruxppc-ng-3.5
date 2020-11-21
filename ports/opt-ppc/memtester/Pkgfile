@@ -2,10 +2,9 @@
 # URL: http://pyropus.ca/software/memtester/
 # Maintainer: cruxppc at gmail dot com
 # Depends on:
-# PPC!=: upstream
 
 name=memtester
-version=4.3.0
+version=4.5.0
 release=1
 source=(http://pyropus.ca/software/$name/old-versions/$name-$version.tar.gz)
 
