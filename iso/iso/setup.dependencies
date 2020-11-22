@@ -119,6 +119,7 @@ desktop-file-utils: glib pkg-config meson desktop-file-utils
 dialog: ncurses dialog 
 dosfstools: dosfstools 
 exfat-utils: fuse exfat-utils
+exiv2: exiv2
 expat: expat 
 fakeroot: fakeroot 
 fetchmail: openssl fetchmail 
@@ -153,10 +154,13 @@ libidl: libpcre bzip2 expat ncurses libffi libtirpc mpdecimal zlib xz readline g
 libidn: libidn
 libjpeg-turbo: openssl zlib bzip2 xz attr lzo expat ncurses nasm curl acl libarchive cmake libjpeg-turbo 
 libmng: lcms2 libmng
+libmpeg2: libsdl libmpeg2
 libnl: libnl 
 libogg: libogg
+libpcre2: libpcre2
 libpng: zlib libpng 
 librsvg-compat: gtk3 libcroco librsvg-compat
+libsdl: libsdl
 libtiff: openssl zlib bzip2 xz attr lzo expat ncurses nasm curl acl libarchive cmake libjpeg-turbo libtiff 
 libtirpc: libtirpc 
 libunique: gtk xorg-libxdamage libunique
@@ -170,6 +174,7 @@ llvm: openssl zlib bzip2 xz attr lzo expat ncurses libffi libtirpc mpdecimal cur
 lvm2: kmod ncurses zlib libaio eudev util-linux libdevmapper lvm2 
 lxappearance: gtk lxappearance
 mdadm: mdadm 
+memtester: memtester
 meson: bzip2 expat ncurses libffi libtirpc mpdecimal zlib xz readline gdbm sqlite3 python3 python3-setuptools meson 
 mpdecimal: mpdecimal 
 mtools: mtools 

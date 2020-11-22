@@ -75,7 +75,7 @@ pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/lvm2#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/lzo#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/mac-fdisk#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/mdadm#*.pkg.tar.xz
-#pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/memtester*.pkg.tar.xz
+pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/memtester*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/nvsetenv#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/patch#*.pkg.tar.xz
 pkgadd --root $ROOTFS_DIR $CRUX_DIR/*/pkgutils#*.pkg.tar.xz
