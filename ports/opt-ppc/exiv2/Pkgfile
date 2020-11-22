@@ -13,12 +13,11 @@ build() {
 
 	export CXXFLAGS+=" -Wno-deprecated-declarations"
 
-	cmake -S$name-$version -Bbuild \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_INSTALL_LIBDIR=lib \
-		-DEXIV2_ENABLE_BUILD_PO=OFF \
-		-DEXIV2_ENABLE_BUILD_SAMPLES=OFF \
+	cmake -S $name-$version -B build \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib
 
 	cmake --build build
 	DESTDIR=$PKG cmake --install build
