@@ -345,6 +345,7 @@ xorg-xf86-video-vmware: xorg-server xorg-xf86-video-vmware
 xorg-xf86-video-r128: xorg-server xorg-xf86-video-r128 
 autoconf-2.13: autoconf-2.13
 consolekit2: consolekit2
+gdk-pixbuf-xlib: gdk-pixbuf-xlib
 gpicview: gpicview
 keybinder: keybinder
 libcanberra: libcanberra
