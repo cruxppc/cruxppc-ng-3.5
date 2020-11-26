@@ -7,3 +7,6 @@ grub2-efi
 elilo
 lilo
 syslinux
+nvidia*
+flash-player-plugin
+jdk
