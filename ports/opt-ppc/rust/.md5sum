@@ -1,3 +1,4 @@
+1c26c6abf0bbb2494e7ad18e72a27a76  0040-rls-atomics.patch
 eb4d5ce93e62165a2e0ca808937c96a1  cargo-0.48.0-powerpc-unknown-linux-gnu.tar.xz
 970835d14e9c08a68c4b2ff3931bada7  compiler-rt-10.0.1.src.tar.xz
 ac663d1fef9e59b03f5c37d4d275f18a  rust-std-1.47.0-powerpc-unknown-linux-gnu.tar.xz
