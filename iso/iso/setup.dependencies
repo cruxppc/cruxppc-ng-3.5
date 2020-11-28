@@ -344,29 +344,29 @@ xorg-xf86-video-vboxvideo: xorg-server xorg-xf86-video-vboxvideo
 xorg-xf86-video-vmware: xorg-server xorg-xf86-video-vmware 
 xorg-xf86-video-r128: xorg-server xorg-xf86-video-r128 
 autoconf-2.13: autoconf-2.13
-consolekit2: consolekit2
-gdk-pixbuf-xlib: gdk-pixbuf-xlib
-gpicview: gpicview
-keybinder: keybinder
-libcanberra: libcanberra
-libfm: libfm
-libfm-extra: libfm-extra
-libglade-compat: libglade-compat
+consolekit2: eudev linux-pam polkit consolekit2
+gdk-pixbuf-xlib: gdk-pixbuf xorg-libx11 gdk-pixbuf-xlib
+gpicview: gtk gpicview
+keybinder: gtk gobject-introspection pygtk keybinder
+libcanberra: alsa-lib gtk gtk3 libvorbis libcanberra
+libfm: gtk menu-cache lxmenu-data libexif vala libfm
+libfm-extra: glib libfm-extra
+libglade-compat: libglade pango-compat libglade-compat
 lsb-release: lsb-release
-lxappearance-obconf: lxappearance-obconf
-lxde: lxde
-lxde-common: lxde-common
-lxde-icon-theme: lxde-icon-theme
-lxinput: lxinput
+lxappearance-obconf: lxappearance openbox lxappearance-obconf
+lxde: lxmenu-data libfm-extra menu-cache libfm pcmanfm lxpanel lxappearance lxsession lxde-common gpicview lxappearance-obconf lxinput lxrandr lxtask lxterminal lxde
+lxde-common: lxde-icon-theme lxpanel lxsession openbox pcmanfm desktop-file-utils hicolor-icon-theme shared-mime-info consolekit2 dbus notification-daemon lxde-common
+lxde-icon-theme: gtk lxde-icon-theme
+lxinput: gtk lxinput
 lxmenu-data: lxmenu-data
-lxpanel: lxpanel
-lxrandr: lxrandr
-lxsession: lxsession
-lxtask: lxtask
-lxterminal: lxterminal
-menu-cache: menu-cache
-notification-daemon: notification-daemon
-pcmanfm: pcmanfm
-pygtk: pygtk
-python-gobject-compat: python-gobject-compat
-vala: vala
+lxpanel: alsa-lib libwnck keybinder lxmenu-data menu-cache libxml2 wireless-tools gdk-pixbuf-xlib lxpanel
+lxrandr: gtk xorg-xrandr lxrandr
+lxsession: dbus-glib libunique lsb-release polkit gtk vala lxsession
+lxtask: gtk lxtask
+lxterminal: vte lxterminal
+menu-cache: libfm-extra menu-cache
+notification-daemon: gtk3 libcanberra notification-daemon
+pcmanfm: libfm adwaita-icon-theme pcmanfm
+pygtk: libglade-compat python-cairo python-gobject-compat pygtk
+python-gobject-compat: glib python-gobject-compat
+vala: glib vala
