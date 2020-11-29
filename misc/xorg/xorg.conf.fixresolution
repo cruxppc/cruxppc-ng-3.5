@@ -1,0 +1,10 @@
+
+Section "Screen"
+Identifier "Default Screen"
+Monitor "Configured Monitor"
+Device "Configured Video"
+SubSection "Display"
+Depth 24
+Modes "1280x1024"
+EndSubSection
+EndSection
