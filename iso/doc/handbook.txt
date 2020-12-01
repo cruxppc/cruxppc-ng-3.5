@@ -1,6 +1,16 @@
-11/02/2020 NOTE: This handbook is a WIP and is a bit rough in spots.
+
+Note: This document is revised from time to time.   If you are reading
+this from the install iso, be aware that there may be a newer
+version of this document in www.github.com/cruxppc/cruxppc-ng-3.5/iso/doc.
+
+Additionally, you may find materials on the www.github.com/cruxppc website
+that supplement the information in this handbook.   This handbook is a 
+concise description of installation and configuration.  The supplemental
+materials provide additional information that may helpful.
+
 
 HANDBOOK FOR CRUX PPC 3.5
+12/01/2020
 
    1. Preface
 
@@ -32,10 +42,9 @@ HANDBOOK FOR CRUX PPC 3.5
               3. Removing a Package
               4. Querying the Package Database
 
-         3. Package management frontend: ilenia  (NA)
+         3. Package management frontend:
 
               1. prt-get and CRUX PPC
-              2. ilenia and CRUX PPC
 
          4. Creating Packages
 
@@ -188,10 +197,10 @@ Installing CRUX PPC
    Packages  on  the  official   CRUX  PPC  ISO   image  are  compiled   with
    optimizations to support Power Architecture(R) processors.  The packages
    should be compatible with any machine which supports the classic
-   PowerPC instruction set.  However, the CRUX PPC installer only supports
-   Apple NewWorld (G3, G4, 32 bit only).   
+   PowerPC instruction set.  However, the CRUX PPC installer is strongly
+   oriented for Apple NewWorld (G3, G4, 32 bit only).   
 
-   A minimum of 192Meg of RAM is needed to boot the install CD and
+   A minimum of 256Meg of RAM is needed to boot the install CD and
    install CRUX PPC 3.5.   However, the CRUX user may find the time needed
    to compile additional CRUX packages on lower end machines to be quite
    lengthy.
@@ -216,6 +225,9 @@ Installing CRUX PPC
    ISO image on the  download site. If the  checksums match the download  was
    successful and you can continue with burning the ISO image on a CD.
 
+   Note that you must use a CD, not DVD, for burning the image.   For 
+   yet unknown reasons, CRUXPPC install does not work from a DVD media.
+
    2. The ISO  image is bootable,  on Apple computers  just insert the  newly
    burned CD into the first CD-ROM drive, reboot your computer and keep the C
    key pressed to boot from CD. Select  at the boot prompt press return 
@@ -234,7 +246,7 @@ Installing CRUX PPC
 
    2a.  CRUX PPC can (on most machines) be installed from a USB stick
    rather than a CDROM.  Creating the usb stick and booting it is 
-   described in a seperate document (TBA).
+   described in a seperate document in the cruxppc repository (TBA).
 
    3. Login as root (no password required).
 
@@ -247,7 +259,10 @@ Installing CRUX PPC
 
    Partitioning of a hard drive is very dependent on the individual users
    needs and decisions.   It's not possible to provide a description of
-   partitioning that addresses every possible choice.   
+   partitioning that addresses every possible choice.   The Gentoo PPC
+   handbook has a good explanation of disk partitioning and it might be
+   useful to review that (and other such documents on the internet) to 
+   help figure out  the proper partitioning for your system.
 
    A simple paritioning for a CRUX PPC system could be as follows:
 
@@ -303,16 +318,18 @@ Installing CRUX PPC
    marked core.  Also git (from opt) is also recommended as it is used
    for updates of the powerpc specific portions of the ports tree.
 
-   In this Beta release, the dependency list has not been carefully checked
-   for accuracy.   It is suggested to install either all of "core" or all of
-   "core", "opt" and "xorg" (and "lxde" if desired) to ensure that all 
-   dependencies are satisfied.
+   It is suggested to install either all of "core" or all of "core", "opt" and 
+   "xorg" (and "lxde" if desired) to ensure that all dependencies are satisfied.
+   Selecting individual packages within collections is not recommended but if
+   you choose to do so, spend some time after installation verifying that 
+   all expected dependencies are installed.
 
    Once it has installed the selected packages, the setup script will display
    an installation log. Make sure the last line in the log says "0 error(s)".
 
    If you at a later  stage find that you  need some additional packages  you
-   can just mount the CRUX PPC CD-ROM and use pkgadd to install them.
+   can just mount the CRUX PPC CD-ROM and use pkgadd to install them.  In this
+   case, ensure that you also install package dependencies.
 
    Note There is only a simple package dependency checking. This means that
    it is up to you to figure out that if you for example install the exim
@@ -320,7 +337,7 @@ Installing CRUX PPC
 
    Note that unlike previous crux ppc install cds, the kernel source is
    not automatically installed into the target system.  A pre built
-   kernel is included under /crux/kernel.   
+   kernel binary is included under /crux/kernel.   
 
    A prebuilt starter kernel tarball is provided on the install CD
    (look in /crux/kernel).   If desired, it can be copied to the target 
@@ -394,7 +411,7 @@ Installing CRUX PPC
    10. Edit /etc/fstab to configure your filesystem(s). Editors vim, and nano
    are available.
 
-   WIP: NOTE If you want access your computer via serial console (as it should be
+   NA WIP: NOTE If you want access your computer via serial console (as it should be
    for IBM RS/6000, pSeries, Apple Xserve or Genesi EFIKA users) you also
    have to add ttyS0 (ttyPZ0 for Xserve or ttyPSC0 for EFIKA) in the
    /etc/securetty and c7:2:respawn:/sbin/agetty 9600 ttyS0
@@ -408,7 +425,8 @@ Installing CRUX PPC
 
    11. Edit /etc/rc.conf to configure font, keyboard, timezone, hostname  and
    services. See Section 6.1.3,  Configuration Variables in /etc/rc.conf  for
-   details about /etc/rc.conf .   It may also be useful to enable sshd.
+   details about /etc/rc.conf .   It may also be useful to enable sshd at this
+   time.
 
    12. Generate  locales  for  your system.  See  Section  6.1.4,  Generating
    Locales for more information.  A 'makelocales' script is provided which
@@ -426,17 +444,17 @@ Installing CRUX PPC
 
    14. Install kernel:
 
-   Classis CRUX installation expects the user to build and install their own
+   Classic CRUX installation expects the user to build and install their own
    kernel.   This can be quite a long process on PowerPC machines so
    CRUX PPC also provides the alternative of installing a prebuilt starter
-   kernel.   If you installed the pre-built kernel, skip this step for now
+   kernel.   If you already installed the pre-built kernel, for now skip this step 
    and sometime after install is completed, the user can build their own
    kernel that better suits their specific needs.
 
    NVIDIA ugly hack tip:  If you are installing a kernel onto a machine with an 
    nvidia graphics card (not likely), remove the modules under drivers/char/agp, 
    otherwise, the screen may be garbled and essentially unusable upon boot.  CRUX
-   PPC is not supported or recommended for machines with NVIDA graphics cards.
+   PPC is not recommended for machines with NVIDA graphics cards.
 
    If you wish to build your own kernel, unpack the linux-4.19.xx tarball,
    (typically into /usr/src/linux-4.19.x) configure and compile it.
