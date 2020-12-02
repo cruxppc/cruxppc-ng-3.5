@@ -3,7 +3,7 @@ this from the install iso, be aware that there may be a newer
 version of this document in www.github.com/cruxppc/cruxppc-ng-3.5/iso/doc.
 
 Release Notes for CRUX PPC 3.5
-12/01/2020
+12/02/2020
 
    This page discusses the relevant changes introduced in CRUX PPC 3.5.
 
@@ -90,8 +90,8 @@ Release Notes for CRUX PPC 3.5
    and the whole output will be visible.   Enabling ssh access to the 
    machine and using it to access the machine is also a workaround.
 
-   The monitor resolution may be set incorrectly when starting 
-   X windows.   This can be worked around with an xorg.conf file.
+   The monitor resolution may be set incorrectly when starting X windows.   
+   This can be worked around with an xorg.conf file.
 
    X windows do not work on the imac G3 machines (ATI Rage graphics).
    X seems to be running but screen is blank.   A fix is not known
@@ -101,7 +101,8 @@ Release Notes for CRUX PPC 3.5
    When starting the LXDE desktop, an error box pops up with 
    a "cannot connect" type of error message.  Simply close the
    error box.   The fix is unknown yet but the desktop seems to
-   function properly and so the error message is likely benign.
+   function properly and so the error message is likely benign and
+   can be ignored.
 
    On G3 machines, netsurf seems to occasionally lock the screen for
    some seconds (maybe 10 seconds or so).   Then it becomes responsive
@@ -123,6 +124,17 @@ Release Notes for CRUX PPC 3.5
    works well).   libffi 3.3 has problems building on powerpc.   There
    is a patch that makes it build but I'm concerned the patch is
    not actually the proper fix so libffi is downreved to 3.2.1.
+
+   fakeroot is completely non functional on ppc.   It hangs and you have
+   to kill it from another window.   It appears to be something 
+   recently broken and looks like it is known to the developers.
+   So, I expect it to be fixed in the next fakeroot update.   
+   If you need to use fakeroot, back it down to a previous version
+   and it will probably work.
+
+   On G3 ibook, the console window switch key sequences (alt-f1,f2,etc) 
+   don't work.   X-windows and/or ssh sessions an be used if more
+   than one login session is needed.
 
    All of the applicable core packages, most of the opt and xorg packages
    have been built on powerpc but only a subset of contrib packages have been 
