@@ -19,10 +19,14 @@ If you are going to be installing ubuntu as well as CRUX on your system in a dua
 configuration, install ubuntu first and then CRUX.   In my experience, the ubuntu installer
 does not properly set up the boot loader when it detects a second OS and you are left with
 a system that is not bootable at all.   So, wipe any existing CRUX install off, then install 
-ubuntu and then install CEUX and then setup yaboot.conf for a dual boot configuration
+ubuntu and then install CRUX and then setup yaboot.conf for a dual boot configuration
 
 The CRUX PPC install enviroment is a bootable CD, not a live CD.  /tmp is writable but you cannot
 'modify' any other part of the install environment like you can with a live CD.
+
+Make sure the system time is reasonbly correct prior to starting the install.  Older machines 
+often have a dead battery and wrong clock setting.   Make sure the clock is set to a reasonable
+value before starting the install.
 
 
 ## Install materials needed
