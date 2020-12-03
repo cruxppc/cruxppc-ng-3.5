@@ -144,15 +144,3 @@ hmount /dev/sda2   (typically sda2 but may be different on some machines)
 hcopy :yaboot.conf /etc/yaboot.conf
 
    Add an entry for CRUX linux, run 'ybin' and then reboot.
-
-
-
-
-
-
-   
-yaboot.conf.can reboot into your other OS and modify it's 
-/etc/yaboot.conf to add an entry for CRUX PPC.
-
-   Alternatively, 
-
