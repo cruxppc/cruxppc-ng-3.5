@@ -1,15 +1,18 @@
 # Description: A fast image manipulation library
 # URL: http://freshmeat.net/projects/imlib2/
-# Maintainer: Fredrik Rinnestam, fredrik at crux dot guru
+# Maintainer: cruxppc at gmail dot com
 # Depends on: freetype, libid3tag, libtiff, giflib, xorg-libsm, xorg-libxext
 
 name=imlib2
 version=1.7.0
 release=1
-source=(http://download.sourceforge.net/enlightenment/$name-$version.tar.bz2)
+source=(http://download.sourceforge.net/enlightenment/$name-$version.tar.bz2
+	powerpc.patch)
 
 build() {
 	cd $name-$version
+# The problem this patch is for shouuld be fixed in the next imlib2 release.
+	patch -p0 -i $SRC/powerpc.patch
 
 	./configure --prefix=/usr
 
