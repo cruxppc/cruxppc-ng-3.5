@@ -16,8 +16,7 @@ build() {
 	mkdir "$PKGMK_SOURCE_DIR/rust" || true
 	export CARGO_HOME="$PKGMK_SOURCE_DIR/rust"
 
-	cargo fetch
-	cargo build --release
-	cargo install --path . --root $PKG/usr
-	#rm $PKG/usr/.crates.toml $PKG/usr/.crates2.json   # crate2.json not on ppc32
+	cargo fetch --locked --target powerpc-unknown-linux-gnu
+	cargo build --release --frozen --all-targets
+	install -Dt $PKG/usr/bin target/release/cbindgen
 }
