@@ -2,8 +2,8 @@
 
 # Browsers
 
-mainline crux provides the firefox browser as part of the install CD.   Firefox is very sluggish on powerpc so it was replaced by
-netsurf as part of the initial install.   Netsurfs performance is decent but
+mainline crux provides the firefox browser as part of the install CD.   Firefox is very sluggish on 
+powerpc so it was replaced by netsurf as part of the initial install.   Netsurfs performance is decent but
 it does not work with a number of websites as it does not support all
 the latest features of other browsers.
 
@@ -21,7 +21,7 @@ Lightweight browser.  Easy to build and works for general browsing but doesn't s
 
 ## Arcticfox
 
-ArcticFox builds now work and will be added to the install CD.   It does not work with youtube videos and perhaps
+ArcticFox builds now work and is added to the install CD.   It does not work with youtube videos and perhaps
 other websites and consumes a large fraction of the CPU cycles.  But it seemes to be a better choice than firefox.
 
 A port is provided to download the pre=built ArcticFox binary from the website and repackage it into a CRUX package.

@@ -1,7 +1,7 @@
 
 # Configuring up wifi
 
-The Macs have two varieties of wifi.   The earliest version (often found on
+The Macs have two varieties of builtin wifi.   The earliest version (often found on
 G3 machines does not work (or at least I haven't been able to figure out
 how to correctly configure it).  The later version (often found on G4
 machines) is pretty easy to get working.   If you have a G3 machine, you
@@ -13,14 +13,14 @@ To bringup wifi in cruxppc:
 1) If using a USB wifi adapter, install the linux-firmware package and
    depending on the adapter, you may need to rebuild kernel with support
    for your wifidevice enabled.   (The default kernel config has numerous
-   wifi adapters enabled so there is a good chance a rebuild is not
-   required).
+   wifi adapters enabled so there is a good chance the existing kernel
+   will work and a rebuild is not required).
 
-   If using the Mac builtin wifi, linux-firmware should not be needed.
+   If using the Mac builtin wifi, linux-firmware is not required.
 
    Reboot after installing linux-firmware package.
 
-2) Add password protected entries to /etc/wpa_supplicant.conf by using
+2) Add WIFI password entries to /etc/wpa_supplicant.conf by using
    wpa_passphrase like so:
 
   "wpa_passphrase yourssidname yourwifipassword >>/etc/wpa_supplicant.conf"
@@ -32,6 +32,9 @@ To bringup wifi in cruxppc:
 	ssid="CoffeeShop_Public_WIFI"
         key_mgmt=NONE
    }
+
+   Running 'iwlist scan' may help you determine what the SSID is for your
+   wifi.
    
 
 3) Modify the /etc/rc.d/wlan startup script as needed.  
@@ -55,8 +58,11 @@ To bringup wifi in cruxppc:
    Setting DEV to the proper value is typically the only change you have
    to make to /etc/rc.d/wlan.
 
+   Runnning 'ifconfig -a' may help you determine the interface name
+   for your wifi device.
 
-4) Add wlan to /etc/rc.conf to enable auto startup of wifi
+
+4) Optional:  Add wlan to /etc/rc.conf to enable auto startup of wifi
    at boot.   It may display an ERROR during startup but should
    complete connection shortly after startup is complete.
 
@@ -64,5 +70,5 @@ To bringup wifi in cruxppc:
    "/etc/rc.d/wlan start" as root.
 
 
-After a few seconds ater start, WIFI should be up.
+After 5 to 10 seconds ater start, WIFI should be up.
 

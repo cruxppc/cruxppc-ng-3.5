@@ -4,7 +4,8 @@
 
 
 This document is intended to be a supplment to the handbook and provides some additional explanation 
-and tips for installing CRUX PPC
+and tips for installing CRUX PPC.   The handbook is the document that describes how to install
+CRUX PPC.   This document provides a bit more detail about some portions of the install.
 
 
 ## General info
@@ -31,7 +32,8 @@ value before starting the install.
 
 ## Install materials needed
 
-You will need a blank CD (not DVD). 
+You will need a blank CD (not DVD).    For some yet unknown reason, the CRUX PPC installer
+cannot be booted from a DVD.
 
 Download the CRUX PPC iso image file.  Verify that your downloaded copy md5sum is correct.
 
@@ -46,10 +48,10 @@ source.
 
 If you are building a kernel from source with support for the builtin WIFI (airport or some such...), 
 then you will also need to obtain the propreitary b43 firmware.   This can be done later but 
-it easier to obtain it prior on an system that is already running and connected to the
+it easier to obtain it beforehand on an system that is already running and connected to the
 internet and then copy it to a USB stick for use during the install.  You can install the b43-fwcutter tool on 
-most distrubitions and use it to obtain the needed b43 firmware.   The b43fwscript file in this repository 
-may be helpful.
+most distrubitions and use it to obtain the needed b43 firmware.   The b43fwscript file 
+in this repository may be helpful for downloading the needed b43 firmware.
 
 Copy any needed firmwares and kernel source onto a USB flash stick.   The USB stick should
 be in exfat, regular fat, or ext2,3 and 4 type of filesystem.
@@ -65,7 +67,8 @@ CD.
 
 ## Create and boot install USB stick
 
-TBA (Installing from USB not yet documented)
+See the usbinstall note in this directory to create and use a USB flash stick for the install
+(still a WIP...).
 
 
 ## Memtester and smartmontools
@@ -85,8 +88,8 @@ you find on x86 machines.   You have to use a partitioning tool that supports th
 partition map.   mac-fdisk or parted will work but don't use the fdisk utility.  mac-disk is
 the easiest to use IMO.
 
-Personally, after I finish partitioning a drive, I reboot the machine.   It's probably not needed but
-my paranoia tells me it's better to do it so I do. :)
+Personally, after I finish changing partitions on a drive, I reboot the machine.   It's probably not 
+needed but it does ensure that the new parition map is then in effect.
 
 
 ## package installation
@@ -100,13 +103,13 @@ The setup step will take about 5 to 10 minutes to install the selected packages.
 
    Even if you intend to build your own kernel, it is recommended to initially startup with the
 prebuilt kernel and then build your own kernel at your first opportunity.   Building a kernel
-within chroot is a bit tedious.
+within the chroot environment is a bit tedious.
 
    The default kernel config enables builtin firmware.   These builtin firmware pieces must be
 present in /lib/firmware or the build will fail.   So, you have to first get the needed pieces
-of firmware and install them before starting.  Alternatively, you can modify the kernel config
-to not require firmware but then the resulting kernel will not support the builtin wifi and maybe
-other features as well.
+of firmware and install them before starting.  Alternatively, if you do not want or cannot 
+obtain the required firmware you can modify the kernel config to not include the firmware but 
+then the resulting kernel will not support the builtin wifi and maybe missing other features as well.
 
    Some of the required firmware can be found in this repository.  (look under kernel/firmware).
 
@@ -138,7 +141,8 @@ and then reboot into your CRUX linux install.
    If you are setting up dual booting, then you have to start with the other OSs yaboot.conf
 and add to it.   You can do this either by rebooting into the other OS and modifying it's
 yaboot.conf file or you can use the hfsutills (within chroot) to copy the other OSs yaboot.conf
-into CRUX and modify it within CRUX.   To do so do:
+into CRUX and modify it within CRUX.   A convenient way of obtaining the active current yaboot.conf
+file is:
 
 hmount /dev/sda2   (typically sda2 but may be different on some machines)
 hcopy :yaboot.conf /etc/yaboot.conf
