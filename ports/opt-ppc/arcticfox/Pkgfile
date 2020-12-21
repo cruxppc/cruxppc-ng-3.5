@@ -2,7 +2,9 @@
 # URL: https://github.com/wicknix/Arctic-Fox/
 # Maintainer: cruxppc at gmail
 # Depends on: autoconf-2.13 ccache gcc6
-# PATH needs to include /usr/local/bin for gcc6.
+# Optional: ffmpeg
+# ffmpeg provides (very sluggish) youtube support.
+# set PATH=/usr/local/bin:$PATH during build for gcc6.
 
 name=arcticfox
 version=27.11.0

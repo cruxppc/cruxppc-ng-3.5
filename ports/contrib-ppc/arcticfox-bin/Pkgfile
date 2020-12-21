@@ -2,6 +2,8 @@
 # URL:         https:/www.github.com/wicknix/Arctic-Fox
 # Maintainer:  cruxppc at gmail dot com
 # Depends on:
+# Optional: ffmpeg
+# ffmpeg provides (very sluggish) youtube support.
 # This is experimental and not recommended except for testing purposes.
 
 name=arcticfox-bin
