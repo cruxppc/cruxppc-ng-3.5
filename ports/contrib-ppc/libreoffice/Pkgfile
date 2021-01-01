@@ -76,7 +76,7 @@ build() {
     --with-external-hyph-dir=/usr/share/hypen \
     --with-external-thes-dir=/usr/share/mythes \
     --without-{doxygen,fonts,gssapi,help,helppack-integration,java,system-firebird} \
-    --disable-{avahi,build-unowinreg,dconf,dependency-tracking,extension-update,fetch-external} \
+    --disable-{avahi,build-unowinreg,dconf,dependency-tracking,extension-update,fetch-external,skia} \
     --disable-{firebird-sdbc,poppler,postgresql-sdbc,report-builder,sdremote-bluetooth,werror}
 
   touch {sources.ver,src.downloaded}
